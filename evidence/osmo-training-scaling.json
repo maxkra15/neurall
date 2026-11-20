@@ -1,0 +1,23 @@
+{
+  "scope": "400 AdamW updates on 44 checksum-matched benchmark episodes with a fixed global batch of four. Fit time includes loading scenes within the loop and excludes staging and evaluation.",
+  "training": [
+    {
+      "label": "One L40",
+      "l40s": 1,
+      "fit_seconds": 87.09148398786783,
+      "gpu_seconds": 87.09148398786783
+    },
+    {
+      "label": "Four L40s",
+      "l40s": 4,
+      "fit_seconds": 49.88363749906421,
+      "gpu_seconds": 199.53454999625683
+    },
+    {
+      "label": "Four L40s \u00b7 momentum-conserving triangle contact",
+      "l40s": 4,
+      "fit_seconds": 191.16102325171232,
+      "gpu_seconds": 764.6440930068493
+    }
+  ]
+}

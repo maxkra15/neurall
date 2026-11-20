@@ -1,8 +1,147 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T11:51:02Z",
-  "headline": "The frozen momentum-conserving NeurALL model exchanges impulses in all four fresh mixed scenes.",
+  "updated": "2026-11-20T11:53:32Z",
+  "headline": "The frozen OSMO checkpoint exchanges impulses in all four fresh cloth–cable scenes.",
   "runs": [
+    {
+      "id": "fresh-conservative-l40",
+      "title": "OSMO checkpoint on four fresh cloth–cable scenes",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Freeze the four-L40 checkpoint and evaluate on CPU on four new 1.8 s Newton scenes generated after model development.",
+      "summary": "4 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 4 GPU processes. The cable exchanges impulse with the cloth in all four scenes. Mean position RMSE is 44.13 mm with NeurALL, 45.47 mm with the analytical prior and 1.34 m with exchange disabled. Terminal cable error remains 126.40 mm and reaction-estimate error exceeds the prior.",
+      "metrics": [
+        {
+          "label": "Final cloth position RMSE",
+          "value": 27.878,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 126.403,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/fresh-conservative-l40-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+          "poster": "media/fresh-conservative-l40-mixed.webp"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/fresh-conservative-l40-scores.json"
+        }
+      ]
+    },
+    {
+      "id": "shared-conservative-l40",
+      "title": "NeurALL with momentum-conserving contact on four L40s",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories. Held-out Newton cloth trajectories. Held-out Newton cable trajectories. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+      "summary": "12 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 4 GPU processes. Shared contact catches the cable and transfers impulse in each mixed case. Mixed position RMSE is 49.38 mm compared with 50.15 mm for the analytical prior. The model is coarser than the independent elastic solver on cloth and cable.",
+      "metrics": [
+        {
+          "label": "Mean position RMSE",
+          "value": 442.106,
+          "unit": "mm",
+          "detail": "Cloth"
+        },
+        {
+          "label": "Mean position RMSE",
+          "value": 398.178,
+          "unit": "mm",
+          "detail": "Cable"
+        },
+        {
+          "label": "Final cloth position RMSE",
+          "value": 17.65,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 128.811,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Tool force vector RMSE",
+          "value": 118.607,
+          "unit": "N",
+          "detail": "Granular sand"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/shared-conservative-l40-sand.mp4",
+          "type": "video",
+          "label": "Granular sand. Recorded rigid motion on previously inspected public sand trajectories.",
+          "poster": "media/shared-conservative-l40-sand.webp"
+        },
+        {
+          "src": "media/shared-conservative-l40-cloth.mp4",
+          "type": "video",
+          "label": "Cloth. Held-out Newton cloth trajectories.",
+          "poster": "media/shared-conservative-l40-cloth.webp"
+        },
+        {
+          "src": "media/shared-conservative-l40-cable.mp4",
+          "type": "video",
+          "label": "Cable. Held-out Newton cable trajectories.",
+          "poster": "media/shared-conservative-l40-cable.webp"
+        },
+        {
+          "src": "media/shared-conservative-l40-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+          "poster": "media/shared-conservative-l40-mixed.webp"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/shared-conservative-l40-scores.json"
+        }
+      ]
+    },
+    {
+      "id": "osmo-training-scaling",
+      "title": "Training on one and four OSMO L40s",
+      "date": "2026-11-20",
+      "status": "Measured fit time",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "400 AdamW updates on 44 checksum-matched benchmark episodes with a fixed global batch of four. Fit time includes loading scenes within the loop and excludes staging and evaluation.",
+      "summary": "The point-contact fit takes 87.09 seconds on one L40 and 49.88 seconds on four. The four-GPU fit is 1.75× faster and uses 2.29× as many GPU-seconds. The more expensive triangle-contact model takes 191.16 seconds on four L40s.",
+      "sources": [
+        {
+          "label": "Training times and protocol",
+          "url": "evidence/osmo-training-scaling.json"
+        }
+      ]
+    },
     {
       "id": "shared-conservative-fresh",
       "title": "Frozen NeurALL on four fresh cloth–cable scenes",
@@ -628,6 +767,160 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "fresh-conservative-l40-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 4 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 44.133,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 45.471,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 1335.586,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/fresh-conservative-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-l40-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 49.378,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 50.146,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 1388.199,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-l40-cable",
+      "label": "Cable",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cable trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 398.178,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 474.066,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-l40-cloth",
+      "label": "Cloth",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cloth trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 442.106,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 485.806,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-l40-sand",
+      "label": "Granular sand",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 12.391,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 7.509,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-l40-scores.json"
+      }
+    },
+    {
+      "id": "osmo-point-gpu-count",
+      "label": "Point-contact training time",
+      "track": "Matched compute comparison · 400 updates",
+      "scope": "400 AdamW updates on 44 checksum-matched benchmark episodes with a fixed global batch of four. Fit time includes loading scenes within the loop and excludes staging and evaluation.",
+      "values": [
+        {
+          "label": "One L40",
+          "value": 87.09,
+          "unit": "s"
+        },
+        {
+          "label": "Four L40s",
+          "value": 49.88,
+          "unit": "s"
+        }
+      ],
+      "source": {
+        "label": "Training times and protocol",
+        "url": "evidence/osmo-training-scaling.json"
+      }
+    },
     {
       "id": "shared-conservative-fresh-mixed",
       "label": "Cloth and cable contact",
