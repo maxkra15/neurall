@@ -1,8 +1,56 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T14:53:15Z",
-  "headline": "New excitation tests show partial transfer for cloth and weak added-load response for cable.",
+  "updated": "2026-11-20T17:12:37Z",
+  "headline": "Diverse training loads improve transfer to new force histories, especially for cloth",
   "runs": [
+    {
+      "id": "elastic-shared-diversity-v5",
+      "title": "Same amount of training data, different load diversity",
+      "date": "2026-11-20",
+      "status": "Measured fresh rollouts",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Each retrained shared model receives 192 extra load trajectories per material. The test scenes and load inputs are identical across all three checkpoints.",
+      "summary": "On two held-out waveforms, pooled response error falls from 104.2% to 89.3% for cloth and from 98.4% to 96.3% for cable compared with the same number of extra single pulses. A score of 100% matches the error from ignoring the extra load. Giving each case equal weight, the diverse cable model still averages 134.4%. The training loads match direction and peak acceleration, with different time profiles and rates. The clips show Newton, the frozen v4 model, and the diverse-load model on matched scenes.",
+      "media": [
+        {
+          "src": "media/elastic-shared-diversity-v5-cloth-triangle-load.mp4",
+          "poster": "media/elastic-shared-diversity-v5-cloth-triangle-load.webp",
+          "type": "video",
+          "label": "Cloth scene 40500. Triangular load at the 6 m/s² setting, with signed acceleration shown."
+        },
+        {
+          "src": "media/elastic-shared-diversity-v5-cloth-descending-chirp.mp4",
+          "poster": "media/elastic-shared-diversity-v5-cloth-descending-chirp.webp",
+          "type": "video",
+          "label": "Cloth scene 40500. Descending chirp at the 6 m/s² setting, with signed acceleration shown."
+        },
+        {
+          "src": "media/elastic-shared-diversity-v5-cable-triangle-load.mp4",
+          "poster": "media/elastic-shared-diversity-v5-cable-triangle-load.webp",
+          "type": "video",
+          "label": "Cable scene 40500. Triangular load at the 6 m/s² setting, with signed acceleration shown."
+        },
+        {
+          "src": "media/elastic-shared-diversity-v5-cable-descending-chirp.mp4",
+          "poster": "media/elastic-shared-diversity-v5-cable-descending-chirp.webp",
+          "type": "video",
+          "label": "Cable scene 40500. Descending chirp at the 6 m/s² setting, with signed acceleration shown."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Equal-case and pooled scores, per test case and load level",
+          "url": "evidence/elastic-shared-diversity-v5-scores.json"
+        },
+        {
+          "label": "Matched training and aggregate results by material",
+          "url": "evidence/elastic-shared-diversity-v5-matched-summary.json"
+        }
+      ]
+    },
     {
       "id": "elastic-shared-excitations",
       "title": "Shared cloth and cable under new load patterns",
@@ -1036,6 +1084,168 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-shared-diversity-v5-earlier-stress-tests-cable",
+      "label": "Cable · Earlier stress tests",
+      "track": "48 paired test cases · pooled response error",
+      "scope": "Pooled error compares predicted added motion with Newton across length-normalized trajectories. A score of 100% gives the same pooled error as ignoring the extra load.",
+      "values": [
+        {
+          "label": "Frozen v4",
+          "unit": "%",
+          "value": 96.4
+        },
+        {
+          "label": "More pulses",
+          "unit": "%",
+          "value": 94.3
+        },
+        {
+          "label": "Diverse loads",
+          "unit": "%",
+          "value": 93.2
+        }
+      ],
+      "source": {
+        "label": "Equal-case and pooled scores, per test case and load level",
+        "url": "evidence/elastic-shared-diversity-v5-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-diversity-v5-earlier-stress-tests-cloth",
+      "label": "Cloth · Earlier stress tests",
+      "track": "48 paired test cases · pooled response error",
+      "scope": "Pooled error compares predicted added motion with Newton across length-normalized trajectories. A score of 100% gives the same pooled error as ignoring the extra load.",
+      "values": [
+        {
+          "label": "Frozen v4",
+          "unit": "%",
+          "value": 87.6
+        },
+        {
+          "label": "More pulses",
+          "unit": "%",
+          "value": 87.7
+        },
+        {
+          "label": "Diverse loads",
+          "unit": "%",
+          "value": 88.0
+        }
+      ],
+      "source": {
+        "label": "Equal-case and pooled scores, per test case and load level",
+        "url": "evidence/elastic-shared-diversity-v5-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-diversity-v5-held-out-waveforms-cable-descending-chirp",
+      "label": "Cable · Descending chirp",
+      "track": "16 paired test cases · pooled response error",
+      "scope": "Pooled error compares predicted added motion with Newton across length-normalized trajectories. A score of 100% gives the same pooled error as ignoring the extra load.",
+      "values": [
+        {
+          "label": "Frozen v4",
+          "unit": "%",
+          "value": 110.7
+        },
+        {
+          "label": "More pulses",
+          "unit": "%",
+          "value": 109.7
+        },
+        {
+          "label": "Diverse loads",
+          "unit": "%",
+          "value": 105.8
+        }
+      ],
+      "source": {
+        "label": "Equal-case and pooled scores, per test case and load level",
+        "url": "evidence/elastic-shared-diversity-v5-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-diversity-v5-held-out-waveforms-cable-triangle-load",
+      "label": "Cable · Triangular load",
+      "track": "16 paired test cases · pooled response error",
+      "scope": "Pooled error compares predicted added motion with Newton across length-normalized trajectories. A score of 100% gives the same pooled error as ignoring the extra load.",
+      "values": [
+        {
+          "label": "Frozen v4",
+          "unit": "%",
+          "value": 87.9
+        },
+        {
+          "label": "More pulses",
+          "unit": "%",
+          "value": 87.5
+        },
+        {
+          "label": "Diverse loads",
+          "unit": "%",
+          "value": 87.3
+        }
+      ],
+      "source": {
+        "label": "Equal-case and pooled scores, per test case and load level",
+        "url": "evidence/elastic-shared-diversity-v5-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-diversity-v5-held-out-waveforms-cloth-descending-chirp",
+      "label": "Cloth · Descending chirp",
+      "track": "16 paired test cases · pooled response error",
+      "scope": "Pooled error compares predicted added motion with Newton across length-normalized trajectories. A score of 100% gives the same pooled error as ignoring the extra load.",
+      "values": [
+        {
+          "label": "Frozen v4",
+          "unit": "%",
+          "value": 105.1
+        },
+        {
+          "label": "More pulses",
+          "unit": "%",
+          "value": 112.8
+        },
+        {
+          "label": "Diverse loads",
+          "unit": "%",
+          "value": 83.8
+        }
+      ],
+      "source": {
+        "label": "Equal-case and pooled scores, per test case and load level",
+        "url": "evidence/elastic-shared-diversity-v5-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-diversity-v5-held-out-waveforms-cloth-triangle-load",
+      "label": "Cloth · Triangular load",
+      "track": "16 paired test cases · pooled response error",
+      "scope": "Pooled error compares predicted added motion with Newton across length-normalized trajectories. A score of 100% gives the same pooled error as ignoring the extra load.",
+      "values": [
+        {
+          "label": "Frozen v4",
+          "unit": "%",
+          "value": 95.3
+        },
+        {
+          "label": "More pulses",
+          "unit": "%",
+          "value": 95.6
+        },
+        {
+          "label": "Diverse loads",
+          "unit": "%",
+          "value": 94.1
+        }
+      ],
+      "source": {
+        "label": "Equal-case and pooled scores, per test case and load level",
+        "url": "evidence/elastic-shared-diversity-v5-scores.json"
+      }
+    },
     {
       "id": "elastic-shared-excitations-cable-oscillating-load",
       "label": "Cable · Oscillating load",

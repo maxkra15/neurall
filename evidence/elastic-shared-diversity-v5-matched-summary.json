@@ -1,0 +1,141 @@
+{
+  "checkpoint_selection": {
+    "pulses": {
+      "checkpoint_sha256": "89f2e2fa767802c490c137a11b1ad86c1429783af4772a0f4da4657e7822b458",
+      "initial_checkpoint_sha256": "10687bb59ea9f5bfd5b54ce1b0a121ad0007e505a81c2e5111def9092c7f3029",
+      "manifest_sha256": "4db59b206c20603cb5580ea98f0fbd68b6ffea9145104259c1cf05785238c2ec",
+      "selected_step": 4200
+    },
+    "diverse": {
+      "checkpoint_sha256": "d349c22922deaaa41b90cdf0ec7eadca86139457e510e2336f04dba8fe8054c6",
+      "initial_checkpoint_sha256": "10687bb59ea9f5bfd5b54ce1b0a121ad0007e505a81c2e5111def9092c7f3029",
+      "manifest_sha256": "b64b06552ec3fa469176de69d6f8df471e3bab684fc5684c7bd500159f710742",
+      "selected_step": 5100
+    }
+  },
+  "training_program_case_counts": {
+    "fixed-multisine": 128,
+    "smooth-bursts": 128,
+    "smooth-knots": 128
+  },
+  "peak_slew_range_m_s3": {
+    "pulses": [
+      8.930173916108876,
+      39.524068950942016
+    ],
+    "diverse": [
+      9.873519625479524,
+      71.38654213806826
+    ]
+  },
+  "scopes": [
+    {
+      "suite": "held",
+      "material": "cloth",
+      "cases": 32,
+      "geometry_seeds": 8,
+      "scores": {
+        "previous": {
+          "pooled_response_pct": 100.11067038164903,
+          "equal_case_response_pct": 102.03675178238112,
+          "wins_vs_ignore": 16
+        },
+        "pulses": {
+          "pooled_response_pct": 104.24163526364762,
+          "equal_case_response_pct": 106.18296299380384,
+          "wins_vs_ignore": 9
+        },
+        "diverse": {
+          "pooled_response_pct": 89.33135003269254,
+          "equal_case_response_pct": 91.82449839108847,
+          "wins_vs_ignore": 23
+        }
+      },
+      "diverse_minus_pulses_paired_seed_bootstrap_95_pct_points": [
+        -19.86404002851603,
+        -8.262788339374698
+      ]
+    },
+    {
+      "suite": "held",
+      "material": "cable",
+      "cases": 32,
+      "geometry_seeds": 8,
+      "scores": {
+        "previous": {
+          "pooled_response_pct": 99.11862921771586,
+          "equal_case_response_pct": 141.85090413265394,
+          "wins_vs_ignore": 14
+        },
+        "pulses": {
+          "pooled_response_pct": 98.35954993502182,
+          "equal_case_response_pct": 139.69627508494042,
+          "wins_vs_ignore": 14
+        },
+        "diverse": {
+          "pooled_response_pct": 96.2810251377072,
+          "equal_case_response_pct": 134.44471973261972,
+          "wins_vs_ignore": 16
+        }
+      },
+      "diverse_minus_pulses_paired_seed_bootstrap_95_pct_points": [
+        -4.7057601443125066,
+        -1.1892111325295147
+      ]
+    },
+    {
+      "suite": "stress",
+      "material": "cloth",
+      "cases": 48,
+      "geometry_seeds": 8,
+      "scores": {
+        "previous": {
+          "pooled_response_pct": 87.5514607286748,
+          "equal_case_response_pct": 89.57439962858392,
+          "wins_vs_ignore": 39
+        },
+        "pulses": {
+          "pooled_response_pct": 87.68996455259769,
+          "equal_case_response_pct": 91.68655685353052,
+          "wins_vs_ignore": 37
+        },
+        "diverse": {
+          "pooled_response_pct": 87.99886837419311,
+          "equal_case_response_pct": 90.56360329538792,
+          "wins_vs_ignore": 42
+        }
+      },
+      "diverse_minus_pulses_paired_seed_bootstrap_95_pct_points": [
+        -1.582808935486188,
+        2.235716499118027
+      ]
+    },
+    {
+      "suite": "stress",
+      "material": "cable",
+      "cases": 48,
+      "geometry_seeds": 8,
+      "scores": {
+        "previous": {
+          "pooled_response_pct": 96.42134045822597,
+          "equal_case_response_pct": 133.48882740888445,
+          "wins_vs_ignore": 24
+        },
+        "pulses": {
+          "pooled_response_pct": 94.26908805581022,
+          "equal_case_response_pct": 127.45965420704938,
+          "wins_vs_ignore": 24
+        },
+        "diverse": {
+          "pooled_response_pct": 93.21722439488859,
+          "equal_case_response_pct": 124.75937420281531,
+          "wins_vs_ignore": 26
+        }
+      },
+      "diverse_minus_pulses_paired_seed_bootstrap_95_pct_points": [
+        -3.346823830541126,
+        0.28000415099482723
+      ]
+    }
+  ]
+}
