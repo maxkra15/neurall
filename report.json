@@ -1,8 +1,54 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T12:17:41Z",
-  "headline": "Cloth averages 0.96% on the pinned benchmark. Cable reaches 0.665% against the refined Newton reference.",
+  "updated": "2026-11-20T12:35:20Z",
+  "headline": "One updated shared network reduces error on all four fresh cloth and cable comparisons.",
   "runs": [
+    {
+      "id": "elastic-shared-v4",
+      "title": "Shared cloth and cable dynamics under changing loads",
+      "date": "2026-11-20",
+      "status": "Measured fresh rollouts",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Six-second, contact-free rollouts at 20 ms per step from clamped rest. 12 fresh cloth and 12 fresh cable scenes each have an original load schedule and a matched second-load variant.",
+      "summary": "The updated checkpoint uses the same recurrent architecture with more six-second training trajectories, including a second load after release, and loss measured directly in native geometry. All test pairs yield identical predictions before the load changes. The model still starts at clamped rest and evolves from current loads.",
+      "metrics": [
+        {
+          "label": "Cloth CPU step",
+          "value": 9.1,
+          "unit": "µs",
+          "detail": "Median warm step for the updated model, with position readout"
+        },
+        {
+          "label": "Cable CPU step",
+          "value": 14.5,
+          "unit": "µs",
+          "detail": "Median warm step including cable length projection"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/elastic-shared-v4-cloth.mp4",
+          "poster": "media/elastic-shared-v4-cloth.webp",
+          "type": "video",
+          "label": "Cloth test 40205. Median-error example for the updated model. The chart shows the applied load."
+        },
+        {
+          "src": "media/elastic-shared-v4-cable.mp4",
+          "poster": "media/elastic-shared-v4-cable.webp",
+          "type": "video",
+          "label": "Cable test 40207. Median-error example for the updated model. The chart shows the applied load."
+        }
+      ],
+      "sources": [
+        {
+          "label": "All paired case scores and checkpoint selection",
+          "url": "evidence/elastic-shared-v4-scores.json"
+        }
+      ]
+    },
     {
       "id": "elastic-refined-cable-v4",
       "title": "Cable at higher Newton resolution",
@@ -934,6 +980,94 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-shared-v4-pulse-cable",
+      "label": "Cable · second load",
+      "track": "12 fresh six-second rollouts",
+      "scope": "Mean frame-wise position RMSE as a percent of rest length.",
+      "values": [
+        {
+          "label": "Previous shared",
+          "value": 1.87,
+          "unit": "%"
+        },
+        {
+          "label": "Updated shared",
+          "value": 1.69,
+          "unit": "%"
+        }
+      ],
+      "source": {
+        "label": "All paired case scores and checkpoint selection",
+        "url": "evidence/elastic-shared-v4-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-v4-pulse-cloth",
+      "label": "Cloth · second load",
+      "track": "12 fresh six-second rollouts",
+      "scope": "Mean frame-wise position RMSE as a percent of rest length.",
+      "values": [
+        {
+          "label": "Previous shared",
+          "value": 4.31,
+          "unit": "%"
+        },
+        {
+          "label": "Updated shared",
+          "value": 3.25,
+          "unit": "%"
+        }
+      ],
+      "source": {
+        "label": "All paired case scores and checkpoint selection",
+        "url": "evidence/elastic-shared-v4-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-v4-standard-cable",
+      "label": "Cable · standard load",
+      "track": "12 fresh six-second rollouts",
+      "scope": "Mean frame-wise position RMSE as a percent of rest length.",
+      "values": [
+        {
+          "label": "Previous shared",
+          "value": 1.41,
+          "unit": "%"
+        },
+        {
+          "label": "Updated shared",
+          "value": 1.27,
+          "unit": "%"
+        }
+      ],
+      "source": {
+        "label": "All paired case scores and checkpoint selection",
+        "url": "evidence/elastic-shared-v4-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-v4-standard-cloth",
+      "label": "Cloth · standard load",
+      "track": "12 fresh six-second rollouts",
+      "scope": "Mean frame-wise position RMSE as a percent of rest length.",
+      "values": [
+        {
+          "label": "Previous shared",
+          "value": 3.32,
+          "unit": "%"
+        },
+        {
+          "label": "Updated shared",
+          "value": 2.81,
+          "unit": "%"
+        }
+      ],
+      "source": {
+        "label": "All paired case scores and checkpoint selection",
+        "url": "evidence/elastic-shared-v4-scores.json"
+      }
+    },
     {
       "id": "elastic-six-second-cable-v3",
       "label": "Cable stability over six seconds",
