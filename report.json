@@ -1,8 +1,52 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T17:12:37Z",
-  "headline": "Diverse training loads improve transfer to new force histories, especially for cloth",
+  "updated": "2026-11-20T17:29:11Z",
+  "headline": "More varied trajectories and a longer fit improve transfer to unseen loads",
   "runs": [
+    {
+      "id": "elastic-shared-load-scale-v6",
+      "title": "Scaling training from 1,088 to 4,096 trajectories",
+      "date": "2026-11-20",
+      "status": "Measured fresh rollouts",
+      "summary": "Relative to the 1,088-trajectory fit, the longer 4,096-trajectory fit drops pooled response error from 96.8% to 86.4% for cloth and from 95.3% to 90.1% for cable. Cable still averages 125.9% with equal weight per case. The videos compare Newton and the 1,088- and 4,096-trajectory fits at the equal update budget on the same test scenes.",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "The three same-budget fits start from the same shared weights and use 6,500 updates on nested training sets with increasing shares of diverse loads. The longer 4,096-trajectory fit uses 24,500 updates to match the expected draws per trajectory of the smallest fit. All four checkpoints use the same development set. The test uses 24 fresh geometries per material and two waveform families held out from training.",
+      "media": [
+        {
+          "src": "media/elastic-shared-load-scale-v6-cloth-triangle-load.mp4",
+          "poster": "media/elastic-shared-load-scale-v6-cloth-triangle-load.webp",
+          "type": "video",
+          "label": "Cloth · Triangular load at the 6 m/s² setting. Same geometry and camera within each material."
+        },
+        {
+          "src": "media/elastic-shared-load-scale-v6-cloth-descending-chirp.mp4",
+          "poster": "media/elastic-shared-load-scale-v6-cloth-descending-chirp.webp",
+          "type": "video",
+          "label": "Cloth · Descending chirp at the 6 m/s² setting. Same geometry and camera within each material."
+        },
+        {
+          "src": "media/elastic-shared-load-scale-v6-cable-triangle-load.mp4",
+          "poster": "media/elastic-shared-load-scale-v6-cable-triangle-load.webp",
+          "type": "video",
+          "label": "Cable · Triangular load at the 6 m/s² setting. Same geometry and camera within each material."
+        },
+        {
+          "src": "media/elastic-shared-load-scale-v6-cable-descending-chirp.mp4",
+          "poster": "media/elastic-shared-load-scale-v6-cable-descending-chirp.webp",
+          "type": "video",
+          "label": "Cable · Descending chirp at the 6 m/s² setting. Same geometry and camera within each material."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Frozen checkpoints, per-case scores and geometry bootstrap intervals",
+          "url": "evidence/elastic-shared-load-scale-v6-scores.json"
+        }
+      ]
+    },
     {
       "id": "elastic-shared-diversity-v5",
       "title": "Same amount of training data, different load diversity",
@@ -1084,6 +1128,134 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-shared-load-scale-v6-cable-equal-case-response-pct",
+      "label": "Cable · Equal-case response error",
+      "track": "96 paired tests across 24 fresh geometries",
+      "scope": "Response error measures the extra motion caused by the added load. A score of 100% matches the error from ignoring that load. Pooled scores give more weight to scenes with larger Newton responses.",
+      "values": [
+        {
+          "label": "1,088 trajectories",
+          "unit": "%",
+          "value": 134.7
+        },
+        {
+          "label": "2,048 trajectories",
+          "unit": "%",
+          "value": 131.1
+        },
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 125.7
+        },
+        {
+          "label": "4,096 · longer fit",
+          "unit": "%",
+          "value": 125.9
+        }
+      ],
+      "source": {
+        "label": "Frozen checkpoints, per-case scores and geometry bootstrap intervals",
+        "url": "evidence/elastic-shared-load-scale-v6-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v6-cable-pooled-response-pct",
+      "label": "Cable · Pooled response error",
+      "track": "96 paired tests across 24 fresh geometries",
+      "scope": "Response error measures the extra motion caused by the added load. A score of 100% matches the error from ignoring that load. Pooled scores give more weight to scenes with larger Newton responses.",
+      "values": [
+        {
+          "label": "1,088 trajectories",
+          "unit": "%",
+          "value": 95.3
+        },
+        {
+          "label": "2,048 trajectories",
+          "unit": "%",
+          "value": 93.6
+        },
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 92.4
+        },
+        {
+          "label": "4,096 · longer fit",
+          "unit": "%",
+          "value": 90.1
+        }
+      ],
+      "source": {
+        "label": "Frozen checkpoints, per-case scores and geometry bootstrap intervals",
+        "url": "evidence/elastic-shared-load-scale-v6-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v6-cloth-equal-case-response-pct",
+      "label": "Cloth · Equal-case response error",
+      "track": "96 paired tests across 24 fresh geometries",
+      "scope": "Response error measures the extra motion caused by the added load. A score of 100% matches the error from ignoring that load. Pooled scores give more weight to scenes with larger Newton responses.",
+      "values": [
+        {
+          "label": "1,088 trajectories",
+          "unit": "%",
+          "value": 101.7
+        },
+        {
+          "label": "2,048 trajectories",
+          "unit": "%",
+          "value": 96.2
+        },
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 94.2
+        },
+        {
+          "label": "4,096 · longer fit",
+          "unit": "%",
+          "value": 88.5
+        }
+      ],
+      "source": {
+        "label": "Frozen checkpoints, per-case scores and geometry bootstrap intervals",
+        "url": "evidence/elastic-shared-load-scale-v6-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v6-cloth-pooled-response-pct",
+      "label": "Cloth · Pooled response error",
+      "track": "96 paired tests across 24 fresh geometries",
+      "scope": "Response error measures the extra motion caused by the added load. A score of 100% matches the error from ignoring that load. Pooled scores give more weight to scenes with larger Newton responses.",
+      "values": [
+        {
+          "label": "1,088 trajectories",
+          "unit": "%",
+          "value": 96.8
+        },
+        {
+          "label": "2,048 trajectories",
+          "unit": "%",
+          "value": 92.0
+        },
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 92.8
+        },
+        {
+          "label": "4,096 · longer fit",
+          "unit": "%",
+          "value": 86.4
+        }
+      ],
+      "source": {
+        "label": "Frozen checkpoints, per-case scores and geometry bootstrap intervals",
+        "url": "evidence/elastic-shared-load-scale-v6-scores.json"
+      }
+    },
     {
       "id": "elastic-shared-diversity-v5-earlier-stress-tests-cable",
       "label": "Cable · Earlier stress tests",
