@@ -1,8 +1,132 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T11:42:54Z",
-  "headline": "NeurALL point-contact fit on four L40s · 12 evaluated rollouts",
+  "updated": "2026-11-20T11:51:02Z",
+  "headline": "The frozen momentum-conserving NeurALL model exchanges impulses in all four fresh mixed scenes.",
   "runs": [
+    {
+      "id": "shared-conservative-fresh",
+      "title": "Frozen NeurALL on four fresh cloth–cable scenes",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Four new Newton cloth–cable scenes generated after the checkpoint was frozen.",
+      "summary": "4 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 1 CPU process. The cable interacts with the cloth in all four fresh scenes. Mean position error is 44.42 mm, compared with 45.47 mm for the analytical prior and 1.34 m with exchange disabled. The cable ends 129.40 mm from Newton on average. Reaction-estimate accuracy remains below the prior.",
+      "metrics": [
+        {
+          "label": "Final cloth position RMSE",
+          "value": 28.519,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 129.403,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/shared-conservative-fresh-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+          "poster": "media/shared-conservative-fresh-mixed.webp"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/shared-conservative-fresh-scores.json"
+        }
+      ]
+    },
+    {
+      "id": "shared-conservative-cpu",
+      "title": "NeurALL with momentum-conserving cable motion",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories. Held-out Newton cloth trajectories. Held-out Newton cable trajectories. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+      "summary": "12 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 1 CPU process. The momentum-conserving model exchanges contact impulse in all three mixed scenes. Mean mixed position RMSE is 49.27 mm, compared with 50.13 mm for its analytical prior and 1.39 m with exchange disabled. The mean reaction-estimate error increases from 0.270 to 0.282 N s.",
+      "metrics": [
+        {
+          "label": "Mean position RMSE",
+          "value": 442.105,
+          "unit": "mm",
+          "detail": "Cloth"
+        },
+        {
+          "label": "Mean position RMSE",
+          "value": 398.179,
+          "unit": "mm",
+          "detail": "Cable"
+        },
+        {
+          "label": "Final cloth position RMSE",
+          "value": 17.905,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 129.133,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Tool force vector RMSE",
+          "value": 118.607,
+          "unit": "N",
+          "detail": "Granular sand"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/shared-conservative-cpu-sand.mp4",
+          "type": "video",
+          "label": "Granular sand. Recorded rigid motion on previously inspected public sand trajectories.",
+          "poster": "media/shared-conservative-cpu-sand.webp"
+        },
+        {
+          "src": "media/shared-conservative-cpu-cloth.mp4",
+          "type": "video",
+          "label": "Cloth. Held-out Newton cloth trajectories.",
+          "poster": "media/shared-conservative-cpu-cloth.webp"
+        },
+        {
+          "src": "media/shared-conservative-cpu-cable.mp4",
+          "type": "video",
+          "label": "Cable. Held-out Newton cable trajectories.",
+          "poster": "media/shared-conservative-cpu-cable.webp"
+        },
+        {
+          "src": "media/shared-conservative-cpu-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+          "poster": "media/shared-conservative-cpu-mixed.webp"
+        },
+        {
+          "src": "media/neurall-cable-contact.gif",
+          "type": "image",
+          "label": "Animated Newton, learned, analytical and exchange-disabled cloth–cable rollouts."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/shared-conservative-cpu-scores.json"
+        }
+      ]
+    },
     {
       "id": "shared-point-l40",
       "title": "NeurALL point-contact fit on four L40s",
@@ -213,7 +337,7 @@
         "sand"
       ],
       "scope": "Matched Newton references for circular push and cube pull-up",
-      "summary": "NeurALL has lower whole-bed error than the Particle NeRD Local retrain on both scenes. The Particle NeRD retrain has lower active velocity error on both. Damped contact has the lowest whole-bed error on both. The training runs use different data and budgets.",
+      "summary": "NeurALL has lower whole-bed error than the Particle NeRD Local retrain on both scenes. The Particle NeRD retrain has lower active velocity error on both. Damped contact has the lowest whole-bed error on both. The training runs use different data and budgets. The Particle NeRD retrain also has lower reconstructed height error near the tool on both scenes. NeurALL's geometry projection removes visible particle-center overlap at the sampled frames.",
       "media": [
         {
           "src": "media/nerd-circular-push.mp4",
@@ -236,6 +360,10 @@
         {
           "label": "Public Particle NeRD Local source",
           "url": "https://github.com/jnskkmhr/IsaacLab/tree/271756dcc6cbcee9aad708feddd148718d294a8f/source/isaaclab_tasks/isaaclab_tasks/contrib/particle_nerd_local"
+        },
+        {
+          "label": "Near-tool surface geometry and sampled penetration",
+          "url": "evidence/particle-nerd-neurall-surface-scores.json"
         }
       ]
     },
@@ -500,6 +628,222 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "shared-conservative-fresh-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 4 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 44.419,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 45.471,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 1335.588,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-fresh-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-cpu-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps. The free cable's learned update has zero net linear momentum.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 49.267,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 50.125,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 1388.199,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-cpu-cable",
+      "label": "Cable",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cable trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 398.179,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 474.066,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-cpu-cloth",
+      "label": "Cloth",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cloth trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 442.105,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 485.806,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-conservative-cpu-sand",
+      "label": "Granular sand",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 12.391,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 7.509,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-conservative-cpu-scores.json"
+      }
+    },
+    {
+      "id": "nerd-sphere-surface",
+      "label": "Sphere support · near-tool top surface",
+      "track": "Matched reconstructed heights · 1 case",
+      "scope": "Density is reconstructed on the same 20 mm grid. The score averages paired columns within 25 cm of the tool at 100 ms sample intervals.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 0.94,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        },
+        {
+          "label": "NeurALL",
+          "value": 42.71,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        }
+      ],
+      "source": {
+        "label": "Near-tool surface geometry and sampled penetration",
+        "url": "evidence/particle-nerd-neurall-surface-scores.json"
+      }
+    },
+    {
+      "id": "nerd-pull-surface",
+      "label": "Cube pull-up · near-tool top surface",
+      "track": "Matched reconstructed heights · 1 case",
+      "scope": "Density is reconstructed on the same 20 mm grid. The score averages paired columns within 25 cm of the tool at 100 ms sample intervals.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 10.55,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        },
+        {
+          "label": "NeurALL",
+          "value": 37.08,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        },
+        {
+          "label": "Particle NeRD Local retrain",
+          "value": 11.31,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        }
+      ],
+      "source": {
+        "label": "Near-tool surface geometry and sampled penetration",
+        "url": "evidence/particle-nerd-neurall-surface-scores.json"
+      }
+    },
+    {
+      "id": "nerd-circular-surface",
+      "label": "Circular box push · near-tool top surface",
+      "track": "Matched reconstructed heights · 1 case",
+      "scope": "Density is reconstructed on the same 20 mm grid. The score averages paired columns within 25 cm of the tool at 100 ms sample intervals.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 10.56,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        },
+        {
+          "label": "NeurALL",
+          "value": 22.05,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        },
+        {
+          "label": "Particle NeRD Local retrain",
+          "value": 10.59,
+          "unit": "mm",
+          "detail": "Mean absolute height error"
+        }
+      ],
+      "source": {
+        "label": "Near-tool surface geometry and sampled penetration",
+        "url": "evidence/particle-nerd-neurall-surface-scores.json"
+      }
+    },
     {
       "id": "shared-point-l40-mixed",
       "label": "Cloth and cable contact",

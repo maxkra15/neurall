@@ -1,0 +1,83 @@
+{
+  "scope": "Paired observed top-height columns within 25 cm of the recorded tool. Sampled endpoint overlaps use particle centers and analytical geometry.",
+  "density_grid": {
+    "spacing_m": 0.02,
+    "gaussian_sigma_m": 0.032,
+    "density_threshold_kg_m3": 800
+  },
+  "cases": [
+    {
+      "case": "flat-lateral_push-0003",
+      "sampled_frames": 60,
+      "actors": {
+        "teacher": {
+          "near_tool_height_mae_mm": 0.0,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 8.559391021728516
+        },
+        "neurall": {
+          "near_tool_height_mae_mm": 22.05408720970154,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 2.9802322387695312e-05
+        },
+        "analytic": {
+          "near_tool_height_mae_mm": 10.557660948236784,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 2.2351741790771484e-05
+        },
+        "author_local": {
+          "near_tool_height_mae_mm": 10.591314521431922,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 16.679134368896484
+        }
+      }
+    },
+    {
+      "case": "flat-vertical_push-0003",
+      "sampled_frames": 60,
+      "actors": {
+        "teacher": {
+          "near_tool_height_mae_mm": 0.0,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 5.893856048583984
+        },
+        "neurall": {
+          "near_tool_height_mae_mm": 37.07600656785071,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 1.4901161193847656e-05
+        },
+        "analytic": {
+          "near_tool_height_mae_mm": 10.546491475775838,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 0.0
+        },
+        "author_local": {
+          "near_tool_height_mae_mm": 11.314333014686902,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 40.33291244506836
+        }
+      }
+    },
+    {
+      "case": "flat-rest-0001",
+      "sampled_frames": 60,
+      "actors": {
+        "teacher": {
+          "near_tool_height_mae_mm": 0.0,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 1.8199458122253418
+        },
+        "neurall": {
+          "near_tool_height_mae_mm": 42.71493556201458,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": 7.450580596923828e-06
+        },
+        "analytic": {
+          "near_tool_height_mae_mm": 0.9379465535283089,
+          "near_tool_teacher_surface_coverage": 1.0,
+          "max_sampled_particle_center_tool_overlap_mm": -0.0
+        }
+      }
+    }
+  ]
+}
