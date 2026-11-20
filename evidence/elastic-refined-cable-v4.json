@@ -1,0 +1,282 @@
+{
+  "scope": "Fixed prescribed load and clamped rest, 1.8 seconds; 16 substeps, 32 VBD iterations",
+  "cases": [
+    {
+      "identity": "cable-40000",
+      "length_m": 0.9579117188559578,
+      "mean_position_rmse_mm": 2.9888140403766963,
+      "mean_position_rmse_percent_length": 0.312013516647052,
+      "final_position_rmse_mm": 4.893104518157384,
+      "worst_frame_position_rmse_percent_length": 0.7996875556630928,
+      "mean_velocity_rmse_mm_s": 30.793089981155916,
+      "maximum_link_stretch_percent": 0.02157037976533438,
+      "teacher_maximum_link_stretch_percent": 0.023090839385986328,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7026698440313339,
+      "amortized_step_ms": 0.007807442711459266,
+      "median_plan_setup_ms": 0.6052942480891943,
+      "median_planned_frame_ms": 0.011268071830272675
+    },
+    {
+      "identity": "cable-40001",
+      "length_m": 0.7006862913337611,
+      "mean_position_rmse_mm": 8.564611928013557,
+      "mean_position_rmse_percent_length": 1.2223176097409811,
+      "final_position_rmse_mm": 4.011638676424089,
+      "worst_frame_position_rmse_percent_length": 3.1434315464858926,
+      "mean_velocity_rmse_mm_s": 129.30932121545715,
+      "maximum_link_stretch_percent": 0.04218969062981248,
+      "teacher_maximum_link_stretch_percent": 0.03718137741088867,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7177903316915035,
+      "amortized_step_ms": 0.007975448129905595,
+      "median_plan_setup_ms": 0.6203311495482922,
+      "median_planned_frame_ms": 0.011373776942491531
+    },
+    {
+      "identity": "cable-40002",
+      "length_m": 0.7231844869157364,
+      "mean_position_rmse_mm": 6.882894008002919,
+      "mean_position_rmse_percent_length": 0.9517480162437298,
+      "final_position_rmse_mm": 6.337593622347481,
+      "worst_frame_position_rmse_percent_length": 2.2665289200063334,
+      "mean_velocity_rmse_mm_s": 101.99868291879511,
+      "maximum_link_stretch_percent": 0.021844931851133786,
+      "teacher_maximum_link_stretch_percent": 0.01976490020751953,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7269340567290783,
+      "amortized_step_ms": 0.008077045074767537,
+      "median_plan_setup_ms": 0.6252659950405359,
+      "median_planned_frame_ms": 0.011455733329057693
+    },
+    {
+      "identity": "cable-40003",
+      "length_m": 0.8066642681471631,
+      "mean_position_rmse_mm": 3.979321469799654,
+      "mean_position_rmse_percent_length": 0.4933057812192185,
+      "final_position_rmse_mm": 9.703848105069211,
+      "worst_frame_position_rmse_percent_length": 1.2938515332139964,
+      "mean_velocity_rmse_mm_s": 34.89710673361474,
+      "maximum_link_stretch_percent": 0.07235912658087873,
+      "teacher_maximum_link_stretch_percent": 0.06736516952514648,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7381550967693329,
+      "amortized_step_ms": 0.008201723297437033,
+      "median_plan_setup_ms": 0.6323729176074266,
+      "median_planned_frame_ms": 0.011381926015019417
+    },
+    {
+      "identity": "cable-40004",
+      "length_m": 1.00265345802313,
+      "mean_position_rmse_mm": 3.4370735512392625,
+      "mean_position_rmse_percent_length": 0.3427977556688358,
+      "final_position_rmse_mm": 5.798846297552236,
+      "worst_frame_position_rmse_percent_length": 0.6054388510065815,
+      "mean_velocity_rmse_mm_s": 24.541459147971064,
+      "maximum_link_stretch_percent": 0.14199122561344701,
+      "teacher_maximum_link_stretch_percent": 0.13413429260253906,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7305536419153214,
+      "amortized_step_ms": 0.008117262687948015,
+      "median_plan_setup_ms": 0.6205523386597633,
+      "median_planned_frame_ms": 0.011447351425886154
+    },
+    {
+      "identity": "cable-40005",
+      "length_m": 0.897643129114564,
+      "mean_position_rmse_mm": 4.5335839364493395,
+      "mean_position_rmse_percent_length": 0.5050541567584069,
+      "final_position_rmse_mm": 15.385056245169475,
+      "worst_frame_position_rmse_percent_length": 1.7139390639958787,
+      "mean_velocity_rmse_mm_s": 55.11196089504701,
+      "maximum_link_stretch_percent": 0.025558058544827844,
+      "teacher_maximum_link_stretch_percent": 0.02429485321044922,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7014360744506121,
+      "amortized_step_ms": 0.007793734160562356,
+      "median_plan_setup_ms": 0.6146889645606279,
+      "median_planned_frame_ms": 0.011403113603591919
+    },
+    {
+      "identity": "cable-40006",
+      "length_m": 0.7699777717322535,
+      "mean_position_rmse_mm": 3.5502480296317427,
+      "mean_position_rmse_percent_length": 0.461084483211066,
+      "final_position_rmse_mm": 10.63935454666467,
+      "worst_frame_position_rmse_percent_length": 1.6519548215423494,
+      "mean_velocity_rmse_mm_s": 49.53799120922915,
+      "maximum_link_stretch_percent": 0.05125778978813944,
+      "teacher_maximum_link_stretch_percent": 0.050318241119384766,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7330679800361395,
+      "amortized_step_ms": 0.008145199778179327,
+      "median_plan_setup_ms": 0.6313459016382694,
+      "median_planned_frame_ms": 0.011447351425886154
+    },
+    {
+      "identity": "cable-40007",
+      "length_m": 0.8633196077623744,
+      "mean_position_rmse_mm": 1.987113936325381,
+      "mean_position_rmse_percent_length": 0.23017129675483136,
+      "final_position_rmse_mm": 5.428649803513172,
+      "worst_frame_position_rmse_percent_length": 0.6499073044563802,
+      "mean_velocity_rmse_mm_s": 23.219173870946253,
+      "maximum_link_stretch_percent": 0.061448308772749094,
+      "teacher_maximum_link_stretch_percent": 0.06097555160522461,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7070933934301138,
+      "amortized_step_ms": 0.007856593260334598,
+      "median_plan_setup_ms": 0.6180938798934221,
+      "median_planned_frame_ms": 0.01141638495028019
+    },
+    {
+      "identity": "cable-40008",
+      "length_m": 0.8059509313947856,
+      "mean_position_rmse_mm": 1.839376573073904,
+      "mean_position_rmse_percent_length": 0.2282243870468222,
+      "final_position_rmse_mm": 1.3195682145342558,
+      "worst_frame_position_rmse_percent_length": 0.6659950795181045,
+      "mean_velocity_rmse_mm_s": 18.505704754190315,
+      "maximum_link_stretch_percent": 0.07411031408499635,
+      "teacher_maximum_link_stretch_percent": 0.06760358810424805,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7217349484562874,
+      "amortized_step_ms": 0.00801927720506986,
+      "median_plan_setup_ms": 0.6186224054545164,
+      "median_planned_frame_ms": 0.011426862329244614
+    },
+    {
+      "identity": "cable-40009",
+      "length_m": 0.9904451728590761,
+      "mean_position_rmse_mm": 7.108207211397363,
+      "mean_position_rmse_percent_length": 0.7176780104726447,
+      "final_position_rmse_mm": 11.036727184956185,
+      "worst_frame_position_rmse_percent_length": 1.1863866192225536,
+      "mean_velocity_rmse_mm_s": 54.411753563864416,
+      "maximum_link_stretch_percent": 0.0613763683329438,
+      "teacher_maximum_link_stretch_percent": 0.06331205368041992,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.6967941299080849,
+      "amortized_step_ms": 0.007742156998978721,
+      "median_plan_setup_ms": 0.6113306153565645,
+      "median_planned_frame_ms": 0.011303462088108063
+    },
+    {
+      "identity": "cable-40010",
+      "length_m": 0.6825810943758004,
+      "mean_position_rmse_mm": 5.882695854062682,
+      "mean_position_rmse_percent_length": 0.8618310560508898,
+      "final_position_rmse_mm": 3.0937692003142434,
+      "worst_frame_position_rmse_percent_length": 2.743222023296465,
+      "mean_velocity_rmse_mm_s": 97.50129459327205,
+      "maximum_link_stretch_percent": 0.029414855074150204,
+      "teacher_maximum_link_stretch_percent": 0.024521350860595703,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7113951724022627,
+      "amortized_step_ms": 0.007904390804469585,
+      "median_plan_setup_ms": 0.6111008115112782,
+      "median_planned_frame_ms": 0.011370517313480377
+    },
+    {
+      "identity": "cable-40011",
+      "length_m": 0.7380886325386661,
+      "mean_position_rmse_mm": 12.199926308643779,
+      "mean_position_rmse_percent_length": 1.6529080344567784,
+      "final_position_rmse_mm": 9.586721094522078,
+      "worst_frame_position_rmse_percent_length": 3.6188640505988015,
+      "mean_velocity_rmse_mm_s": 166.79756187319796,
+      "maximum_link_stretch_percent": 0.03708460403895053,
+      "teacher_maximum_link_stretch_percent": 0.030612945556640625,
+      "maximum_pin_error_mm": 0.0,
+      "median_rollout_ms": 0.7486594840884209,
+      "amortized_step_ms": 0.008318438712093566,
+      "median_plan_setup_ms": 0.6327424198389053,
+      "median_planned_frame_ms": 0.011386815458536148
+    }
+  ],
+  "matched_cpu": {
+    "scope": "Same machine and fresh cases. CPU Newton VBD 16 x 32, 90 output intervals at 20 ms; native positions equal stored reference exactly. Surrogate outputs centerline positions under fully prescribed controls. Speed ratios conservatively use Newton solve excluding its readout. The serial ratio includes model preparation once across 90 frame calls. Contact/coupling and general online dynamics are outside this operator.",
+    "cases": [
+      {
+        "identity": "cable-40005",
+        "native": {
+          "step": {
+            "p50_ms": 62.6043315,
+            "p95_ms": 62.94767795,
+            "samples": 80
+          },
+          "readout": {
+            "p50_ms": 0.0722075,
+            "p95_ms": 0.08092049999999999,
+            "samples": 80
+          },
+          "step_and_readout": {
+            "p50_ms": 62.678163,
+            "p95_ms": 63.026629299999996,
+            "samples": 80
+          },
+          "target_30x_step_ms": 2.08681105,
+          "target_30x_step_and_readout_ms": 2.0892721
+        },
+        "surrogate": {
+          "identity": "cable-40005",
+          "length_m": 0.897643129114564,
+          "mean_position_rmse_mm": 4.5335839364493395,
+          "mean_position_rmse_percent_length": 0.5050541567584069,
+          "final_position_rmse_mm": 15.385056245169475,
+          "worst_frame_position_rmse_percent_length": 1.7139390639958787,
+          "mean_velocity_rmse_mm_s": 55.11196089504701,
+          "maximum_link_stretch_percent": 0.025558058544827844,
+          "teacher_maximum_link_stretch_percent": 0.02429485321044922,
+          "maximum_pin_error_mm": 0.0,
+          "median_rollout_ms": 0.7014360744506121,
+          "amortized_step_ms": 0.007793734160562356,
+          "median_plan_setup_ms": 0.6146889645606279,
+          "median_planned_frame_ms": 0.011403113603591919
+        },
+        "speedup_native_solve_over_whole_forecast": 8032.649075559794,
+        "speedup_native_solve_over_serial_with_setup": 3433.574422462015
+      },
+      {
+        "identity": "cable-40011",
+        "native": {
+          "step": {
+            "p50_ms": 63.1157215,
+            "p95_ms": 63.5357796,
+            "samples": 80
+          },
+          "readout": {
+            "p50_ms": 0.08098,
+            "p95_ms": 0.09561,
+            "samples": 80
+          },
+          "step_and_readout": {
+            "p50_ms": 63.194272999999995,
+            "p95_ms": 63.6162382,
+            "samples": 80
+          },
+          "target_30x_step_ms": 2.103857383333333,
+          "target_30x_step_and_readout_ms": 2.1064757666666667
+        },
+        "surrogate": {
+          "identity": "cable-40011",
+          "length_m": 0.7380886325386661,
+          "mean_position_rmse_mm": 12.199926308643779,
+          "mean_position_rmse_percent_length": 1.6529080344567784,
+          "final_position_rmse_mm": 9.586721094522078,
+          "worst_frame_position_rmse_percent_length": 3.6188640505988015,
+          "mean_velocity_rmse_mm_s": 166.79756187319796,
+          "maximum_link_stretch_percent": 0.03708460403895053,
+          "teacher_maximum_link_stretch_percent": 0.030612945556640625,
+          "maximum_pin_error_mm": 0.0,
+          "median_rollout_ms": 0.7486594840884209,
+          "amortized_step_ms": 0.008318438712093566,
+          "median_plan_setup_ms": 0.6327424198389053,
+          "median_planned_frame_ms": 0.011386815458536148
+        },
+        "speedup_native_solve_over_whole_forecast": 7587.448039767451,
+        "speedup_native_solve_over_serial_with_setup": 3426.9826071230664
+      }
+    ]
+  }
+}

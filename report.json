@@ -1,8 +1,97 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T12:13:27Z",
-  "headline": "On the 1.8 s pinned benchmark, the prescribed-load models average 0.96% cloth and 1.00% cable position error.",
+  "updated": "2026-11-20T12:17:41Z",
+  "headline": "Cloth averages 0.96% on the pinned benchmark. Cable reaches 0.665% against the refined Newton reference.",
   "runs": [
+    {
+      "id": "elastic-refined-cable-v4",
+      "title": "Cable at higher Newton resolution",
+      "date": "2026-11-20",
+      "status": "Measured fresh rollouts",
+      "modalities": [
+        "cable"
+      ],
+      "scope": "Twelve 1.8 s clamped cable trajectories. Train and evaluation labels use 16 VBD substeps and 32 iterations per recorded interval.",
+      "summary": "The frozen 288-trajectory model averages 0.665% of rest length, with 10 of 12 cases at or below 1%. Good aggregate accuracy still allows a worst case of 1.653%. The model uses the known load schedule and reconstructs centerline positions.",
+      "metrics": [
+        {
+          "label": "Mean normalized position error",
+          "value": 0.665,
+          "unit": "%",
+          "detail": "12 complete fresh trajectories"
+        },
+        {
+          "label": "Planned scalar output",
+          "value": 11.39,
+          "unit": "µs",
+          "detail": "CPU centerline output after about 0.62 ms setup"
+        },
+        {
+          "label": "Whole 91-frame forecast",
+          "value": 0.72,
+          "unit": "ms",
+          "detail": "CPU batched output with scene setup"
+        },
+        {
+          "label": "Refined Newton CPU step",
+          "value": "62.6–63.1",
+          "unit": "ms",
+          "detail": "Solve only on two matched cases"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/elastic-refined-cable-representative.mp4",
+          "poster": "media/elastic-refined-cable-representative.webp",
+          "type": "video",
+          "label": "cable-40005. Representative case for the refined cable operator."
+        },
+        {
+          "src": "media/elastic-refined-cable-hard.mp4",
+          "poster": "media/elastic-refined-cable-hard.webp",
+          "type": "video",
+          "label": "cable-40011. Highest-error case for the refined cable operator."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Frozen scores and matched native timings",
+          "url": "evidence/elastic-refined-cable-v4.json"
+        }
+      ]
+    },
+    {
+      "id": "elastic-six-second-v3",
+      "title": "Does longer training reduce drift?",
+      "date": "2026-11-20",
+      "status": "Measured fresh rollouts",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Six fresh cloth and six fresh cable scenes. The recurrent model receives the current load at each 20 ms interval.",
+      "summary": "Longer training improves both materials on the same six-second trajectories. Cloth drops from 11.85% to 3.61% mean error, and cable drops from 3.27% to 1.27%. The six-second test retains the original control distribution.",
+      "media": [
+        {
+          "src": "media/elastic-six-second-cloth.mp4",
+          "poster": "media/elastic-six-second-cloth.webp",
+          "type": "video",
+          "label": "cloth-40101. Newton and both checkpoints on the six-second current-load replay."
+        },
+        {
+          "src": "media/elastic-six-second-cable.mp4",
+          "poster": "media/elastic-six-second-cable.webp",
+          "type": "video",
+          "label": "cable-40103. Newton and both checkpoints on the six-second current-load replay."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Paired six-second trajectories and scores",
+          "url": "evidence/elastic-six-second-v3.json"
+        }
+      ]
+    },
     {
       "id": "elastic-accuracy-speed-v3",
       "title": "Cloth and cable accuracy and speed",
@@ -13,7 +102,7 @@
         "cable"
       ],
       "scope": "Twelve fresh cloth and twelve fresh cable scenes. Each runs 1.8 s at 20 ms intervals from the clamped rest shape under a prescribed load schedule. Position error is the mean of frame-wise all-node RMSE divided by each object's rest length. Newton targets use four substeps and eight VBD iterations.",
-      "summary": "The cloth and cable operators are evaluated from their initial state and the prescribed schedule. The frozen operators average 0.96% and 1.00% position error. The worst case averages 1.84% and 3.05%, respectively. The shared current-load model averages 1.79% and 1.88%. Extending its original 1.8 s fit to 6 s exposes drift. Reference refinement changes the original cable trajectory by over 20% in the paired convergence check.",
+      "summary": "The cloth and cable operators are evaluated from their initial state and the prescribed schedule. The frozen operators average 0.96% and 1.00% position error. The worst case averages 1.84% and 3.05%, respectively. The shared current-load model averages 1.79% and 1.88%. Extending its original 1.8 s fit to 6 s exposes drift. Reference refinement changes the original cable trajectory by over 20% in the paired convergence check. For moving nodes alone, mean error is 1.007% for cloth and 1.077% for cable. The compiled cloth batch takes 1.16 ms including warm scene setup. The finer cloth reference changes by up to 0.914% in mean position and 2.727% at a single frame between 32 and 64 substeps.",
       "metrics": [
         {
           "label": "Cloth mean position error",
@@ -29,9 +118,9 @@
         },
         {
           "label": "Projected cloth CPU speedup",
-          "value": 59.6,
+          "value": 36.8,
           "unit": "×",
-          "detail": "Paired warm steps against stock Newton CPU, setup excluded"
+          "detail": "Matched warm steps against exact fused CPU Newton; 89.2× against stock CPU"
         },
         {
           "label": "Cable CPU step time",
@@ -70,6 +159,14 @@
         {
           "label": "All fresh case scores, timing and reference checks",
           "url": "evidence/elastic-accuracy-speed-v3.json"
+        },
+        {
+          "label": "Compiled cloth timings and parity",
+          "url": "evidence/elastic-compiled-timing-v3.json"
+        },
+        {
+          "label": "Native cloth 32-to-64 substep refinement",
+          "url": "evidence/elastic-newton-cloth-refinement-v3.json"
         }
       ]
     },
@@ -837,6 +934,50 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-six-second-cable-v3",
+      "label": "Cable stability over six seconds",
+      "track": "Paired fresh rollouts · 6 cases",
+      "scope": "The models get the same current load at each interval. The long-fit model was fine-tuned on six-second trajectories.",
+      "values": [
+        {
+          "label": "1.8-second training",
+          "unit": "%",
+          "value": 3.265
+        },
+        {
+          "label": "6-second training",
+          "unit": "%",
+          "value": 1.268
+        }
+      ],
+      "source": {
+        "label": "Paired six-second trajectories and scores",
+        "url": "evidence/elastic-six-second-v3.json"
+      }
+    },
+    {
+      "id": "elastic-six-second-cloth-v3",
+      "label": "Cloth stability over six seconds",
+      "track": "Paired fresh rollouts · 6 cases",
+      "scope": "The models get the same current load at each interval. The long-fit model was fine-tuned on six-second trajectories.",
+      "values": [
+        {
+          "label": "1.8-second training",
+          "unit": "%",
+          "value": 11.848
+        },
+        {
+          "label": "6-second training",
+          "unit": "%",
+          "value": 3.614
+        }
+      ],
+      "source": {
+        "label": "Paired six-second trajectories and scores",
+        "url": "evidence/elastic-six-second-v3.json"
+      }
+    },
     {
       "id": "elastic-accuracy-cable-v3",
       "label": "Cable position error",

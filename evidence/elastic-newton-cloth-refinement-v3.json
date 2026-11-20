@@ -1,0 +1,334 @@
+{
+  "scope": "Fresh cloth seeds 31000–31002 rerun at 32 and 64 substeps with 32 VBD iterations, identical initial conditions and frame-held loads at 20 ms cadence. CPU only, pinned performance cores, ten initial intervals excluded from timing.",
+  "limitations": "This comparison varies temporal resolution at fixed iteration count and grid. It does not estimate spatial or empirical model error.",
+  "cpu": "Intel Core Ultra 9 285K",
+  "newton_revision": "0ced8f842",
+  "warp_version": "1.19.0.dev20261020",
+  "driver_sha256": "38a1e31d21397b049e2ecc50209faf4a387d7be5d45d85075bdb216abcf675c9",
+  "seeds": [
+    31000,
+    31001,
+    31002
+  ],
+  "aggregate": {
+    "max_case_mean_frame_rmse_percent_length": 0.9143156463956694,
+    "max_case_peak_frame_rmse_percent_length": 2.726530210557474,
+    "max_case_terminal_rmse_percent_length": 2.3937224132534682,
+    "32x32_step_and_readout_p50_ms_range": [
+      150.26222099999998,
+      169.1509485
+    ],
+    "64x32_step_and_readout_p50_ms_range": [
+      300.8695615,
+      339.47362999999996
+    ]
+  },
+  "cases": [
+    {
+      "identity": "cloth-31000",
+      "family": "cloth",
+      "seed": 31000,
+      "length_m": 0.6100518510727582,
+      "gravity_m_per_s2": [
+        0.0,
+        0.0,
+        -9.8100004196167
+      ],
+      "control": "frame-held force distributed on the free edge; fixed opposite edge",
+      "load_duration_s": 1.1671656244282638,
+      "load_phase_rad": 0.3192347188596557,
+      "load_peak_acceleration_scale": 5.819185098112003,
+      "nodes": 77,
+      "interval_s": 0.02,
+      "output_intervals": 90,
+      "cpu_affinity": [
+        2
+      ],
+      "configurations": [
+        {
+          "substeps": 32,
+          "iterations": 32,
+          "timing": {
+            "step": {
+              "p50_ms": 169.1346035,
+              "p95_ms": 169.66717309999999,
+              "samples": 80
+            },
+            "readout": {
+              "p50_ms": 0.0107005,
+              "p95_ms": 0.017370899999999998,
+              "samples": 80
+            },
+            "step_and_readout": {
+              "p50_ms": 169.1509485,
+              "p95_ms": 169.68017195,
+              "samples": 80
+            },
+            "target_30x_step_ms": 5.637820116666666,
+            "target_30x_step_and_readout_ms": 5.63836495
+          },
+          "max_speed_m_per_s": 6.499934673309326,
+          "position_quality": {
+            "mean_frame_rmse_mm": 0.0,
+            "mean_frame_rmse_percent_length": 0.0,
+            "peak_frame_rmse_percent_length": 0.0,
+            "terminal_rmse_percent_length": 0.0,
+            "max_pinned_displacement_mm": 0.0,
+            "abs_structural_strain_p99_percent": 2.1213347911834717,
+            "max_abs_structural_strain_percent": 4.401910305023193
+          }
+        },
+        {
+          "substeps": 64,
+          "iterations": 32,
+          "timing": {
+            "step": {
+              "p50_ms": 339.4609635,
+              "p95_ms": 340.70167614999997,
+              "samples": 80
+            },
+            "readout": {
+              "p50_ms": 0.012768499999999999,
+              "p95_ms": 0.0192666,
+              "samples": 80
+            },
+            "step_and_readout": {
+              "p50_ms": 339.47362999999996,
+              "p95_ms": 340.71498065,
+              "samples": 80
+            },
+            "target_30x_step_ms": 11.31536545,
+            "target_30x_step_and_readout_ms": 11.315787666666665
+          },
+          "max_speed_m_per_s": 6.556638240814209,
+          "position_quality": {
+            "mean_frame_rmse_mm": 0.0,
+            "mean_frame_rmse_percent_length": 0.0,
+            "peak_frame_rmse_percent_length": 0.0,
+            "terminal_rmse_percent_length": 0.0,
+            "max_pinned_displacement_mm": 0.0,
+            "abs_structural_strain_p99_percent": 2.1310274600982666,
+            "max_abs_structural_strain_percent": 4.743695259094238
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "coarser": "32x32",
+          "finer": "64x32",
+          "mean_frame_rmse_mm": 4.271501578938861,
+          "mean_frame_rmse_percent_length": 0.7001866433857304,
+          "peak_frame_rmse_percent_length": 1.7182898530681747,
+          "terminal_rmse_percent_length": 1.482835090266523,
+          "max_pinned_displacement_mm": 0.0,
+          "abs_structural_strain_p99_percent": 2.1213347911834717,
+          "max_abs_structural_strain_percent": 4.401910305023193
+        }
+      ]
+    },
+    {
+      "identity": "cloth-31001",
+      "family": "cloth",
+      "seed": 31001,
+      "length_m": 0.6372340140071933,
+      "gravity_m_per_s2": [
+        0.0,
+        0.0,
+        -9.8100004196167
+      ],
+      "control": "frame-held force distributed on the free edge; fixed opposite edge",
+      "load_duration_s": 1.0137084689848908,
+      "load_phase_rad": 0.3328389189838217,
+      "load_peak_acceleration_scale": 4.031942434454557,
+      "nodes": 60,
+      "interval_s": 0.02,
+      "output_intervals": 90,
+      "cpu_affinity": [
+        4
+      ],
+      "configurations": [
+        {
+          "substeps": 32,
+          "iterations": 32,
+          "timing": {
+            "step": {
+              "p50_ms": 150.248558,
+              "p95_ms": 150.90897969999997,
+              "samples": 80
+            },
+            "readout": {
+              "p50_ms": 0.010690999999999999,
+              "p95_ms": 0.01593715,
+              "samples": 80
+            },
+            "step_and_readout": {
+              "p50_ms": 150.26222099999998,
+              "p95_ms": 150.9248609,
+              "samples": 80
+            },
+            "target_30x_step_ms": 5.008285266666666,
+            "target_30x_step_and_readout_ms": 5.0087407
+          },
+          "max_speed_m_per_s": 5.7790045738220215,
+          "position_quality": {
+            "mean_frame_rmse_mm": 0.0,
+            "mean_frame_rmse_percent_length": 0.0,
+            "peak_frame_rmse_percent_length": 0.0,
+            "terminal_rmse_percent_length": 0.0,
+            "max_pinned_displacement_mm": 0.0,
+            "abs_structural_strain_p99_percent": 3.0892274379730225,
+            "max_abs_structural_strain_percent": 5.136275291442871
+          }
+        },
+        {
+          "substeps": 64,
+          "iterations": 32,
+          "timing": {
+            "step": {
+              "p50_ms": 300.85795049999996,
+              "p95_ms": 302.20980695,
+              "samples": 80
+            },
+            "readout": {
+              "p50_ms": 0.012494499999999999,
+              "p95_ms": 0.018516599999999998,
+              "samples": 80
+            },
+            "step_and_readout": {
+              "p50_ms": 300.8695615,
+              "p95_ms": 302.2258453,
+              "samples": 80
+            },
+            "target_30x_step_ms": 10.02859835,
+            "target_30x_step_and_readout_ms": 10.028985383333332
+          },
+          "max_speed_m_per_s": 5.829842567443848,
+          "position_quality": {
+            "mean_frame_rmse_mm": 0.0,
+            "mean_frame_rmse_percent_length": 0.0,
+            "peak_frame_rmse_percent_length": 0.0,
+            "terminal_rmse_percent_length": 0.0,
+            "max_pinned_displacement_mm": 0.0,
+            "abs_structural_strain_p99_percent": 3.192610025405884,
+            "max_abs_structural_strain_percent": 5.512857437133789
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "coarser": "32x32",
+          "finer": "64x32",
+          "mean_frame_rmse_mm": 3.5910419823593407,
+          "mean_frame_rmse_percent_length": 0.563535828820149,
+          "peak_frame_rmse_percent_length": 1.4333710471895704,
+          "terminal_rmse_percent_length": 1.207147952103152,
+          "max_pinned_displacement_mm": 0.0,
+          "abs_structural_strain_p99_percent": 3.0892274379730225,
+          "max_abs_structural_strain_percent": 5.136275291442871
+        }
+      ]
+    },
+    {
+      "identity": "cloth-31002",
+      "family": "cloth",
+      "seed": 31002,
+      "length_m": 0.6439809375832198,
+      "gravity_m_per_s2": [
+        0.0,
+        0.0,
+        -9.8100004196167
+      ],
+      "control": "frame-held force distributed on the free edge; fixed opposite edge",
+      "load_duration_s": 1.5705569603347214,
+      "load_phase_rad": 0.07608348021842959,
+      "load_peak_acceleration_scale": 5.806999537679443,
+      "nodes": 77,
+      "interval_s": 0.02,
+      "output_intervals": 90,
+      "cpu_affinity": [
+        6
+      ],
+      "configurations": [
+        {
+          "substeps": 32,
+          "iterations": 32,
+          "timing": {
+            "step": {
+              "p50_ms": 168.0041185,
+              "p95_ms": 168.52326539999999,
+              "samples": 80
+            },
+            "readout": {
+              "p50_ms": 0.011136499999999999,
+              "p95_ms": 0.017473899999999997,
+              "samples": 80
+            },
+            "step_and_readout": {
+              "p50_ms": 168.0184755,
+              "p95_ms": 168.54056605,
+              "samples": 80
+            },
+            "target_30x_step_ms": 5.600137283333334,
+            "target_30x_step_and_readout_ms": 5.60061585
+          },
+          "max_speed_m_per_s": 6.751528739929199,
+          "position_quality": {
+            "mean_frame_rmse_mm": 0.0,
+            "mean_frame_rmse_percent_length": 0.0,
+            "peak_frame_rmse_percent_length": 0.0,
+            "terminal_rmse_percent_length": 0.0,
+            "max_pinned_displacement_mm": 0.0,
+            "abs_structural_strain_p99_percent": 2.9055428504943848,
+            "max_abs_structural_strain_percent": 9.195745468139648
+          }
+        },
+        {
+          "substeps": 64,
+          "iterations": 32,
+          "timing": {
+            "step": {
+              "p50_ms": 336.530887,
+              "p95_ms": 337.65854305,
+              "samples": 80
+            },
+            "readout": {
+              "p50_ms": 0.0141155,
+              "p95_ms": 0.01995435,
+              "samples": 80
+            },
+            "step_and_readout": {
+              "p50_ms": 336.543766,
+              "p95_ms": 337.67399464999994,
+              "samples": 80
+            },
+            "target_30x_step_ms": 11.217696233333333,
+            "target_30x_step_and_readout_ms": 11.218125533333334
+          },
+          "max_speed_m_per_s": 6.811611652374268,
+          "position_quality": {
+            "mean_frame_rmse_mm": 0.0,
+            "mean_frame_rmse_percent_length": 0.0,
+            "peak_frame_rmse_percent_length": 0.0,
+            "terminal_rmse_percent_length": 0.0,
+            "max_pinned_displacement_mm": 0.0,
+            "abs_structural_strain_p99_percent": 2.939448356628418,
+            "max_abs_structural_strain_percent": 9.84453010559082
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "coarser": "32x32",
+          "finer": "64x32",
+          "mean_frame_rmse_mm": 5.888018472128909,
+          "mean_frame_rmse_percent_length": 0.9143156463956694,
+          "peak_frame_rmse_percent_length": 2.726530210557474,
+          "terminal_rmse_percent_length": 2.3937224132534682,
+          "max_pinned_displacement_mm": 0.0,
+          "abs_structural_strain_p99_percent": 2.9055428504943848,
+          "max_abs_structural_strain_percent": 9.195745468139648
+        }
+      ]
+    }
+  ]
+}
