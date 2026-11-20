@@ -1,8 +1,86 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T11:33:51Z",
-  "headline": "Triangle contact catches the cable in all three held-out scenes. This tests the analytical contact solver.",
+  "updated": "2026-11-20T11:36:05Z",
+  "headline": "One shared checkpoint runs all four tasks. Weak sand and contact accuracy leave clear room for stronger baselines.",
   "runs": [
+    {
+      "id": "shared-point-cpu",
+      "title": "NeurALL shared model with point contact",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories. Held-out Newton cloth trajectories. Held-out Newton cable trajectories. Held-out Newton mixed scenes. The coupled models exchange point-contact impulses.",
+      "summary": "12 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 1 CPU process. Point-contact coupling makes only a small difference for the learned rollout. The learned sand model trails the analytical baseline, and the dedicated elastic controls are substantially more accurate on cloth and cable.",
+      "metrics": [
+        {
+          "label": "Mean position RMSE",
+          "value": 464.997,
+          "unit": "mm",
+          "detail": "Cloth"
+        },
+        {
+          "label": "Mean position RMSE",
+          "value": 389.293,
+          "unit": "mm",
+          "detail": "Cable"
+        },
+        {
+          "label": "Final cloth position RMSE",
+          "value": 81.266,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 925.142,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Tool force vector RMSE",
+          "value": 119.356,
+          "unit": "N",
+          "detail": "Granular sand"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/shared-point-cpu-sand.mp4",
+          "type": "video",
+          "label": "Granular sand. Recorded rigid motion on previously inspected public sand trajectories.",
+          "poster": "media/shared-point-cpu-sand.webp"
+        },
+        {
+          "src": "media/shared-point-cpu-cloth.mp4",
+          "type": "video",
+          "label": "Cloth. Held-out Newton cloth trajectories.",
+          "poster": "media/shared-point-cpu-cloth.webp"
+        },
+        {
+          "src": "media/shared-point-cpu-cable.mp4",
+          "type": "video",
+          "label": "Cable. Held-out Newton cable trajectories.",
+          "poster": "media/shared-point-cpu-cable.webp"
+        },
+        {
+          "src": "media/shared-point-cpu-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange point-contact impulses.",
+          "poster": "media/shared-point-cpu-mixed.webp"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/shared-point-cpu-scores.json"
+        }
+      ]
+    },
     {
       "id": "contact-geometry",
       "title": "Triangle contact and elastic controls",
@@ -186,6 +264,180 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "point-cpu-sand-specialist",
+      "label": "Sand sharing control",
+      "track": "Matched CPU training windows · 3 cases",
+      "scope": "Equal updates, starting seed, and sampled windows for this material. The specialist sees a single family. The shared model also receives a window from each of the other families at each update.",
+      "values": [
+        {
+          "label": "Shared checkpoint",
+          "value": 12.54,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Single-material checkpoint",
+          "value": 9.64,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
+    {
+      "id": "point-cpu-cable-specialist",
+      "label": "Cable sharing control",
+      "track": "Matched CPU training windows · 3 cases",
+      "scope": "Equal updates, starting seed, and sampled windows for this material. The specialist sees a single family. The shared model also receives a window from each of the other families at each update.",
+      "values": [
+        {
+          "label": "Shared checkpoint",
+          "value": 389.29,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Single-material checkpoint",
+          "value": 474.92,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
+    {
+      "id": "point-cpu-cloth-specialist",
+      "label": "Cloth sharing control",
+      "track": "Matched CPU training windows · 3 cases",
+      "scope": "Equal updates, starting seed, and sampled windows for this material. The specialist sees a single family. The shared model also receives a window from each of the other families at each update.",
+      "values": [
+        {
+          "label": "Shared checkpoint",
+          "value": 465.0,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Single-material checkpoint",
+          "value": 426.79,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-cpu-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange point-contact impulses.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 125.369,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 1407.71,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 129.453,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-cpu-cable",
+      "label": "Cable",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cable trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 389.293,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 474.066,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-cpu-cloth",
+      "label": "Cloth",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cloth trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 464.997,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 485.806,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-cpu-sand",
+      "label": "Granular sand",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 12.536,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 7.509,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-cpu-scores.json"
+      }
+    },
     {
       "id": "contact-geometry-substeps",
       "label": "Point and triangle contact",
