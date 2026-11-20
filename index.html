@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: Copyright (c) 2026 The Newton Developers -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="NeurALL benchmark results for sand, cable, cloth and coupled deformable simulation.">
+  <meta name="theme-color" content="#f7f6f1">
+  <title>NeurALL · Deformable dynamics benchmark</title>
+  <link rel="icon" href="./media/mark.png" type="image/png">
+  <link rel="stylesheet" href="./report.css">
+  <script src="./report.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#results">Skip to benchmark results</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top" aria-label="NeurALL report home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>NeurALL</a>
+      <nav aria-label="Report sections">
+        <a href="#results">Results</a>
+        <a href="#comparisons">Comparisons</a>
+        <a href="#methods">Protocol</a>
+      </nav>
+      <a class="data-link" href="./report.json">Report data <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="kicker">Deformable dynamics benchmark</p>
+        <h1 id="page-title">Sand, cloth<br>and cable</h1>
+        <p class="intro">NeurALL studies whether shared learned dynamics can reproduce sand, cable and cloth and exchange forces with other bodies.</p>
+        <a class="action" href="#results">Explore results <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-figure" aria-labelledby="hero-caption">
+        <div class="hero-image">
+          <img src="./media/sphere-pair.webp" width="704" height="352" alt="Two measured height fields for the same sphere replay. Newton produces a small depression; the small local network predicts a deeper depression and a wider pile-up around the sphere.">
+          <div class="image-key" aria-hidden="true"><span>Newton MPM</span><span>Small local network</span></div>
+        </div>
+        <figcaption id="hero-caption"><span>Historical sphere replay</span><a href="#sphere-support">Watch comparison <span aria-hidden="true">↗</span></a></figcaption>
+      </figure>
+    </section>
+
+    <section class="status" aria-labelledby="status-title">
+      <h2 id="status-title">Latest evidence</h2>
+      <p id="headline">Loading the benchmark record…</p>
+      <div class="status-controls">
+        <time id="updated" hidden></time>
+        <button type="button" id="refresh" class="refresh">Refresh</button>
+      </div>
+      <p id="network-status" class="sr-only" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="results section" id="results" aria-labelledby="results-title">
+      <div class="section-heading">
+        <div><p class="kicker">Experiments</p><h2 id="results-title">Rollout results</h2></div>
+        <div class="filters" role="group" aria-label="Filter by modality">
+          <button type="button" aria-pressed="true" data-modality="all">All</button>
+          <button type="button" aria-pressed="false" data-modality="sand">Sand</button>
+          <button type="button" aria-pressed="false" data-modality="cloth">Cloth</button>
+          <button type="button" aria-pressed="false" data-modality="cable">Cable</button>
+          <button type="button" aria-pressed="false" data-modality="coupled">Coupled</button>
+        </div>
+      </div>
+      <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+      <div id="runs" class="run-grid" aria-busy="true"></div>
+      <noscript><p>Enable JavaScript to filter the evidence and play rollouts. <a href="./report.json">Download the report data</a>.</p></noscript>
+    </section>
+
+    <section class="section" id="comparisons" aria-labelledby="comparisons-title">
+      <div class="section-heading"><div><p class="kicker">Baselines and prior work</p><h2 id="comparisons-title">Reference comparisons</h2></div></div>
+      <p class="section-intro">Each card gives the task, conditioning and metric for its result.</p>
+      <div id="reference-grid" class="reference-grid"></div>
+    </section>
+
+    <section class="section methods" id="methods" aria-labelledby="methods-title">
+      <div class="section-heading"><div><p class="kicker">Evaluation</p><h2 id="methods-title">Benchmark protocol</h2></div></div>
+      <dl>
+        <div><dt>Rollout conditioning</dt><dd>Prescribed replay supplies the recorded rigid trajectory. Two-way evaluation advances the interacting bodies from their own predicted states.</dd></div>
+        <div><dt>Accuracy and stability</dt><dd>Compare complete trajectories, surface shape, settled drift, reaction forces and penetration against Newton. State position and runtime metrics with their units and time intervals.</dd></div>
+        <div><dt>Matched references</dt><dd>Use the same scenes, initial states and rollout protocol for head-to-head comparisons. Published results retain their original conditions and checkpoint provenance.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><span>NeurALL · Deformable dynamics benchmark</span><a href="#top">Back to top ↑</a></div>
+  </footer>
+</body>
+</html>
