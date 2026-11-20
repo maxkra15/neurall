@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 const modalities = new Map([
-  ["all", "All"], ["sand", "Sand"], ["cloth", "Cloth"], ["cable", "Cable"], ["coupled", "Coupled"],
+  ["all", "All"], ["cloth", "Cloth"], ["cable", "Cable"], ["sand", "Sand"], ["coupled", "Coupled"],
 ]);
 const el = (id) => document.getElementById(id);
 const dateFormat = new Intl.DateTimeFormat("en", { dateStyle: "medium", timeZone: "UTC" });
@@ -12,11 +12,22 @@ const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const imageFile = /^media\/(?:[\w-]+\/)*[\w.-]+\.(?:png|jpe?g|webp|gif)$/i;
 const videoFile = /^media\/(?:[\w-]+\/)*[\w.-]+\.(?:mp4|webm)$/i;
 const evidenceFile = /^evidence\/(?:[\w-]+\/)*[\w.-]+\.(?:json|csv|pdf|txt)$/i;
-const selected = new URLSearchParams(location.search).get("modality");
-let modality = modalities.has(selected) ? selected : "all";
+const fallbackRun = "elastic-six-second-v3";
+const specialistCloth = "elastic-accuracy-speed-v3";
+const specialistCable = "elastic-refined-cable-v4";
+
+let modality = urlModality();
 let manifest = null;
 let payload = null;
 let loading = false;
+let featured = null;
+let primaryComparisons = [];
+const expanded = new Set();
+
+function urlModality() {
+  const value = new URLSearchParams(location.search).get("modality");
+  return modalities.has(value) ? value : "all";
+}
 
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -32,20 +43,23 @@ function dateElement(date, className) {
   return stamp;
 }
 
+function anchor(label, href) {
+  const link = element("a", label);
+  link.href = href;
+  return link;
+}
+
 function sourceAnchor(source) {
   const url = typeof source === "string" ? source : source?.url;
   if (typeof url !== "string") return null;
-  const anchor = element("a", source?.label || "Source");
-  if (evidenceFile.test(url)) {
-    anchor.href = `./${url}`;
-    return anchor;
-  }
+  const label = source?.label || "Source";
+  if (evidenceFile.test(url)) return anchor(label, `./${url}`);
   try {
     const target = new URL(url);
     if (target.protocol !== "https:" || target.username || target.password) return null;
-    anchor.href = target.href;
-    anchor.rel = "noreferrer";
-    return anchor;
+    const link = anchor(label, target.href);
+    link.rel = "noreferrer";
+    return link;
   } catch {
     return null;
   }
@@ -54,14 +68,26 @@ function sourceAnchor(source) {
 function appendSources(container, sources) {
   const list = element("ul", null, "source-links");
   for (const source of sources) {
-    const anchor = sourceAnchor(source);
-    if (anchor) {
+    const link = sourceAnchor(source);
+    if (link) {
       const item = element("li");
-      item.append(anchor);
+      item.append(link);
       list.append(item);
     }
   }
   if (list.childElementCount) container.append(list);
+}
+
+function formatValue(value) {
+  if (typeof value === "number") {
+    return value !== 0 && Math.abs(value) < 1e-5 ? value.toExponential(2) : numberFormat.format(value);
+  }
+  return typeof value === "string" ? value : "Pending";
+}
+
+function metricText(metric) {
+  const value = formatValue(metric.value);
+  return metric.unit ? `${value}${metric.unit === "%" || metric.unit === "×" ? "" : " "}${metric.unit}` : value;
 }
 
 function appendMetrics(container, metrics) {
@@ -69,12 +95,7 @@ function appendMetrics(container, metrics) {
   for (const metric of metrics) {
     if (typeof metric?.label !== "string") continue;
     const item = element("div");
-    let value = metric.value;
-    if (typeof value === "number") {
-      value = value !== 0 && Math.abs(value) < 1e-5 ? value.toExponential(2) : numberFormat.format(value);
-    }
-    const definition = element("dd", typeof value === "string" ? value : "Pending");
-    if (metric.unit) definition.append(element("span", metric.unit, "metric-unit"));
+    const definition = element("dd", metricText(metric));
     if (metric.detail) definition.append(element("span", metric.detail, "metric-context"));
     item.append(element("dt", metric.label), definition);
     list.append(item);
@@ -95,9 +116,7 @@ function mediaItem(record) {
     const movie = element("source");
     movie.src = `./${record.src}`;
     movie.type = record.src.toLowerCase().endsWith(".webm") ? "video/webm" : "video/mp4";
-    const download = element("a", "Download rollout video");
-    download.href = movie.src;
-    video.append(movie, download);
+    video.append(movie, anchor("Download rollout video", movie.src));
     figure.append(video);
   } else if (record.type === "image" && imageFile.test(record.src)) {
     const image = element("img");
@@ -112,59 +131,195 @@ function mediaItem(record) {
   return figure;
 }
 
-function runCard(run) {
-  const article = element("article", null, "run-card");
-  if (slug.test(run.id)) article.id = run.id;
-  const heading = element("div", null, "run-content");
-  const labels = element("div", null, "label-row");
-  labels.append(element("span", run.status, "tag status-tag"));
-  for (const type of run.modalities) {
-    if (modalities.has(type) && type !== "all") labels.append(element("span", modalities.get(type), "tag"));
-  }
-  const date = dateElement(run.date, "run-date");
-  if (date) labels.append(date);
-  heading.append(labels, element("h3", run.title), element("p", run.scope, "scope"));
-  article.append(heading);
-
+function assetsFor(run) {
   const assets = element("div", null, "assets");
   for (const record of run.media ?? []) {
     const figure = mediaItem(record);
     if (figure) assets.append(figure);
   }
-  if (assets.childElementCount) article.append(assets);
-
-  const details = element("div", null, "run-content");
-  if (run.summary) details.append(element("p", run.summary, "run-summary"));
-  appendMetrics(details, run.metrics ?? []);
-  appendSources(details, run.sources ?? []);
-  if (details.childElementCount) article.append(details);
-  return article;
+  return assets;
 }
 
-function renderRuns() {
+function evidenceFor(run) {
+  const content = element("div", null, "run-content");
+  content.append(element("p", run.scope, "scope"));
+  if (run.summary) content.append(element("p", run.summary, "run-summary"));
+  appendMetrics(content, run.metrics ?? []);
+  appendSources(content, run.sources ?? []);
+  return content;
+}
+
+function referenceCard(comparison) {
+  const card = element("article", null, "reference-card");
+  if (slug.test(comparison.id)) card.id = comparison.id;
+  card.append(element("h4", comparison.label), element("p", comparison.track, "meta"));
+  card.append(element("p", comparison.scope, "scope"));
+  appendMetrics(card, comparison.values ?? []);
+  appendSources(card, comparison.source ? [comparison.source] : []);
+  return card;
+}
+
+function comparisonTable(comparisons) {
+  const labels = comparisons[0]?.values.map((value) => value.label);
+  if (!labels?.length || !comparisons.every((entry) => entry.values.length === labels.length
+    && entry.values.every((value, index) => value.label === labels[index]))) {
+    const cards = element("div", null, "reference-grid");
+    cards.append(...comparisons.map(referenceCard));
+    return cards;
+  }
+  const wrap = element("div", null, "table-wrap");
+  const table = element("table", null, "comparison-table");
+  table.append(element("caption", "Matched evaluation results", "sr-only"));
+  const header = element("thead");
+  const headings = element("tr");
+  for (const label of ["Benchmark", ...labels]) {
+    const column = element("th", label);
+    column.scope = "col";
+    headings.append(column);
+  }
+  header.append(headings);
+  table.append(header);
+  const body = element("tbody");
+  for (const comparison of comparisons) {
+    const row = element("tr");
+    if (slug.test(comparison.id)) row.id = comparison.id;
+    const cell = element("th", comparison.label);
+    cell.scope = "row";
+    cell.append(element("span", comparison.track, "meta"));
+    row.append(cell);
+    for (const metric of comparison.values) row.append(element("td", metricText(metric)));
+    body.append(row);
+  }
+  table.append(body);
+  wrap.append(table);
+  return wrap;
+}
+
+function specialistResult(id, metricLabel, label, context) {
+  const run = manifest.runs.find((entry) => entry.id === id);
+  const metric = run?.metrics?.find((entry) => entry.label === metricLabel);
+  if (!metric) return null;
+  const item = element("li");
+  const link = anchor(label, `#${id}`);
+  item.append(link, element("strong", metricText(metric)), element("span", context, "meta"));
+  return item;
+}
+
+function renderCurrent() {
+  featured = manifest.runs.find((run) => run.id.startsWith("elastic-shared-"))
+    ?? manifest.runs.find((run) => run.id === fallbackRun)
+    ?? manifest.runs[0] ?? null;
+  primaryComparisons = featured?.id === fallbackRun
+    ? manifest.comparisons.filter((entry) => /^elastic-six-second-(cloth|cable)-v3$/.test(entry.id))
+    : manifest.comparisons.filter((entry) => entry.id.startsWith(`${featured?.id}-`));
+
+  const container = el("runs");
+  container.replaceChildren();
+  if (!featured) {
+    container.append(element("p", "Shared benchmarks will appear here when available.", "empty"));
+    return;
+  }
+
+  const comparison = element("article", null, "current-result");
+  comparison.id = featured.id;
+  comparison.append(element("h3", featured.title));
+  const evidence = evidenceFor(featured);
+  if (primaryComparisons.length) {
+    const results = element("section", null, "matched-results");
+    results.id = "comparisons";
+    results.append(element("h4", "Matched comparison", "sr-only"));
+    if (primaryComparisons.every((entry) => /position error|stability/i.test(entry.label)
+      && entry.values.every((value) => value.unit === "%"))) {
+      results.append(element("p", "Mean position error as a percent of rest length", "comparison-unit"));
+    }
+    results.append(comparisonTable(primaryComparisons));
+    const detail = primaryComparisons.map((entry) => entry.scope);
+    if (detail.every((scope) => scope === detail[0])) results.append(element("p", detail[0], "scope"));
+    comparison.append(results);
+  } else {
+    evidence.id = "comparisons";
+  }
+  comparison.append(evidence);
+  const assets = assetsFor(featured);
+  if (assets.childElementCount) comparison.append(assets);
+  container.append(comparison);
+
+  const specialist = element("aside", null, "specialist-reference");
+  const results = element("ul", null, "specialist-scores");
+  const benchmarks = [
+    specialistResult(specialistCloth, "Cloth mean position error", "Cloth specialist", "Pinned Newton reference"),
+    specialistResult(specialistCable, "Mean normalized position error", "Cable specialist", "Finer-step Newton reference"),
+  ];
+  for (const result of benchmarks) if (result) results.append(result);
+  if (results.childElementCount) {
+    specialist.append(element("h3", "Prescribed-load benchmarks"), results,
+      element("p", "Separate 1.8-second experiments with full schedules and their own reference settings.", "scope"));
+    container.append(specialist);
+  }
+
+  const rolloutPoster = (run) => run?.media?.find((item) => typeof item?.poster === "string" && imageFile.test(item.poster));
+  const previewRun = rolloutPoster(featured) ? featured : manifest.runs.find((run) => run.id === fallbackRun);
+  const preview = rolloutPoster(previewRun);
+  if (preview) {
+    el("preview-link").href = `#${previewRun.id}`;
+    el("preview-title").textContent = previewRun.title;
+    el("preview-image").src = `./${preview.poster}`;
+    el("preview-image").alt = preview.label;
+  }
+}
+
+function archiveEntry(run) {
+  const entry = element("details", null, "archive-entry");
+  entry.id = run.id;
+  const summary = element("summary");
+  summary.append(element("span", run.title, "archive-run-title"));
+  const date = dateElement(run.date, "run-date");
+  if (date) summary.append(date);
+  entry.append(summary);
+  const expand = () => {
+    if (entry.open) {
+      expanded.add(run.id);
+      if (entry.childElementCount === 1) {
+        const content = evidenceFor(run);
+        const labels = run.modalities.map((name) => modalities.get(name)).filter(Boolean);
+        const info = element("p", [run.status, ...labels].join(" · "), "meta");
+        content.prepend(info);
+        entry.append(content);
+        const assets = assetsFor(run);
+        if (assets.childElementCount) entry.append(assets);
+      }
+    } else {
+      expanded.delete(run.id);
+    }
+  };
+  entry.addEventListener("toggle", expand);
+  if (expanded.has(run.id)) {
+    entry.open = true;
+    expand();
+  }
+  return entry;
+}
+
+function renderArchive() {
   for (const button of filterButtons) button.setAttribute("aria-pressed", String(button.dataset.modality === modality));
   if (!manifest) return;
-
-  const runs = manifest.runs.filter((run) => modality === "all" || run.modalities.includes(modality));
-  const container = el("runs");
-  container.replaceChildren(...runs.map(runCard));
-  if (runs.length === 0) {
-    const area = modality === "all" ? "this benchmark" : modalities.get(modality).toLowerCase();
-    container.append(element("p", `Results for ${area} will appear here when a run is added.`, "empty"));
-  }
-  el("filter-status").textContent = `${runs.length} rollout ${runs.length === 1 ? "result" : "results"} shown.`;
+  const all = manifest.runs.filter((run) => run !== featured);
+  const needle = el("archive-search").value.trim().toLowerCase();
+  const runs = all.filter((run) => (modality === "all" || run.modalities.includes(modality))
+    && [run.id, run.title, run.scope, run.status].some((value) => String(value).toLowerCase().includes(needle)));
+  el("archive-count").textContent = `${all.length} runs`;
+  const container = el("archive-runs");
+  container.replaceChildren(...runs.map(archiveEntry));
+  if (!runs.length) container.append(element("p", "No runs match these filters.", "empty"));
+  el("filter-status").textContent = `${runs.length} archived ${runs.length === 1 ? "run" : "runs"} shown.`;
 }
 
 function renderReferences() {
-  const cards = manifest.comparisons.map((comparison) => {
-    const card = element("article", null, "reference-card");
-    card.append(element("p", comparison.track, "kicker"), element("h3", comparison.label));
-    card.append(element("p", comparison.scope, "scope"));
-    appendMetrics(card, comparison.values ?? []);
-    appendSources(card, comparison.source ? [comparison.source] : []);
-    return card;
-  });
-  el("reference-grid").replaceChildren(...cards);
+  const older = manifest?.comparisons.filter((comparison) => !primaryComparisons.includes(comparison)) ?? [];
+  el("reference-count").textContent = `${older.length} comparisons`;
+  if (el("archive-comparisons").open) {
+    el("reference-grid").replaceChildren(...older.map(referenceCard));
+  }
 }
 
 function setModality(next) {
@@ -173,14 +328,35 @@ function setModality(next) {
   if (modality === "all") url.searchParams.delete("modality");
   else url.searchParams.set("modality", modality);
   history.replaceState(null, "", url);
-  renderRuns();
+  renderArchive();
 }
 
-function revealRun() {
-  const id = location.hash.slice(1);
-  if (!slug.test(id) || !manifest?.runs.some((run) => run.id === id)) return;
-  if (!el(id)) setModality("all");
-  el(id)?.scrollIntoView();
+function revealResult(id = location.hash.slice(1)) {
+  if (!slug.test(id) || !manifest) return;
+  const archive = el("archive-panel");
+  if (id === "archive") {
+    archive.open = true;
+    return;
+  }
+  const run = manifest.runs.find((entry) => entry.id === id);
+  const comparison = manifest.comparisons.find((entry) => entry.id === id);
+  if (run && run !== featured) {
+    archive.open = true;
+    if (!el(id)) {
+      el("archive-search").value = "";
+      if (modality === "all" || run.modalities.includes(modality)) renderArchive();
+      else setModality("all");
+    }
+    const entry = el(id);
+    if (entry) entry.open = true;
+  } else if (id === "archive-comparisons" || (comparison && !primaryComparisons.includes(comparison))) {
+    archive.open = true;
+    el("archive-comparisons").open = true;
+    renderReferences();
+  }
+  if (run || id === "archive-comparisons" || comparison) {
+    requestAnimationFrame(() => el(id)?.scrollIntoView());
+  }
 }
 
 function validate(data) {
@@ -215,26 +391,23 @@ async function refreshReport(manual = false) {
       const first = manifest === null;
       manifest = validate(JSON.parse(body));
       payload = body;
-      el("headline").textContent = manifest.headline;
       const stamp = dateElement(manifest.updated);
       el("updated").hidden = stamp === null;
       if (stamp) {
         el("updated").dateTime = stamp.dateTime;
-        el("updated").textContent = stamp.textContent;
+        el("updated").textContent = `Updated ${stamp.textContent}`;
       }
-      renderRuns();
+      renderCurrent();
+      renderArchive();
       renderReferences();
-      if (first) revealRun();
+      if (first) revealResult();
       el("network-status").textContent = "Latest benchmark results loaded.";
     } else if (manual) {
       el("network-status").textContent = "The benchmark report is up to date.";
     }
   } catch {
     const description = "Could not load the benchmark report. Use Refresh to retry.";
-    if (!manifest) {
-      el("headline").textContent = description;
-      el("runs").replaceChildren(element("p", description, "empty"));
-    }
+    if (!manifest) el("runs").replaceChildren(element("p", description, "empty"));
     el("network-status").textContent = description;
   } finally {
     el("refresh").disabled = false;
@@ -244,19 +417,22 @@ async function refreshReport(manual = false) {
 }
 
 for (const button of filterButtons) button.addEventListener("click", () => setModality(button.dataset.modality));
-el("refresh").addEventListener("click", () => refreshReport(true));
-document.querySelector(".hero-figure figcaption a").addEventListener("click", (event) => {
-  const id = event.currentTarget.hash.slice(1);
-  if (manifest?.runs.some((run) => run.id === id) && !el(id)) setModality("all");
+el("archive-search").addEventListener("input", renderArchive);
+el("archive-comparisons").addEventListener("toggle", () => {
+  if (el("archive-comparisons").open) renderReferences();
 });
-window.addEventListener("hashchange", revealRun);
+el("refresh").addEventListener("click", () => refreshReport(true));
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href^='#']");
+  if (link?.hash === location.hash) revealResult();
+});
+window.addEventListener("hashchange", () => revealResult());
 window.addEventListener("popstate", () => {
-  const next = new URLSearchParams(location.search).get("modality");
-  modality = modalities.has(next) ? next : "all";
-  renderRuns();
-  revealRun();
+  modality = urlModality();
+  renderArchive();
+  revealResult();
 });
 document.addEventListener("visibilitychange", () => refreshReport());
-renderRuns();
+renderArchive();
 void refreshReport(true);
 window.setInterval(refreshReport, 60_000);

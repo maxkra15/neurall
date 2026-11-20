@@ -6,22 +6,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
-  <meta name="description" content="NeurALL benchmark results for sand, cable, cloth and coupled deformable simulation.">
-  <meta name="theme-color" content="#f7f6f1">
-  <title>NeurALL · Deformable dynamics benchmark</title>
+  <meta name="description" content="NeurALL measures shared and specialist dynamics models against Newton on cloth, cable, and sand benchmarks.">
+  <meta name="theme-color" content="#f4f5ef">
+  <title>NeurALL | Cloth and cable dynamics</title>
   <link rel="icon" href="./media/mark.png" type="image/png">
   <link rel="stylesheet" href="./report.css">
   <script src="./report.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#results">Skip to benchmark results</a>
+  <a class="skip" href="#results">Skip to results</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="#top" aria-label="NeurALL report home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>NeurALL</a>
       <nav aria-label="Report sections">
         <a href="#results">Results</a>
-        <a href="#comparisons">Comparisons</a>
-        <a href="#methods">Protocol</a>
+        <a href="#models">Models</a>
+        <a href="#archive">Archive</a>
       </nav>
       <a class="data-link" href="./report.json">Report data <span aria-hidden="true">↗</span></a>
     </div>
@@ -30,63 +30,125 @@
   <main class="wrap" id="top">
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
-        <p class="kicker">Deformable dynamics benchmark</p>
-        <h1 id="page-title">Sand, cloth<br>and cable</h1>
-        <p class="intro">NeurALL studies whether shared learned dynamics can reproduce sand, cable and cloth and exchange forces with other bodies.</p>
-        <a class="action" href="#results">Explore results <span aria-hidden="true">↓</span></a>
-      </div>
-      <figure class="hero-figure" aria-labelledby="hero-caption">
-        <div class="hero-image">
-          <img src="./media/contact-substeps.webp" width="1200" height="464" alt="Matched snapshots of Newton, point contact and triangle contact. The cloth supports the cable in Newton and the triangle-contact solver.">
+        <h1 id="page-title">One dynamics model for cloth and cable</h1>
+        <p class="intro">Can one model advance two very different materials with just the load applied at each step? NeurALL measures where the shared model matches Newton and where it drifts.</p>
+        <div class="hero-actions">
+          <a class="action" href="#results">See the results <span aria-hidden="true">↓</span></a>
+          <a class="plain-link" href="#models">How the models work</a>
         </div>
-        <figcaption id="hero-caption"><span>Cloth catches a free cable</span><a href="#contact-geometry">Watch comparison <span aria-hidden="true">↗</span></a></figcaption>
+      </div>
+      <figure class="hero-figure">
+        <a id="preview-link" class="preview-link" href="#elastic-six-second-v3" aria-describedby="preview-title">
+          <img id="preview-image" src="./media/elastic-six-second-cloth.webp" width="1200" height="464" alt="Newton and predictions from the shared model on a six-second cloth rollout">
+          <span class="preview-play" aria-hidden="true">▶</span>
+        </a>
+        <figcaption><span id="preview-title">Shared model on the six-second benchmark</span></figcaption>
       </figure>
     </section>
 
-    <section class="status" aria-labelledby="status-title">
-      <h2 id="status-title">Latest evidence</h2>
-      <p id="headline">Loading the benchmark record…</p>
-      <div class="status-controls">
-        <time id="updated" hidden></time>
-        <button type="button" id="refresh" class="refresh">Refresh</button>
-      </div>
-      <p id="network-status" class="sr-only" role="status" aria-live="polite"></p>
-    </section>
-
-    <section class="results section" id="results" aria-labelledby="results-title">
+    <section class="section current-section" id="results" aria-labelledby="results-title">
       <div class="section-heading">
-        <div><p class="kicker">Experiments</p><h2 id="results-title">Rollout results</h2></div>
-        <div class="filters" role="group" aria-label="Filter by modality">
-          <button type="button" aria-pressed="true" data-modality="all">All</button>
-          <button type="button" aria-pressed="false" data-modality="sand">Sand</button>
-          <button type="button" aria-pressed="false" data-modality="cloth">Cloth</button>
-          <button type="button" aria-pressed="false" data-modality="cable">Cable</button>
-          <button type="button" aria-pressed="false" data-modality="coupled">Coupled</button>
+        <div>
+          <h2 id="results-title">Latest shared results</h2>
+          <p>Full rollouts measure how error accumulates when the model advances on its own.</p>
+        </div>
+        <div class="status-controls">
+          <time id="updated" hidden></time>
+          <button type="button" id="refresh" class="refresh">Refresh</button>
         </div>
       </div>
-      <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
-      <div id="runs" class="run-grid" aria-busy="true"></div>
-      <noscript><p>Enable JavaScript to filter the evidence and play rollouts. <a href="./report.json">Download the report data</a>.</p></noscript>
+      <p id="network-status" class="sr-only" role="status" aria-live="polite"></p>
+      <div id="runs" aria-busy="true">
+        <p class="empty">Loading benchmark results…</p>
+      </div>
+      <noscript><p>The full benchmark and video links are available in the <a href="./report.json">report data</a>.</p></noscript>
     </section>
 
-    <section class="section" id="comparisons" aria-labelledby="comparisons-title">
-      <div class="section-heading"><div><p class="kicker">Baselines and prior work</p><h2 id="comparisons-title">Reference comparisons</h2></div></div>
-      <p class="section-intro">Each card gives the task, conditioning and metric for its result.</p>
-      <div id="reference-grid" class="reference-grid"></div>
+    <section class="section" id="models" aria-labelledby="models-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="models-title">How the models work</h2>
+          <p>The information available at inference determines which tasks each model can handle.</p>
+        </div>
+      </div>
+      <article class="shared-model" aria-labelledby="shared-title">
+        <div class="model-heading">
+          <h3 id="shared-title">Shared recurrent model</h3>
+          <p>One checkpoint uses the same recurrent weights for cloth and cable. Each material has its own shape basis.</p>
+        </div>
+        <ol class="model-flow">
+          <li>
+            <h4>Read the current load</h4>
+            <p>Take the load at this step together with the rest geometry and material parameters.</p>
+          </li>
+          <li>
+            <h4>Update the hidden state</h4>
+            <p>A gated recurrent unit (GRU) carries motion history forward between steps.</p>
+          </li>
+          <li>
+            <h4>Reconstruct the shape</h4>
+            <p>Decode compact coefficients into cloth vertices or a cable centerline. Keep anchors fixed and project cable links to rest length.</p>
+          </li>
+        </ol>
+        <p class="model-note">The evaluated rollouts start from the clamped rest pose. Recovery from an observed deformed state and contact response remain open tests.</p>
+      </article>
+      <div class="specialists">
+        <article class="model-card" aria-labelledby="cloth-title">
+          <h3 id="cloth-title">Cloth specialist</h3>
+          <p>A small neural network maps the material, the full load schedule, and the requested time to shape coefficients. It reconstructs the mesh, keeps its pins fixed, and limits edge stretch.</p>
+          <a href="#elastic-accuracy-speed-v3">Cloth accuracy and timing <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="model-card" aria-labelledby="cable-title">
+          <h3 id="cable-title">Cable specialist</h3>
+          <p>A learned interpolation model uses the full load schedule to estimate link angles and length changes. It reconstructs the centerline from its anchored first segment.</p>
+          <a href="#elastic-refined-cable-v4">Refined cable results <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="model-note">Both specialists can query the whole trajectory in one batch once the schedule is known. Their accuracy and CPU timing apply to that setup.</p>
     </section>
 
-    <section class="section methods" id="methods" aria-labelledby="methods-title">
-      <div class="section-heading"><div><p class="kicker">Evaluation</p><h2 id="methods-title">Benchmark protocol</h2></div></div>
+    <section class="section protocol" id="methods" aria-labelledby="methods-title">
+      <div class="section-heading"><div><h2 id="methods-title">Reading the numbers</h2></div></div>
       <dl>
-        <div><dt>Rollout conditioning</dt><dd>Prescribed replay supplies the recorded rigid trajectory. Two-way evaluation advances the interacting bodies from their own predicted states.</dd></div>
-        <div><dt>Accuracy and stability</dt><dd>Compare complete trajectories, surface shape, settled drift, reaction forces and penetration against Newton. State position and runtime metrics with their units and time intervals.</dd></div>
-        <div><dt>Matched references</dt><dd>Use the same scenes, initial states and rollout protocol for head-to-head comparisons. Published results retain their original conditions and checkpoint provenance.</dd></div>
+        <div><dt>Position error</dt><dd>At each frame, compare predicted and Newton node positions. Average the root mean square error over the rollout and express it as a percent of rest length.</dd></div>
+        <div><dt>Runtime</dt><dd>Warm step time and full forecast time measure different work. Each result identifies the device, baseline, and any setup outside its timing window.</dd></div>
+        <div><dt>Reference and scope</dt><dd>Newton solver settings affect the target trajectory. Look for the load inputs, test duration, and reference resolution before comparing scores.</dd></div>
       </dl>
+    </section>
+
+    <section class="section archive-section" id="archive" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="archive-title">Archive</h2>
+          <p>Earlier elastic runs, coupled contact, sand and MPM results, and models from prior work.</p>
+        </div>
+      </div>
+      <details id="archive-panel" class="archive-panel">
+        <summary><span>Browse past runs</span><span id="archive-count" class="count"></span></summary>
+        <div class="archive-content">
+          <div class="archive-controls">
+            <label class="search-label">Search runs<input id="archive-search" type="search" placeholder="Search by title or model"></label>
+            <div class="filters" role="group" aria-label="Filter archived runs by material">
+              <button type="button" aria-pressed="true" data-modality="all">All</button>
+              <button type="button" aria-pressed="false" data-modality="cloth">Cloth</button>
+              <button type="button" aria-pressed="false" data-modality="cable">Cable</button>
+              <button type="button" aria-pressed="false" data-modality="sand">Sand</button>
+              <button type="button" aria-pressed="false" data-modality="coupled">Coupled</button>
+            </div>
+          </div>
+          <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+          <div id="archive-runs" class="archive-list"></div>
+          <details id="archive-comparisons" class="archive-references">
+            <summary><span>Earlier reference comparisons</span><span id="reference-count" class="count"></span></summary>
+            <div id="reference-grid" class="reference-grid"></div>
+          </details>
+        </div>
+      </details>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap"><span>NeurALL · Deformable dynamics benchmark</span><a href="#top">Back to top ↑</a></div>
+    <div class="wrap"><span>NeurALL benchmark</span><a href="./report.json">Report data</a><a href="#top">Back to top ↑</a></div>
   </footer>
 </body>
 </html>
