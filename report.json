@@ -1,8 +1,244 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T11:36:05Z",
-  "headline": "One shared checkpoint runs all four tasks. Weak sand and contact accuracy leave clear room for stronger baselines.",
+  "updated": "2026-11-20T11:42:54Z",
+  "headline": "NeurALL point-contact fit on four L40s · 12 evaluated rollouts",
   "runs": [
+    {
+      "id": "shared-point-l40",
+      "title": "NeurALL point-contact fit on four L40s",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories. Held-out Newton cloth trajectories. Held-out Newton cable trajectories. Held-out Newton mixed scenes. The coupled models exchange point-contact impulses.",
+      "summary": "12 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 4 GPU processes.",
+      "metrics": [
+        {
+          "label": "Mean position RMSE",
+          "value": 464.997,
+          "unit": "mm",
+          "detail": "Cloth"
+        },
+        {
+          "label": "Mean position RMSE",
+          "value": 389.293,
+          "unit": "mm",
+          "detail": "Cable"
+        },
+        {
+          "label": "Final cloth position RMSE",
+          "value": 81.266,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 925.144,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Tool force vector RMSE",
+          "value": 119.356,
+          "unit": "N",
+          "detail": "Granular sand"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/shared-point-l40-sand.mp4",
+          "type": "video",
+          "label": "Granular sand. Recorded rigid motion on previously inspected public sand trajectories.",
+          "poster": "media/shared-point-l40-sand.webp"
+        },
+        {
+          "src": "media/shared-point-l40-cloth.mp4",
+          "type": "video",
+          "label": "Cloth. Held-out Newton cloth trajectories.",
+          "poster": "media/shared-point-l40-cloth.webp"
+        },
+        {
+          "src": "media/shared-point-l40-cable.mp4",
+          "type": "video",
+          "label": "Cable. Held-out Newton cable trajectories.",
+          "poster": "media/shared-point-l40-cable.webp"
+        },
+        {
+          "src": "media/shared-point-l40-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange point-contact impulses.",
+          "poster": "media/shared-point-l40-mixed.webp"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/shared-point-l40-scores.json"
+        }
+      ]
+    },
+    {
+      "id": "shared-triangle-cpu",
+      "title": "NeurALL with triangle contact",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories. Held-out Newton cloth trajectories. Held-out Newton cable trajectories. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps.",
+      "summary": "12 evaluated rollouts from a single 33,366-parameter checkpoint. The fit completed 400 updates using 1 CPU process. All three learned mixed rollouts exchanged zero contact impulse. The analytical triangle contact control caught all three cables. The learned update slowed the free cable before contact.",
+      "metrics": [
+        {
+          "label": "Mean position RMSE",
+          "value": 439.823,
+          "unit": "mm",
+          "detail": "Cloth"
+        },
+        {
+          "label": "Mean position RMSE",
+          "value": 392.439,
+          "unit": "mm",
+          "detail": "Cable"
+        },
+        {
+          "label": "Final cloth position RMSE",
+          "value": 6.357,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Final cable position RMSE",
+          "value": 1188.203,
+          "unit": "mm",
+          "detail": "Cloth and cable contact"
+        },
+        {
+          "label": "Tool force vector RMSE",
+          "value": 118.646,
+          "unit": "N",
+          "detail": "Granular sand"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/shared-triangle-cpu-sand.mp4",
+          "type": "video",
+          "label": "Granular sand. Recorded rigid motion on previously inspected public sand trajectories.",
+          "poster": "media/shared-triangle-cpu-sand.webp"
+        },
+        {
+          "src": "media/shared-triangle-cpu-cloth.mp4",
+          "type": "video",
+          "label": "Cloth. Held-out Newton cloth trajectories.",
+          "poster": "media/shared-triangle-cpu-cloth.webp"
+        },
+        {
+          "src": "media/shared-triangle-cpu-cable.mp4",
+          "type": "video",
+          "label": "Cable. Held-out Newton cable trajectories.",
+          "poster": "media/shared-triangle-cpu-cable.webp"
+        },
+        {
+          "src": "media/shared-triangle-cpu-mixed.mp4",
+          "type": "video",
+          "label": "Cloth and cable contact. Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps.",
+          "poster": "media/shared-triangle-cpu-mixed.webp"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Scores and evaluation scope",
+          "url": "evidence/shared-triangle-cpu-scores.json"
+        }
+      ]
+    },
+    {
+      "id": "sand-two-way-control",
+      "title": "Two-way sand and plate support",
+      "date": "2026-11-20",
+      "status": "Measured analytical control",
+      "modalities": [
+        "sand",
+        "coupled"
+      ],
+      "scope": "Two load-support cases and one prescribed press, 1,024 Newton MPM particles",
+      "summary": "The guided granular control transfers equal-and-opposite impulses. Without exchange the plate drops to the floor. With exchange it stays above the floor and the sand carries its weight, but the supported plate still sits about 3 cm too low. The press hold force is about one tenth of Newton's.",
+      "metrics": [
+        {
+          "label": "Supported plate height RMSE",
+          "value": "26–30",
+          "unit": "mm"
+        },
+        {
+          "label": "Press hold force",
+          "value": 6.11,
+          "unit": "N",
+          "detail": "Newton sustained 61.27 N"
+        },
+        {
+          "label": "Maximum momentum residual",
+          "value": "1.86 × 10⁻¹⁵",
+          "unit": "N s",
+          "detail": "Material and plate with separately measured floor impulse"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/native-sand-support.mp4",
+          "poster": "media/native-sand-support.webp",
+          "type": "video",
+          "label": "Independently moving plate in Newton, analytical exchange and its no-exchange control."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Per-case force, pose and momentum metrics",
+          "url": "evidence/native-sand-support-scores.json"
+        }
+      ]
+    },
+    {
+      "id": "particle-nerd-comparison",
+      "title": "NeurALL and Particle NeRD Local on the same scenes",
+      "date": "2026-11-20",
+      "status": "Measured rollout",
+      "modalities": [
+        "sand"
+      ],
+      "scope": "Matched Newton references for circular push and cube pull-up",
+      "summary": "NeurALL has lower whole-bed error than the Particle NeRD Local retrain on both scenes. The Particle NeRD retrain has lower active velocity error on both. Damped contact has the lowest whole-bed error on both. The training runs use different data and budgets.",
+      "media": [
+        {
+          "src": "media/nerd-circular-push.mp4",
+          "poster": "media/nerd-circular-push.webp",
+          "type": "video",
+          "label": "Circular box push. Newton, NeurALL, Particle NeRD Local retrain and damped contact."
+        },
+        {
+          "src": "media/nerd-cube-pull-up.mp4",
+          "poster": "media/nerd-cube-pull-up.webp",
+          "type": "video",
+          "label": "Cube pull-up. Newton, NeurALL, Particle NeRD Local retrain and damped contact."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Matched full-rollout metrics and scope",
+          "url": "evidence/particle-nerd-neurall-scores.json"
+        },
+        {
+          "label": "Public Particle NeRD Local source",
+          "url": "https://github.com/jnskkmhr/IsaacLab/tree/271756dcc6cbcee9aad708feddd148718d294a8f/source/isaaclab_tasks/isaaclab_tasks/contrib/particle_nerd_local"
+        }
+      ]
+    },
     {
       "id": "shared-point-cpu",
       "title": "NeurALL shared model with point contact",
@@ -264,6 +500,354 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "shared-point-l40-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange point-contact impulses.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 125.369,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 1407.709,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 129.453,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-l40-cable",
+      "label": "Cable",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cable trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 389.293,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 474.066,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-l40-cloth",
+      "label": "Cloth",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cloth trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 464.997,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 485.806,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-point-l40-sand",
+      "label": "Granular sand",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 12.536,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 7.509,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-point-l40-scores.json"
+      }
+    },
+    {
+      "id": "shared-triangle-cpu-mixed",
+      "label": "Cloth and cable contact",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton mixed scenes. The coupled models exchange triangle-contact impulses across eight 2.5 ms substeps.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 150.904,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 50.125,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL without exchange",
+          "value": 150.904,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-triangle-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-triangle-cpu-cable",
+      "label": "Cable",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cable trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 392.439,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 474.066,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-triangle-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-triangle-cpu-cloth",
+      "label": "Cloth",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Held-out Newton cloth trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 439.823,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 485.806,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-triangle-cpu-scores.json"
+      }
+    },
+    {
+      "id": "shared-triangle-cpu-sand",
+      "label": "Granular sand",
+      "track": "Matched comparison · 3 cases",
+      "scope": "Recorded rigid motion on previously inspected public sand trajectories.",
+      "values": [
+        {
+          "label": "NeurALL",
+          "value": 11.193,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Analytic baseline",
+          "value": 7.509,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Scores and evaluation scope",
+        "url": "evidence/shared-triangle-cpu-scores.json"
+      }
+    },
+    {
+      "id": "guided-sand-press-load",
+      "label": "Material response under compression",
+      "track": "Matched prescribed press · 1 case",
+      "scope": "The plate follows the same press and hold. The analytical model transfers impulses but does not reproduce Newton's hardening and stress response.",
+      "values": [
+        {
+          "label": "Newton MPM",
+          "value": 61.27,
+          "unit": "N",
+          "detail": "Mean vertical hold force"
+        },
+        {
+          "label": "Analytical granular control",
+          "value": 6.11,
+          "unit": "N",
+          "detail": "Mean vertical hold force"
+        }
+      ],
+      "source": {
+        "label": "Per-case force, pose and momentum metrics",
+        "url": "evidence/native-sand-support-scores.json"
+      }
+    },
+    {
+      "id": "nerd-cube-pull-up-2",
+      "label": "Cube pull-up · Active particle velocity RMSE",
+      "track": "Same-scene rollout · 1 case",
+      "scope": "Six seconds, 20,646 particles and 300 self-fed steps with the recorded rigid motion. Initial material state and the sampled Newton arrays match exactly. NeurALL trained on seven sand trajectories plus three other deformable tasks. The Particle NeRD Local retrain used four sand trajectories and a different fit schedule.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 94.52,
+          "unit": "mm/s",
+          "detail": "Active particle velocity RMSE"
+        },
+        {
+          "label": "NeurALL",
+          "value": 103.29,
+          "unit": "mm/s",
+          "detail": "Active particle velocity RMSE"
+        },
+        {
+          "label": "Particle NeRD Local retrain",
+          "value": 94.82,
+          "unit": "mm/s",
+          "detail": "Active particle velocity RMSE"
+        }
+      ],
+      "source": {
+        "label": "Matched full-rollout metrics and scope",
+        "url": "evidence/particle-nerd-neurall-scores.json"
+      }
+    },
+    {
+      "id": "nerd-cube-pull-up-1",
+      "label": "Cube pull-up · Mean position RMSE",
+      "track": "Same-scene rollout · 1 case",
+      "scope": "Six seconds, 20,646 particles and 300 self-fed steps with the recorded rigid motion. Initial material state and the sampled Newton arrays match exactly. NeurALL trained on seven sand trajectories plus three other deformable tasks. The Particle NeRD Local retrain used four sand trajectories and a different fit schedule.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 5.82,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL",
+          "value": 11.95,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Particle NeRD Local retrain",
+          "value": 17.38,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Matched full-rollout metrics and scope",
+        "url": "evidence/particle-nerd-neurall-scores.json"
+      }
+    },
+    {
+      "id": "nerd-circular-push-2",
+      "label": "Circular box push · Active particle velocity RMSE",
+      "track": "Same-scene rollout · 1 case",
+      "scope": "Six seconds, 20,646 particles and 300 self-fed steps with the recorded rigid motion. Initial material state and the sampled Newton arrays match exactly. NeurALL trained on seven sand trajectories plus three other deformable tasks. The Particle NeRD Local retrain used four sand trajectories and a different fit schedule.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 164.38,
+          "unit": "mm/s",
+          "detail": "Active particle velocity RMSE"
+        },
+        {
+          "label": "NeurALL",
+          "value": 150.46,
+          "unit": "mm/s",
+          "detail": "Active particle velocity RMSE"
+        },
+        {
+          "label": "Particle NeRD Local retrain",
+          "value": 120.61,
+          "unit": "mm/s",
+          "detail": "Active particle velocity RMSE"
+        }
+      ],
+      "source": {
+        "label": "Matched full-rollout metrics and scope",
+        "url": "evidence/particle-nerd-neurall-scores.json"
+      }
+    },
+    {
+      "id": "nerd-circular-push-1",
+      "label": "Circular box push · Mean position RMSE",
+      "track": "Same-scene rollout · 1 case",
+      "scope": "Six seconds, 20,646 particles and 300 self-fed steps with the recorded rigid motion. Initial material state and the sampled Newton arrays match exactly. NeurALL trained on seven sand trajectories plus three other deformable tasks. The Particle NeRD Local retrain used four sand trajectories and a different fit schedule.",
+      "values": [
+        {
+          "label": "Damped contact",
+          "value": 14.74,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "NeurALL",
+          "value": 14.78,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Particle NeRD Local retrain",
+          "value": 22.48,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Matched full-rollout metrics and scope",
+        "url": "evidence/particle-nerd-neurall-scores.json"
+      }
+    },
     {
       "id": "point-cpu-sand-specialist",
       "label": "Sand sharing control",

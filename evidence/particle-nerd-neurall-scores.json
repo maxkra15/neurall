@@ -1,0 +1,43 @@
+{
+  "scope": "Six seconds, 20,646 particles and 300 self-fed steps with the recorded rigid motion. Initial material state and the sampled Newton arrays match exactly. NeurALL trained on seven sand trajectories plus three other deformable tasks. The Particle NeRD Local retrain used four sand trajectories and a different fit schedule.",
+  "cases": [
+    {
+      "scene": "Circular box push",
+      "dataset_identity": "flat-lateral_push-0003",
+      "step_seconds": 0.02,
+      "metrics": {
+        "analytical": {
+          "position_mm": 14.738481491804123,
+          "active_velocity_mm_s": 164.37940177681133
+        },
+        "neurall": {
+          "position_mm": 14.781850390136242,
+          "active_velocity_mm_s": 150.45868030493764
+        },
+        "author_local": {
+          "position_mm": 22.479337692260742,
+          "active_velocity_mm_s": 120.6072023398405
+        }
+      }
+    },
+    {
+      "scene": "Cube pull-up",
+      "dataset_identity": "flat-vertical_push-0003",
+      "step_seconds": 0.02,
+      "metrics": {
+        "analytical": {
+          "position_mm": 5.8175562880933285,
+          "active_velocity_mm_s": 94.52369140633928
+        },
+        "neurall": {
+          "position_mm": 11.948060244321823,
+          "active_velocity_mm_s": 103.28598680732773
+        },
+        "author_local": {
+          "position_mm": 17.382862091064453,
+          "active_velocity_mm_s": 94.82377265330237
+        }
+      }
+    }
+  ]
+}

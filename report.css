@@ -52,10 +52,7 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid 
 .action { display: inline-flex; align-items: center; gap: .9rem; padding: .64rem .95rem; background: var(--accent); color: #fff; text-decoration: none; font-size: .83rem; font-weight: 700; border-radius: 4px; }
 .action:hover { color: #fff; background: #813024; }
 .hero-figure { margin: 0; padding: .72rem .72rem 0; border-radius: 8px; background: var(--ink); color: #f8f9f5; }
-.hero-image { position: relative; }
 .hero-figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
-.image-key { position: absolute; inset: .7rem .65rem auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; pointer-events: none; }
-.image-key span { justify-self: start; color: #fff; background: #172425; padding: .2rem .45rem; border-radius: 3px; font-size: .68rem; font-weight: 650; }
 .hero-figure figcaption { display: flex; align-items: center; justify-content: space-between; gap: .7rem; padding: .63rem .05rem; font-weight: 600; font-size: .75rem; }
 .hero-figure figcaption > span { color: #dce3db; }
 .hero-figure figcaption a:hover { color: #ffc8b8; }
@@ -80,6 +77,7 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid 
 
 .run-grid, .reference-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
 .run-card, .reference-card { min-width: 0; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); overflow: hidden; }
+.run-card:has(.media-item:nth-child(2)) { grid-column: 1 / -1; }
 .run-card:target { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-pale); }
 .run-content, .reference-card { padding: clamp(1rem, 2.5vw, 1.5rem); }
 .label-row { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .5rem; margin-bottom: .7rem; }
@@ -110,6 +108,12 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid 
 .methods dt { font-weight: 700; font-size: .92rem; margin-bottom: .35rem; }
 .methods dd { margin: 0; color: var(--muted); font-size: .83rem; }
 .site-footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: .8rem; padding-block: 1.5rem; font-size: .76rem; color: var(--muted); }
+
+@media (min-width: 661px) {
+  .assets:has(.media-item:nth-child(2)) { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .assets:has(.media-item:nth-child(2)) .media-item:nth-child(2) { border-top: 0; }
+  .assets:has(.media-item:nth-child(2)) .media-item:nth-child(even) { border-left: 1px solid var(--line); }
+}
 
 @media (max-width: 900px) {
   .hero h1 { font-size: clamp(3.25rem, 6.6vw, 4.85rem); }

@@ -245,8 +245,9 @@ async function refreshReport(manual = false) {
 
 for (const button of filterButtons) button.addEventListener("click", () => setModality(button.dataset.modality));
 el("refresh").addEventListener("click", () => refreshReport(true));
-document.querySelector(".hero-figure figcaption a").addEventListener("click", () => {
-  if (manifest?.runs.some((run) => run.id === "sphere-support") && !el("sphere-support")) setModality("all");
+document.querySelector(".hero-figure figcaption a").addEventListener("click", (event) => {
+  const id = event.currentTarget.hash.slice(1);
+  if (manifest?.runs.some((run) => run.id === id) && !el(id)) setModality("all");
 });
 window.addEventListener("hashchange", revealRun);
 window.addEventListener("popstate", () => {

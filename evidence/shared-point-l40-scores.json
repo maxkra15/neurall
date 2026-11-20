@@ -1,0 +1,481 @@
+{
+  "id": "shared-point-l40",
+  "date": "2026-11-20",
+  "status": "Measured rollout",
+  "training": {
+    "updates": 400,
+    "processes": 4,
+    "device": "GPU",
+    "mixed_contact": "point",
+    "fit_seconds": 49.88363749906421,
+    "parameters": 33366
+  },
+  "cases": [
+    {
+      "case": "cloth-1",
+      "family": "cloth",
+      "split": "test",
+      "particles": 72,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 427.70466208457947,
+          "final_particle_rmse_mm": 572.4291801452637,
+          "mean_step_ms": 3.2752352567870964,
+          "median_step_ms": 3.2679270952939987,
+          "active_particle_velocity_rmse_mm_s": 1678.966375392371,
+          "active_particle_intervals": 5931,
+          "quiet_terminal_rmse_mm": 0.0
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 511.6308927536011,
+          "final_particle_rmse_mm": 371.2771236896515,
+          "mean_step_ms": 1.0760790051034328,
+          "median_step_ms": 1.0732952505350113,
+          "active_particle_velocity_rmse_mm_s": 2097.7088435488736,
+          "active_particle_intervals": 5931,
+          "quiet_terminal_rmse_mm": 0.0
+        }
+      }
+    },
+    {
+      "case": "cloth-2",
+      "family": "cloth",
+      "split": "test",
+      "particles": 80,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 512.6089453697205,
+          "final_particle_rmse_mm": 950.09845495224,
+          "mean_step_ms": 3.252658009361685,
+          "median_step_ms": 3.254096955060959,
+          "active_particle_velocity_rmse_mm_s": 2094.871848615881,
+          "active_particle_intervals": 6471,
+          "quiet_terminal_rmse_mm": 0.0
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 471.6499447822571,
+          "final_particle_rmse_mm": 726.8667817115784,
+          "mean_step_ms": 1.0605596759346094,
+          "median_step_ms": 1.0595377534627914,
+          "active_particle_velocity_rmse_mm_s": 2235.314789923903,
+          "active_particle_intervals": 6471,
+          "quiet_terminal_rmse_mm": 0.0
+        }
+      }
+    },
+    {
+      "case": "cloth-3",
+      "family": "cloth",
+      "split": "test",
+      "particles": 99,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 454.6762704849243,
+          "final_particle_rmse_mm": 652.6185870170593,
+          "mean_step_ms": 3.2513903433017517,
+          "median_step_ms": 3.236047923564911,
+          "active_particle_velocity_rmse_mm_s": 1819.1754017850578,
+          "active_particle_intervals": 8090,
+          "quiet_terminal_rmse_mm": 0.0
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 474.1378724575043,
+          "final_particle_rmse_mm": 470.9233045578003,
+          "mean_step_ms": 1.0726962112978604,
+          "median_step_ms": 1.070212572813034,
+          "active_particle_velocity_rmse_mm_s": 2156.92577101645,
+          "active_particle_intervals": 8090,
+          "quiet_terminal_rmse_mm": 0.0
+        }
+      }
+    },
+    {
+      "case": "cable-1",
+      "family": "cable",
+      "split": "test",
+      "particles": 14,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 372.98887968063354,
+          "final_particle_rmse_mm": 801.6989827156067,
+          "mean_step_ms": 3.1499695660692923,
+          "median_step_ms": 3.1507182866334915,
+          "active_particle_velocity_rmse_mm_s": 1158.9226741018633,
+          "active_particle_intervals": 1044,
+          "quiet_terminal_rmse_mm": 2.107342389479072e-05
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 458.7538540363312,
+          "final_particle_rmse_mm": 518.464207649231,
+          "mean_step_ms": 1.0486151604505067,
+          "median_step_ms": 1.0468307882547379,
+          "active_particle_velocity_rmse_mm_s": 1527.8710262763107,
+          "active_particle_intervals": 1044,
+          "quiet_terminal_rmse_mm": 2.107342389479072e-05
+        }
+      }
+    },
+    {
+      "case": "cable-2",
+      "family": "cable",
+      "split": "test",
+      "particles": 12,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 414.9433672428131,
+          "final_particle_rmse_mm": 859.6523404121399,
+          "mean_step_ms": 3.152113617136237,
+          "median_step_ms": 3.149406984448433,
+          "active_particle_velocity_rmse_mm_s": 1316.9877219873413,
+          "active_particle_intervals": 873,
+          "quiet_terminal_rmse_mm": 0.0
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 510.41847467422485,
+          "final_particle_rmse_mm": 325.7561922073364,
+          "mean_step_ms": 1.0495214733514893,
+          "median_step_ms": 1.0489095002412796,
+          "active_particle_velocity_rmse_mm_s": 1649.4630320612214,
+          "active_particle_intervals": 873,
+          "quiet_terminal_rmse_mm": 0.0
+        }
+      }
+    },
+    {
+      "case": "cable-3",
+      "family": "cable",
+      "split": "test",
+      "particles": 14,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 379.9471855163574,
+          "final_particle_rmse_mm": 727.2082567214966,
+          "mean_step_ms": 3.148739927270439,
+          "median_step_ms": 3.147536888718605,
+          "active_particle_velocity_rmse_mm_s": 1293.504423023338,
+          "active_particle_intervals": 1042,
+          "quiet_terminal_rmse_mm": 8.429369557916289e-05
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 453.0266523361206,
+          "final_particle_rmse_mm": 413.1946861743927,
+          "mean_step_ms": 1.055176045452611,
+          "median_step_ms": 1.0515954345464706,
+          "active_particle_velocity_rmse_mm_s": 1638.1481366144524,
+          "active_particle_intervals": 1042,
+          "quiet_terminal_rmse_mm": 8.429369557916289e-05
+        }
+      }
+    },
+    {
+      "case": "mixed-1",
+      "family": "mixed",
+      "split": "test",
+      "particles": 152,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 107.59923607110977,
+          "final_particle_rmse_mm": 217.29834377765656,
+          "mean_step_ms": 6.622540440117375,
+          "median_step_ms": 4.940880462527275,
+          "active_particle_velocity_rmse_mm_s": 404.1003374231808,
+          "active_particle_intervals": 9582,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.23337361216545105,
+          "cable_reaction_estimate_rmse_n_s": 0.286080539226532,
+          "final_cloth_rmse_mm": 76.47265493869781,
+          "final_cable_rmse_mm": 839.3747210502625
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 1308.313012123108,
+          "final_particle_rmse_mm": 3820.6186294555664,
+          "mean_step_ms": 1.6322869891196155,
+          "median_step_ms": 1.3684984296560287,
+          "active_particle_velocity_rmse_mm_s": 3065.5900424706324,
+          "active_particle_intervals": 9582,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.15485678613185883,
+          "cable_reaction_estimate_rmse_n_s": 0.28613168001174927,
+          "final_cloth_rmse_mm": 199.5818018913269,
+          "final_cable_rmse_mm": 15681.081771850586
+        },
+        "no_exchange": {
+          "mean_particle_rmse_mm": 111.73401027917862,
+          "final_particle_rmse_mm": 246.11973762512207,
+          "mean_step_ms": 4.572794092505165,
+          "median_step_ms": 4.570756107568741,
+          "active_particle_velocity_rmse_mm_s": 390.3174339671509,
+          "active_particle_intervals": 9582,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.0,
+          "cable_reaction_estimate_rmse_n_s": 0.287045419216156,
+          "final_cloth_rmse_mm": 61.637766659259796,
+          "final_cable_rmse_mm": 981.1614751815796
+        }
+      }
+    },
+    {
+      "case": "mixed-2",
+      "family": "mixed",
+      "split": "test",
+      "particles": 155,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 149.83324706554413,
+          "final_particle_rmse_mm": 321.8379616737366,
+          "mean_step_ms": 6.202800429604027,
+          "median_step_ms": 4.92454320192337,
+          "active_particle_velocity_rmse_mm_s": 422.43307563960855,
+          "active_particle_intervals": 9398,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.0549178384244442,
+          "cable_reaction_estimate_rmse_n_s": 0.24398215115070343,
+          "final_cloth_rmse_mm": 74.22414422035217,
+          "final_cable_rmse_mm": 1127.9417276382446
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 1455.090880393982,
+          "final_particle_rmse_mm": 4273.561954498291,
+          "mean_step_ms": 1.7241638237505816,
+          "median_step_ms": 1.3719722628593445,
+          "active_particle_velocity_rmse_mm_s": 3478.049971817372,
+          "active_particle_intervals": 9398,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.3804453909397125,
+          "cable_reaction_estimate_rmse_n_s": 0.241803377866745,
+          "final_cloth_rmse_mm": 169.8111742734909,
+          "final_cable_rmse_mm": 15347.891807556152
+        },
+        "no_exchange": {
+          "mean_particle_rmse_mm": 152.84377336502075,
+          "final_particle_rmse_mm": 334.2183530330658,
+          "mean_step_ms": 4.578792416815007,
+          "median_step_ms": 4.578178748488426,
+          "active_particle_velocity_rmse_mm_s": 427.20894499547666,
+          "active_particle_intervals": 9398,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.0,
+          "cable_reaction_estimate_rmse_n_s": 0.24417704343795776,
+          "final_cloth_rmse_mm": 69.77314502000809,
+          "final_cable_rmse_mm": 1176.77640914917
+        }
+      }
+    },
+    {
+      "case": "mixed-3",
+      "family": "mixed",
+      "split": "test",
+      "particles": 155,
+      "states": 91,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 118.67596209049225,
+          "final_particle_rmse_mm": 241.98193848133087,
+          "mean_step_ms": 6.620695772633124,
+          "median_step_ms": 4.937352612614632,
+          "active_particle_velocity_rmse_mm_s": 430.0909502099648,
+          "active_particle_intervals": 10093,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.2560873031616211,
+          "cable_reaction_estimate_rmse_n_s": 0.3415161967277527,
+          "final_cloth_rmse_mm": 93.10055524110794,
+          "final_cable_rmse_mm": 808.1141114234924
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 1459.723711013794,
+          "final_particle_rmse_mm": 4279.560089111328,
+          "mean_step_ms": 1.8033736458655154,
+          "median_step_ms": 1.36563740670681,
+          "active_particle_velocity_rmse_mm_s": 3392.041834996087,
+          "active_particle_intervals": 10093,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.5232387781143188,
+          "cable_reaction_estimate_rmse_n_s": 0.3403117060661316,
+          "final_cloth_rmse_mm": 163.6083722114563,
+          "final_cable_rmse_mm": 15370.265007019043
+        },
+        "no_exchange": {
+          "mean_particle_rmse_mm": 123.78077954053879,
+          "final_particle_rmse_mm": 274.03920888900757,
+          "mean_step_ms": 4.596070648076829,
+          "median_step_ms": 4.593808203935623,
+          "active_particle_velocity_rmse_mm_s": 402.14536922911407,
+          "active_particle_intervals": 10093,
+          "quiet_terminal_rmse_mm": 0.0,
+          "coupled_impulse_activity_n_s": 0.0,
+          "cable_reaction_estimate_rmse_n_s": 0.3419637680053711,
+          "final_cloth_rmse_mm": 65.85792452096939,
+          "final_cable_rmse_mm": 958.2918882369995
+        }
+      }
+    },
+    {
+      "case": "sand-1",
+      "family": "sand",
+      "split": "diagnostic",
+      "particles": 20646,
+      "states": 301,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 14.781855046749115,
+          "final_particle_rmse_mm": 29.223930090665817,
+          "mean_step_ms": 16.806309301418604,
+          "median_step_ms": 16.793861985206604,
+          "active_particle_velocity_rmse_mm_s": 150.45868030493764,
+          "active_particle_intervals": 36238,
+          "quiet_terminal_rmse_mm": 10.480531491339207,
+          "body_force_vector_rmse_n": 29.75098419189453,
+          "body_force_tail_z_n": 15.551385879516602,
+          "reference_force_tail_z_n": 10.615199089050293
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 14.738472178578377,
+          "final_particle_rmse_mm": 30.479615554213524,
+          "mean_step_ms": 11.997885958456674,
+          "median_step_ms": 11.992556974291801,
+          "active_particle_velocity_rmse_mm_s": 164.37939665364502,
+          "active_particle_intervals": 36238,
+          "quiet_terminal_rmse_mm": 0.9342280682176352
+        }
+      }
+    },
+    {
+      "case": "sand-2",
+      "family": "sand",
+      "split": "diagnostic",
+      "particles": 20646,
+      "states": 301,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 11.948062106966972,
+          "final_particle_rmse_mm": 20.44365555047989,
+          "mean_step_ms": 16.858766771180175,
+          "median_step_ms": 16.843795776367188,
+          "active_particle_velocity_rmse_mm_s": 103.28599182374155,
+          "active_particle_intervals": 29450,
+          "quiet_terminal_rmse_mm": 1.2670796131715178,
+          "body_force_vector_rmse_n": 321.8758239746094,
+          "body_force_tail_z_n": 11.127674102783203,
+          "reference_force_tail_z_n": 0.0
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 5.8175562880933285,
+          "final_particle_rmse_mm": 8.727611042559147,
+          "mean_step_ms": 12.00726281315786,
+          "median_step_ms": 11.99798472225666,
+          "active_particle_velocity_rmse_mm_s": 94.52368592490629,
+          "active_particle_intervals": 29450,
+          "quiet_terminal_rmse_mm": 0.8637271239422262
+        }
+      }
+    },
+    {
+      "case": "sand-3",
+      "family": "sand",
+      "split": "diagnostic",
+      "particles": 20646,
+      "states": 301,
+      "dt": 0.02,
+      "actors": {
+        "neurall": {
+          "mean_particle_rmse_mm": 10.87883673608303,
+          "final_particle_rmse_mm": 23.731036111712456,
+          "mean_step_ms": 16.81109789422523,
+          "median_step_ms": 16.795765608549118,
+          "active_particle_velocity_rmse_mm_s": 55.42898904109111,
+          "active_particle_intervals": 1033,
+          "quiet_terminal_rmse_mm": 20.69036290049553,
+          "body_force_vector_rmse_n": 6.439696788787842,
+          "body_force_tail_z_n": 14.873204231262207,
+          "reference_force_tail_z_n": 19.620214462280273
+        },
+        "analytic": {
+          "mean_particle_rmse_mm": 1.9714231602847576,
+          "final_particle_rmse_mm": 2.8326462488621473,
+          "mean_step_ms": 12.008233145377707,
+          "median_step_ms": 12.001456692814827,
+          "active_particle_velocity_rmse_mm_s": 53.90475940183487,
+          "active_particle_intervals": 1033,
+          "quiet_terminal_rmse_mm": 0.7615807116962969
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "mean_particle_rmse_mm": {
+      "label": "Mean position RMSE",
+      "unit": "mm"
+    },
+    "final_particle_rmse_mm": {
+      "label": "Final position RMSE",
+      "unit": "mm"
+    },
+    "active_particle_velocity_rmse_mm_s": {
+      "label": "Active velocity RMSE",
+      "unit": "mm/s"
+    },
+    "quiet_terminal_rmse_mm": {
+      "label": "Quiet final position RMSE",
+      "unit": "mm"
+    },
+    "body_force_vector_rmse_n": {
+      "label": "Tool force vector RMSE",
+      "unit": "N"
+    },
+    "body_force_tail_z_n": {
+      "label": "Mean final vertical tool force",
+      "unit": "N"
+    },
+    "reference_force_tail_z_n": {
+      "label": "Newton final vertical tool force",
+      "unit": "N"
+    },
+    "final_cloth_rmse_mm": {
+      "label": "Final cloth position RMSE",
+      "unit": "mm"
+    },
+    "final_cable_rmse_mm": {
+      "label": "Final cable position RMSE",
+      "unit": "mm"
+    },
+    "coupled_impulse_activity_n_s": {
+      "label": "Sum of predicted interface impulse magnitudes",
+      "unit": "N s"
+    },
+    "cable_reaction_estimate_rmse_n_s": {
+      "label": "Cable reaction estimate RMSE",
+      "unit": "N s"
+    },
+    "median_step_ms": {
+      "label": "Median step time",
+      "unit": "ms"
+    },
+    "mean_step_ms": {
+      "label": "Mean step time",
+      "unit": "ms"
+    },
+    "active_particle_intervals": {
+      "label": "Active particle intervals",
+      "unit": ""
+    }
+  }
+}
