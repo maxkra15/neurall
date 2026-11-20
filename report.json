@@ -1,26 +1,95 @@
 {
   "schema": 1,
-  "updated": "2026-11-20",
-  "headline": "The archive contains two measured sand replays. Shared-model, cloth, cable and two-way runs will appear as they are evaluated.",
+  "updated": "2026-11-20T11:25:41Z",
+  "headline": "The first benchmark spans sand, cloth, cable and native cloth–cable contact. Shared-model rollouts will appear here after evaluation.",
   "runs": [
+    {
+      "id": "newton-benchmark-v1",
+      "title": "Newton benchmark v1",
+      "date": "2026-11-20",
+      "status": "Teacher validated",
+      "modalities": [
+        "sand",
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Native reference generation and a matched cloth–cable contact ablation",
+      "summary": "The benchmark contains independent cloth, cable and coupled test trajectories and pinned public Newton MPM sand replays. A native falling cable loads the cloth. With cross-material contact disabled, the cable falls through and the cloth has a different final shape.",
+      "metrics": [
+        {
+          "label": "Benchmark episodes",
+          "value": 44,
+          "detail": "32 train and 12 evaluation, including three reused public sand diagnostics"
+        },
+        {
+          "label": "Cloth shape response",
+          "value": 8.91,
+          "unit": "mm",
+          "detail": "Final native position RMS difference with cross-material contact disabled, seed 9000"
+        },
+        {
+          "label": "Native support estimate",
+          "value": 12.114,
+          "unit": "N",
+          "detail": "Late cable reaction inferred from linear momentum, against 12.101 N weight"
+        }
+      ],
+      "media": [],
+      "sources": [
+        {
+          "label": "Pinned Newton source",
+          "url": "https://github.com/newton-physics/newton/tree/0ced8f8420d4ee1eab9ecfaee59e1354ef670348"
+        },
+        {
+          "label": "Public Newton MPM recordings",
+          "url": "https://huggingface.co/datasets/jnskkmhr/MPM_benchmark_dataset/tree/8942da594d773152ed998536abc8cade7947bb08"
+        }
+      ]
+    },
     {
       "id": "sphere-support",
       "title": "Sphere support",
       "date": "2026-11-20",
       "status": "Historical result",
-      "modalities": ["sand"],
+      "modalities": [
+        "sand"
+      ],
       "scope": "Held-out sphere · recorded rigid motion · 20,646 particles · six seconds",
       "summary": "The small local network reproduces active particle motion slightly better than damped contact. It predicts a deeper depression and sustained bed drift.",
       "metrics": [
-        { "label": "Damped contact", "value": 0.94, "unit": "mm", "detail": "Near-tool height MAE" },
-        { "label": "Small local network", "value": 27.37, "unit": "mm", "detail": "Near-tool height MAE" },
-        { "label": "Small local step", "value": 6.71, "unit": "ms", "detail": "GPU median, one environment" }
+        {
+          "label": "Damped contact",
+          "value": 0.94,
+          "unit": "mm",
+          "detail": "Near-tool height MAE"
+        },
+        {
+          "label": "Small local network",
+          "value": 27.37,
+          "unit": "mm",
+          "detail": "Near-tool height MAE"
+        },
+        {
+          "label": "Small local step",
+          "value": 6.71,
+          "unit": "ms",
+          "detail": "GPU median, one environment"
+        }
       ],
       "media": [
-        { "src": "media/sphere-rollout.mp4", "type": "video", "label": "Newton, damped contact, directional Transolver and small local network. All panels replay the same sphere track.", "poster": "media/sphere-poster.webp" }
+        {
+          "src": "media/sphere-rollout.mp4",
+          "type": "video",
+          "label": "Newton, damped contact, directional Transolver and small local network. All panels replay the same sphere track.",
+          "poster": "media/sphere-poster.webp"
+        }
       ],
       "sources": [
-        { "label": "Pinned sphere trajectory", "url": "https://huggingface.co/datasets/jnskkmhr/MPM_benchmark_dataset/blob/8942da594d773152ed998536abc8cade7947bb08/flat/rest/0001.hdf5" }
+        {
+          "label": "Pinned sphere trajectory",
+          "url": "https://huggingface.co/datasets/jnskkmhr/MPM_benchmark_dataset/blob/8942da594d773152ed998536abc8cade7947bb08/flat/rest/0001.hdf5"
+        }
       ]
     },
     {
@@ -28,33 +97,82 @@
       "title": "Spinning cylinder drop",
       "date": "2026-11-20",
       "status": "Historical result",
-      "modalities": ["sand"],
+      "modalities": [
+        "sand"
+      ],
       "scope": "Held-out impact · recorded rigid motion · 20,646 particles · six seconds",
       "summary": "Local directional features improve active motion slightly while both learned variants predict much wider and deeper excavation than Newton.",
       "metrics": [
-        { "label": "Damped contact", "value": 1.30, "unit": "mm", "detail": "Near-tool height MAE" },
-        { "label": "Directional Transolver", "value": 20.91, "unit": "mm", "detail": "Near-tool height MAE" },
-        { "label": "Directional Transolver", "value": 73.36, "unit": "mm/s", "detail": "Active velocity RMSE" }
+        {
+          "label": "Damped contact",
+          "value": 1.3,
+          "unit": "mm",
+          "detail": "Near-tool height MAE"
+        },
+        {
+          "label": "Directional Transolver",
+          "value": 20.91,
+          "unit": "mm",
+          "detail": "Near-tool height MAE"
+        },
+        {
+          "label": "Directional Transolver",
+          "value": 73.36,
+          "unit": "mm/s",
+          "detail": "Active velocity RMSE"
+        }
       ],
       "media": [
-        { "src": "media/cylinder-rollout.mp4", "type": "video", "label": "Newton, damped contact, lattice Transolver and directional Transolver on the same cylinder replay.", "poster": "media/cylinder-poster.webp" }
+        {
+          "src": "media/cylinder-rollout.mp4",
+          "type": "video",
+          "label": "Newton, damped contact, lattice Transolver and directional Transolver on the same cylinder replay.",
+          "poster": "media/cylinder-poster.webp"
+        }
       ],
       "sources": [
-        { "label": "Pinned cylinder trajectory", "url": "https://huggingface.co/datasets/jnskkmhr/MPM_benchmark_dataset/blob/8942da594d773152ed998536abc8cade7947bb08/flat/impact/0002.hdf5" }
+        {
+          "label": "Pinned cylinder trajectory",
+          "url": "https://huggingface.co/datasets/jnskkmhr/MPM_benchmark_dataset/blob/8942da594d773152ed998536abc8cade7947bb08/flat/impact/0002.hdf5"
+        }
       ]
     }
   ],
   "comparisons": [
+    {
+      "id": "public-cable-graph",
+      "label": "Public learned cable baseline",
+      "track": "MuJoCo falling-cable experiments",
+      "scope": "Public trajectories and checkpoint references are available for the cable simulator. A common Newton test is needed before comparing accuracy.",
+      "values": [],
+      "source": {
+        "label": "Paper and evaluation protocol",
+        "url": "https://arxiv.org/abs/2610.11975"
+      }
+    },
     {
       "id": "particle-nerd",
       "label": "Particle NeRD Local",
       "track": "Published closed-loop results",
       "scope": "A 200 Hz material and rigid-body rollout on the author's scenes. The surface mesh distance and final body depth describe separate cases.",
       "values": [
-        { "label": "Box push", "value": 8.35, "unit": "mm", "detail": "Mean surface distance" },
-        { "label": "Box free drop", "value": 157, "unit": "mm", "detail": "Final object center lower than MPM" }
+        {
+          "label": "Box push",
+          "value": 8.35,
+          "unit": "mm",
+          "detail": "Mean surface distance"
+        },
+        {
+          "label": "Box free drop",
+          "value": 157,
+          "unit": "mm",
+          "detail": "Final object center lower than MPM"
+        }
       ],
-      "source": { "label": "Published protocol and videos", "url": "https://jnskkmhr.github.io/Particle_NeRD_benchmark/nerd_model_20261115/" }
+      "source": {
+        "label": "Published protocol and videos",
+        "url": "https://jnskkmhr.github.io/Particle_NeRD_benchmark/nerd_model_20261115/"
+      }
     },
     {
       "id": "cable-nerd",
