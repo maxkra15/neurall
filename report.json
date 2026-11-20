@@ -1,8 +1,55 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T11:25:41Z",
-  "headline": "The first benchmark spans sand, cloth, cable and native cloth–cable contact. Shared-model rollouts will appear here after evaluation.",
+  "updated": "2026-11-20T11:33:51Z",
+  "headline": "Triangle contact catches the cable in all three held-out scenes. This tests the analytical contact solver.",
   "runs": [
+    {
+      "id": "contact-geometry",
+      "title": "Triangle contact and elastic controls",
+      "date": "2026-11-20",
+      "status": "Measured analytical controls",
+      "modalities": [
+        "cloth",
+        "cable",
+        "coupled"
+      ],
+      "scope": "Three held-out Newton scenes per task, 1.8 s rollouts",
+      "summary": "With matched 2.5 ms substeps, point contact lets the cable fall through. Triangle contact supports the cable in all three scenes. Its lowest cable point still falls 16–21 cm below Newton. Separate uncoupled XPBD controls test cloth membrane and hinge constraints and cable stretch and bend constraints.",
+      "metrics": [
+        {
+          "label": "Mixed position RMSE",
+          "value": 50.13,
+          "unit": "mm",
+          "detail": "Triangle contact, mean over three trajectories"
+        },
+        {
+          "label": "Cloth position RMSE",
+          "value": 27.62,
+          "unit": "mm",
+          "detail": "Uncoupled XPBD over three trajectories"
+        },
+        {
+          "label": "Cable position RMSE",
+          "value": 53.33,
+          "unit": "mm",
+          "detail": "Uncoupled XPBD over three trajectories"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/contact-substeps.mp4",
+          "poster": "media/contact-substeps.webp",
+          "type": "video",
+          "label": "Newton and analytical point and triangle contact at the same 2.5 ms step size."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Per-case metrics and CPU timings",
+          "url": "evidence/contact-and-elastic-controls.json"
+        }
+      ]
+    },
     {
       "id": "newton-benchmark-v1",
       "title": "Newton benchmark v1",
@@ -139,6 +186,30 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "contact-geometry-substeps",
+      "label": "Point and triangle contact",
+      "track": "Matched analytical controls · 3 cases",
+      "scope": "Both actors use eight 2.5 ms substeps with the same gravity and structural projection. No learned correction is applied.",
+      "values": [
+        {
+          "label": "Point contact",
+          "value": 1216.16,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        },
+        {
+          "label": "Triangle contact",
+          "value": 50.13,
+          "unit": "mm",
+          "detail": "Mean position RMSE"
+        }
+      ],
+      "source": {
+        "label": "Per-case metrics and CPU timings",
+        "url": "evidence/contact-and-elastic-controls.json"
+      }
+    },
     {
       "id": "public-cable-graph",
       "label": "Public learned cable baseline",
