@@ -1,8 +1,78 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T11:53:32Z",
-  "headline": "The frozen OSMO checkpoint exchanges impulses in all four fresh cloth–cable scenes.",
+  "updated": "2026-11-20T12:13:27Z",
+  "headline": "On the 1.8 s pinned benchmark, the prescribed-load models average 0.96% cloth and 1.00% cable position error.",
   "runs": [
+    {
+      "id": "elastic-accuracy-speed-v3",
+      "title": "Cloth and cable accuracy and speed",
+      "date": "2026-11-20",
+      "status": "Measured fresh rollouts",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Twelve fresh cloth and twelve fresh cable scenes. Each runs 1.8 s at 20 ms intervals from the clamped rest shape under a prescribed load schedule. Position error is the mean of frame-wise all-node RMSE divided by each object's rest length. Newton targets use four substeps and eight VBD iterations.",
+      "summary": "The cloth and cable operators are evaluated from their initial state and the prescribed schedule. The frozen operators average 0.96% and 1.00% position error. The worst case averages 1.84% and 3.05%, respectively. The shared current-load model averages 1.79% and 1.88%. Extending its original 1.8 s fit to 6 s exposes drift. Reference refinement changes the original cable trajectory by over 20% in the paired convergence check.",
+      "metrics": [
+        {
+          "label": "Cloth mean position error",
+          "value": 0.964,
+          "unit": "%",
+          "detail": "6 of 12 cases at or below 1%"
+        },
+        {
+          "label": "Cable mean position error",
+          "value": 1.0,
+          "unit": "%",
+          "detail": "9 of 12 cases at or below 1%"
+        },
+        {
+          "label": "Projected cloth CPU speedup",
+          "value": 59.6,
+          "unit": "×",
+          "detail": "Paired warm steps against stock Newton CPU, setup excluded"
+        },
+        {
+          "label": "Cable CPU step time",
+          "value": 23.2,
+          "unit": "µs",
+          "detail": "Centerline reconstruction after the prescribed-load plan is prepared"
+        }
+      ],
+      "media": [
+        {
+          "src": "media/elastic-cloth-median.mp4",
+          "poster": "media/elastic-cloth-median.webp",
+          "type": "video",
+          "label": "cloth-40006. Median case for the prescribed-load response, selected by mean normalized error."
+        },
+        {
+          "src": "media/elastic-cloth-hardest.mp4",
+          "poster": "media/elastic-cloth-hardest.webp",
+          "type": "video",
+          "label": "cloth-40001. Hardest case for the prescribed-load response, selected by mean normalized error."
+        },
+        {
+          "src": "media/elastic-cable-median.mp4",
+          "poster": "media/elastic-cable-median.webp",
+          "type": "video",
+          "label": "cable-40010. Median case for the prescribed-load response, selected by mean normalized error."
+        },
+        {
+          "src": "media/elastic-cable-hardest.mp4",
+          "poster": "media/elastic-cable-hardest.webp",
+          "type": "video",
+          "label": "cable-40011. Hardest case for the prescribed-load response, selected by mean normalized error."
+        }
+      ],
+      "sources": [
+        {
+          "label": "All fresh case scores, timing and reference checks",
+          "url": "evidence/elastic-accuracy-speed-v3.json"
+        }
+      ]
+    },
     {
       "id": "fresh-conservative-l40",
       "title": "OSMO checkpoint on four fresh cloth–cable scenes",
@@ -767,6 +837,50 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-accuracy-cable-v3",
+      "label": "Cable position error",
+      "track": "Fresh matched rollouts · 12 cases",
+      "scope": "The prescribed response receives the full load schedule. The recurrent model receives the current load at each step.",
+      "values": [
+        {
+          "label": "Prescribed-load response",
+          "value": 1.0,
+          "unit": "%"
+        },
+        {
+          "label": "Current-load recurrent model",
+          "value": 1.882,
+          "unit": "%"
+        }
+      ],
+      "source": {
+        "label": "All fresh case scores, timing and reference checks",
+        "url": "evidence/elastic-accuracy-speed-v3.json"
+      }
+    },
+    {
+      "id": "elastic-accuracy-cloth-v3",
+      "label": "Cloth position error",
+      "track": "Fresh matched rollouts · 12 cases",
+      "scope": "The prescribed response receives the full load schedule. The recurrent model receives the current load at each step.",
+      "values": [
+        {
+          "label": "Prescribed-load response",
+          "value": 0.964,
+          "unit": "%"
+        },
+        {
+          "label": "Current-load recurrent model",
+          "value": 1.789,
+          "unit": "%"
+        }
+      ],
+      "source": {
+        "label": "All fresh case scores, timing and reference checks",
+        "url": "evidence/elastic-accuracy-speed-v3.json"
+      }
+    },
     {
       "id": "fresh-conservative-l40-mixed",
       "label": "Cloth and cable contact",
