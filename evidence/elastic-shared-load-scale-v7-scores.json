@@ -1,0 +1,5545 @@
+{
+  "protocol": {
+    "training_trajectories": {
+      "baseline": 4096,
+      "large": 104096
+    },
+    "updates": {
+      "baseline": 24500,
+      "large": 625000
+    },
+    "batch": {
+      "baseline": 32,
+      "large": 32
+    },
+    "development_cases": {
+      "baseline": 80,
+      "large": 272
+    },
+    "test_geometry_seeds_per_material": 32,
+    "test_pairs_per_material": 128,
+    "recording_interval_s": 0.02,
+    "duration_s": 6,
+    "added_load_levels_m_s2": [
+      3,
+      6
+    ],
+    "teacher": {
+      "newton_commit": "0ced8f8420d4ee1eab9ecfaee59e1354ef670348",
+      "warp_version": "1.19.0.dev20261020"
+    },
+    "capture_profiles": {
+      "reference": 10000,
+      "smooth-knots": 6666,
+      "smooth-bursts": 6668,
+      "broad-pulse": 10000,
+      "signed-bursts": 10000,
+      "redirected-bursts": 10000,
+      "continuous-multisine": 10000,
+      "rotating-multisine": 10000,
+      "irregular-knots": 10000,
+      "sloped-drive": 10000,
+      "fixed-multisine": 6666
+    },
+    "frozen_checkpoints": {
+      "baseline": {
+        "checkpoint_sha256": "416a82a2dbb0f6a01f9ad1d868e3778445df678f48dc9d0811f008669f0a3da2",
+        "initial_checkpoint_sha256": "10687bb59ea9f5bfd5b54ce1b0a121ad0007e505a81c2e5111def9092c7f3029",
+        "manifest_sha256": "a5380fec3c595452b0b2b40dffc7e21545dc586e09d6c25ee34162e675583305",
+        "selected_step": 24200
+      },
+      "large": {
+        "checkpoint_sha256": "84c23339f7ec1aea651eb8ba1a0b274965246c0c5bb94955983e17e187c18d0b",
+        "initial_checkpoint_sha256": "10687bb59ea9f5bfd5b54ce1b0a121ad0007e505a81c2e5111def9092c7f3029",
+        "manifest_sha256": "b7a5f4f6bc5a35a66ca20b73e43da4dcf27dd67856b6c2db14e150d3fc0d8132",
+        "selected_step": 624000
+      }
+    }
+  },
+  "summary": [
+    {
+      "family": "cloth",
+      "cases": 128,
+      "geometry_seeds": 32,
+      "actors": {
+        "baseline": {
+          "pooled_response_pct": 84.62142845577905,
+          "equal_case_response_pct": 85.71057243696487,
+          "mean_rollout_rmse_pct_length": 3.2467756355181336,
+          "beats_ignore_load": 108
+        },
+        "large": {
+          "pooled_response_pct": 48.78126584866364,
+          "equal_case_response_pct": 56.558045515414946,
+          "mean_rollout_rmse_pct_length": 2.339361315127462,
+          "beats_ignore_load": 123
+        }
+      },
+      "pooled_large_minus_baseline_geometry_bootstrap_95_pct_points": [
+        -40.591078019644364,
+        -30.069613895394962
+      ],
+      "waveforms": {
+        "triangle-load": {
+          "baseline": {
+            "pooled_response_pct": 84.80028586321107,
+            "equal_case_response_pct": 85.18293973900516,
+            "mean_rollout_rmse_pct_length": 3.4463165141642094,
+            "beats_ignore_load": 55
+          },
+          "large": {
+            "pooled_response_pct": 43.99182377219423,
+            "equal_case_response_pct": 51.52368193224357,
+            "mean_rollout_rmse_pct_length": 2.312623838894069,
+            "beats_ignore_load": 62
+          }
+        },
+        "descending-chirp": {
+          "baseline": {
+            "pooled_response_pct": 84.29655362804625,
+            "equal_case_response_pct": 86.23820513492458,
+            "mean_rollout_rmse_pct_length": 3.047234756872058,
+            "beats_ignore_load": 53
+          },
+          "large": {
+            "pooled_response_pct": 56.42952514681223,
+            "equal_case_response_pct": 61.59240909858632,
+            "mean_rollout_rmse_pct_length": 2.366098791360855,
+            "beats_ignore_load": 61
+          }
+        }
+      }
+    },
+    {
+      "family": "cable",
+      "cases": 128,
+      "geometry_seeds": 32,
+      "actors": {
+        "baseline": {
+          "pooled_response_pct": 93.49415743905115,
+          "equal_case_response_pct": 156.65116616068883,
+          "mean_rollout_rmse_pct_length": 1.5318085537292063,
+          "beats_ignore_load": 60
+        },
+        "large": {
+          "pooled_response_pct": 37.54479099503034,
+          "equal_case_response_pct": 69.81311533329597,
+          "mean_rollout_rmse_pct_length": 0.5766872188542038,
+          "beats_ignore_load": 96
+        }
+      },
+      "pooled_large_minus_baseline_geometry_bootstrap_95_pct_points": [
+        -61.58487053384815,
+        -51.42203586999626
+      ],
+      "waveforms": {
+        "triangle-load": {
+          "baseline": {
+            "pooled_response_pct": 84.80721199235413,
+            "equal_case_response_pct": 132.0560605926354,
+            "mean_rollout_rmse_pct_length": 1.4505801619961858,
+            "beats_ignore_load": 32
+          },
+          "large": {
+            "pooled_response_pct": 36.347830277447756,
+            "equal_case_response_pct": 71.90564660691747,
+            "mean_rollout_rmse_pct_length": 0.5638729678466916,
+            "beats_ignore_load": 46
+          }
+        },
+        "descending-chirp": {
+          "baseline": {
+            "pooled_response_pct": 101.75696881396696,
+            "equal_case_response_pct": 181.2462717287423,
+            "mean_rollout_rmse_pct_length": 1.6130369454622269,
+            "beats_ignore_load": 28
+          },
+          "large": {
+            "pooled_response_pct": 38.75225135293266,
+            "equal_case_response_pct": 67.72058405967445,
+            "mean_rollout_rmse_pct_length": 0.589501469861716,
+            "beats_ignore_load": 50
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "identity": "cable-1200100-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200100,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.32088165463352863,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6484237044481495,
+          "relative_response_rmse_pct": 202.07565471098647,
+          "mean_rollout_rmse_pct_length": 1.041240930557251
+        },
+        "large": {
+          "response_rmse_pct_length": 0.22956217455021943,
+          "relative_response_rmse_pct": 71.5410716802732,
+          "mean_rollout_rmse_pct_length": 0.3498992323875427
+        }
+      }
+    },
+    {
+      "identity": "cable-1200100-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200100,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.6417461335967595,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2717822515227324,
+          "relative_response_rmse_pct": 198.1752884734722,
+          "mean_rollout_rmse_pct_length": 1.247835397720337
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5064654917301128,
+          "relative_response_rmse_pct": 78.9199132204433,
+          "mean_rollout_rmse_pct_length": 0.4663202464580536
+        }
+      }
+    },
+    {
+      "identity": "cable-1200100-triangle-load-3",
+      "family": "cable",
+      "seed": 1200100,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.33257035172800126,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.48910013600458707,
+          "relative_response_rmse_pct": 147.06666828936287,
+          "mean_rollout_rmse_pct_length": 0.9212520122528076
+        },
+        "large": {
+          "response_rmse_pct_length": 0.31255496319885623,
+          "relative_response_rmse_pct": 93.98160767333974,
+          "mean_rollout_rmse_pct_length": 0.33575892448425293
+        }
+      }
+    },
+    {
+      "identity": "cable-1200100-triangle-load-6",
+      "family": "cable",
+      "seed": 1200100,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.6650762420346825,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9519871016547589,
+          "relative_response_rmse_pct": 143.13954423365414,
+          "mean_rollout_rmse_pct_length": 1.047580361366272
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6449893232709637,
+          "relative_response_rmse_pct": 96.97975698210682,
+          "mean_rollout_rmse_pct_length": 0.4350340962409973
+        }
+      }
+    },
+    {
+      "identity": "cable-1200101-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200101,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.16618999946684634,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7779644403403846,
+          "relative_response_rmse_pct": 468.11748169936226,
+          "mean_rollout_rmse_pct_length": 1.3994262218475342
+        },
+        "large": {
+          "response_rmse_pct_length": 0.1904074986673876,
+          "relative_response_rmse_pct": 114.5721759902722,
+          "mean_rollout_rmse_pct_length": 0.6750733852386475
+        }
+      }
+    },
+    {
+      "identity": "cable-1200101-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200101,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3323559975366794,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.570388835546683,
+          "relative_response_rmse_pct": 472.50203010805376,
+          "mean_rollout_rmse_pct_length": 1.6475062370300293
+        },
+        "large": {
+          "response_rmse_pct_length": 0.37795517251965355,
+          "relative_response_rmse_pct": 113.71997957640039,
+          "mean_rollout_rmse_pct_length": 0.7228032350540161
+        }
+      }
+    },
+    {
+      "identity": "cable-1200101-triangle-load-3",
+      "family": "cable",
+      "seed": 1200101,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.1579108307193368,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4734192439756366,
+          "relative_response_rmse_pct": 299.8016297039622,
+          "mean_rollout_rmse_pct_length": 1.3856362104415894
+        },
+        "large": {
+          "response_rmse_pct_length": 0.25078661643908934,
+          "relative_response_rmse_pct": 158.81533603279283,
+          "mean_rollout_rmse_pct_length": 0.6877142190933228
+        }
+      }
+    },
+    {
+      "identity": "cable-1200101-triangle-load-6",
+      "family": "cable",
+      "seed": 1200101,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.31577017205628893,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.905336919324047,
+          "relative_response_rmse_pct": 286.7075485402916,
+          "mean_rollout_rmse_pct_length": 1.505124807357788
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5388848001018368,
+          "relative_response_rmse_pct": 170.6572842496902,
+          "mean_rollout_rmse_pct_length": 0.7658114433288574
+        }
+      }
+    },
+    {
+      "identity": "cable-1200102-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200102,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.303960578809094,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6966366378177752,
+          "relative_response_rmse_pct": 229.18650850948205,
+          "mean_rollout_rmse_pct_length": 1.1370460987091064
+        },
+        "large": {
+          "response_rmse_pct_length": 0.20314721912285474,
+          "relative_response_rmse_pct": 66.83340975292843,
+          "mean_rollout_rmse_pct_length": 0.5697370171546936
+        }
+      }
+    },
+    {
+      "identity": "cable-1200102-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200102,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.6077432508014161,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.4335621448780964,
+          "relative_response_rmse_pct": 235.882857273642,
+          "mean_rollout_rmse_pct_length": 1.4894102811813354
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4349108291110725,
+          "relative_response_rmse_pct": 71.5616057500542,
+          "mean_rollout_rmse_pct_length": 0.6541165709495544
+        }
+      }
+    },
+    {
+      "identity": "cable-1200102-triangle-load-3",
+      "family": "cable",
+      "seed": 1200102,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3762055273756238,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.49330355587510527,
+          "relative_response_rmse_pct": 131.12607869330017,
+          "mean_rollout_rmse_pct_length": 0.966151237487793
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2620281777269595,
+          "relative_response_rmse_pct": 69.65027323092372,
+          "mean_rollout_rmse_pct_length": 0.6172811985015869
+        }
+      }
+    },
+    {
+      "identity": "cable-1200102-triangle-load-6",
+      "family": "cable",
+      "seed": 1200102,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7522891076601771,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9738305674014217,
+          "relative_response_rmse_pct": 129.44897878826114,
+          "mean_rollout_rmse_pct_length": 1.1410183906555176
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5515397521555365,
+          "relative_response_rmse_pct": 73.31486612520213,
+          "mean_rollout_rmse_pct_length": 0.7239848971366882
+        }
+      }
+    },
+    {
+      "identity": "cable-1200103-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200103,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.13632511990054239,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5853133480217143,
+          "relative_response_rmse_pct": 429.3510605006154,
+          "mean_rollout_rmse_pct_length": 1.4617418050765991
+        },
+        "large": {
+          "response_rmse_pct_length": 0.24438097254484475,
+          "relative_response_rmse_pct": 179.26334686016475,
+          "mean_rollout_rmse_pct_length": 0.674392580986023
+        }
+      }
+    },
+    {
+      "identity": "cable-1200103-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200103,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.27264303498893366,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.1676002089111568,
+          "relative_response_rmse_pct": 428.2523516357382,
+          "mean_rollout_rmse_pct_length": 1.6118144989013672
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4721485210659831,
+          "relative_response_rmse_pct": 173.1746131292689,
+          "mean_rollout_rmse_pct_length": 0.7264530062675476
+        }
+      }
+    },
+    {
+      "identity": "cable-1200103-triangle-load-3",
+      "family": "cable",
+      "seed": 1200103,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.2528637992293625,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4982061048185349,
+          "relative_response_rmse_pct": 197.02547629865848,
+          "mean_rollout_rmse_pct_length": 1.441044807434082
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3076203625949562,
+          "relative_response_rmse_pct": 121.65456800557136,
+          "mean_rollout_rmse_pct_length": 0.707215428352356
+        }
+      }
+    },
+    {
+      "identity": "cable-1200103-triangle-load-6",
+      "family": "cable",
+      "seed": 1200103,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.5056804221742079,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.0535124725481213,
+          "relative_response_rmse_pct": 208.33562589163952,
+          "mean_rollout_rmse_pct_length": 1.6413178443908691
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6605242468760948,
+          "relative_response_rmse_pct": 130.62088582273466,
+          "mean_rollout_rmse_pct_length": 0.8382981419563293
+        }
+      }
+    },
+    {
+      "identity": "cable-1200104-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200104,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.18423640835316524,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6611683511550809,
+          "relative_response_rmse_pct": 358.8695399921597,
+          "mean_rollout_rmse_pct_length": 1.0316871404647827
+        },
+        "large": {
+          "response_rmse_pct_length": 0.38891974455616607,
+          "relative_response_rmse_pct": 211.0982015078369,
+          "mean_rollout_rmse_pct_length": 0.426792174577713
+        }
+      }
+    },
+    {
+      "identity": "cable-1200104-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200104,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.36841549598937356,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.269602651326798,
+          "relative_response_rmse_pct": 344.6116314725855,
+          "mean_rollout_rmse_pct_length": 1.228193998336792
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7348075508956674,
+          "relative_response_rmse_pct": 199.4507719938202,
+          "mean_rollout_rmse_pct_length": 0.5581966042518616
+        }
+      }
+    },
+    {
+      "identity": "cable-1200104-triangle-load-3",
+      "family": "cable",
+      "seed": 1200104,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.11477277407790545,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.39604914197550734,
+          "relative_response_rmse_pct": 345.07237901793434,
+          "mean_rollout_rmse_pct_length": 0.9639155864715576
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2617191225286377,
+          "relative_response_rmse_pct": 228.03240980390353,
+          "mean_rollout_rmse_pct_length": 0.4118957221508026
+        }
+      }
+    },
+    {
+      "identity": "cable-1200104-triangle-load-6",
+      "family": "cable",
+      "seed": 1200104,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.22947937463723675,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.834187599175837,
+          "relative_response_rmse_pct": 363.5131046066902,
+          "mean_rollout_rmse_pct_length": 1.0971709489822388
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5171505095798208,
+          "relative_response_rmse_pct": 225.35816580350078,
+          "mean_rollout_rmse_pct_length": 0.48838672041893005
+        }
+      }
+    },
+    {
+      "identity": "cable-1200105-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200105,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.2007375511590986,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6363447285575311,
+          "relative_response_rmse_pct": 317.0033333988334,
+          "mean_rollout_rmse_pct_length": 1.235280990600586
+        },
+        "large": {
+          "response_rmse_pct_length": 0.23977938197588475,
+          "relative_response_rmse_pct": 119.44919153957534,
+          "mean_rollout_rmse_pct_length": 0.5455555319786072
+        }
+      }
+    },
+    {
+      "identity": "cable-1200105-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200105,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.40155622755290615,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3041509889489025,
+          "relative_response_rmse_pct": 324.7741908764388,
+          "mean_rollout_rmse_pct_length": 1.5169328451156616
+        },
+        "large": {
+          "response_rmse_pct_length": 0.44598034398448266,
+          "relative_response_rmse_pct": 111.0629877918463,
+          "mean_rollout_rmse_pct_length": 0.6032300591468811
+        }
+      }
+    },
+    {
+      "identity": "cable-1200105-triangle-load-3",
+      "family": "cable",
+      "seed": 1200105,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.14855234980178525,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.2902354802536166,
+          "relative_response_rmse_pct": 195.37589317225914,
+          "mean_rollout_rmse_pct_length": 1.1290335655212402
+        },
+        "large": {
+          "response_rmse_pct_length": 0.20169704400249153,
+          "relative_response_rmse_pct": 135.77506129766223,
+          "mean_rollout_rmse_pct_length": 0.5303588509559631
+        }
+      }
+    },
+    {
+      "identity": "cable-1200105-triangle-load-6",
+      "family": "cable",
+      "seed": 1200105,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.297055522585898,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5758662232228544,
+          "relative_response_rmse_pct": 193.85811050065033,
+          "mean_rollout_rmse_pct_length": 1.1859139204025269
+        },
+        "large": {
+          "response_rmse_pct_length": 0.45881984944613863,
+          "relative_response_rmse_pct": 154.45592307191126,
+          "mean_rollout_rmse_pct_length": 0.58359694480896
+        }
+      }
+    },
+    {
+      "identity": "cable-1200106-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200106,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3598440898118675,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6236914574209591,
+          "relative_response_rmse_pct": 173.32269032042055,
+          "mean_rollout_rmse_pct_length": 0.8130810260772705
+        },
+        "large": {
+          "response_rmse_pct_length": 0.26920653825998747,
+          "relative_response_rmse_pct": 74.81199382786394,
+          "mean_rollout_rmse_pct_length": 0.44621899724006653
+        }
+      }
+    },
+    {
+      "identity": "cable-1200106-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200106,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7195418578429799,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2034492614030026,
+          "relative_response_rmse_pct": 167.25215472671255,
+          "mean_rollout_rmse_pct_length": 1.066123366355896
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5441679925419841,
+          "relative_response_rmse_pct": 75.62700996621294,
+          "mean_rollout_rmse_pct_length": 0.5233789682388306
+        }
+      }
+    },
+    {
+      "identity": "cable-1200106-triangle-load-3",
+      "family": "cable",
+      "seed": 1200106,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.2588145987777925,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.289387734757258,
+          "relative_response_rmse_pct": 111.81275558791579,
+          "mean_rollout_rmse_pct_length": 0.724669337272644
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2057846401468414,
+          "relative_response_rmse_pct": 79.51044536074241,
+          "mean_rollout_rmse_pct_length": 0.3946742117404938
+        }
+      }
+    },
+    {
+      "identity": "cable-1200106-triangle-load-6",
+      "family": "cable",
+      "seed": 1200106,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.5174001971145404,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6196325219313882,
+          "relative_response_rmse_pct": 119.75884922096695,
+          "mean_rollout_rmse_pct_length": 0.8315467238426208
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4077861659162641,
+          "relative_response_rmse_pct": 78.81445894114911,
+          "mean_rollout_rmse_pct_length": 0.4405710697174072
+        }
+      }
+    },
+    {
+      "identity": "cable-1200107-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200107,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.2206520641933557,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6739691619415906,
+          "relative_response_rmse_pct": 305.44430409270797,
+          "mean_rollout_rmse_pct_length": 1.0518962144851685
+        },
+        "large": {
+          "response_rmse_pct_length": 0.21623241325835538,
+          "relative_response_rmse_pct": 97.99700449159295,
+          "mean_rollout_rmse_pct_length": 0.37774428725242615
+        }
+      }
+    },
+    {
+      "identity": "cable-1200107-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200107,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.4413026242123689,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3676823198882042,
+          "relative_response_rmse_pct": 309.91937161697734,
+          "mean_rollout_rmse_pct_length": 1.2716907262802124
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4342437156581204,
+          "relative_response_rmse_pct": 98.40043811956771,
+          "mean_rollout_rmse_pct_length": 0.45176610350608826
+        }
+      }
+    },
+    {
+      "identity": "cable-1200107-triangle-load-3",
+      "family": "cable",
+      "seed": 1200107,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.22332145661976885,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4511297161427318,
+          "relative_response_rmse_pct": 202.00912306909828,
+          "mean_rollout_rmse_pct_length": 0.9750614166259766
+        },
+        "large": {
+          "response_rmse_pct_length": 0.1987963465065741,
+          "relative_response_rmse_pct": 89.01802339801516,
+          "mean_rollout_rmse_pct_length": 0.3497639000415802
+        }
+      }
+    },
+    {
+      "identity": "cable-1200107-triangle-load-6",
+      "family": "cable",
+      "seed": 1200107,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.4466236928893932,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.898641895222705,
+          "relative_response_rmse_pct": 201.20784220134388,
+          "mean_rollout_rmse_pct_length": 1.1270673274993896
+        },
+        "large": {
+          "response_rmse_pct_length": 0.44910900492149225,
+          "relative_response_rmse_pct": 100.5564666791456,
+          "mean_rollout_rmse_pct_length": 0.4086645245552063
+        }
+      }
+    },
+    {
+      "identity": "cable-1200108-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200108,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.27019673733176397,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6340080282193126,
+          "relative_response_rmse_pct": 234.64681123844917,
+          "mean_rollout_rmse_pct_length": 0.8437260985374451
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2877496265634336,
+          "relative_response_rmse_pct": 106.49633648614977,
+          "mean_rollout_rmse_pct_length": 0.4664122462272644
+        }
+      }
+    },
+    {
+      "identity": "cable-1200108-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200108,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.5403185145019693,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.239213226565321,
+          "relative_response_rmse_pct": 229.3486514537722,
+          "mean_rollout_rmse_pct_length": 1.1271440982818604
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5896202482699671,
+          "relative_response_rmse_pct": 109.12456864696574,
+          "mean_rollout_rmse_pct_length": 0.5890240669250488
+        }
+      }
+    },
+    {
+      "identity": "cable-1200108-triangle-load-3",
+      "family": "cable",
+      "seed": 1200108,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.16189162554044267,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.423043867735906,
+          "relative_response_rmse_pct": 261.3130026483205,
+          "mean_rollout_rmse_pct_length": 0.7685289978981018
+        },
+        "large": {
+          "response_rmse_pct_length": 0.20508067419580878,
+          "relative_response_rmse_pct": 126.6777534113875,
+          "mean_rollout_rmse_pct_length": 0.4542657732963562
+        }
+      }
+    },
+    {
+      "identity": "cable-1200108-triangle-load-6",
+      "family": "cable",
+      "seed": 1200108,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.32369481048364684,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8945616628886904,
+          "relative_response_rmse_pct": 276.35959364071545,
+          "mean_rollout_rmse_pct_length": 0.9531505107879639
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4375583859578818,
+          "relative_response_rmse_pct": 135.176212835821,
+          "mean_rollout_rmse_pct_length": 0.5216315984725952
+        }
+      }
+    },
+    {
+      "identity": "cable-1200109-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200109,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2434147969197031,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.0733591409885106,
+          "relative_response_rmse_pct": 86.32349748833056,
+          "mean_rollout_rmse_pct_length": 1.5559746026992798
+        },
+        "large": {
+          "response_rmse_pct_length": 0.318553333678272,
+          "relative_response_rmse_pct": 25.61923297578736,
+          "mean_rollout_rmse_pct_length": 0.4802486002445221
+        }
+      }
+    },
+    {
+      "identity": "cable-1200109-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200109,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4833828083956635,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.1632613849967144,
+          "relative_response_rmse_pct": 87.1094612430793,
+          "mean_rollout_rmse_pct_length": 1.9268697500228882
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6630671848798569,
+          "relative_response_rmse_pct": 26.70016006546399,
+          "mean_rollout_rmse_pct_length": 0.657595694065094
+        }
+      }
+    },
+    {
+      "identity": "cable-1200109-triangle-load-3",
+      "family": "cable",
+      "seed": 1200109,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.738866579882229,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.43428521875402365,
+          "relative_response_rmse_pct": 58.77721777905371,
+          "mean_rollout_rmse_pct_length": 1.825413465499878
+        },
+        "large": {
+          "response_rmse_pct_length": 0.11921685629176555,
+          "relative_response_rmse_pct": 16.135099290966444,
+          "mean_rollout_rmse_pct_length": 0.4127838611602783
+        }
+      }
+    },
+    {
+      "identity": "cable-1200109-triangle-load-6",
+      "family": "cable",
+      "seed": 1200109,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.473214499240668,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8874942909038573,
+          "relative_response_rmse_pct": 60.24202798447167,
+          "mean_rollout_rmse_pct_length": 2.0072643756866455
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3305969601568982,
+          "relative_response_rmse_pct": 22.440517679353295,
+          "mean_rollout_rmse_pct_length": 0.5126712322235107
+        }
+      }
+    },
+    {
+      "identity": "cable-1200110-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200110,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4901269966750152,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3325493480094972,
+          "relative_response_rmse_pct": 89.42522019820272,
+          "mean_rollout_rmse_pct_length": 5.200674533843994
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5731433229893462,
+          "relative_response_rmse_pct": 38.4627165515574,
+          "mean_rollout_rmse_pct_length": 0.8404398560523987
+        }
+      }
+    },
+    {
+      "identity": "cable-1200110-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200110,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.951374406378435,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.641214255747726,
+          "relative_response_rmse_pct": 89.49099274018238,
+          "mean_rollout_rmse_pct_length": 5.722855091094971
+        },
+        "large": {
+          "response_rmse_pct_length": 1.380922398260316,
+          "relative_response_rmse_pct": 46.789129677207406,
+          "mean_rollout_rmse_pct_length": 1.2621554136276245
+        }
+      }
+    },
+    {
+      "identity": "cable-1200110-triangle-load-3",
+      "family": "cable",
+      "seed": 1200110,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.7974470106728717,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.4667953505487914,
+          "relative_response_rmse_pct": 81.60437230356509,
+          "mean_rollout_rmse_pct_length": 3.978184938430786
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2217675505730927,
+          "relative_response_rmse_pct": 12.33791868446093,
+          "mean_rollout_rmse_pct_length": 0.6080266833305359
+        }
+      }
+    },
+    {
+      "identity": "cable-1200110-triangle-load-6",
+      "family": "cable",
+      "seed": 1200110,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.5881807391610563,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.997252550018971,
+          "relative_response_rmse_pct": 83.53125909481781,
+          "mean_rollout_rmse_pct_length": 3.256190538406372
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5779425373921674,
+          "relative_response_rmse_pct": 16.10684019019886,
+          "mean_rollout_rmse_pct_length": 0.6632989048957825
+        }
+      }
+    },
+    {
+      "identity": "cable-1200111-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200111,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2605802816139327,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.063659336431772,
+          "relative_response_rmse_pct": 84.37854787558305,
+          "mean_rollout_rmse_pct_length": 1.3503631353378296
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4113978781862127,
+          "relative_response_rmse_pct": 32.635595224406984,
+          "mean_rollout_rmse_pct_length": 0.48547500371932983
+        }
+      }
+    },
+    {
+      "identity": "cable-1200111-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200111,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.517896239075413,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.1292455224506828,
+          "relative_response_rmse_pct": 84.56446653387728,
+          "mean_rollout_rmse_pct_length": 1.8691155910491943
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7879431092816429,
+          "relative_response_rmse_pct": 31.29370849574724,
+          "mean_rollout_rmse_pct_length": 0.6721702814102173
+        }
+      }
+    },
+    {
+      "identity": "cable-1200111-triangle-load-3",
+      "family": "cable",
+      "seed": 1200111,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3065924984924895,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9565043408271401,
+          "relative_response_rmse_pct": 73.20601809138874,
+          "mean_rollout_rmse_pct_length": 0.9876292943954468
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3853638674986018,
+          "relative_response_rmse_pct": 29.493806825251486,
+          "mean_rollout_rmse_pct_length": 0.46617886424064636
+        }
+      }
+    },
+    {
+      "identity": "cable-1200111-triangle-load-6",
+      "family": "cable",
+      "seed": 1200111,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.6089578499321475,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.9169936922768311,
+          "relative_response_rmse_pct": 73.4773730563216,
+          "mean_rollout_rmse_pct_length": 1.3738605976104736
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8391196175899045,
+          "relative_response_rmse_pct": 32.1630193301792,
+          "mean_rollout_rmse_pct_length": 0.6588160395622253
+        }
+      }
+    },
+    {
+      "identity": "cable-1200112-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200112,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.0546568326253138,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.970452550345841,
+          "relative_response_rmse_pct": 92.0159544152512,
+          "mean_rollout_rmse_pct_length": 1.7251567840576172
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3232638189952295,
+          "relative_response_rmse_pct": 30.651090382692747,
+          "mean_rollout_rmse_pct_length": 0.7381736040115356
+        }
+      }
+    },
+    {
+      "identity": "cable-1200112-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200112,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.108629569323786,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.93564610600335,
+          "relative_response_rmse_pct": 91.7964034158968,
+          "mean_rollout_rmse_pct_length": 2.1748135089874268
+        },
+        "large": {
+          "response_rmse_pct_length": 0.747923944553606,
+          "relative_response_rmse_pct": 35.469669753016746,
+          "mean_rollout_rmse_pct_length": 0.8746995329856873
+        }
+      }
+    },
+    {
+      "identity": "cable-1200112-triangle-load-3",
+      "family": "cable",
+      "seed": 1200112,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.000173421817431,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7567956061683405,
+          "relative_response_rmse_pct": 75.66643840556723,
+          "mean_rollout_rmse_pct_length": 1.1259928941726685
+        },
+        "large": {
+          "response_rmse_pct_length": 0.14831618116161327,
+          "relative_response_rmse_pct": 14.82904643597763,
+          "mean_rollout_rmse_pct_length": 0.6253909468650818
+        }
+      }
+    },
+    {
+      "identity": "cable-1200112-triangle-load-6",
+      "family": "cable",
+      "seed": 1200112,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.9981097382236732,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.534628290036204,
+          "relative_response_rmse_pct": 76.80400433864529,
+          "mean_rollout_rmse_pct_length": 1.1121139526367188
+        },
+        "large": {
+          "response_rmse_pct_length": 0.34486559704447556,
+          "relative_response_rmse_pct": 17.259592426142834,
+          "mean_rollout_rmse_pct_length": 0.5811474919319153
+        }
+      }
+    },
+    {
+      "identity": "cable-1200113-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200113,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2317469209910625,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.076080099065619,
+          "relative_response_rmse_pct": 87.36210992107094,
+          "mean_rollout_rmse_pct_length": 2.143515110015869
+        },
+        "large": {
+          "response_rmse_pct_length": 0.18414297221316508,
+          "relative_response_rmse_pct": 14.949740817294172,
+          "mean_rollout_rmse_pct_length": 0.4211951494216919
+        }
+      }
+    },
+    {
+      "identity": "cable-1200113-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200113,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4619489424101215,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.1510430450224423,
+          "relative_response_rmse_pct": 87.37155381121275,
+          "mean_rollout_rmse_pct_length": 2.6676156520843506
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4726986328890723,
+          "relative_response_rmse_pct": 19.20018018027314,
+          "mean_rollout_rmse_pct_length": 0.5522407293319702
+        }
+      }
+    },
+    {
+      "identity": "cable-1200113-triangle-load-3",
+      "family": "cable",
+      "seed": 1200113,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.0737658701158024,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7778472585150322,
+          "relative_response_rmse_pct": 72.4410488509142,
+          "mean_rollout_rmse_pct_length": 1.586082935333252
+        },
+        "large": {
+          "response_rmse_pct_length": 0.1181035786327276,
+          "relative_response_rmse_pct": 10.999006573005575,
+          "mean_rollout_rmse_pct_length": 0.38982516527175903
+        }
+      }
+    },
+    {
+      "identity": "cable-1200113-triangle-load-6",
+      "family": "cable",
+      "seed": 1200113,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.1485538441051526,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.5906078918425381,
+          "relative_response_rmse_pct": 74.03155830637364,
+          "mean_rollout_rmse_pct_length": 1.7140189409255981
+        },
+        "large": {
+          "response_rmse_pct_length": 0.275191818822815,
+          "relative_response_rmse_pct": 12.80823469134092,
+          "mean_rollout_rmse_pct_length": 0.428844153881073
+        }
+      }
+    },
+    {
+      "identity": "cable-1200114-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200114,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4042105483893004,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2771045375072818,
+          "relative_response_rmse_pct": 90.94822275563907,
+          "mean_rollout_rmse_pct_length": 1.6168646812438965
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7036570820427835,
+          "relative_response_rmse_pct": 50.11051105191549,
+          "mean_rollout_rmse_pct_length": 0.6497055888175964
+        }
+      }
+    },
+    {
+      "identity": "cable-1200114-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200114,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.8053809772393103,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.5308716211002547,
+          "relative_response_rmse_pct": 90.21489921097304,
+          "mean_rollout_rmse_pct_length": 2.1536481380462646
+        },
+        "large": {
+          "response_rmse_pct_length": 1.404157475811065,
+          "relative_response_rmse_pct": 50.05229190627981,
+          "mean_rollout_rmse_pct_length": 1.0098931789398193
+        }
+      }
+    },
+    {
+      "identity": "cable-1200114-triangle-load-3",
+      "family": "cable",
+      "seed": 1200114,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3276662227002294,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.0300965553591275,
+          "relative_response_rmse_pct": 77.58701228868355,
+          "mean_rollout_rmse_pct_length": 1.2859530448913574
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5842404407777303,
+          "relative_response_rmse_pct": 44.00506925524493,
+          "mean_rollout_rmse_pct_length": 0.6813393235206604
+        }
+      }
+    },
+    {
+      "identity": "cable-1200114-triangle-load-6",
+      "family": "cable",
+      "seed": 1200114,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.6468212944893654,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.0821010027943356,
+          "relative_response_rmse_pct": 78.66420778498468,
+          "mean_rollout_rmse_pct_length": 1.6976019144058228
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1655321388947324,
+          "relative_response_rmse_pct": 44.03516555202837,
+          "mean_rollout_rmse_pct_length": 0.9299490451812744
+        }
+      }
+    },
+    {
+      "identity": "cable-1200115-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200115,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.5557177007845315,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3679602479032404,
+          "relative_response_rmse_pct": 87.93113604180198,
+          "mean_rollout_rmse_pct_length": 1.1727352142333984
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4269225159190637,
+          "relative_response_rmse_pct": 27.44215841368722,
+          "mean_rollout_rmse_pct_length": 0.43660426139831543
+        }
+      }
+    },
+    {
+      "identity": "cable-1200115-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200115,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.1007441407306335,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.72692509554716,
+          "relative_response_rmse_pct": 87.94421505879586,
+          "mean_rollout_rmse_pct_length": 1.8846346139907837
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8633692915598806,
+          "relative_response_rmse_pct": 27.843938499112777,
+          "mean_rollout_rmse_pct_length": 0.6159094572067261
+        }
+      }
+    },
+    {
+      "identity": "cable-1200115-triangle-load-3",
+      "family": "cable",
+      "seed": 1200115,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.649422464221692,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2974173267279556,
+          "relative_response_rmse_pct": 78.65888545056067,
+          "mean_rollout_rmse_pct_length": 0.6732578873634338
+        },
+        "large": {
+          "response_rmse_pct_length": 0.466559846750918,
+          "relative_response_rmse_pct": 28.286255151197555,
+          "mean_rollout_rmse_pct_length": 0.5149776339530945
+        }
+      }
+    },
+    {
+      "identity": "cable-1200115-triangle-load-6",
+      "family": "cable",
+      "seed": 1200115,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.286860230779674,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.600792213315847,
+          "relative_response_rmse_pct": 79.12694884196262,
+          "mean_rollout_rmse_pct_length": 1.3930683135986328
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0647627422108097,
+          "relative_response_rmse_pct": 32.394524483879195,
+          "mean_rollout_rmse_pct_length": 0.7983417510986328
+        }
+      }
+    },
+    {
+      "identity": "cable-1200116-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200116,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.45094403444325615,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6582228994721174,
+          "relative_response_rmse_pct": 145.96554099773638,
+          "mean_rollout_rmse_pct_length": 0.9777648448944092
+        },
+        "large": {
+          "response_rmse_pct_length": 0.21125540538072318,
+          "relative_response_rmse_pct": 46.84736668964764,
+          "mean_rollout_rmse_pct_length": 0.389036625623703
+        }
+      }
+    },
+    {
+      "identity": "cable-1200116-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200116,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.9019118205368272,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.295293225121082,
+          "relative_response_rmse_pct": 143.61639304717286,
+          "mean_rollout_rmse_pct_length": 1.2475367784500122
+        },
+        "large": {
+          "response_rmse_pct_length": 0.511742810075632,
+          "relative_response_rmse_pct": 56.73978302790593,
+          "mean_rollout_rmse_pct_length": 0.48488849401474
+        }
+      }
+    },
+    {
+      "identity": "cable-1200116-triangle-load-3",
+      "family": "cable",
+      "seed": 1200116,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.42151655639956803,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4089956300910281,
+          "relative_response_rmse_pct": 97.02955290404513,
+          "mean_rollout_rmse_pct_length": 0.8358370661735535
+        },
+        "large": {
+          "response_rmse_pct_length": 0.24798449199216052,
+          "relative_response_rmse_pct": 58.83149504502231,
+          "mean_rollout_rmse_pct_length": 0.40809178352355957
+        }
+      }
+    },
+    {
+      "identity": "cable-1200116-triangle-load-6",
+      "family": "cable",
+      "seed": 1200116,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.8428399592881316,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8070022214873349,
+          "relative_response_rmse_pct": 95.74797831950619,
+          "mean_rollout_rmse_pct_length": 0.934451699256897
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5100171489354993,
+          "relative_response_rmse_pct": 60.511742865901056,
+          "mean_rollout_rmse_pct_length": 0.501011312007904
+        }
+      }
+    },
+    {
+      "identity": "cable-1200117-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200117,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.347138078595224,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.1212159689712815,
+          "relative_response_rmse_pct": 83.22947638303485,
+          "mean_rollout_rmse_pct_length": 1.329469084739685
+        },
+        "large": {
+          "response_rmse_pct_length": 0.27826794734690186,
+          "relative_response_rmse_pct": 20.65623055040324,
+          "mean_rollout_rmse_pct_length": 0.4148913025856018
+        }
+      }
+    },
+    {
+      "identity": "cable-1200117-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200117,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.6901967050027737,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.2419402554325494,
+          "relative_response_rmse_pct": 83.3374099099656,
+          "mean_rollout_rmse_pct_length": 1.7834659814834595
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5778358319995662,
+          "relative_response_rmse_pct": 21.47931528296814,
+          "mean_rollout_rmse_pct_length": 0.5599017143249512
+        }
+      }
+    },
+    {
+      "identity": "cable-1200117-triangle-load-3",
+      "family": "cable",
+      "seed": 1200117,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.8453376349828584,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.47937091805759396,
+          "relative_response_rmse_pct": 56.7076276057808,
+          "mean_rollout_rmse_pct_length": 1.5606625080108643
+        },
+        "large": {
+          "response_rmse_pct_length": 0.17713798342905338,
+          "relative_response_rmse_pct": 20.954702133029407,
+          "mean_rollout_rmse_pct_length": 0.38876625895500183
+        }
+      }
+    },
+    {
+      "identity": "cable-1200117-triangle-load-6",
+      "family": "cable",
+      "seed": 1200117,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.6843769976848515,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9807808839671528,
+          "relative_response_rmse_pct": 58.228109580884805,
+          "mean_rollout_rmse_pct_length": 1.7498112916946411
+        },
+        "large": {
+          "response_rmse_pct_length": 0.43721415521691387,
+          "relative_response_rmse_pct": 25.95702481201403,
+          "mean_rollout_rmse_pct_length": 0.4782484471797943
+        }
+      }
+    },
+    {
+      "identity": "cable-1200118-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200118,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.196164926174004,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6416068770988544,
+          "relative_response_rmse_pct": 327.07522675574046,
+          "mean_rollout_rmse_pct_length": 0.9848611354827881
+        },
+        "large": {
+          "response_rmse_pct_length": 0.19372600994433198,
+          "relative_response_rmse_pct": 98.75670117118253,
+          "mean_rollout_rmse_pct_length": 0.42482632398605347
+        }
+      }
+    },
+    {
+      "identity": "cable-1200118-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200118,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3923306456272594,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2973191825980088,
+          "relative_response_rmse_pct": 330.66985642272505,
+          "mean_rollout_rmse_pct_length": 1.2132627964019775
+        },
+        "large": {
+          "response_rmse_pct_length": 0.33991633761284284,
+          "relative_response_rmse_pct": 86.64027177111888,
+          "mean_rollout_rmse_pct_length": 0.4901184141635895
+        }
+      }
+    },
+    {
+      "identity": "cable-1200118-triangle-load-3",
+      "family": "cable",
+      "seed": 1200118,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.15859791450030652,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.34172032081329884,
+          "relative_response_rmse_pct": 215.46331292561757,
+          "mean_rollout_rmse_pct_length": 0.901885986328125
+        },
+        "large": {
+          "response_rmse_pct_length": 0.20061944195462644,
+          "relative_response_rmse_pct": 126.4956368352742,
+          "mean_rollout_rmse_pct_length": 0.3544180989265442
+        }
+      }
+    },
+    {
+      "identity": "cable-1200118-triangle-load-6",
+      "family": "cable",
+      "seed": 1200118,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3171380182466894,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6694497992477512,
+          "relative_response_rmse_pct": 211.0909953176954,
+          "mean_rollout_rmse_pct_length": 0.9612523913383484
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4762280446275114,
+          "relative_response_rmse_pct": 150.16428722748466,
+          "mean_rollout_rmse_pct_length": 0.41335397958755493
+        }
+      }
+    },
+    {
+      "identity": "cable-1200119-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200119,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.6470146200432948,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7011559171516829,
+          "relative_response_rmse_pct": 108.36786301749493,
+          "mean_rollout_rmse_pct_length": 0.9984169006347656
+        },
+        "large": {
+          "response_rmse_pct_length": 0.23366475685654065,
+          "relative_response_rmse_pct": 36.11429318875438,
+          "mean_rollout_rmse_pct_length": 0.5664700269699097
+        }
+      }
+    },
+    {
+      "identity": "cable-1200119-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200119,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2929798542434476,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3902697104048916,
+          "relative_response_rmse_pct": 107.52446806051518,
+          "mean_rollout_rmse_pct_length": 1.3566582202911377
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5805619493789141,
+          "relative_response_rmse_pct": 44.90108236981111,
+          "mean_rollout_rmse_pct_length": 0.7527682185173035
+        }
+      }
+    },
+    {
+      "identity": "cable-1200119-triangle-load-3",
+      "family": "cable",
+      "seed": 1200119,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7378508990878925,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5537866242919961,
+          "relative_response_rmse_pct": 75.0540014217736,
+          "mean_rollout_rmse_pct_length": 0.934995710849762
+        },
+        "large": {
+          "response_rmse_pct_length": 0.23425279131524535,
+          "relative_response_rmse_pct": 31.74798480354515,
+          "mean_rollout_rmse_pct_length": 0.49124184250831604
+        }
+      }
+    },
+    {
+      "identity": "cable-1200119-triangle-load-6",
+      "family": "cable",
+      "seed": 1200119,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4748880147079093,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.1131011893813914,
+          "relative_response_rmse_pct": 75.47021728302761,
+          "mean_rollout_rmse_pct_length": 1.1848392486572266
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4626396482155409,
+          "relative_response_rmse_pct": 31.367781390993486,
+          "mean_rollout_rmse_pct_length": 0.5233577489852905
+        }
+      }
+    },
+    {
+      "identity": "cable-1200120-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200120,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3870192136007731,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6248796589890011,
+          "relative_response_rmse_pct": 161.4595960689412,
+          "mean_rollout_rmse_pct_length": 2.069758653640747
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3077103968106675,
+          "relative_response_rmse_pct": 79.50778307561853,
+          "mean_rollout_rmse_pct_length": 0.7747074961662292
+        }
+      }
+    },
+    {
+      "identity": "cable-1200120-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200120,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.773717775053642,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.244401962308555,
+          "relative_response_rmse_pct": 160.8340925374605,
+          "mean_rollout_rmse_pct_length": 2.2274699211120605
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6228028484198306,
+          "relative_response_rmse_pct": 80.49483526168846,
+          "mean_rollout_rmse_pct_length": 0.7940564155578613
+        }
+      }
+    },
+    {
+      "identity": "cable-1200120-triangle-load-3",
+      "family": "cable",
+      "seed": 1200120,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.37854754029956844,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4192815286993607,
+          "relative_response_rmse_pct": 110.76060046977372,
+          "mean_rollout_rmse_pct_length": 2.0645792484283447
+        },
+        "large": {
+          "response_rmse_pct_length": 0.26846800382640335,
+          "relative_response_rmse_pct": 70.9205516469471,
+          "mean_rollout_rmse_pct_length": 0.8206658363342285
+        }
+      }
+    },
+    {
+      "identity": "cable-1200120-triangle-load-6",
+      "family": "cable",
+      "seed": 1200120,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7569471588462675,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8210151333557586,
+          "relative_response_rmse_pct": 108.46399563836701,
+          "mean_rollout_rmse_pct_length": 2.168565034866333
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5615856146399909,
+          "relative_response_rmse_pct": 74.19086102337117,
+          "mean_rollout_rmse_pct_length": 0.8774575591087341
+        }
+      }
+    },
+    {
+      "identity": "cable-1200121-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200121,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.136468076542039,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.971900937808298,
+          "relative_response_rmse_pct": 85.51942266302159,
+          "mean_rollout_rmse_pct_length": 0.8706344962120056
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3432204401585044,
+          "relative_response_rmse_pct": 30.200623074502026,
+          "mean_rollout_rmse_pct_length": 0.4105190634727478
+        }
+      }
+    },
+    {
+      "identity": "cable-1200121-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200121,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.269686713353338,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.962291874486336,
+          "relative_response_rmse_pct": 86.4565079815424,
+          "mean_rollout_rmse_pct_length": 1.369799017906189
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6535190562072056,
+          "relative_response_rmse_pct": 28.79335955761344,
+          "mean_rollout_rmse_pct_length": 0.5410664081573486
+        }
+      }
+    },
+    {
+      "identity": "cable-1200121-triangle-load-3",
+      "family": "cable",
+      "seed": 1200121,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.68208208700488,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4132480373216716,
+          "relative_response_rmse_pct": 60.58626156512962,
+          "mean_rollout_rmse_pct_length": 0.8526383638381958
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2916096017749839,
+          "relative_response_rmse_pct": 42.75286029801536,
+          "mean_rollout_rmse_pct_length": 0.3845188319683075
+        }
+      }
+    },
+    {
+      "identity": "cable-1200121-triangle-load-6",
+      "family": "cable",
+      "seed": 1200121,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3603947266121956,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8486473274335453,
+          "relative_response_rmse_pct": 62.382432894821655,
+          "mean_rollout_rmse_pct_length": 1.043670892715454
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5852090108302792,
+          "relative_response_rmse_pct": 43.01758889404335,
+          "mean_rollout_rmse_pct_length": 0.4756661653518677
+        }
+      }
+    },
+    {
+      "identity": "cable-1200122-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200122,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.9487957187794321,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8742257908124623,
+          "relative_response_rmse_pct": 92.14057077925062,
+          "mean_rollout_rmse_pct_length": 1.1350054740905762
+        },
+        "large": {
+          "response_rmse_pct_length": 0.22570545155954605,
+          "relative_response_rmse_pct": 23.788624578734648,
+          "mean_rollout_rmse_pct_length": 0.5238044261932373
+        }
+      }
+    },
+    {
+      "identity": "cable-1200122-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200122,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.894720566002225,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.748908762725572,
+          "relative_response_rmse_pct": 92.30431094204516,
+          "mean_rollout_rmse_pct_length": 1.5722894668579102
+        },
+        "large": {
+          "response_rmse_pct_length": 0.545987339008016,
+          "relative_response_rmse_pct": 28.81624598396716,
+          "mean_rollout_rmse_pct_length": 0.602161169052124
+        }
+      }
+    },
+    {
+      "identity": "cable-1200122-triangle-load-3",
+      "family": "cable",
+      "seed": 1200122,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.167022226471482,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.954524456196431,
+          "relative_response_rmse_pct": 90.19401980841438,
+          "mean_rollout_rmse_pct_length": 1.7388091087341309
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5683219112977071,
+          "relative_response_rmse_pct": 26.225938264744705,
+          "mean_rollout_rmse_pct_length": 0.631430983543396
+        }
+      }
+    },
+    {
+      "identity": "cable-1200122-triangle-load-6",
+      "family": "cable",
+      "seed": 1200122,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.313798972701457,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.880720655655527,
+          "relative_response_rmse_pct": 89.96062821224324,
+          "mean_rollout_rmse_pct_length": 2.7687342166900635
+        },
+        "large": {
+          "response_rmse_pct_length": 1.3896754459954213,
+          "relative_response_rmse_pct": 32.21465475766378,
+          "mean_rollout_rmse_pct_length": 1.052363395690918
+        }
+      }
+    },
+    {
+      "identity": "cable-1200123-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200123,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.4311254153079007,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6585820842328654,
+          "relative_response_rmse_pct": 152.7588170051445,
+          "mean_rollout_rmse_pct_length": 2.1024930477142334
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2974913073976762,
+          "relative_response_rmse_pct": 69.00342611098773,
+          "mean_rollout_rmse_pct_length": 0.8279805183410645
+        }
+      }
+    },
+    {
+      "identity": "cable-1200123-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200123,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.8622617047538508,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3165995541026843,
+          "relative_response_rmse_pct": 152.69140991000324,
+          "mean_rollout_rmse_pct_length": 2.1737732887268066
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6214417476257771,
+          "relative_response_rmse_pct": 72.0711292406497,
+          "mean_rollout_rmse_pct_length": 0.9485108852386475
+        }
+      }
+    },
+    {
+      "identity": "cable-1200123-triangle-load-3",
+      "family": "cable",
+      "seed": 1200123,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.4599270509611481,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.494318875199823,
+          "relative_response_rmse_pct": 107.4776693753506,
+          "mean_rollout_rmse_pct_length": 2.168745756149292
+        },
+        "large": {
+          "response_rmse_pct_length": 0.37423058218515487,
+          "relative_response_rmse_pct": 81.36737802290469,
+          "mean_rollout_rmse_pct_length": 0.8497471213340759
+        }
+      }
+    },
+    {
+      "identity": "cable-1200123-triangle-load-6",
+      "family": "cable",
+      "seed": 1200123,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.9195677581925826,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9802639726867024,
+          "relative_response_rmse_pct": 106.60051572636894,
+          "mean_rollout_rmse_pct_length": 2.2690298557281494
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7361908318746635,
+          "relative_response_rmse_pct": 80.05835625660171,
+          "mean_rollout_rmse_pct_length": 1.0268546342849731
+        }
+      }
+    },
+    {
+      "identity": "cable-1200124-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200124,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2018852900785006,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.0328187648719578,
+          "relative_response_rmse_pct": 85.93322286226663,
+          "mean_rollout_rmse_pct_length": 1.3469904661178589
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4811963071374876,
+          "relative_response_rmse_pct": 40.03679145670038,
+          "mean_rollout_rmse_pct_length": 0.6711236238479614
+        }
+      }
+    },
+    {
+      "identity": "cable-1200124-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200124,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4028583614004897,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.048930418388885,
+          "relative_response_rmse_pct": 85.27054491862265,
+          "mean_rollout_rmse_pct_length": 1.8494404554367065
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9636149469508789,
+          "relative_response_rmse_pct": 40.10286092723511,
+          "mean_rollout_rmse_pct_length": 0.8907577991485596
+        }
+      }
+    },
+    {
+      "identity": "cable-1200124-triangle-load-3",
+      "family": "cable",
+      "seed": 1200124,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2822797806647581,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9214896593314937,
+          "relative_response_rmse_pct": 71.86338529441494,
+          "mean_rollout_rmse_pct_length": 1.1752008199691772
+        },
+        "large": {
+          "response_rmse_pct_length": 0.43801708344613044,
+          "relative_response_rmse_pct": 34.159244343621644,
+          "mean_rollout_rmse_pct_length": 0.6774706244468689
+        }
+      }
+    },
+    {
+      "identity": "cable-1200124-triangle-load-6",
+      "family": "cable",
+      "seed": 1200124,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.559450868648793,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8703868351007469,
+          "relative_response_rmse_pct": 73.07766122848756,
+          "mean_rollout_rmse_pct_length": 1.62367844581604
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8968276961031882,
+          "relative_response_rmse_pct": 35.03984808181332,
+          "mean_rollout_rmse_pct_length": 0.8086603283882141
+        }
+      }
+    },
+    {
+      "identity": "cable-1200125-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200125,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.2238978035131242,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6545487315909153,
+          "relative_response_rmse_pct": 292.3426319153451,
+          "mean_rollout_rmse_pct_length": 1.1875985860824585
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3131448123481889,
+          "relative_response_rmse_pct": 139.86060043230094,
+          "mean_rollout_rmse_pct_length": 0.48363515734672546
+        }
+      }
+    },
+    {
+      "identity": "cable-1200125-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200125,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.44775957775676806,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2928827465300547,
+          "relative_response_rmse_pct": 288.7448556672471,
+          "mean_rollout_rmse_pct_length": 1.401103138923645
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5680822794027315,
+          "relative_response_rmse_pct": 126.87216703409639,
+          "mean_rollout_rmse_pct_length": 0.609459400177002
+        }
+      }
+    },
+    {
+      "identity": "cable-1200125-triangle-load-3",
+      "family": "cable",
+      "seed": 1200125,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.1635492455512502,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.36158020868981905,
+          "relative_response_rmse_pct": 221.08338529541754,
+          "mean_rollout_rmse_pct_length": 1.135075569152832
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2790062816355576,
+          "relative_response_rmse_pct": 170.59466137869,
+          "mean_rollout_rmse_pct_length": 0.47666025161743164
+        }
+      }
+    },
+    {
+      "identity": "cable-1200125-triangle-load-6",
+      "family": "cable",
+      "seed": 1200125,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.32705127436277764,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7556651018294733,
+          "relative_response_rmse_pct": 231.05401539920652,
+          "mean_rollout_rmse_pct_length": 1.2276098728179932
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5495610888522559,
+          "relative_response_rmse_pct": 168.0351467588724,
+          "mean_rollout_rmse_pct_length": 0.5684137344360352
+        }
+      }
+    },
+    {
+      "identity": "cable-1200126-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200126,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.32753849368186694,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6823749454024686,
+          "relative_response_rmse_pct": 208.3342747693188,
+          "mean_rollout_rmse_pct_length": 1.0859427452087402
+        },
+        "large": {
+          "response_rmse_pct_length": 0.27208212777091767,
+          "relative_response_rmse_pct": 83.0687485652257,
+          "mean_rollout_rmse_pct_length": 0.4599945545196533
+        }
+      }
+    },
+    {
+      "identity": "cable-1200126-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200126,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.6548688707392375,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3715909028277344,
+          "relative_response_rmse_pct": 209.44512162861514,
+          "mean_rollout_rmse_pct_length": 1.331068992614746
+        },
+        "large": {
+          "response_rmse_pct_length": 0.47765618195648146,
+          "relative_response_rmse_pct": 72.93921016848572,
+          "mean_rollout_rmse_pct_length": 0.5549031496047974
+        }
+      }
+    },
+    {
+      "identity": "cable-1200126-triangle-load-3",
+      "family": "cable",
+      "seed": 1200126,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.3927046991127962,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5306908773468283,
+          "relative_response_rmse_pct": 135.13738912362706,
+          "mean_rollout_rmse_pct_length": 1.1097352504730225
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4526696242974062,
+          "relative_response_rmse_pct": 115.26972438070732,
+          "mean_rollout_rmse_pct_length": 0.5100864171981812
+        }
+      }
+    },
+    {
+      "identity": "cable-1200126-triangle-load-6",
+      "family": "cable",
+      "seed": 1200126,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7852602402782729,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.0544003089697351,
+          "relative_response_rmse_pct": 134.2739966811623,
+          "mean_rollout_rmse_pct_length": 1.3593310117721558
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8543616492376573,
+          "relative_response_rmse_pct": 108.7998099757218,
+          "mean_rollout_rmse_pct_length": 0.6935532093048096
+        }
+      }
+    },
+    {
+      "identity": "cable-1200127-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200127,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.21691536738624295,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6314853890504101,
+          "relative_response_rmse_pct": 291.12063228142665,
+          "mean_rollout_rmse_pct_length": 1.0349500179290771
+        },
+        "large": {
+          "response_rmse_pct_length": 0.24284637723347519,
+          "relative_response_rmse_pct": 111.95443649737322,
+          "mean_rollout_rmse_pct_length": 0.3576577305793762
+        }
+      }
+    },
+    {
+      "identity": "cable-1200127-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200127,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.43379874854233746,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.273763401560297,
+          "relative_response_rmse_pct": 293.630031400605,
+          "mean_rollout_rmse_pct_length": 1.2772217988967896
+        },
+        "large": {
+          "response_rmse_pct_length": 0.47653141616961747,
+          "relative_response_rmse_pct": 109.85080472704716,
+          "mean_rollout_rmse_pct_length": 0.44827795028686523
+        }
+      }
+    },
+    {
+      "identity": "cable-1200127-triangle-load-3",
+      "family": "cable",
+      "seed": 1200127,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.21832579964970744,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4456894319209456,
+          "relative_response_rmse_pct": 204.13960816176169,
+          "mean_rollout_rmse_pct_length": 0.9722103476524353
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2087630781607462,
+          "relative_response_rmse_pct": 95.61997642774965,
+          "mean_rollout_rmse_pct_length": 0.3416813910007477
+        }
+      }
+    },
+    {
+      "identity": "cable-1200127-triangle-load-6",
+      "family": "cable",
+      "seed": 1200127,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.43661805811885424,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9112734979303403,
+          "relative_response_rmse_pct": 208.71182054551613,
+          "mean_rollout_rmse_pct_length": 1.1559982299804688
+        },
+        "large": {
+          "response_rmse_pct_length": 0.46148478966666756,
+          "relative_response_rmse_pct": 105.69530533275474,
+          "mean_rollout_rmse_pct_length": 0.41472139954566956
+        }
+      }
+    },
+    {
+      "identity": "cable-1200128-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200128,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.204768094061294,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.1213506951484744,
+          "relative_response_rmse_pct": 93.07606174798188,
+          "mean_rollout_rmse_pct_length": 2.0093111991882324
+        },
+        "large": {
+          "response_rmse_pct_length": 0.20861774942609163,
+          "relative_response_rmse_pct": 17.316008819825033,
+          "mean_rollout_rmse_pct_length": 0.43494468927383423
+        }
+      }
+    },
+    {
+      "identity": "cable-1200128-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200128,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4139189075613836,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.240754768863004,
+          "relative_response_rmse_pct": 92.82643098921184,
+          "mean_rollout_rmse_pct_length": 2.340019941329956
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4706304726993133,
+          "relative_response_rmse_pct": 19.496532017919314,
+          "mean_rollout_rmse_pct_length": 0.5645421147346497
+        }
+      }
+    },
+    {
+      "identity": "cable-1200128-triangle-load-3",
+      "family": "cable",
+      "seed": 1200128,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.0710811632557677,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8580166977916469,
+          "relative_response_rmse_pct": 80.1075331381547,
+          "mean_rollout_rmse_pct_length": 2.25024676322937
+        },
+        "large": {
+          "response_rmse_pct_length": 0.14853117773020186,
+          "relative_response_rmse_pct": 13.867406395114944,
+          "mean_rollout_rmse_pct_length": 0.38077083230018616
+        }
+      }
+    },
+    {
+      "identity": "cable-1200128-triangle-load-6",
+      "family": "cable",
+      "seed": 1200128,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.1403036994059415,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.7320319667166413,
+          "relative_response_rmse_pct": 80.92458874866126,
+          "mean_rollout_rmse_pct_length": 2.629016637802124
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3872013445433742,
+          "relative_response_rmse_pct": 18.090953384365267,
+          "mean_rollout_rmse_pct_length": 0.4473276436328888
+        }
+      }
+    },
+    {
+      "identity": "cable-1200129-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200129,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.40343686821023367,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6522748918752669,
+          "relative_response_rmse_pct": 161.6795447498274,
+          "mean_rollout_rmse_pct_length": 1.0182979106903076
+        },
+        "large": {
+          "response_rmse_pct_length": 0.1776535184978297,
+          "relative_response_rmse_pct": 44.03502319605884,
+          "mean_rollout_rmse_pct_length": 0.35088393092155457
+        }
+      }
+    },
+    {
+      "identity": "cable-1200129-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200129,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.8066481607139658,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3077445989007834,
+          "relative_response_rmse_pct": 162.1208182937275,
+          "mean_rollout_rmse_pct_length": 1.232229232788086
+        },
+        "large": {
+          "response_rmse_pct_length": 0.387881310562439,
+          "relative_response_rmse_pct": 48.08556313066213,
+          "mean_rollout_rmse_pct_length": 0.4314993619918823
+        }
+      }
+    },
+    {
+      "identity": "cable-1200129-triangle-load-3",
+      "family": "cable",
+      "seed": 1200129,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.4175891864490412,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.4549938970406711,
+          "relative_response_rmse_pct": 108.95729865749156,
+          "mean_rollout_rmse_pct_length": 1.0634219646453857
+        },
+        "large": {
+          "response_rmse_pct_length": 0.11374192806467445,
+          "relative_response_rmse_pct": 27.237757048231057,
+          "mean_rollout_rmse_pct_length": 0.34659814834594727
+        }
+      }
+    },
+    {
+      "identity": "cable-1200129-triangle-load-6",
+      "family": "cable",
+      "seed": 1200129,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.8350389131669242,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9207729832403411,
+          "relative_response_rmse_pct": 110.26707482987426,
+          "mean_rollout_rmse_pct_length": 1.2401450872421265
+        },
+        "large": {
+          "response_rmse_pct_length": 0.2660980924920433,
+          "relative_response_rmse_pct": 31.86654996506136,
+          "mean_rollout_rmse_pct_length": 0.38476136326789856
+        }
+      }
+    },
+    {
+      "identity": "cable-1200130-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200130,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.24704450669403,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.0479685556715534,
+          "relative_response_rmse_pct": 84.03617914566372,
+          "mean_rollout_rmse_pct_length": 0.9742412567138672
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5549953390853072,
+          "relative_response_rmse_pct": 44.50485416568044,
+          "mean_rollout_rmse_pct_length": 0.5856757760047913
+        }
+      }
+    },
+    {
+      "identity": "cable-1200130-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200130,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4899055001101917,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.10780377897653,
+          "relative_response_rmse_pct": 84.65396694305258,
+          "mean_rollout_rmse_pct_length": 1.5141507387161255
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0889972116954774,
+          "relative_response_rmse_pct": 43.736487655747716,
+          "mean_rollout_rmse_pct_length": 0.8407067656517029
+        }
+      }
+    },
+    {
+      "identity": "cable-1200130-triangle-load-3",
+      "family": "cable",
+      "seed": 1200130,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.297623325042385,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9493090222454443,
+          "relative_response_rmse_pct": 73.15751835876074,
+          "mean_rollout_rmse_pct_length": 0.7029751539230347
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4862719165395433,
+          "relative_response_rmse_pct": 37.47404251720429,
+          "mean_rollout_rmse_pct_length": 0.5195024609565735
+        }
+      }
+    },
+    {
+      "identity": "cable-1200130-triangle-load-6",
+      "family": "cable",
+      "seed": 1200130,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.5893623065196447,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.9012611357918434,
+          "relative_response_rmse_pct": 73.425844309417,
+          "mean_rollout_rmse_pct_length": 1.1764639616012573
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0081601610863336,
+          "relative_response_rmse_pct": 38.93468899844299,
+          "mean_rollout_rmse_pct_length": 0.7098401188850403
+        }
+      }
+    },
+    {
+      "identity": "cable-1200131-descending-chirp-3",
+      "family": "cable",
+      "seed": 1200131,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3624751686043157,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2744073320492353,
+          "relative_response_rmse_pct": 93.53618777175258,
+          "mean_rollout_rmse_pct_length": 2.2819812297821045
+        },
+        "large": {
+          "response_rmse_pct_length": 0.23483390268272242,
+          "relative_response_rmse_pct": 17.235829914117275,
+          "mean_rollout_rmse_pct_length": 0.4507032334804535
+        }
+      }
+    },
+    {
+      "identity": "cable-1200131-descending-chirp-6",
+      "family": "cable",
+      "seed": 1200131,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.7317591299317674,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.552755976129946,
+          "relative_response_rmse_pct": 93.447330262742,
+          "mean_rollout_rmse_pct_length": 2.5505433082580566
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5432279460384152,
+          "relative_response_rmse_pct": 19.88564584945612,
+          "mean_rollout_rmse_pct_length": 0.56400066614151
+        }
+      }
+    },
+    {
+      "identity": "cable-1200131-triangle-load-3",
+      "family": "cable",
+      "seed": 1200131,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.0877369113849829,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9016951729398562,
+          "relative_response_rmse_pct": 82.89643970909793,
+          "mean_rollout_rmse_pct_length": 2.8040835857391357
+        },
+        "large": {
+          "response_rmse_pct_length": 0.1994456962334003,
+          "relative_response_rmse_pct": 18.33583968199186,
+          "mean_rollout_rmse_pct_length": 0.5099571943283081
+        }
+      }
+    },
+    {
+      "identity": "cable-1200131-triangle-load-6",
+      "family": "cable",
+      "seed": 1200131,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.1730780580334232,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8371597993132884,
+          "relative_response_rmse_pct": 84.5418227164775,
+          "mean_rollout_rmse_pct_length": 3.2516121864318848
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5175834841313387,
+          "relative_response_rmse_pct": 23.817988599992482,
+          "mean_rollout_rmse_pct_length": 0.6541720628738403
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200100-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200100,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.187524184172871,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.234751941297238,
+          "relative_response_rmse_pct": 81.63339178673054,
+          "mean_rollout_rmse_pct_length": 3.392789602279663
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6896640029758259,
+          "relative_response_rmse_pct": 32.571684352450596,
+          "mean_rollout_rmse_pct_length": 2.038332939147949
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200100-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200100,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 10.766246315681789,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 8.478794759359012,
+          "relative_response_rmse_pct": 78.75349040648507,
+          "mean_rollout_rmse_pct_length": 5.563852787017822
+        },
+        "large": {
+          "response_rmse_pct_length": 3.5795111390239267,
+          "relative_response_rmse_pct": 33.24753153576023,
+          "mean_rollout_rmse_pct_length": 2.6330983638763428
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200100-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200100,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.824382307646841,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.346063776787645,
+          "relative_response_rmse_pct": 47.658695961352706,
+          "mean_rollout_rmse_pct_length": 1.901918888092041
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8423284955610527,
+          "relative_response_rmse_pct": 29.82345885967705,
+          "mean_rollout_rmse_pct_length": 1.705787181854248
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200100-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200100,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.143406083777199,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4024759620304996,
+          "relative_response_rmse_pct": 57.98311614777478,
+          "mean_rollout_rmse_pct_length": 2.4372355937957764
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7354167155786357,
+          "relative_response_rmse_pct": 41.883819265829736,
+          "mean_rollout_rmse_pct_length": 1.7742786407470703
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200101-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200101,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.8292789700733765,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3237760064603206,
+          "relative_response_rmse_pct": 72.3659992880813,
+          "mean_rollout_rmse_pct_length": 3.189389705657959
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6999791681811875,
+          "relative_response_rmse_pct": 92.93165208765275,
+          "mean_rollout_rmse_pct_length": 2.425507068634033
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200101-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200101,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.716131757115423,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.5333990493156526,
+          "relative_response_rmse_pct": 74.92155078120257,
+          "mean_rollout_rmse_pct_length": 2.8177409172058105
+        },
+        "large": {
+          "response_rmse_pct_length": 3.046988889094251,
+          "relative_response_rmse_pct": 64.60779821295563,
+          "mean_rollout_rmse_pct_length": 3.0108907222747803
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200101-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200101,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.496022417109438,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.0101280123860334,
+          "relative_response_rmse_pct": 72.96418587926918,
+          "mean_rollout_rmse_pct_length": 4.37646484375
+        },
+        "large": {
+          "response_rmse_pct_length": 2.640965725785167,
+          "relative_response_rmse_pct": 48.052309931700556,
+          "mean_rollout_rmse_pct_length": 2.197242021560669
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200101-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200101,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 9.055019640169789,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.627417542192241,
+          "relative_response_rmse_pct": 62.146939110191944,
+          "mean_rollout_rmse_pct_length": 5.270322799682617
+        },
+        "large": {
+          "response_rmse_pct_length": 3.4853672585160047,
+          "relative_response_rmse_pct": 38.49099612168982,
+          "mean_rollout_rmse_pct_length": 2.8386120796203613
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200102-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200102,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.721461467213196,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8072079839517607,
+          "relative_response_rmse_pct": 104.98103026827411,
+          "mean_rollout_rmse_pct_length": 2.2482876777648926
+        },
+        "large": {
+          "response_rmse_pct_length": 1.3811014797980392,
+          "relative_response_rmse_pct": 80.22842835011859,
+          "mean_rollout_rmse_pct_length": 1.1531223058700562
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200102-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200102,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.7069460188897945,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.0923741339292548,
+          "relative_response_rmse_pct": 114.23848545001782,
+          "mean_rollout_rmse_pct_length": 2.9091336727142334
+        },
+        "large": {
+          "response_rmse_pct_length": 2.219533919665864,
+          "relative_response_rmse_pct": 81.99402219982822,
+          "mean_rollout_rmse_pct_length": 1.521744728088379
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200102-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200102,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4794769348627355,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.397610192770618,
+          "relative_response_rmse_pct": 94.46650771208455,
+          "mean_rollout_rmse_pct_length": 2.301943063735962
+        },
+        "large": {
+          "response_rmse_pct_length": 1.2431935328365937,
+          "relative_response_rmse_pct": 84.02926085170338,
+          "mean_rollout_rmse_pct_length": 1.6580091714859009
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200102-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200102,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.580681793603664,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.6811643675377135,
+          "relative_response_rmse_pct": 80.36280478329641,
+          "mean_rollout_rmse_pct_length": 3.190793037414551
+        },
+        "large": {
+          "response_rmse_pct_length": 2.0169358473384196,
+          "relative_response_rmse_pct": 44.03134594843092,
+          "mean_rollout_rmse_pct_length": 2.0158135890960693
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200103-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200103,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 8.184509298117794,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 8.03944066411957,
+          "relative_response_rmse_pct": 98.22752191103766,
+          "mean_rollout_rmse_pct_length": 7.076660633087158
+        },
+        "large": {
+          "response_rmse_pct_length": 6.906095076939188,
+          "relative_response_rmse_pct": 84.38007491209514,
+          "mean_rollout_rmse_pct_length": 6.734901428222656
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200103-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200103,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 7.460315312286346,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.9477967635362115,
+          "relative_response_rmse_pct": 93.13006853871082,
+          "mean_rollout_rmse_pct_length": 6.335257053375244
+        },
+        "large": {
+          "response_rmse_pct_length": 6.914206500248774,
+          "relative_response_rmse_pct": 92.67981594372844,
+          "mean_rollout_rmse_pct_length": 7.587696552276611
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200103-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200103,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.0241402152781407,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.059632280871809,
+          "relative_response_rmse_pct": 101.75343908123438,
+          "mean_rollout_rmse_pct_length": 5.9775824546813965
+        },
+        "large": {
+          "response_rmse_pct_length": 2.5230825459606607,
+          "relative_response_rmse_pct": 124.6495932898581,
+          "mean_rollout_rmse_pct_length": 4.906574249267578
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200103-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200103,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.577930023433997,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.6649794283653754,
+          "relative_response_rmse_pct": 102.43295437197598,
+          "mean_rollout_rmse_pct_length": 5.9861226081848145
+        },
+        "large": {
+          "response_rmse_pct_length": 3.324854923977371,
+          "relative_response_rmse_pct": 92.92677336339487,
+          "mean_rollout_rmse_pct_length": 4.974658966064453
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200104-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200104,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.691203028563566,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3202339161491654,
+          "relative_response_rmse_pct": 78.06477955934803,
+          "mean_rollout_rmse_pct_length": 2.458801031112671
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8357920070231079,
+          "relative_response_rmse_pct": 49.41996867951408,
+          "mean_rollout_rmse_pct_length": 2.752553701400757
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200104-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200104,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.0364585120379552,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.8952343676472765,
+          "relative_response_rmse_pct": 95.34905075004977,
+          "mean_rollout_rmse_pct_length": 2.9683830738067627
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6300955359068323,
+          "relative_response_rmse_pct": 53.68410368343133,
+          "mean_rollout_rmse_pct_length": 2.996265172958374
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200104-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200104,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.112422685301303,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.7908542302960326,
+          "relative_response_rmse_pct": 84.7772674833113,
+          "mean_rollout_rmse_pct_length": 2.464996099472046
+        },
+        "large": {
+          "response_rmse_pct_length": 2.1417997789934606,
+          "relative_response_rmse_pct": 101.3906825512039,
+          "mean_rollout_rmse_pct_length": 2.0357165336608887
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200104-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200104,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 7.3614749239090935,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.173656742254247,
+          "relative_response_rmse_pct": 83.86439954041043,
+          "mean_rollout_rmse_pct_length": 4.681906223297119
+        },
+        "large": {
+          "response_rmse_pct_length": 2.653761984813201,
+          "relative_response_rmse_pct": 36.04932452047259,
+          "mean_rollout_rmse_pct_length": 3.160912275314331
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200105-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200105,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.9345994227402427,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7764579979719661,
+          "relative_response_rmse_pct": 83.07922935533104,
+          "mean_rollout_rmse_pct_length": 1.842061996459961
+        },
+        "large": {
+          "response_rmse_pct_length": 0.45829316578904616,
+          "relative_response_rmse_pct": 49.036320228545826,
+          "mean_rollout_rmse_pct_length": 1.3084025382995605
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200105-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200105,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.0515902555456433,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8383779650222092,
+          "relative_response_rmse_pct": 89.60746231138987,
+          "mean_rollout_rmse_pct_length": 2.2242603302001953
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9976844339671836,
+          "relative_response_rmse_pct": 48.62980954751311,
+          "mean_rollout_rmse_pct_length": 1.51199209690094
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200105-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200105,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.2229266769262976,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.1880048641131669,
+          "relative_response_rmse_pct": 97.1444066539702,
+          "mean_rollout_rmse_pct_length": 2.096144199371338
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4740509734462213,
+          "relative_response_rmse_pct": 38.763646454888075,
+          "mean_rollout_rmse_pct_length": 1.5249552726745605
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200105-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200105,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.2804016638188083,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.6642815722725803,
+          "relative_response_rmse_pct": 116.83387249467793,
+          "mean_rollout_rmse_pct_length": 2.7472763061523438
+        },
+        "large": {
+          "response_rmse_pct_length": 1.341245984931584,
+          "relative_response_rmse_pct": 58.816216731113315,
+          "mean_rollout_rmse_pct_length": 1.956172227859497
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200106-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200106,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.610308877839216,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.391092053054736,
+          "relative_response_rmse_pct": 86.38665986375018,
+          "mean_rollout_rmse_pct_length": 2.625927686691284
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8082065013498491,
+          "relative_response_rmse_pct": 50.18953273326894,
+          "mean_rollout_rmse_pct_length": 1.8627527952194214
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200106-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200106,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.059196012224833,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.0159618154034096,
+          "relative_response_rmse_pct": 98.58674643113237,
+          "mean_rollout_rmse_pct_length": 3.3220465183258057
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7732475647921047,
+          "relative_response_rmse_pct": 57.964496479010876,
+          "mean_rollout_rmse_pct_length": 2.258413314819336
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200106-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200106,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.396228635082648,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.613721092858321,
+          "relative_response_rmse_pct": 67.34420368875453,
+          "mean_rollout_rmse_pct_length": 1.7936246395111084
+        },
+        "large": {
+          "response_rmse_pct_length": 0.988917872340762,
+          "relative_response_rmse_pct": 41.26976273725455,
+          "mean_rollout_rmse_pct_length": 1.5111852884292603
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200106-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200106,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.062756526157762,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.942140360255921,
+          "relative_response_rmse_pct": 72.4173437741879,
+          "mean_rollout_rmse_pct_length": 1.8741618394851685
+        },
+        "large": {
+          "response_rmse_pct_length": 1.8701866179948703,
+          "relative_response_rmse_pct": 46.03245618962913,
+          "mean_rollout_rmse_pct_length": 1.416896104812622
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200107-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200107,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4851250918545253,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8518392395084418,
+          "relative_response_rmse_pct": 74.5169426512251,
+          "mean_rollout_rmse_pct_length": 4.161200523376465
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1188477869893605,
+          "relative_response_rmse_pct": 45.02178947275527,
+          "mean_rollout_rmse_pct_length": 2.0355899333953857
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200107-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200107,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.496032127602607,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.635673680298332,
+          "relative_response_rmse_pct": 66.15088114276051,
+          "mean_rollout_rmse_pct_length": 3.7829976081848145
+        },
+        "large": {
+          "response_rmse_pct_length": 2.100906490915244,
+          "relative_response_rmse_pct": 38.22587718081023,
+          "mean_rollout_rmse_pct_length": 2.271538257598877
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200107-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200107,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 9.42526576872403,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 9.236973165520766,
+          "relative_response_rmse_pct": 98.00225682942464,
+          "mean_rollout_rmse_pct_length": 4.550443172454834
+        },
+        "large": {
+          "response_rmse_pct_length": 5.716739746449437,
+          "relative_response_rmse_pct": 60.65335330298444,
+          "mean_rollout_rmse_pct_length": 3.546023368835449
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200107-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200107,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 11.983902150469678,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 11.174970970517677,
+          "relative_response_rmse_pct": 93.24985159428813,
+          "mean_rollout_rmse_pct_length": 5.0853071212768555
+        },
+        "large": {
+          "response_rmse_pct_length": 4.8991446090457655,
+          "relative_response_rmse_pct": 40.88104648663004,
+          "mean_rollout_rmse_pct_length": 3.314422845840454
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200108-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200108,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4552569580631722,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.5455952018466137,
+          "relative_response_rmse_pct": 103.67938042031678,
+          "mean_rollout_rmse_pct_length": 2.7247869968414307
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5901624892369028,
+          "relative_response_rmse_pct": 64.76562398142235,
+          "mean_rollout_rmse_pct_length": 2.1269638538360596
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200108-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200108,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.539583242145018,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.261617881779056,
+          "relative_response_rmse_pct": 115.90530674557839,
+          "mean_rollout_rmse_pct_length": 4.092770576477051
+        },
+        "large": {
+          "response_rmse_pct_length": 3.383601407577221,
+          "relative_response_rmse_pct": 74.53550749249882,
+          "mean_rollout_rmse_pct_length": 2.7814531326293945
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200108-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200108,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.6630819069394684,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3104786285420023,
+          "relative_response_rmse_pct": 49.20909961977333,
+          "mean_rollout_rmse_pct_length": 2.2433226108551025
+        },
+        "large": {
+          "response_rmse_pct_length": 1.2310995536700617,
+          "relative_response_rmse_pct": 46.22837737217388,
+          "mean_rollout_rmse_pct_length": 1.7787768840789795
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200108-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200108,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.814490282836748,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.166730977277986,
+          "relative_response_rmse_pct": 86.54563063782746,
+          "mean_rollout_rmse_pct_length": 3.709632635116577
+        },
+        "large": {
+          "response_rmse_pct_length": 1.746434479652197,
+          "relative_response_rmse_pct": 36.2745457370241,
+          "mean_rollout_rmse_pct_length": 2.040759325027466
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200109-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200109,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.9632212161522001,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.767152969935761,
+          "relative_response_rmse_pct": 79.64452579235359,
+          "mean_rollout_rmse_pct_length": 2.298430919647217
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6298766276700999,
+          "relative_response_rmse_pct": 65.39272776676174,
+          "mean_rollout_rmse_pct_length": 1.7018636465072632
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200109-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200109,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.01679418903737,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.7104224476442689,
+          "relative_response_rmse_pct": 84.80897341640326,
+          "mean_rollout_rmse_pct_length": 2.7056000232696533
+        },
+        "large": {
+          "response_rmse_pct_length": 1.3390361406313858,
+          "relative_response_rmse_pct": 66.3942879204009,
+          "mean_rollout_rmse_pct_length": 1.9410643577575684
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200109-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200109,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.0037220349327796,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.7091974070007794,
+          "relative_response_rmse_pct": 85.30112346935982,
+          "mean_rollout_rmse_pct_length": 2.480013370513916
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5382396669977265,
+          "relative_response_rmse_pct": 76.76911468657534,
+          "mean_rollout_rmse_pct_length": 2.012277364730835
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200109-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200109,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.089719665108317,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.526594167000862,
+          "relative_response_rmse_pct": 90.75285022832921,
+          "mean_rollout_rmse_pct_length": 3.937946319580078
+        },
+        "large": {
+          "response_rmse_pct_length": 2.3597194711975082,
+          "relative_response_rmse_pct": 38.74922986550212,
+          "mean_rollout_rmse_pct_length": 2.149352788925171
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200110-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200110,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.665071200376824,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.596235962217682,
+          "relative_response_rmse_pct": 95.86592824717863,
+          "mean_rollout_rmse_pct_length": 2.552741289138794
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6216175277953797,
+          "relative_response_rmse_pct": 97.39028141429566,
+          "mean_rollout_rmse_pct_length": 1.8948167562484741
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200110-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200110,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.437107349411438,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4294974591268965,
+          "relative_response_rmse_pct": 99.68774907324539,
+          "mean_rollout_rmse_pct_length": 3.0417275428771973
+        },
+        "large": {
+          "response_rmse_pct_length": 2.392705633713494,
+          "relative_response_rmse_pct": 98.17809766530524,
+          "mean_rollout_rmse_pct_length": 2.2709131240844727
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200110-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200110,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.146811850072507,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4162333822913964,
+          "relative_response_rmse_pct": 76.78353512732969,
+          "mean_rollout_rmse_pct_length": 2.4465248584747314
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6071377057198253,
+          "relative_response_rmse_pct": 51.071935097829076,
+          "mean_rollout_rmse_pct_length": 1.5303928852081299
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200110-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200110,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 9.86131855815366,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 7.744444687942134,
+          "relative_response_rmse_pct": 78.5335616355155,
+          "mean_rollout_rmse_pct_length": 4.878791332244873
+        },
+        "large": {
+          "response_rmse_pct_length": 4.016286741568597,
+          "relative_response_rmse_pct": 40.72768482109119,
+          "mean_rollout_rmse_pct_length": 2.8432490825653076
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200111-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200111,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.8302413903097848,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.8038575078409725,
+          "relative_response_rmse_pct": 96.82214320115169,
+          "mean_rollout_rmse_pct_length": 2.900205373764038
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8002842944846371,
+          "relative_response_rmse_pct": 96.39176073672141,
+          "mean_rollout_rmse_pct_length": 1.7722364664077759
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200111-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200111,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4023538187640816,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.3773648271549341,
+          "relative_response_rmse_pct": 98.21806798863565,
+          "mean_rollout_rmse_pct_length": 3.04292631149292
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5454516581891515,
+          "relative_response_rmse_pct": 110.20411806994504,
+          "mean_rollout_rmse_pct_length": 2.0068838596343994
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200111-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200111,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.035051580471746,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.1575285101831976,
+          "relative_response_rmse_pct": 106.01836979891488,
+          "mean_rollout_rmse_pct_length": 3.0841898918151855
+        },
+        "large": {
+          "response_rmse_pct_length": 1.3587951004404781,
+          "relative_response_rmse_pct": 66.76956562081318,
+          "mean_rollout_rmse_pct_length": 1.895538330078125
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200111-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200111,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.589047112970224,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.641900869214585,
+          "relative_response_rmse_pct": 101.15173705876714,
+          "mean_rollout_rmse_pct_length": 3.852998733520508
+        },
+        "large": {
+          "response_rmse_pct_length": 2.6890840312460407,
+          "relative_response_rmse_pct": 58.59787369900312,
+          "mean_rollout_rmse_pct_length": 2.319981336593628
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200112-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200112,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7228437253820575,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9118945873153893,
+          "relative_response_rmse_pct": 126.15376675413614,
+          "mean_rollout_rmse_pct_length": 1.9244011640548706
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7932637648494038,
+          "relative_response_rmse_pct": 109.74208352298082,
+          "mean_rollout_rmse_pct_length": 1.4932448863983154
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200112-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200112,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3502545978932081,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.9336875780167815,
+          "relative_response_rmse_pct": 143.20910893648497,
+          "mean_rollout_rmse_pct_length": 2.1502037048339844
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6082637231089256,
+          "relative_response_rmse_pct": 119.10818342098499,
+          "mean_rollout_rmse_pct_length": 1.8049752712249756
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200112-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200112,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.0749770906107987,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9604117712861365,
+          "relative_response_rmse_pct": 89.34253387115753,
+          "mean_rollout_rmse_pct_length": 2.073188304901123
+        },
+        "large": {
+          "response_rmse_pct_length": 0.6709739968641227,
+          "relative_response_rmse_pct": 62.41751593821197,
+          "mean_rollout_rmse_pct_length": 1.31729257106781
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200112-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200112,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.1874949962002233,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.0313765419718126,
+          "relative_response_rmse_pct": 92.86314005291003,
+          "mean_rollout_rmse_pct_length": 2.461698293685913
+        },
+        "large": {
+          "response_rmse_pct_length": 1.4021917349505273,
+          "relative_response_rmse_pct": 64.10034022414666,
+          "mean_rollout_rmse_pct_length": 1.469346284866333
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200113-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200113,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.029782184297547,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.3573583755965917,
+          "relative_response_rmse_pct": 83.31364381625582,
+          "mean_rollout_rmse_pct_length": 2.6282100677490234
+        },
+        "large": {
+          "response_rmse_pct_length": 1.8425586760459087,
+          "relative_response_rmse_pct": 45.723530249987824,
+          "mean_rollout_rmse_pct_length": 1.9820507764816284
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200113-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200113,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 8.599067098520482,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.875721752970571,
+          "relative_response_rmse_pct": 79.95892663930461,
+          "mean_rollout_rmse_pct_length": 4.508690357208252
+        },
+        "large": {
+          "response_rmse_pct_length": 3.8951141841304295,
+          "relative_response_rmse_pct": 45.296939069130026,
+          "mean_rollout_rmse_pct_length": 2.8071279525756836
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200113-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200113,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.9698554279915377,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.1264268670286923,
+          "relative_response_rmse_pct": 71.60034953171974,
+          "mean_rollout_rmse_pct_length": 2.7180707454681396
+        },
+        "large": {
+          "response_rmse_pct_length": 1.661790992899045,
+          "relative_response_rmse_pct": 55.955282443593084,
+          "mean_rollout_rmse_pct_length": 2.1445553302764893
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200113-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200113,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.919110777139984,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.125532553264039,
+          "relative_response_rmse_pct": 83.8674455642705,
+          "mean_rollout_rmse_pct_length": 3.231022834777832
+        },
+        "large": {
+          "response_rmse_pct_length": 2.782199207155062,
+          "relative_response_rmse_pct": 56.55898663808213,
+          "mean_rollout_rmse_pct_length": 2.638514518737793
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200114-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200114,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.6236532476847794,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.2550467537565098,
+          "relative_response_rmse_pct": 85.9506398471847,
+          "mean_rollout_rmse_pct_length": 3.3330981731414795
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0308412891099998,
+          "relative_response_rmse_pct": 39.29030217768515,
+          "mean_rollout_rmse_pct_length": 2.77226185798645
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200114-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200114,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.9306210736434375,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.008835537671468,
+          "relative_response_rmse_pct": 101.58630044490998,
+          "mean_rollout_rmse_pct_length": 3.768212080001831
+        },
+        "large": {
+          "response_rmse_pct_length": 2.348478633001434,
+          "relative_response_rmse_pct": 47.63048301470969,
+          "mean_rollout_rmse_pct_length": 2.716987133026123
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200114-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200114,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.9397122463262,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.337334079296277,
+          "relative_response_rmse_pct": 91.31983941626953,
+          "mean_rollout_rmse_pct_length": 4.970393180847168
+        },
+        "large": {
+          "response_rmse_pct_length": 3.1571376800882383,
+          "relative_response_rmse_pct": 45.49378371934065,
+          "mean_rollout_rmse_pct_length": 2.402757406234741
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200114-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200114,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 11.550101871291591,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 9.682475396500353,
+          "relative_response_rmse_pct": 83.83021642923057,
+          "mean_rollout_rmse_pct_length": 7.485642910003662
+        },
+        "large": {
+          "response_rmse_pct_length": 3.8761324380021436,
+          "relative_response_rmse_pct": 33.5592922140062,
+          "mean_rollout_rmse_pct_length": 3.5672850608825684
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200115-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200115,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.5735034395492904,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.78234366714327,
+          "relative_response_rmse_pct": 77.8603886692829,
+          "mean_rollout_rmse_pct_length": 1.780274748802185
+        },
+        "large": {
+          "response_rmse_pct_length": 2.252626562155168,
+          "relative_response_rmse_pct": 63.03692161659935,
+          "mean_rollout_rmse_pct_length": 1.6265554428100586
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200115-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200115,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.137560282898774,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.8809803067448296,
+          "relative_response_rmse_pct": 63.233273937178176,
+          "mean_rollout_rmse_pct_length": 2.3600549697875977
+        },
+        "large": {
+          "response_rmse_pct_length": 2.6192227978756977,
+          "relative_response_rmse_pct": 42.67530870814741,
+          "mean_rollout_rmse_pct_length": 1.845922827720642
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200115-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200115,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.895792160132119,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.4764951198034755,
+          "relative_response_rmse_pct": 89.23718147442383,
+          "mean_rollout_rmse_pct_length": 2.4415652751922607
+        },
+        "large": {
+          "response_rmse_pct_length": 2.1129261761675173,
+          "relative_response_rmse_pct": 54.23611140733599,
+          "mean_rollout_rmse_pct_length": 2.1423165798187256
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200115-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200115,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 10.881607778465613,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 9.899213429159317,
+          "relative_response_rmse_pct": 90.97197427708775,
+          "mean_rollout_rmse_pct_length": 5.731808185577393
+        },
+        "large": {
+          "response_rmse_pct_length": 5.1759986812278775,
+          "relative_response_rmse_pct": 47.566488212073125,
+          "mean_rollout_rmse_pct_length": 3.560891628265381
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200116-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200116,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4779760589452513,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.4119195193863865,
+          "relative_response_rmse_pct": 56.97873933404219,
+          "mean_rollout_rmse_pct_length": 2.462831735610962
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9918513064564343,
+          "relative_response_rmse_pct": 40.02667026890546,
+          "mean_rollout_rmse_pct_length": 2.3380932807922363
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200116-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200116,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.06887949223244,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.734656046059991,
+          "relative_response_rmse_pct": 53.94991240668836,
+          "mean_rollout_rmse_pct_length": 2.8916678428649902
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7703480314676003,
+          "relative_response_rmse_pct": 34.92582599725412,
+          "mean_rollout_rmse_pct_length": 2.4919893741607666
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200116-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200116,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.5918666478773364,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.1453161641534355,
+          "relative_response_rmse_pct": 71.94799675466845,
+          "mean_rollout_rmse_pct_length": 1.8308424949645996
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7600079801449839,
+          "relative_response_rmse_pct": 47.74319388865966,
+          "mean_rollout_rmse_pct_length": 1.8045710325241089
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200116-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200116,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.717067683128874,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.195049549333174,
+          "relative_response_rmse_pct": 80.78744460297864,
+          "mean_rollout_rmse_pct_length": 1.965399980545044
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7025905971862667,
+          "relative_response_rmse_pct": 62.66279665236851,
+          "mean_rollout_rmse_pct_length": 1.4759141206741333
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200117-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200117,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.5191881455095047,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.1457317003836107,
+          "relative_response_rmse_pct": 89.38799434175108,
+          "mean_rollout_rmse_pct_length": 2.2265071868896484
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5791537265830293,
+          "relative_response_rmse_pct": 44.8726712323703,
+          "mean_rollout_rmse_pct_length": 2.4193413257598877
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200117-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200117,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.0742556919707775,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.708222781171811,
+          "relative_response_rmse_pct": 93.97402859937547,
+          "mean_rollout_rmse_pct_length": 3.521496057510376
+        },
+        "large": {
+          "response_rmse_pct_length": 3.541682784056742,
+          "relative_response_rmse_pct": 58.3064487841415,
+          "mean_rollout_rmse_pct_length": 3.437807083129883
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200117-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200117,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.285580336064584,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.830965453400262,
+          "relative_response_rmse_pct": 80.10943323711392,
+          "mean_rollout_rmse_pct_length": 2.887047529220581
+        },
+        "large": {
+          "response_rmse_pct_length": 1.8558074799579738,
+          "relative_response_rmse_pct": 81.19633559472197,
+          "mean_rollout_rmse_pct_length": 2.0570929050445557
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200117-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200117,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.925282261057669,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.662779453934331,
+          "relative_response_rmse_pct": 81.7696555962396,
+          "mean_rollout_rmse_pct_length": 4.784173011779785
+        },
+        "large": {
+          "response_rmse_pct_length": 2.7743668133057175,
+          "relative_response_rmse_pct": 40.061425783416375,
+          "mean_rollout_rmse_pct_length": 2.3247621059417725
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200118-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200118,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.938119219093654,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.8936960828705343,
+          "relative_response_rmse_pct": 98.87197076188711,
+          "mean_rollout_rmse_pct_length": 3.0492749214172363
+        },
+        "large": {
+          "response_rmse_pct_length": 1.9817839302446465,
+          "relative_response_rmse_pct": 50.32310653867782,
+          "mean_rollout_rmse_pct_length": 2.173727512359619
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200118-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200118,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 7.385771667197905,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 7.928372807029332,
+          "relative_response_rmse_pct": 107.34657344257278,
+          "mean_rollout_rmse_pct_length": 4.644517421722412
+        },
+        "large": {
+          "response_rmse_pct_length": 3.972373779840525,
+          "relative_response_rmse_pct": 53.78414008495348,
+          "mean_rollout_rmse_pct_length": 2.6724045276641846
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200118-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200118,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.698934249382489,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.13876101418311,
+          "relative_response_rmse_pct": 109.3601387348295,
+          "mean_rollout_rmse_pct_length": 4.964662075042725
+        },
+        "large": {
+          "response_rmse_pct_length": 2.8958372377831894,
+          "relative_response_rmse_pct": 61.627532629632896,
+          "mean_rollout_rmse_pct_length": 3.0828115940093994
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200118-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200118,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.8525458968742425,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.8852105484962625,
+          "relative_response_rmse_pct": 100.5581272184378,
+          "mean_rollout_rmse_pct_length": 5.373868942260742
+        },
+        "large": {
+          "response_rmse_pct_length": 3.1135376161833013,
+          "relative_response_rmse_pct": 53.19971292914072,
+          "mean_rollout_rmse_pct_length": 2.8758766651153564
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200119-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200119,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.596863877948743,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.9330686024095527,
+          "relative_response_rmse_pct": 74.43858027462262,
+          "mean_rollout_rmse_pct_length": 1.732373833656311
+        },
+        "large": {
+          "response_rmse_pct_length": 1.241759221203347,
+          "relative_response_rmse_pct": 47.81764773070085,
+          "mean_rollout_rmse_pct_length": 1.3654323816299438
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200119-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200119,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.4582482619417485,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.1097628911952957,
+          "relative_response_rmse_pct": 69.75302200512422,
+          "mean_rollout_rmse_pct_length": 2.35433292388916
+        },
+        "large": {
+          "response_rmse_pct_length": 2.183961516788591,
+          "relative_response_rmse_pct": 48.98698745496481,
+          "mean_rollout_rmse_pct_length": 1.7429370880126953
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200119-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200119,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.9871421645795342,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.4133855498651762,
+          "relative_response_rmse_pct": 71.12654419288813,
+          "mean_rollout_rmse_pct_length": 1.5756391286849976
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8325273102775254,
+          "relative_response_rmse_pct": 41.89570958319846,
+          "mean_rollout_rmse_pct_length": 0.9290820956230164
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200119-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200119,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.796866155493088,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.3088663555307067,
+          "relative_response_rmse_pct": 87.1473004320584,
+          "mean_rollout_rmse_pct_length": 2.3640263080596924
+        },
+        "large": {
+          "response_rmse_pct_length": 1.8684267473634868,
+          "relative_response_rmse_pct": 49.20970797615171,
+          "mean_rollout_rmse_pct_length": 1.439168930053711
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200120-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200120,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.0682977739768147,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.7366151282697215,
+          "relative_response_rmse_pct": 68.95222907070368,
+          "mean_rollout_rmse_pct_length": 1.5904048681259155
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8161883938165769,
+          "relative_response_rmse_pct": 76.40083258605486,
+          "mean_rollout_rmse_pct_length": 1.4962457418441772
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200120-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200120,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.0242258709365797,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.482954392582664,
+          "relative_response_rmse_pct": 73.26032207544718,
+          "mean_rollout_rmse_pct_length": 1.8651355504989624
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6827756856176888,
+          "relative_response_rmse_pct": 83.13181398274952,
+          "mean_rollout_rmse_pct_length": 1.898671269416809
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200120-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200120,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.297897276867459,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.061376053181243,
+          "relative_response_rmse_pct": 89.7070584456827,
+          "mean_rollout_rmse_pct_length": 1.869956612586975
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5538870289960973,
+          "relative_response_rmse_pct": 67.62212761374556,
+          "mean_rollout_rmse_pct_length": 1.4833813905715942
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200120-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200120,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.3173098473394886,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.8122316214401915,
+          "relative_response_rmse_pct": 84.7744633711447,
+          "mean_rollout_rmse_pct_length": 2.1813433170318604
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6238993757022153,
+          "relative_response_rmse_pct": 48.95229720565888,
+          "mean_rollout_rmse_pct_length": 1.5295469760894775
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200121-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200121,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.153107397763329,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.5929799351637115,
+          "relative_response_rmse_pct": 82.23569983702598,
+          "mean_rollout_rmse_pct_length": 3.187592029571533
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1448121208656539,
+          "relative_response_rmse_pct": 36.30742554718344,
+          "mean_rollout_rmse_pct_length": 1.728968858718872
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200121-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200121,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.234191422872854,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.561523265065653,
+          "relative_response_rmse_pct": 87.1485755208013,
+          "mean_rollout_rmse_pct_length": 4.176246643066406
+        },
+        "large": {
+          "response_rmse_pct_length": 2.2460892665421683,
+          "relative_response_rmse_pct": 42.911867088524886,
+          "mean_rollout_rmse_pct_length": 2.1746866703033447
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200121-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200121,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.137061553864388,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.155092712070984,
+          "relative_response_rmse_pct": 80.88461990386875,
+          "mean_rollout_rmse_pct_length": 2.8854472637176514
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7766597379703533,
+          "relative_response_rmse_pct": 34.58513625622899,
+          "mean_rollout_rmse_pct_length": 1.597342610359192
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200121-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200121,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 9.190842014968288,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.673524674650918,
+          "relative_response_rmse_pct": 72.61059067039075,
+          "mean_rollout_rmse_pct_length": 4.011209487915039
+        },
+        "large": {
+          "response_rmse_pct_length": 2.428724516909417,
+          "relative_response_rmse_pct": 26.42548433488438,
+          "mean_rollout_rmse_pct_length": 2.230318546295166
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200122-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200122,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.27144636497458,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.5970788236164246,
+          "relative_response_rmse_pct": 84.21219690623066,
+          "mean_rollout_rmse_pct_length": 3.29317569732666
+        },
+        "large": {
+          "response_rmse_pct_length": 3.2909058984326833,
+          "relative_response_rmse_pct": 77.0442987513029,
+          "mean_rollout_rmse_pct_length": 2.1768341064453125
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200122-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200122,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.0532307459767685,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.565267356240557,
+          "relative_response_rmse_pct": 70.55421641054322,
+          "mean_rollout_rmse_pct_length": 2.840813636779785
+        },
+        "large": {
+          "response_rmse_pct_length": 2.9768968701965783,
+          "relative_response_rmse_pct": 58.91076461463182,
+          "mean_rollout_rmse_pct_length": 2.0569965839385986
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200122-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200122,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.999050144871669,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.2390622953300516,
+          "relative_response_rmse_pct": 80.99579095010309,
+          "mean_rollout_rmse_pct_length": 3.989403247833252
+        },
+        "large": {
+          "response_rmse_pct_length": 2.6851976494634133,
+          "relative_response_rmse_pct": 67.14588595261495,
+          "mean_rollout_rmse_pct_length": 2.783257484436035
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200122-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200122,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 9.8907900858881,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 7.298444621514884,
+          "relative_response_rmse_pct": 73.79030955199524,
+          "mean_rollout_rmse_pct_length": 5.247245788574219
+        },
+        "large": {
+          "response_rmse_pct_length": 3.3171763684145494,
+          "relative_response_rmse_pct": 33.538032246255064,
+          "mean_rollout_rmse_pct_length": 3.0534539222717285
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200123-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200123,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.089878965941896,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4185480420519303,
+          "relative_response_rmse_pct": 78.273229104127,
+          "mean_rollout_rmse_pct_length": 2.996547222137451
+        },
+        "large": {
+          "response_rmse_pct_length": 1.4424806000556005,
+          "relative_response_rmse_pct": 46.68404866194768,
+          "mean_rollout_rmse_pct_length": 2.8750970363616943
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200123-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200123,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.402998436816176,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.7990371908419913,
+          "relative_response_rmse_pct": 70.31349787102009,
+          "mean_rollout_rmse_pct_length": 3.469026803970337
+        },
+        "large": {
+          "response_rmse_pct_length": 2.5257096420316696,
+          "relative_response_rmse_pct": 46.746444063752016,
+          "mean_rollout_rmse_pct_length": 2.9278595447540283
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200123-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200123,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.497954161406395,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.745481601799461,
+          "relative_response_rmse_pct": 83.27078194652711,
+          "mean_rollout_rmse_pct_length": 3.0201172828674316
+        },
+        "large": {
+          "response_rmse_pct_length": 2.364372495596717,
+          "relative_response_rmse_pct": 52.565508912555,
+          "mean_rollout_rmse_pct_length": 2.306678056716919
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200123-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200123,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 11.155014582852079,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 9.54513542365324,
+          "relative_response_rmse_pct": 85.56811246420416,
+          "mean_rollout_rmse_pct_length": 6.160830497741699
+        },
+        "large": {
+          "response_rmse_pct_length": 3.8705217248612427,
+          "relative_response_rmse_pct": 34.69759448643983,
+          "mean_rollout_rmse_pct_length": 3.187403917312622
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200124-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200124,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.1384293686390723,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.107020289877451,
+          "relative_response_rmse_pct": 97.24101647174044,
+          "mean_rollout_rmse_pct_length": 1.8586970567703247
+        },
+        "large": {
+          "response_rmse_pct_length": 0.74498311636372,
+          "relative_response_rmse_pct": 65.43955531069135,
+          "mean_rollout_rmse_pct_length": 1.2467641830444336
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200124-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200124,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.359745308402059,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.3204281416784713,
+          "relative_response_rmse_pct": 98.33383854674501,
+          "mean_rollout_rmse_pct_length": 2.192533493041992
+        },
+        "large": {
+          "response_rmse_pct_length": 1.550927130861217,
+          "relative_response_rmse_pct": 65.72434428999682,
+          "mean_rollout_rmse_pct_length": 1.506187915802002
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200124-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200124,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3663503164517554,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.04624361780854,
+          "relative_response_rmse_pct": 76.57213565299318,
+          "mean_rollout_rmse_pct_length": 1.5381019115447998
+        },
+        "large": {
+          "response_rmse_pct_length": 0.5341243999382904,
+          "relative_response_rmse_pct": 39.09132185992726,
+          "mean_rollout_rmse_pct_length": 1.0612331628799438
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200124-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200124,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.5704362867222708,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.162075889820793,
+          "relative_response_rmse_pct": 84.11318736002578,
+          "mean_rollout_rmse_pct_length": 1.6353919506072998
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0188947743179855,
+          "relative_response_rmse_pct": 39.63898189506359,
+          "mean_rollout_rmse_pct_length": 1.088323712348938
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200125-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200125,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.7715133833491579,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8095166113893482,
+          "relative_response_rmse_pct": 102.14524080920816,
+          "mean_rollout_rmse_pct_length": 2.4026894569396973
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1308283979047156,
+          "relative_response_rmse_pct": 63.83403075210265,
+          "mean_rollout_rmse_pct_length": 1.3944151401519775
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200125-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200125,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.068037446372185,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.0813730438240325,
+          "relative_response_rmse_pct": 100.32781402894264,
+          "mean_rollout_rmse_pct_length": 3.4480016231536865
+        },
+        "large": {
+          "response_rmse_pct_length": 2.364156085593868,
+          "relative_response_rmse_pct": 58.11539634921962,
+          "mean_rollout_rmse_pct_length": 1.966269850730896
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200125-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200125,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.1771917658374016,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.939656430233842,
+          "relative_response_rmse_pct": 89.08982941554541,
+          "mean_rollout_rmse_pct_length": 2.2324609756469727
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9923033952865858,
+          "relative_response_rmse_pct": 45.57721606598679,
+          "mean_rollout_rmse_pct_length": 1.3467680215835571
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200125-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200125,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.356823159845485,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.00243146367189,
+          "relative_response_rmse_pct": 91.86582325764714,
+          "mean_rollout_rmse_pct_length": 3.219390392303467
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6759364879913798,
+          "relative_response_rmse_pct": 38.46693855829616,
+          "mean_rollout_rmse_pct_length": 1.5693879127502441
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200126-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200126,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.677167973141701,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.260875055845861,
+          "relative_response_rmse_pct": 88.67898011903526,
+          "mean_rollout_rmse_pct_length": 2.8078317642211914
+        },
+        "large": {
+          "response_rmse_pct_length": 2.7692588230546744,
+          "relative_response_rmse_pct": 75.30955461598546,
+          "mean_rollout_rmse_pct_length": 2.1419734954833984
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200126-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200126,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.002934758114254,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.983285879749874,
+          "relative_response_rmse_pct": 83.01416024909973,
+          "mean_rollout_rmse_pct_length": 2.9578630924224854
+        },
+        "large": {
+          "response_rmse_pct_length": 2.5282398279227216,
+          "relative_response_rmse_pct": 42.11673006282907,
+          "mean_rollout_rmse_pct_length": 2.422365427017212
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200126-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200126,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.500647755735825,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.567425101019601,
+          "relative_response_rmse_pct": 83.03431348166038,
+          "mean_rollout_rmse_pct_length": 3.073526620864868
+        },
+        "large": {
+          "response_rmse_pct_length": 3.038667286435852,
+          "relative_response_rmse_pct": 55.24199005957559,
+          "mean_rollout_rmse_pct_length": 2.377756357192993
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200126-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200126,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 11.504653873257096,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 9.033324560403866,
+          "relative_response_rmse_pct": 78.51887297019941,
+          "mean_rollout_rmse_pct_length": 4.617821216583252
+        },
+        "large": {
+          "response_rmse_pct_length": 3.4233909562700773,
+          "relative_response_rmse_pct": 29.756574982476,
+          "mean_rollout_rmse_pct_length": 2.6262216567993164
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200127-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200127,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.4472993118406143,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.5317628564870376,
+          "relative_response_rmse_pct": 62.589927152596566,
+          "mean_rollout_rmse_pct_length": 3.2260940074920654
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0730334263687693,
+          "relative_response_rmse_pct": 43.84561468134197,
+          "mean_rollout_rmse_pct_length": 2.9658923149108887
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200127-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200127,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.12047920445791,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.5480393272425834,
+          "relative_response_rmse_pct": 57.96995968319499,
+          "mean_rollout_rmse_pct_length": 3.787181854248047
+        },
+        "large": {
+          "response_rmse_pct_length": 2.308172132960307,
+          "relative_response_rmse_pct": 37.71227800723722,
+          "mean_rollout_rmse_pct_length": 2.8891854286193848
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200127-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200127,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3689259122314767,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.6227955816421684,
+          "relative_response_rmse_pct": 118.54517232396167,
+          "mean_rollout_rmse_pct_length": 3.1929678916931152
+        },
+        "large": {
+          "response_rmse_pct_length": 1.033177483365111,
+          "relative_response_rmse_pct": 75.47358656400445,
+          "mean_rollout_rmse_pct_length": 3.1260013580322266
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200127-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200127,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.8840958813686237,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.262215791460082,
+          "relative_response_rmse_pct": 147.7834290806408,
+          "mean_rollout_rmse_pct_length": 4.385740756988525
+        },
+        "large": {
+          "response_rmse_pct_length": 2.1887215060596996,
+          "relative_response_rmse_pct": 75.88934612746162,
+          "mean_rollout_rmse_pct_length": 3.6067545413970947
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200128-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200128,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4896913389650126,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.4584267323767421,
+          "relative_response_rmse_pct": 97.90126949318292,
+          "mean_rollout_rmse_pct_length": 1.9305223226547241
+        },
+        "large": {
+          "response_rmse_pct_length": 1.254117279446502,
+          "relative_response_rmse_pct": 84.18638456459178,
+          "mean_rollout_rmse_pct_length": 1.2727851867675781
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200128-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200128,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.2531571959496066,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4226044642756563,
+          "relative_response_rmse_pct": 107.52043703966405,
+          "mean_rollout_rmse_pct_length": 2.396674394607544
+        },
+        "large": {
+          "response_rmse_pct_length": 1.9756186765614152,
+          "relative_response_rmse_pct": 87.6822389539838,
+          "mean_rollout_rmse_pct_length": 1.5238542556762695
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200128-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200128,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.3242545536006505,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.966497451931318,
+          "relative_response_rmse_pct": 89.23797513394908,
+          "mean_rollout_rmse_pct_length": 2.417182683944702
+        },
+        "large": {
+          "response_rmse_pct_length": 1.2015427934755518,
+          "relative_response_rmse_pct": 36.14472881368566,
+          "mean_rollout_rmse_pct_length": 1.3734381198883057
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200128-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200128,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 7.531350947326225,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.913594432509533,
+          "relative_response_rmse_pct": 91.79753381382383,
+          "mean_rollout_rmse_pct_length": 4.3711771965026855
+        },
+        "large": {
+          "response_rmse_pct_length": 2.7356065463694965,
+          "relative_response_rmse_pct": 36.32291955987909,
+          "mean_rollout_rmse_pct_length": 2.324554920196533
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200129-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200129,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.8952949972472242,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.268504491231459,
+          "relative_response_rmse_pct": 66.92913203875217,
+          "mean_rollout_rmse_pct_length": 2.0777618885040283
+        },
+        "large": {
+          "response_rmse_pct_length": 1.4491441608435085,
+          "relative_response_rmse_pct": 76.46008473342056,
+          "mean_rollout_rmse_pct_length": 1.6854372024536133
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200129-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200129,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.881972390036233,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.3012294728016127,
+          "relative_response_rmse_pct": 59.279903141715394,
+          "mean_rollout_rmse_pct_length": 2.3649120330810547
+        },
+        "large": {
+          "response_rmse_pct_length": 2.119257996524399,
+          "relative_response_rmse_pct": 54.59229957337792,
+          "mean_rollout_rmse_pct_length": 1.906972050666809
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200129-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200129,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.330001636278676,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.9694932977338047,
+          "relative_response_rmse_pct": 91.6741754662545,
+          "mean_rollout_rmse_pct_length": 3.224945545196533
+        },
+        "large": {
+          "response_rmse_pct_length": 1.6862854276589796,
+          "relative_response_rmse_pct": 38.94422148782882,
+          "mean_rollout_rmse_pct_length": 1.8311033248901367
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200129-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200129,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 7.332295719611337,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.337079277753995,
+          "relative_response_rmse_pct": 86.4269462128282,
+          "mean_rollout_rmse_pct_length": 4.394051551818848
+        },
+        "large": {
+          "response_rmse_pct_length": 2.1064644818912814,
+          "relative_response_rmse_pct": 28.728580548888978,
+          "mean_rollout_rmse_pct_length": 1.9175589084625244
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200130-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200130,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 3.4557903935152723,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.528397465457529,
+          "relative_response_rmse_pct": 73.16408628839355,
+          "mean_rollout_rmse_pct_length": 5.213789463043213
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5854927678542277,
+          "relative_response_rmse_pct": 45.879309428875544,
+          "mean_rollout_rmse_pct_length": 5.903014659881592
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200130-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200130,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 6.622083474359976,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.357492343046796,
+          "relative_response_rmse_pct": 65.80243755486558,
+          "mean_rollout_rmse_pct_length": 5.8583984375
+        },
+        "large": {
+          "response_rmse_pct_length": 2.503457822692086,
+          "relative_response_rmse_pct": 37.80468537410041,
+          "mean_rollout_rmse_pct_length": 5.5067219734191895
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200130-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200130,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 4.034506505341829,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.6221495202402534,
+          "relative_response_rmse_pct": 64.99306710172445,
+          "mean_rollout_rmse_pct_length": 3.712186336517334
+        },
+        "large": {
+          "response_rmse_pct_length": 2.455547257701343,
+          "relative_response_rmse_pct": 60.863633617893825,
+          "mean_rollout_rmse_pct_length": 4.745717525482178
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200130-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200130,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 5.236184436786987,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.783410511684813,
+          "relative_response_rmse_pct": 72.25510402392126,
+          "mean_rollout_rmse_pct_length": 5.296791076660156
+        },
+        "large": {
+          "response_rmse_pct_length": 2.6314483286185375,
+          "relative_response_rmse_pct": 50.255073334147866,
+          "mean_rollout_rmse_pct_length": 5.069400787353516
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200131-descending-chirp-3",
+      "family": "cloth",
+      "seed": 1200131,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 0.7623287536218142,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.6555592479963037,
+          "relative_response_rmse_pct": 85.99429640843928,
+          "mean_rollout_rmse_pct_length": 1.6234132051467896
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4274726655801675,
+          "relative_response_rmse_pct": 56.07458246186443,
+          "mean_rollout_rmse_pct_length": 1.7379462718963623
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200131-descending-chirp-6",
+      "family": "cloth",
+      "seed": 1200131,
+      "excitation": "descending-chirp",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.4878508744253993,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.2916097005224934,
+          "relative_response_rmse_pct": 86.81042722250687,
+          "mean_rollout_rmse_pct_length": 1.8435908555984497
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8835905542807881,
+          "relative_response_rmse_pct": 59.387037334775,
+          "mean_rollout_rmse_pct_length": 1.7353216409683228
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200131-triangle-load-3",
+      "family": "cloth",
+      "seed": 1200131,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 3,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 1.3592819097756106,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.9545248091364779,
+          "relative_response_rmse_pct": 70.22272585780607,
+          "mean_rollout_rmse_pct_length": 1.613491415977478
+        },
+        "large": {
+          "response_rmse_pct_length": 0.541209268619318,
+          "relative_response_rmse_pct": 39.815822216648236,
+          "mean_rollout_rmse_pct_length": 1.668336033821106
+        }
+      }
+    },
+    {
+      "identity": "cloth-1200131-triangle-load-6",
+      "family": "cloth",
+      "seed": 1200131,
+      "excitation": "triangle-load",
+      "load_level_m_s2": 6,
+      "prefix_frames": 102,
+      "reference_response_rms_pct_length": 2.49793940458972,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.0093087541322996,
+          "relative_response_rmse_pct": 80.43865077112723,
+          "mean_rollout_rmse_pct_length": 2.0447640419006348
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0330491096706196,
+          "relative_response_rmse_pct": 41.35605162288935,
+          "mean_rollout_rmse_pct_length": 1.7641597986221313
+        }
+      }
+    }
+  ]
+}

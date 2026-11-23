@@ -1,8 +1,52 @@
 {
   "schema": 1,
-  "updated": "2026-11-20T17:29:11Z",
-  "headline": "More varied trajectories and a longer fit improve transfer to unseen loads",
+  "updated": "2026-11-23T09:05:38Z",
+  "headline": "The 104,096-trajectory fit improves cloth and brings cable below 1% mean position error",
   "runs": [
+    {
+      "id": "elastic-shared-load-scale-v7",
+      "title": "Scaling the shared fit to 104,096 trajectories",
+      "date": "2026-11-23",
+      "status": "Measured fresh rollouts",
+      "summary": "On held-out added-load rollouts, mean position error falls from 3.25% to 2.34% of rest length for cloth and from 1.53% to 0.58% for cable. Cable meets the 1% target in 124 of 128 cases. The response metric measures the extra motion caused by each load. A response error of 100% matches the error from ignoring that load.",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Both fits use the same shared architecture and V4 initialization. The larger fit adds 100,000 Newton trajectories with broader loads, uses more updates, and selects on a broader development set. Both frozen models are tested on the same 256 pairs with two held-out waveforms and a fixed force application site.",
+      "media": [
+        {
+          "src": "media/elastic-shared-load-scale-v7-cloth-triangle-load.mp4",
+          "poster": "media/elastic-shared-load-scale-v7-cloth-triangle-load.webp",
+          "type": "video",
+          "label": "Cloth · Triangular load at the 6 m/s² setting. Same geometry and camera within each material."
+        },
+        {
+          "src": "media/elastic-shared-load-scale-v7-cloth-descending-chirp.mp4",
+          "poster": "media/elastic-shared-load-scale-v7-cloth-descending-chirp.webp",
+          "type": "video",
+          "label": "Cloth · Descending chirp at the 6 m/s² setting. Same geometry and camera within each material."
+        },
+        {
+          "src": "media/elastic-shared-load-scale-v7-cable-triangle-load.mp4",
+          "poster": "media/elastic-shared-load-scale-v7-cable-triangle-load.webp",
+          "type": "video",
+          "label": "Cable · Triangular load at the 6 m/s² setting. Same geometry and camera within each material."
+        },
+        {
+          "src": "media/elastic-shared-load-scale-v7-cable-descending-chirp.mp4",
+          "poster": "media/elastic-shared-load-scale-v7-cable-descending-chirp.webp",
+          "type": "video",
+          "label": "Cable · Descending chirp at the 6 m/s² setting. Same geometry and camera within each material."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+          "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+        }
+      ]
+    },
     {
       "id": "elastic-shared-load-scale-v6",
       "title": "Scaling training from 1,088 to 4,096 trajectories",
@@ -1128,6 +1172,138 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-shared-load-scale-v7-cable-mean-rollout-rmse-pct-length",
+      "label": "Cable · Mean position error",
+      "track": "128 paired tests across 32 fresh geometries",
+      "scope": "Position RMSE across complete rollouts, as a percentage of rest length.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 1.53
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 0.58
+        }
+      ],
+      "source": {
+        "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+        "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v7-cable-equal-case-response-pct",
+      "label": "Cable · Equal-case response error",
+      "track": "128 paired tests across 32 fresh geometries",
+      "scope": "Response error measures the added motion from a new load. A score of 100% matches the error from ignoring the added load. Pooled scores weight cases by the size of the Newton response.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 156.65
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 69.81
+        }
+      ],
+      "source": {
+        "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+        "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v7-cable-pooled-response-pct",
+      "label": "Cable · Pooled response error",
+      "track": "128 paired tests across 32 fresh geometries",
+      "scope": "Response error measures the added motion from a new load. A score of 100% matches the error from ignoring the added load. Pooled scores weight cases by the size of the Newton response.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 93.49
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 37.54
+        }
+      ],
+      "source": {
+        "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+        "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v7-cloth-mean-rollout-rmse-pct-length",
+      "label": "Cloth · Mean position error",
+      "track": "128 paired tests across 32 fresh geometries",
+      "scope": "Position RMSE across complete rollouts, as a percentage of rest length.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 3.25
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 2.34
+        }
+      ],
+      "source": {
+        "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+        "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v7-cloth-equal-case-response-pct",
+      "label": "Cloth · Equal-case response error",
+      "track": "128 paired tests across 32 fresh geometries",
+      "scope": "Response error measures the added motion from a new load. A score of 100% matches the error from ignoring the added load. Pooled scores weight cases by the size of the Newton response.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 85.71
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 56.56
+        }
+      ],
+      "source": {
+        "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+        "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-load-scale-v7-cloth-pooled-response-pct",
+      "label": "Cloth · Pooled response error",
+      "track": "128 paired tests across 32 fresh geometries",
+      "scope": "Response error measures the added motion from a new load. A score of 100% matches the error from ignoring the added load. Pooled scores weight cases by the size of the Newton response.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 84.62
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 48.78
+        }
+      ],
+      "source": {
+        "label": "Training and test protocol, scores by waveform, and paired geometry intervals",
+        "url": "evidence/elastic-shared-load-scale-v7-scores.json"
+      }
+    },
     {
       "id": "elastic-shared-load-scale-v6-cable-equal-case-response-pct",
       "label": "Cable · Equal-case response error",
