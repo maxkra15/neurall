@@ -1,0 +1,942 @@
+{
+  "first": {
+    "benchmark": {
+      "device": "cpu",
+      "machine": "x86_64",
+      "batch": 1,
+      "dt_s": 0.02,
+      "solve_substeps": 4,
+      "solve_iterations": 8,
+      "discarded_warmup_intervals": 15,
+      "checkpoint_sha256": "84c23339f7ec1aea651eb8ba1a0b274965246c0c5bb94955983e17e187c18d0b",
+      "manifest_sha256": "401178484387e6e698f5ab4b066253adfbf6deab357542b028233d47f54c72d3",
+      "scope": "Identical start and load per case; model step includes position decoding. Newton solve includes force staging and excludes native readout. Both timings exclude scene and model setup."
+    },
+    "summary": {
+      "cloth": {
+        "cases": 12,
+        "mean_position_rmse_pct_length": 2.02644936243693,
+        "mean_node_distance_pct_length": 1.5559663474559784,
+        "newton_solve_median_scene_p50_ms": 5.5940115,
+        "neurall_position_median_scene_p50_ms": 0.0090615,
+        "median_paired_speed_ratio_vs_newton_solve": 605.6782865444477
+      },
+      "cable": {
+        "cases": 12,
+        "mean_position_rmse_pct_length": 0.46262330065170926,
+        "mean_node_distance_pct_length": 0.37598483512798947,
+        "newton_solve_median_scene_p50_ms": 4.0763085,
+        "neurall_position_median_scene_p50_ms": 0.013889,
+        "median_paired_speed_ratio_vs_newton_solve": 292.849894220123
+      }
+    },
+    "cases": {
+      "cloth": [
+        {
+          "identity": "cloth-1200100-reference",
+          "family": "cloth",
+          "nodes": 60,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.5728634595870972,
+          "mean_node_distance_pct_length": 1.2269690036773682,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.4482085704803467,
+            "16": 0.6057906746864319,
+            "64": 1.0909115076065063
+          },
+          "newton_solve_p50_ms": 4.491165,
+          "newton_solve_and_native_readout_p50_ms": 4.496598,
+          "neurall_step_and_position_decode_p50_ms": 0.008379,
+          "neurall_step_and_position_decode_p90_ms": 0.008861200000000001,
+          "neurall_step_and_position_decode_p99_ms": 0.009272680000000004
+        },
+        {
+          "identity": "cloth-1200101-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.7819018363952637,
+          "mean_node_distance_pct_length": 1.392822265625,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5263679027557373,
+            "16": 0.5850782990455627,
+            "64": 1.1009113788604736
+          },
+          "newton_solve_p50_ms": 5.944668999999999,
+          "newton_solve_and_native_readout_p50_ms": 5.950558,
+          "neurall_step_and_position_decode_p50_ms": 0.00961,
+          "neurall_step_and_position_decode_p90_ms": 0.009955799999999999,
+          "neurall_step_and_position_decode_p99_ms": 0.010600960000000005
+        },
+        {
+          "identity": "cloth-1200102-reference",
+          "family": "cloth",
+          "nodes": 117,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.4062892198562622,
+          "mean_node_distance_pct_length": 1.0731525421142578,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5998349189758301,
+            "16": 0.7112559080123901,
+            "64": 1.0894805192947388
+          },
+          "newton_solve_p50_ms": 6.375444,
+          "newton_solve_and_native_readout_p50_ms": 6.38122,
+          "neurall_step_and_position_decode_p50_ms": 0.009604,
+          "neurall_step_and_position_decode_p90_ms": 0.0101318,
+          "neurall_step_and_position_decode_p99_ms": 0.010425280000000004
+        },
+        {
+          "identity": "cloth-1200103-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 5.24885368347168,
+          "mean_node_distance_pct_length": 4.056085109710693,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.9391286969184875,
+            "16": 2.1596357822418213,
+            "64": 5.283012866973877
+          },
+          "newton_solve_p50_ms": 5.973615,
+          "newton_solve_and_native_readout_p50_ms": 5.979686,
+          "neurall_step_and_position_decode_p50_ms": 0.009094,
+          "neurall_step_and_position_decode_p90_ms": 0.009563,
+          "neurall_step_and_position_decode_p99_ms": 0.010024280000000009
+        },
+        {
+          "identity": "cloth-1200104-reference",
+          "family": "cloth",
+          "nodes": 60,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 2.5230889320373535,
+          "mean_node_distance_pct_length": 1.9524073600769043,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.524554967880249,
+            "16": 1.0391777753829956,
+            "64": 2.4302642345428467
+          },
+          "newton_solve_p50_ms": 4.501571,
+          "newton_solve_and_native_readout_p50_ms": 4.5071509999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.008706,
+          "neurall_step_and_position_decode_p90_ms": 0.009082199999999999,
+          "neurall_step_and_position_decode_p99_ms": 0.009693080000000008
+        },
+        {
+          "identity": "cloth-1200105-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.347201943397522,
+          "mean_node_distance_pct_length": 1.0347621440887451,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6751521825790405,
+            "16": 0.8332202434539795,
+            "64": 1.2960827350616455
+          },
+          "newton_solve_p50_ms": 5.9678379999999995,
+          "newton_solve_and_native_readout_p50_ms": 5.97352,
+          "neurall_step_and_position_decode_p50_ms": 0.009393,
+          "neurall_step_and_position_decode_p90_ms": 0.0097134,
+          "neurall_step_and_position_decode_p99_ms": 0.010412480000000016
+        },
+        {
+          "identity": "cloth-1200106-reference",
+          "family": "cloth",
+          "nodes": 80,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.7821484804153442,
+          "mean_node_distance_pct_length": 1.376041293144226,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5526578426361084,
+            "16": 0.7179898619651794,
+            "64": 1.4084969758987427
+          },
+          "newton_solve_p50_ms": 5.171764,
+          "newton_solve_and_native_readout_p50_ms": 5.177461999999999,
+          "neurall_step_and_position_decode_p50_ms": 0.008883,
+          "neurall_step_and_position_decode_p90_ms": 0.009216,
+          "neurall_step_and_position_decode_p99_ms": 0.009641200000000006
+        },
+        {
+          "identity": "cloth-1200107-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.820078730583191,
+          "mean_node_distance_pct_length": 1.3810584545135498,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6526207327842712,
+            "16": 0.6062004566192627,
+            "64": 1.1115223169326782
+          },
+          "newton_solve_p50_ms": 5.959604,
+          "newton_solve_and_native_readout_p50_ms": 5.9653599999999996,
+          "neurall_step_and_position_decode_p50_ms": 0.009477,
+          "neurall_step_and_position_decode_p90_ms": 0.0097294,
+          "neurall_step_and_position_decode_p99_ms": 0.010384320000000015
+        },
+        {
+          "identity": "cloth-1200108-reference",
+          "family": "cloth",
+          "nodes": 90,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.9327576160430908,
+          "mean_node_distance_pct_length": 1.4739508628845215,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.44673600792884827,
+            "16": 0.7197866439819336,
+            "64": 1.8948639631271362
+          },
+          "newton_solve_p50_ms": 5.5067829999999995,
+          "newton_solve_and_native_readout_p50_ms": 5.512826,
+          "neurall_step_and_position_decode_p50_ms": 0.00929,
+          "neurall_step_and_position_decode_p90_ms": 0.009531,
+          "neurall_step_and_position_decode_p99_ms": 0.010265080000000025
+        },
+        {
+          "identity": "cloth-1200109-reference",
+          "family": "cloth",
+          "nodes": 72,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.5736098289489746,
+          "mean_node_distance_pct_length": 1.2184611558914185,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6379469037055969,
+            "16": 0.5293977856636047,
+            "64": 1.6685594320297241
+          },
+          "newton_solve_p50_ms": 4.960242,
+          "newton_solve_and_native_readout_p50_ms": 4.966584,
+          "neurall_step_and_position_decode_p50_ms": 0.00874,
+          "neurall_step_and_position_decode_p90_ms": 0.0092726,
+          "neurall_step_and_position_decode_p99_ms": 0.009885360000000001
+        },
+        {
+          "identity": "cloth-1200110-reference",
+          "family": "cloth",
+          "nodes": 96,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.5250345468521118,
+          "mean_node_distance_pct_length": 1.1002498865127563,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5237687826156616,
+            "16": 0.6190857291221619,
+            "64": 0.7937139272689819
+          },
+          "newton_solve_p50_ms": 5.68124,
+          "newton_solve_and_native_readout_p50_ms": 5.687043,
+          "neurall_step_and_position_decode_p50_ms": 0.009029,
+          "neurall_step_and_position_decode_p90_ms": 0.0095172,
+          "neurall_step_and_position_decode_p99_ms": 0.009834520000000001
+        },
+        {
+          "identity": "cloth-1200111-reference",
+          "family": "cloth",
+          "nodes": 66,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.8035640716552734,
+          "mean_node_distance_pct_length": 1.3856360912322998,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.4906722903251648,
+            "16": 0.7657080888748169,
+            "64": 1.4447779655456543
+          },
+          "newton_solve_p50_ms": 4.685689,
+          "newton_solve_and_native_readout_p50_ms": 4.691361,
+          "neurall_step_and_position_decode_p50_ms": 0.008989,
+          "neurall_step_and_position_decode_p90_ms": 0.0092322,
+          "neurall_step_and_position_decode_p99_ms": 0.009689560000000003
+        }
+      ],
+      "cable": [
+        {
+          "identity": "cable-1200100-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 1.2287812012345967e-07,
+          "mean_position_rmse_pct_length": 0.2861901521682739,
+          "mean_node_distance_pct_length": 0.23147112131118774,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3499205708503723,
+            "16": 0.6275436878204346,
+            "64": 0.31794172525405884
+          },
+          "newton_solve_p50_ms": 4.081829,
+          "newton_solve_and_native_readout_p50_ms": 4.138553,
+          "neurall_step_and_position_decode_p50_ms": 0.014284,
+          "neurall_step_and_position_decode_p90_ms": 0.0149006,
+          "neurall_step_and_position_decode_p99_ms": 0.015704160000000005
+        },
+        {
+          "identity": "cable-1200101-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.2287812012345967e-07,
+          "mean_position_rmse_pct_length": 0.6430256366729736,
+          "mean_node_distance_pct_length": 0.5395628809928894,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6503025889396667,
+            "16": 0.6165801286697388,
+            "64": 0.5444259643554688
+          },
+          "newton_solve_p50_ms": 4.139044999999999,
+          "newton_solve_and_native_readout_p50_ms": 4.1958969999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.014692,
+          "neurall_step_and_position_decode_p90_ms": 0.015093,
+          "neurall_step_and_position_decode_p99_ms": 0.015925680000000008
+        },
+        {
+          "identity": "cable-1200102-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.5637403130531311,
+          "mean_node_distance_pct_length": 0.4669555723667145,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.4957164227962494,
+            "16": 0.6648263335227966,
+            "64": 0.651287317276001
+          },
+          "newton_solve_p50_ms": 4.141749,
+          "newton_solve_and_native_readout_p50_ms": 4.199727,
+          "neurall_step_and_position_decode_p50_ms": 0.013941,
+          "neurall_step_and_position_decode_p90_ms": 0.0145772,
+          "neurall_step_and_position_decode_p99_ms": 0.01581172
+        },
+        {
+          "identity": "cable-1200103-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.6432749629020691,
+          "mean_node_distance_pct_length": 0.525153636932373,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6310308575630188,
+            "16": 0.5676243901252747,
+            "64": 0.6924432516098022
+          },
+          "newton_solve_p50_ms": 4.131074,
+          "newton_solve_and_native_readout_p50_ms": 4.188095,
+          "neurall_step_and_position_decode_p50_ms": 0.014005,
+          "neurall_step_and_position_decode_p90_ms": 0.014713,
+          "neurall_step_and_position_decode_p99_ms": 0.0155298
+        },
+        {
+          "identity": "cable-1200104-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.3705434203147888,
+          "mean_node_distance_pct_length": 0.30061519145965576,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3864772915840149,
+            "16": 0.4375375211238861,
+            "64": 0.4920038878917694
+          },
+          "newton_solve_p50_ms": 4.0326319999999996,
+          "newton_solve_and_native_readout_p50_ms": 4.08852,
+          "neurall_step_and_position_decode_p50_ms": 0.013796,
+          "neurall_step_and_position_decode_p90_ms": 0.0144966,
+          "neurall_step_and_position_decode_p99_ms": 0.015219640000000001
+        },
+        {
+          "identity": "cable-1200105-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 0.5110380053520203,
+          "mean_node_distance_pct_length": 0.40368959307670593,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.8790988326072693,
+            "16": 1.0428427457809448,
+            "64": 0.7772339582443237
+          },
+          "newton_solve_p50_ms": 4.10216,
+          "newton_solve_and_native_readout_p50_ms": 4.1581719999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.013795,
+          "neurall_step_and_position_decode_p90_ms": 0.0145168,
+          "neurall_step_and_position_decode_p99_ms": 0.015151920000000004
+        },
+        {
+          "identity": "cable-1200106-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.38645055890083313,
+          "mean_node_distance_pct_length": 0.31142860651016235,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.44178149104118347,
+            "16": 0.36265161633491516,
+            "64": 0.39264893531799316
+          },
+          "newton_solve_p50_ms": 4.027386,
+          "newton_solve_and_native_readout_p50_ms": 4.083259,
+          "neurall_step_and_position_decode_p50_ms": 0.013722,
+          "neurall_step_and_position_decode_p90_ms": 0.014391600000000001,
+          "neurall_step_and_position_decode_p99_ms": 0.01505152
+        },
+        {
+          "identity": "cable-1200107-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.3454124629497528,
+          "mean_node_distance_pct_length": 0.2886299788951874,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3561832308769226,
+            "16": 0.41479581594467163,
+            "64": 0.586135745048523
+          },
+          "newton_solve_p50_ms": 4.088532,
+          "newton_solve_and_native_readout_p50_ms": 4.145212,
+          "neurall_step_and_position_decode_p50_ms": 0.014149,
+          "neurall_step_and_position_decode_p90_ms": 0.0147684,
+          "neurall_step_and_position_decode_p99_ms": 0.0173744
+        },
+        {
+          "identity": "cable-1200108-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 2.9802322387695312e-08,
+          "mean_position_rmse_pct_length": 0.423448771238327,
+          "mean_node_distance_pct_length": 0.3389407992362976,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.35948655009269714,
+            "16": 0.36733269691467285,
+            "64": 0.719159722328186
+          },
+          "newton_solve_p50_ms": 4.017904,
+          "newton_solve_and_native_readout_p50_ms": 4.073815,
+          "neurall_step_and_position_decode_p50_ms": 0.013727,
+          "neurall_step_and_position_decode_p90_ms": 0.014446,
+          "neurall_step_and_position_decode_p99_ms": 0.01488268
+        },
+        {
+          "identity": "cable-1200109-reference",
+          "family": "cable",
+          "nodes": 11,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.374504029750824,
+          "mean_node_distance_pct_length": 0.2991589605808258,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.48740169405937195,
+            "16": 0.5368242263793945,
+            "64": 0.6344654560089111
+          },
+          "newton_solve_p50_ms": 4.020824999999999,
+          "newton_solve_and_native_readout_p50_ms": 4.076623,
+          "neurall_step_and_position_decode_p50_ms": 0.013723,
+          "neurall_step_and_position_decode_p90_ms": 0.014416,
+          "neurall_step_and_position_decode_p99_ms": 0.015239000000000011
+        },
+        {
+          "identity": "cable-1200110-reference",
+          "family": "cable",
+          "nodes": 15,
+          "max_pinned_position_error_m": 2.9802322387695312e-08,
+          "mean_position_rmse_pct_length": 0.6448494791984558,
+          "mean_node_distance_pct_length": 0.5290921926498413,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3888017237186432,
+            "16": 0.6484260559082031,
+            "64": 0.7671328186988831
+          },
+          "newton_solve_p50_ms": 4.070787999999999,
+          "newton_solve_and_native_readout_p50_ms": 4.127183,
+          "neurall_step_and_position_decode_p50_ms": 0.013934,
+          "neurall_step_and_position_decode_p90_ms": 0.0146934,
+          "neurall_step_and_position_decode_p99_ms": 0.015097360000000002
+        },
+        {
+          "identity": "cable-1200111-reference",
+          "family": "cable",
+          "nodes": 13,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.3590018153190613,
+          "mean_node_distance_pct_length": 0.2771194875240326,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3997631371021271,
+            "16": 0.6891873478889465,
+            "64": 0.5761685967445374
+          },
+          "newton_solve_p50_ms": 4.070402,
+          "newton_solve_and_native_readout_p50_ms": 4.126634,
+          "neurall_step_and_position_decode_p50_ms": 0.013844,
+          "neurall_step_and_position_decode_p90_ms": 0.014589199999999998,
+          "neurall_step_and_position_decode_p99_ms": 0.01507848
+        }
+      ]
+    }
+  },
+  "repeat": {
+    "benchmark": {
+      "device": "cpu",
+      "machine": "x86_64",
+      "batch": 1,
+      "dt_s": 0.02,
+      "solve_substeps": 4,
+      "solve_iterations": 8,
+      "discarded_warmup_intervals": 15,
+      "checkpoint_sha256": "84c23339f7ec1aea651eb8ba1a0b274965246c0c5bb94955983e17e187c18d0b",
+      "manifest_sha256": "401178484387e6e698f5ab4b066253adfbf6deab357542b028233d47f54c72d3",
+      "scope": "Identical start and load per case; model step includes position decoding. Newton solve includes force staging and excludes native readout. Both timings exclude scene and model setup."
+    },
+    "summary": {
+      "cloth": {
+        "cases": 12,
+        "mean_position_rmse_pct_length": 2.02644936243693,
+        "mean_node_distance_pct_length": 1.5559663474559784,
+        "newton_solve_median_scene_p50_ms": 5.601091,
+        "neurall_position_median_scene_p50_ms": 0.009004999999999999,
+        "median_paired_speed_ratio_vs_newton_solve": 621.957635337131
+      },
+      "cable": {
+        "cases": 12,
+        "mean_position_rmse_pct_length": 0.46262330065170926,
+        "mean_node_distance_pct_length": 0.37598483512798947,
+        "newton_solve_median_scene_p50_ms": 4.066772,
+        "neurall_position_median_scene_p50_ms": 0.01403,
+        "median_paired_speed_ratio_vs_newton_solve": 288.8742919946925
+      }
+    },
+    "cases": {
+      "cloth": [
+        {
+          "identity": "cloth-1200100-reference",
+          "family": "cloth",
+          "nodes": 60,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.5728634595870972,
+          "mean_node_distance_pct_length": 1.2269690036773682,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.4482085704803467,
+            "16": 0.6057906746864319,
+            "64": 1.0909115076065063
+          },
+          "newton_solve_p50_ms": 4.518218,
+          "newton_solve_and_native_readout_p50_ms": 4.523705,
+          "neurall_step_and_position_decode_p50_ms": 0.008364,
+          "neurall_step_and_position_decode_p90_ms": 0.0088472,
+          "neurall_step_and_position_decode_p99_ms": 0.00921116
+        },
+        {
+          "identity": "cloth-1200101-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.7819018363952637,
+          "mean_node_distance_pct_length": 1.392822265625,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5263679027557373,
+            "16": 0.5850782990455627,
+            "64": 1.1009113788604736
+          },
+          "newton_solve_p50_ms": 5.928046999999999,
+          "newton_solve_and_native_readout_p50_ms": 5.93391,
+          "neurall_step_and_position_decode_p50_ms": 0.009206,
+          "neurall_step_and_position_decode_p90_ms": 0.009784,
+          "neurall_step_and_position_decode_p99_ms": 0.01006432
+        },
+        {
+          "identity": "cloth-1200102-reference",
+          "family": "cloth",
+          "nodes": 117,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.4062892198562622,
+          "mean_node_distance_pct_length": 1.0731525421142578,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5998349189758301,
+            "16": 0.7112559080123901,
+            "64": 1.0894805192947388
+          },
+          "newton_solve_p50_ms": 6.366301,
+          "newton_solve_and_native_readout_p50_ms": 6.37254,
+          "neurall_step_and_position_decode_p50_ms": 0.009167,
+          "neurall_step_and_position_decode_p90_ms": 0.0096334,
+          "neurall_step_and_position_decode_p99_ms": 0.00989000000000001
+        },
+        {
+          "identity": "cloth-1200103-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 5.24885368347168,
+          "mean_node_distance_pct_length": 4.056085109710693,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.9391286969184875,
+            "16": 2.1596357822418213,
+            "64": 5.283012866973877
+          },
+          "newton_solve_p50_ms": 5.9827069999999996,
+          "newton_solve_and_native_readout_p50_ms": 5.988674,
+          "neurall_step_and_position_decode_p50_ms": 0.009158,
+          "neurall_step_and_position_decode_p90_ms": 0.009653,
+          "neurall_step_and_position_decode_p99_ms": 0.010045920000000014
+        },
+        {
+          "identity": "cloth-1200104-reference",
+          "family": "cloth",
+          "nodes": 60,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 2.5230889320373535,
+          "mean_node_distance_pct_length": 1.9524073600769043,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.524554967880249,
+            "16": 1.0391777753829956,
+            "64": 2.4302642345428467
+          },
+          "newton_solve_p50_ms": 4.5317099999999995,
+          "newton_solve_and_native_readout_p50_ms": 4.53728,
+          "neurall_step_and_position_decode_p50_ms": 0.008497,
+          "neurall_step_and_position_decode_p90_ms": 0.00898,
+          "neurall_step_and_position_decode_p99_ms": 0.009367520000000002
+        },
+        {
+          "identity": "cloth-1200105-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.347201943397522,
+          "mean_node_distance_pct_length": 1.0347621440887451,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6751521825790405,
+            "16": 0.8332202434539795,
+            "64": 1.2960827350616455
+          },
+          "newton_solve_p50_ms": 5.943141,
+          "newton_solve_and_native_readout_p50_ms": 5.949215,
+          "neurall_step_and_position_decode_p50_ms": 0.009274,
+          "neurall_step_and_position_decode_p90_ms": 0.0097946,
+          "neurall_step_and_position_decode_p99_ms": 0.010445280000000006
+        },
+        {
+          "identity": "cloth-1200106-reference",
+          "family": "cloth",
+          "nodes": 80,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.7821484804153442,
+          "mean_node_distance_pct_length": 1.376041293144226,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5526578426361084,
+            "16": 0.7179898619651794,
+            "64": 1.4084969758987427
+          },
+          "newton_solve_p50_ms": 5.162942999999999,
+          "newton_solve_and_native_readout_p50_ms": 5.1683959999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.008635,
+          "neurall_step_and_position_decode_p90_ms": 0.0090106,
+          "neurall_step_and_position_decode_p99_ms": 0.009797480000000006
+        },
+        {
+          "identity": "cloth-1200107-reference",
+          "family": "cloth",
+          "nodes": 104,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.820078730583191,
+          "mean_node_distance_pct_length": 1.3810584545135498,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6526207327842712,
+            "16": 0.6062004566192627,
+            "64": 1.1115223169326782
+          },
+          "newton_solve_p50_ms": 5.966201,
+          "newton_solve_and_native_readout_p50_ms": 5.9721589999999996,
+          "neurall_step_and_position_decode_p50_ms": 0.009201,
+          "neurall_step_and_position_decode_p90_ms": 0.0096264,
+          "neurall_step_and_position_decode_p99_ms": 0.010041320000000012
+        },
+        {
+          "identity": "cloth-1200108-reference",
+          "family": "cloth",
+          "nodes": 90,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.9327576160430908,
+          "mean_node_distance_pct_length": 1.4739508628845215,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.44673600792884827,
+            "16": 0.7197866439819336,
+            "64": 1.8948639631271362
+          },
+          "newton_solve_p50_ms": 5.501554,
+          "newton_solve_and_native_readout_p50_ms": 5.507527,
+          "neurall_step_and_position_decode_p50_ms": 0.008891,
+          "neurall_step_and_position_decode_p90_ms": 0.009304999999999999,
+          "neurall_step_and_position_decode_p99_ms": 0.009585440000000004
+        },
+        {
+          "identity": "cloth-1200109-reference",
+          "family": "cloth",
+          "nodes": 72,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.5736098289489746,
+          "mean_node_distance_pct_length": 1.2184611558914185,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6379469037055969,
+            "16": 0.5293977856636047,
+            "64": 1.6685594320297241
+          },
+          "newton_solve_p50_ms": 4.925044,
+          "newton_solve_and_native_readout_p50_ms": 4.930463,
+          "neurall_step_and_position_decode_p50_ms": 0.008532,
+          "neurall_step_and_position_decode_p90_ms": 0.0089316,
+          "neurall_step_and_position_decode_p99_ms": 0.009294360000000005
+        },
+        {
+          "identity": "cloth-1200110-reference",
+          "family": "cloth",
+          "nodes": 96,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.5250345468521118,
+          "mean_node_distance_pct_length": 1.1002498865127563,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.5237687826156616,
+            "16": 0.6190857291221619,
+            "64": 0.7937139272689819
+          },
+          "newton_solve_p50_ms": 5.700628,
+          "newton_solve_and_native_readout_p50_ms": 5.706618,
+          "neurall_step_and_position_decode_p50_ms": 0.009119,
+          "neurall_step_and_position_decode_p90_ms": 0.0095636,
+          "neurall_step_and_position_decode_p99_ms": 0.01005808000000001
+        },
+        {
+          "identity": "cloth-1200111-reference",
+          "family": "cloth",
+          "nodes": 66,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 1.8035640716552734,
+          "mean_node_distance_pct_length": 1.3856360912322998,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.4906722903251648,
+            "16": 0.7657080888748169,
+            "64": 1.4447779655456543
+          },
+          "newton_solve_p50_ms": 4.7239119999999994,
+          "newton_solve_and_native_readout_p50_ms": 4.729646,
+          "neurall_step_and_position_decode_p50_ms": 0.008632,
+          "neurall_step_and_position_decode_p90_ms": 0.0091412,
+          "neurall_step_and_position_decode_p99_ms": 0.009517320000000008
+        }
+      ],
+      "cable": [
+        {
+          "identity": "cable-1200100-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 1.2287812012345967e-07,
+          "mean_position_rmse_pct_length": 0.2861901521682739,
+          "mean_node_distance_pct_length": 0.23147112131118774,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3499205708503723,
+            "16": 0.6275436878204346,
+            "64": 0.31794172525405884
+          },
+          "newton_solve_p50_ms": 4.042447999999999,
+          "newton_solve_and_native_readout_p50_ms": 4.097144999999999,
+          "neurall_step_and_position_decode_p50_ms": 0.014063,
+          "neurall_step_and_position_decode_p90_ms": 0.0149374,
+          "neurall_step_and_position_decode_p99_ms": 0.015535160000000003
+        },
+        {
+          "identity": "cable-1200101-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.2287812012345967e-07,
+          "mean_position_rmse_pct_length": 0.6430256366729736,
+          "mean_node_distance_pct_length": 0.5395628809928894,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6503025889396667,
+            "16": 0.6165801286697388,
+            "64": 0.5444259643554688
+          },
+          "newton_solve_p50_ms": 4.067232,
+          "newton_solve_and_native_readout_p50_ms": 4.122673,
+          "neurall_step_and_position_decode_p50_ms": 0.014075,
+          "neurall_step_and_position_decode_p90_ms": 0.0147816,
+          "neurall_step_and_position_decode_p99_ms": 0.015339880000000002
+        },
+        {
+          "identity": "cable-1200102-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.5637403130531311,
+          "mean_node_distance_pct_length": 0.4669555723667145,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.4957164227962494,
+            "16": 0.6648263335227966,
+            "64": 0.651287317276001
+          },
+          "newton_solve_p50_ms": 4.125112,
+          "newton_solve_and_native_readout_p50_ms": 4.179646,
+          "neurall_step_and_position_decode_p50_ms": 0.01463,
+          "neurall_step_and_position_decode_p90_ms": 0.0150748,
+          "neurall_step_and_position_decode_p99_ms": 0.016367320000000008
+        },
+        {
+          "identity": "cable-1200103-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.6432749629020691,
+          "mean_node_distance_pct_length": 0.525153636932373,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.6310308575630188,
+            "16": 0.5676243901252747,
+            "64": 0.6924432516098022
+          },
+          "newton_solve_p50_ms": 4.089542,
+          "newton_solve_and_native_readout_p50_ms": 4.1479539999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.014407,
+          "neurall_step_and_position_decode_p90_ms": 0.0148962,
+          "neurall_step_and_position_decode_p99_ms": 0.015975360000000004
+        },
+        {
+          "identity": "cable-1200104-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.3705434203147888,
+          "mean_node_distance_pct_length": 0.30061519145965576,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3864772915840149,
+            "16": 0.4375375211238861,
+            "64": 0.4920038878917694
+          },
+          "newton_solve_p50_ms": 4.018927,
+          "newton_solve_and_native_readout_p50_ms": 4.074959,
+          "neurall_step_and_position_decode_p50_ms": 0.013801,
+          "neurall_step_and_position_decode_p90_ms": 0.014413,
+          "neurall_step_and_position_decode_p99_ms": 0.01519408
+        },
+        {
+          "identity": "cable-1200105-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 0.0,
+          "mean_position_rmse_pct_length": 0.5110380053520203,
+          "mean_node_distance_pct_length": 0.40368959307670593,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.8790988326072693,
+            "16": 1.0428427457809448,
+            "64": 0.7772339582443237
+          },
+          "newton_solve_p50_ms": 4.068054,
+          "newton_solve_and_native_readout_p50_ms": 4.1236489999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.013997,
+          "neurall_step_and_position_decode_p90_ms": 0.014659199999999999,
+          "neurall_step_and_position_decode_p99_ms": 0.015221840000000004
+        },
+        {
+          "identity": "cable-1200106-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.38645055890083313,
+          "mean_node_distance_pct_length": 0.31142860651016235,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.44178149104118347,
+            "16": 0.36265161633491516,
+            "64": 0.39264893531799316
+          },
+          "newton_solve_p50_ms": 4.031803,
+          "newton_solve_and_native_readout_p50_ms": 4.089570999999999,
+          "neurall_step_and_position_decode_p50_ms": 0.014451,
+          "neurall_step_and_position_decode_p90_ms": 0.0149128,
+          "neurall_step_and_position_decode_p99_ms": 0.01616364
+        },
+        {
+          "identity": "cable-1200107-reference",
+          "family": "cable",
+          "nodes": 16,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.3454124629497528,
+          "mean_node_distance_pct_length": 0.2886299788951874,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3561832308769226,
+            "16": 0.41479581594467163,
+            "64": 0.586135745048523
+          },
+          "newton_solve_p50_ms": 4.066312,
+          "newton_solve_and_native_readout_p50_ms": 4.121513,
+          "neurall_step_and_position_decode_p50_ms": 0.014081,
+          "neurall_step_and_position_decode_p90_ms": 0.0147478,
+          "neurall_step_and_position_decode_p99_ms": 0.015472160000000002
+        },
+        {
+          "identity": "cable-1200108-reference",
+          "family": "cable",
+          "nodes": 12,
+          "max_pinned_position_error_m": 2.9802322387695312e-08,
+          "mean_position_rmse_pct_length": 0.423448771238327,
+          "mean_node_distance_pct_length": 0.3389407992362976,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.35948655009269714,
+            "16": 0.36733269691467285,
+            "64": 0.719159722328186
+          },
+          "newton_solve_p50_ms": 4.0090699999999995,
+          "newton_solve_and_native_readout_p50_ms": 4.065412,
+          "neurall_step_and_position_decode_p50_ms": 0.013954,
+          "neurall_step_and_position_decode_p90_ms": 0.0145866,
+          "neurall_step_and_position_decode_p99_ms": 0.01517364
+        },
+        {
+          "identity": "cable-1200109-reference",
+          "family": "cable",
+          "nodes": 11,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.374504029750824,
+          "mean_node_distance_pct_length": 0.2991589605808258,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.48740169405937195,
+            "16": 0.5368242263793945,
+            "64": 0.6344654560089111
+          },
+          "newton_solve_p50_ms": 4.007295,
+          "newton_solve_and_native_readout_p50_ms": 4.062819999999999,
+          "neurall_step_and_position_decode_p50_ms": 0.01386,
+          "neurall_step_and_position_decode_p90_ms": 0.0146412,
+          "neurall_step_and_position_decode_p99_ms": 0.015469480000000002
+        },
+        {
+          "identity": "cable-1200110-reference",
+          "family": "cable",
+          "nodes": 15,
+          "max_pinned_position_error_m": 2.9802322387695312e-08,
+          "mean_position_rmse_pct_length": 0.6448494791984558,
+          "mean_node_distance_pct_length": 0.5290921926498413,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3888017237186432,
+            "16": 0.6484260559082031,
+            "64": 0.7671328186988831
+          },
+          "newton_solve_p50_ms": 4.102735,
+          "newton_solve_and_native_readout_p50_ms": 4.1596,
+          "neurall_step_and_position_decode_p50_ms": 0.013913,
+          "neurall_step_and_position_decode_p90_ms": 0.0145652,
+          "neurall_step_and_position_decode_p99_ms": 0.015151400000000008
+        },
+        {
+          "identity": "cable-1200111-reference",
+          "family": "cable",
+          "nodes": 13,
+          "max_pinned_position_error_m": 1.1920928955078125e-07,
+          "mean_position_rmse_pct_length": 0.3590018153190613,
+          "mean_node_distance_pct_length": 0.2771194875240326,
+          "position_rmse_from_reset_pct_length": {
+            "1": 0.3997631371021271,
+            "16": 0.6891873478889465,
+            "64": 0.5761685967445374
+          },
+          "newton_solve_p50_ms": 4.086412,
+          "newton_solve_and_native_readout_p50_ms": 4.1431569999999995,
+          "neurall_step_and_position_decode_p50_ms": 0.013979,
+          "neurall_step_and_position_decode_p90_ms": 0.0146564,
+          "neurall_step_and_position_decode_p99_ms": 0.015293040000000016
+        }
+      ]
+    }
+  }
+}

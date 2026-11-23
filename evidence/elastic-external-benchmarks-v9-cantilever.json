@@ -1,0 +1,138 @@
+{
+  "source": "https://github.com/newton-physics/newton/blob/0ced8f8420d4ee1eab9ecfaee59e1354ef670348/newton/examples/vbd/example_cable_bend_stiffness.py",
+  "official_newton": {
+    "passed_all_example_assertions": true,
+    "newton_version": "1.9.0.dev0",
+    "warp_version": "1.19.0.dev20261020",
+    "fps": 60,
+    "steps": 510,
+    "substeps": 10,
+    "iterations": 20,
+    "gravity_m_s2": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "ramp_s": 2.0,
+    "hold_s": 6.0,
+    "tip_force_n": 0.5,
+    "terminal_tip_deflections_mm": [
+      201.11149551092922,
+      68.37190886224285,
+      21.954398337015846
+    ],
+    "terminal_deflection_times_stiffness": [
+      20.11114955109292,
+      20.511572658672854,
+      19.75895850331426
+    ],
+    "zero_load_max_motion_mm": 0.0009113478300263044
+  },
+  "probe_scope": {
+    "response": "Each actor's loaded centerlines minus its own zero-tip-load centerlines.",
+    "tip_measurement": "Start node of the final segment, the penultimate exported centerline point.",
+    "alignment": "Newton positions linearly sampled at 50 Hz and the recorded 60 Hz force averaged over each 50 Hz interval.",
+    "limitation": "The frozen model lacks gravity and bend damping inputs. Length, stretch stiffness, bend stiffness, and density exceed its cable training range. Results are a compatibility probe of added motion."
+  },
+  "geometry": [
+    {
+      "family": "cable",
+      "dt": 0.02,
+      "length_m": 1.6,
+      "segment_count": 16,
+      "stretch_stiffness_n_m": 1000000.0,
+      "bend_stiffness_nm_rad": 100.0,
+      "newton_bend_damping_nm_s_rad": 100.0,
+      "radius_m": 0.009999999776482582,
+      "density_kg_m3": 1000.0,
+      "initial_tilt_rad": 0.0,
+      "tip_body_mass_kg": 0.035604722797870636
+    },
+    {
+      "family": "cable",
+      "dt": 0.02,
+      "length_m": 1.6,
+      "segment_count": 16,
+      "stretch_stiffness_n_m": 1000000.0,
+      "bend_stiffness_nm_rad": 300.0,
+      "newton_bend_damping_nm_s_rad": 300.0,
+      "radius_m": 0.009999999776482582,
+      "density_kg_m3": 1000.0,
+      "initial_tilt_rad": 0.0,
+      "tip_body_mass_kg": 0.035604722797870636
+    },
+    {
+      "family": "cable",
+      "dt": 0.02,
+      "length_m": 1.6,
+      "segment_count": 16,
+      "stretch_stiffness_n_m": 1000000.0,
+      "bend_stiffness_nm_rad": 900.0,
+      "newton_bend_damping_nm_s_rad": 900.0,
+      "radius_m": 0.009999999776482582,
+      "density_kg_m3": 1000.0,
+      "initial_tilt_rad": 0.0,
+      "tip_body_mass_kg": 0.035604722797870636
+    }
+  ],
+  "actors": {
+    "large": {
+      "checkpoint_sha256": "84c23339f7ec1aea651eb8ba1a0b274965246c0c5bb94955983e17e187c18d0b",
+      "monotone_positive_deflection": false,
+      "max_invariant_relative_deviation_pct": 112.55108210320364,
+      "cables": [
+        {
+          "bend_stiffness_nm_rad": 100.0,
+          "mean_response_displacement_error_mm": 333.50478750494625,
+          "relative_response_error_pct": 358.30445182411984,
+          "terminal_added_deflection_mm": -538.1174683570862,
+          "terminal_deflection_times_stiffness": -53.81174683570862
+        },
+        {
+          "bend_stiffness_nm_rad": 300.0,
+          "mean_response_displacement_error_mm": 67.11548095169104,
+          "relative_response_error_pct": 213.52626653641303,
+          "terminal_added_deflection_mm": -17.843633890151978,
+          "terminal_deflection_times_stiffness": -5.353090167045593
+        },
+        {
+          "bend_stiffness_nm_rad": 900.0,
+          "mean_response_displacement_error_mm": 46.239561343719124,
+          "relative_response_error_pct": 450.8101387213676,
+          "terminal_added_deflection_mm": 7.504396140575409,
+          "terminal_deflection_times_stiffness": 6.753956526517868
+        }
+      ]
+    },
+    "baseline": {
+      "checkpoint_sha256": "416a82a2dbb0f6a01f9ad1d868e3778445df678f48dc9d0811f008669f0a3da2",
+      "monotone_positive_deflection": false,
+      "max_invariant_relative_deviation_pct": 358.44500302605945,
+      "cables": [
+        {
+          "bend_stiffness_nm_rad": 100.0,
+          "mean_response_displacement_error_mm": 134.2483123615398,
+          "relative_response_error_pct": 144.231116827075,
+          "terminal_added_deflection_mm": -67.46262311935425,
+          "terminal_deflection_times_stiffness": -6.746262311935425
+        },
+        {
+          "bend_stiffness_nm_rad": 300.0,
+          "mean_response_displacement_error_mm": 92.29780764708785,
+          "relative_response_error_pct": 293.64322503424006,
+          "terminal_added_deflection_mm": -36.645807325839996,
+          "terminal_deflection_times_stiffness": -10.993742197751999
+        },
+        {
+          "bend_stiffness_nm_rad": 900.0,
+          "mean_response_displacement_error_mm": 19.56948585954153,
+          "relative_response_error_pct": 190.7916593210523,
+          "terminal_added_deflection_mm": 19.372642040252686,
+          "terminal_deflection_times_stiffness": 17.435377836227417
+        }
+      ]
+    }
+  }
+}

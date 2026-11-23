@@ -1,8 +1,106 @@
 {
   "schema": 1,
-  "updated": "2026-11-23T09:12:34Z",
-  "headline": "How the shared model responds to long, fast, strong, and relocated loads",
+  "updated": "2026-11-23T13:22:11Z",
+  "headline": "Benchmarking the frozen shared model against Newton and public deformable tests",
   "runs": [
+    {
+      "id": "elastic-external-benchmarks-v9",
+      "date": "2026-11-23",
+      "title": "External benchmarks and a Newton cantilever check",
+      "status": "Measured",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Matched CPU timings use 24 original-load scenes with the same start, forces, and 50 Hz output. Newton’s public cantilever example runs in zero gravity at 60 Hz. The NeurALL response probe preserves impulse when aligning to 50 Hz, then differences each actor’s loaded and unloaded rollouts. The frozen model lacks gravity and bend-damping inputs, and the test materials are outside its training range.",
+      "summary": "Newton passes the official cantilever checks. NeurALL predicts the wrong deflection direction at two stiffness settings. Public learned-cable and measured textile benchmarks also supply useful test targets, with observed deformed starts, moving attachment points, or collisions as part of their respective protocols.",
+      "metrics": [
+        {
+          "label": "Cloth mean position error",
+          "value": 2.03,
+          "unit": "%",
+          "detail": "Percent of rest length on 12 six-second held-out reference scenes."
+        },
+        {
+          "label": "Cloth median CPU step ratio",
+          "value": "606–622",
+          "unit": "×",
+          "detail": "Warmed single-scene comparison with stock CPU Newton VBD. NeurALL includes position decoding."
+        },
+        {
+          "label": "Cable mean position error",
+          "value": 0.46,
+          "unit": "%",
+          "detail": "Percent of rest length on 12 six-second held-out reference scenes."
+        },
+        {
+          "label": "Cable median CPU step ratio",
+          "value": "289–293",
+          "unit": "×",
+          "detail": "Warmed single-scene comparison with stock CPU Newton VBD. NeurALL includes position decoding."
+        },
+        {
+          "label": "Newton cantilever checks",
+          "value": "Pass",
+          "detail": "Official test with three bending stiffness settings."
+        },
+        {
+          "label": "NeurALL cantilever response checks",
+          "value": "Fail",
+          "detail": "Both frozen checkpoints produce an upward response at two of the three stiffness settings."
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "src": "media/elastic-external-benchmarks-v9-cantilever.mp4",
+          "poster": "media/elastic-external-benchmarks-v9-cantilever.webp",
+          "label": "The change due to the force at bend stiffness 300 N·m/rad. All three responses start at the same rest centerline."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Matched CPU timing and trajectory metrics",
+          "url": "evidence/elastic-external-benchmarks-v9-cpu.json"
+        },
+        {
+          "label": "Official cantilever result and learned response scores",
+          "url": "evidence/elastic-external-benchmarks-v9-cantilever.json"
+        },
+        {
+          "label": "Newton cantilever example",
+          "url": "https://github.com/newton-physics/newton/blob/0ced8f8420d4ee1eab9ecfaee59e1354ef670348/newton/examples/vbd/example_cable_bend_stiffness.py"
+        },
+        {
+          "label": "NVIDIA Neural Robot Dynamics",
+          "url": "https://research.nvidia.com/publication/2025-09_neural-robot-dynamics"
+        },
+        {
+          "label": "FlashNeRD",
+          "url": "https://arxiv.org/abs/2610.09130"
+        },
+        {
+          "label": "DLOGPS cable-release benchmark",
+          "url": "https://github.com/avihaig/dlogps"
+        },
+        {
+          "label": "GAUGE real textile measurements and solver comparisons",
+          "url": "https://arxiv.org/html/2608.05948v1#S5.T3"
+        },
+        {
+          "label": "ClothTransformer benchmark and weights",
+          "url": "https://github.com/YuCrazing/ClothTransformer"
+        },
+        {
+          "label": "MeshGraphNets flag benchmarks",
+          "url": "https://github.com/google-deepmind/deepmind-research/tree/master/meshgraphnets"
+        },
+        {
+          "label": "Our same-scene Particle NeRD sand comparison",
+          "url": "https://maxkra15.github.io/neurall/#particle-nerd-comparison"
+        }
+      ]
+    },
     {
       "id": "elastic-shared-excitation-stress-v8",
       "title": "Frozen cloth and cable models under stronger and longer forcing",
