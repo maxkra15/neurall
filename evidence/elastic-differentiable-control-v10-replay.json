@@ -1,0 +1,434 @@
+{
+  "stock_replay": {
+    "checkpoint_sha256": "84c23339f7ec1aea651eb8ba1a0b274965246c0c5bb94955983e17e187c18d0b",
+    "task": "Match Newton's added-motion response for two fixed endpoint pulse shapes, with bounded amplitudes.",
+    "dt_s": 0.02,
+    "frames": 301,
+    "initial_amplitudes_m_s2": [
+      2.5,
+      2.5
+    ],
+    "target_amplitudes_m_s2": [
+      6.0,
+      5.0
+    ],
+    "allowed_amplitudes_m_s2": [
+      0.0,
+      8.0
+    ],
+    "pulses": [
+      {
+        "onset_s": 2.2,
+        "duration_s": 0.9,
+        "axis": "y"
+      },
+      {
+        "onset_s": 3.45,
+        "duration_s": 0.75,
+        "axis": "z"
+      }
+    ],
+    "cases": [
+      {
+        "family": "cloth",
+        "seed": 1205000,
+        "optimized_amplitudes_m_s2": [
+          6.917366199029371,
+          4.983089278631029
+        ],
+        "model_evaluations": 8,
+        "packed_rollout_max_component_difference_m": 2.426331986438157e-07,
+        "model_gradient": [
+          -0.1913989375452,
+          0.014666552920291417
+        ],
+        "newton_finite_difference_gradient": [
+          -0.31223857622908746,
+          0.07662776483049416
+        ],
+        "gradient_cosine": 0.9865528400771606,
+        "model_response_error_pct_before": 69.10949727969992,
+        "model_response_error_pct_after": 34.43699097899691,
+        "newton_replay_response_error_pct_before": 79.64669095973666,
+        "newton_replay_response_error_pct_after": 13.654007257588127
+      },
+      {
+        "family": "cloth",
+        "seed": 1205001,
+        "optimized_amplitudes_m_s2": [
+          6.514646989526756,
+          0.0
+        ],
+        "model_evaluations": 9,
+        "packed_rollout_max_component_difference_m": 2.683478566023467e-07,
+        "model_gradient": [
+          -0.18386182179482324,
+          0.019984151962314695
+        ],
+        "newton_finite_difference_gradient": [
+          -0.20824693217557852,
+          -0.002770878124018772
+        ],
+        "gradient_cosine": 0.992619332653788,
+        "model_response_error_pct_before": 69.68120991810451,
+        "model_response_error_pct_after": 43.58070346798855,
+        "newton_replay_response_error_pct_before": 51.14350620479128,
+        "newton_replay_response_error_pct_after": 39.97787635158647
+      },
+      {
+        "family": "cloth",
+        "seed": 1205002,
+        "optimized_amplitudes_m_s2": [
+          2.05300062605857,
+          5.490569566277347
+        ],
+        "model_evaluations": 7,
+        "packed_rollout_max_component_difference_m": 3.6868406916301666e-07,
+        "model_gradient": [
+          0.05279042567888495,
+          -0.165157027656686
+        ],
+        "newton_finite_difference_gradient": [
+          -0.04670375861545256,
+          -0.13352780208458703
+        ],
+        "gradient_cosine": 0.7985929729786746,
+        "model_response_error_pct_before": 63.937836740237366,
+        "model_response_error_pct_after": 39.56347393523272,
+        "newton_replay_response_error_pct_before": 52.65866239621051,
+        "newton_replay_response_error_pct_after": 36.83467591892583
+      },
+      {
+        "family": "cloth",
+        "seed": 1205003,
+        "optimized_amplitudes_m_s2": [
+          5.779407998314793,
+          4.9159899301441845
+        ],
+        "model_evaluations": 11,
+        "packed_rollout_max_component_difference_m": 2.3658233949674923e-07,
+        "model_gradient": [
+          -0.028022556839107322,
+          -0.1169261774583058
+        ],
+        "newton_finite_difference_gradient": [
+          -0.03847484212371799,
+          -0.14378965253755524
+        ],
+        "gradient_cosine": 0.9996560490849686,
+        "model_response_error_pct_before": 59.40846048422994,
+        "model_response_error_pct_after": 43.64912315386053,
+        "newton_replay_response_error_pct_before": 49.955175547350414,
+        "newton_replay_response_error_pct_after": 3.5458682223082767
+      },
+      {
+        "family": "cloth",
+        "seed": 1205004,
+        "optimized_amplitudes_m_s2": [
+          7.52130906988549,
+          5.650497154825544
+        ],
+        "model_evaluations": 12,
+        "packed_rollout_max_component_difference_m": 3.208830399170637e-07,
+        "model_gradient": [
+          -0.09618825936134945,
+          -0.02667128812719333
+        ],
+        "newton_finite_difference_gradient": [
+          -0.11060910117221823,
+          0.014092783068060943
+        ],
+        "gradient_cosine": 0.9221421157000158,
+        "model_response_error_pct_before": 71.76062438357297,
+        "model_response_error_pct_after": 35.173563470407146,
+        "newton_replay_response_error_pct_before": 75.51026676485601,
+        "newton_replay_response_error_pct_after": 52.38096698905471
+      },
+      {
+        "family": "cloth",
+        "seed": 1205005,
+        "optimized_amplitudes_m_s2": [
+          5.059535662053334,
+          3.2632332655999923
+        ],
+        "model_evaluations": 7,
+        "packed_rollout_max_component_difference_m": 4.168546432481435e-07,
+        "model_gradient": [
+          -0.046680198272572755,
+          -0.08188868534096425
+        ],
+        "newton_finite_difference_gradient": [
+          -0.05159945529659621,
+          -0.14550911139796355
+        ],
+        "gradient_cosine": 0.9843193448809594,
+        "model_response_error_pct_before": 66.22997213333974,
+        "model_response_error_pct_after": 58.52031539550365,
+        "newton_replay_response_error_pct_before": 51.24994001723478,
+        "newton_replay_response_error_pct_after": 32.9049861660077
+      },
+      {
+        "family": "cable",
+        "seed": 1205000,
+        "optimized_amplitudes_m_s2": [
+          7.946560868844678,
+          8.0
+        ],
+        "model_evaluations": 7,
+        "packed_rollout_max_component_difference_m": 4.6065892744806547e-07,
+        "model_gradient": [
+          -0.11864763242020289,
+          -0.04848459767927818
+        ],
+        "newton_finite_difference_gradient": [
+          -0.13594605170509144,
+          -0.06300885836513143
+        ],
+        "gradient_cosine": 0.9989387251512912,
+        "model_response_error_pct_before": 69.81032797104831,
+        "model_response_error_pct_after": 16.018440903165722,
+        "newton_replay_response_error_pct_before": 56.3475241764427,
+        "newton_replay_response_error_pct_after": 44.12131253604515
+      },
+      {
+        "family": "cable",
+        "seed": 1205001,
+        "optimized_amplitudes_m_s2": [
+          2.73439589682338,
+          2.231167857240715
+        ],
+        "model_evaluations": 5,
+        "packed_rollout_max_component_difference_m": 3.791095103400366e-07,
+        "model_gradient": [
+          -0.04192921944494335,
+          0.03134790729905672
+        ],
+        "newton_finite_difference_gradient": [
+          -0.14747977470795343,
+          -0.04704724185852521
+        ],
+        "gradient_cosine": 0.581039429060391,
+        "model_response_error_pct_before": 28.147145241701686,
+        "model_response_error_pct_after": 26.475999621589818,
+        "newton_replay_response_error_pct_before": 56.32982291260071,
+        "newton_replay_response_error_pct_after": 54.59340814129956
+      },
+      {
+        "family": "cable",
+        "seed": 1205002,
+        "optimized_amplitudes_m_s2": [
+          3.414050757095587,
+          2.7505944429807387
+        ],
+        "model_evaluations": 8,
+        "packed_rollout_max_component_difference_m": 6.680267121139671e-07,
+        "model_gradient": [
+          -0.13286389432045548,
+          -0.009466958893266311
+        ],
+        "newton_finite_difference_gradient": [
+          -0.18059272309208368,
+          -0.01394264308877402
+        ],
+        "gradient_cosine": 0.9999824815320211,
+        "model_response_error_pct_before": 41.834423060843584,
+        "model_response_error_pct_after": 33.52355825765175,
+        "newton_replay_response_error_pct_before": 57.864620597017705,
+        "newton_replay_response_error_pct_after": 43.32589912195939
+      },
+      {
+        "family": "cable",
+        "seed": 1205003,
+        "optimized_amplitudes_m_s2": [
+          3.496551416880307,
+          2.4695507179362206
+        ],
+        "model_evaluations": 5,
+        "packed_rollout_max_component_difference_m": 5.033896830486384e-07,
+        "model_gradient": [
+          -0.10462221235621451,
+          0.00691292228302357
+        ],
+        "newton_finite_difference_gradient": [
+          -0.13532007770439586,
+          -0.05985336129257085
+        ],
+        "gradient_cosine": 0.8858751244743165,
+        "model_response_error_pct_before": 37.65015499192346,
+        "model_response_error_pct_after": 29.87246360338427,
+        "newton_replay_response_error_pct_before": 56.018606855941954,
+        "newton_replay_response_error_pct_after": 44.74373615326543
+      },
+      {
+        "family": "cable",
+        "seed": 1205004,
+        "optimized_amplitudes_m_s2": [
+          6.07580257573135,
+          7.124479889827307
+        ],
+        "model_evaluations": 7,
+        "packed_rollout_max_component_difference_m": 2.9918876157108976e-07,
+        "model_gradient": [
+          -0.1217210303742437,
+          -0.06257754175741537
+        ],
+        "newton_finite_difference_gradient": [
+          -0.13134384424109247,
+          -0.0656555578091092
+        ],
+        "gradient_cosine": 0.9999359194760485,
+        "model_response_error_pct_before": 60.55261516743595,
+        "model_response_error_pct_after": 12.024876497945023,
+        "newton_replay_response_error_pct_before": 55.56347900027667,
+        "newton_replay_response_error_pct_after": 24.1499680186683
+      },
+      {
+        "family": "cable",
+        "seed": 1205005,
+        "optimized_amplitudes_m_s2": [
+          6.724323298351177,
+          7.158427463377346
+        ],
+        "model_evaluations": 7,
+        "packed_rollout_max_component_difference_m": 2.8436537574672016e-07,
+        "model_gradient": [
+          -0.13165179970252558,
+          -0.04832161726098307
+        ],
+        "newton_finite_difference_gradient": [
+          -0.1401387860636208,
+          -0.057063390739168496
+        ],
+        "gradient_cosine": 0.9993904926788125,
+        "model_response_error_pct_before": 63.37841334058246,
+        "model_response_error_pct_after": 15.279721272292287,
+        "newton_replay_response_error_pct_before": 56.30893610229918,
+        "newton_replay_response_error_pct_after": 25.822313489233633
+      }
+    ]
+  },
+  "finer_replay": {
+    "substeps": 8,
+    "iterations": 16,
+    "cases": [
+      {
+        "family": "cloth",
+        "seed": 1205000,
+        "refined_newton_response_error_pct_before": 57.00074876650552,
+        "refined_newton_response_error_pct_after": 7.521288629225613
+      },
+      {
+        "family": "cloth",
+        "seed": 1205001,
+        "refined_newton_response_error_pct_before": 43.53655425047404,
+        "refined_newton_response_error_pct_after": 32.49468269309908
+      },
+      {
+        "family": "cloth",
+        "seed": 1205002,
+        "refined_newton_response_error_pct_before": 53.97395190254529,
+        "refined_newton_response_error_pct_after": 36.69881210393971
+      },
+      {
+        "family": "cloth",
+        "seed": 1205003,
+        "refined_newton_response_error_pct_before": 56.589778336234026,
+        "refined_newton_response_error_pct_after": 2.5990109893263007
+      },
+      {
+        "family": "cloth",
+        "seed": 1205004,
+        "refined_newton_response_error_pct_before": 57.251928091854644,
+        "refined_newton_response_error_pct_after": 18.557055448391978
+      },
+      {
+        "family": "cloth",
+        "seed": 1205005,
+        "refined_newton_response_error_pct_before": 55.591224614419744,
+        "refined_newton_response_error_pct_after": 33.22814682286751
+      },
+      {
+        "family": "cable",
+        "seed": 1205000,
+        "refined_newton_response_error_pct_before": 54.629543796418766,
+        "refined_newton_response_error_pct_after": 46.945663806245086
+      },
+      {
+        "family": "cable",
+        "seed": 1205001,
+        "refined_newton_response_error_pct_before": 55.90742362203625,
+        "refined_newton_response_error_pct_after": 54.894047966727484
+      },
+      {
+        "family": "cable",
+        "seed": 1205002,
+        "refined_newton_response_error_pct_before": 55.645331525759104,
+        "refined_newton_response_error_pct_after": 43.97743930772031
+      },
+      {
+        "family": "cable",
+        "seed": 1205003,
+        "refined_newton_response_error_pct_before": 54.976921010782995,
+        "refined_newton_response_error_pct_after": 45.791196125057446
+      },
+      {
+        "family": "cable",
+        "seed": 1205004,
+        "refined_newton_response_error_pct_before": 55.83616728067873,
+        "refined_newton_response_error_pct_after": 24.932396073424517
+      },
+      {
+        "family": "cable",
+        "seed": 1205005,
+        "refined_newton_response_error_pct_before": 55.09179695637116,
+        "refined_newton_response_error_pct_after": 29.91326472655288
+      }
+    ]
+  },
+  "summary": {
+    "cloth": {
+      "surrogate": {
+        "cases": 6,
+        "before": 66.68793348986408,
+        "after": 42.48736173366492,
+        "improved": 6
+      },
+      "stock_newton": {
+        "cases": 6,
+        "before": 60.02737364836327,
+        "after": 29.883063484245184,
+        "improved": 6
+      },
+      "finer_newton": {
+        "cases": 6,
+        "before": 53.990697660338874,
+        "after": 21.8498327811417,
+        "improved": 6
+      },
+      "median_initial_gradient_cosine": 0.9854360924790599,
+      "worst_initial_gradient_cosine": 0.7985929729786746
+    },
+    "cable": {
+      "surrogate": {
+        "cases": 6,
+        "before": 50.228846628922575,
+        "after": 22.199176692671475,
+        "improved": 6
+      },
+      "stock_newton": {
+        "cases": 6,
+        "before": 56.40549827409649,
+        "after": 39.45943957674525,
+        "improved": 6
+      },
+      "finer_newton": {
+        "cases": 6,
+        "before": 55.347864032007834,
+        "after": 41.07566800095462,
+        "improved": 6
+      },
+      "median_initial_gradient_cosine": 0.9991646089150519,
+      "worst_initial_gradient_cosine": 0.581039429060391
+    }
+  }
+}

@@ -1,8 +1,56 @@
 {
   "schema": 1,
-  "updated": "2026-11-23T13:22:11Z",
-  "headline": "Benchmarking the frozen shared model against Newton and public deformable tests",
+  "updated": "2026-11-23T19:13:51Z",
+  "headline": "A bounded test of differentiable force planning in NeurALL",
   "runs": [
+    {
+      "id": "elastic-differentiable-control-v10",
+      "title": "Action gradients replayed in Newton",
+      "date": "2026-11-23",
+      "status": "Measured",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "Two smooth force amplitudes at the existing attachment site, six seconds, locked weights, 12 new geometries, no contact. L-BFGS-B sees the frozen Torch model and a target trajectory. Newton evaluates the chosen controls afterward.",
+      "summary": "Every optimized action improved the target response error in both Newton settings. This is a two-parameter control test and measures whether the learned gradients are useful for these endpoint forces.",
+      "metrics": [
+        {
+          "label": "Cloth response error in stock Newton",
+          "value": "60.0% → 29.9%",
+          "detail": "Mean on six fresh geometries. All 6 improved."
+        },
+        {
+          "label": "Cloth response error in finer Newton",
+          "value": "54.0% → 21.8%",
+          "detail": "Mean on six fresh geometries. All 6 improved."
+        },
+        {
+          "label": "Cable response error in stock Newton",
+          "value": "56.4% → 39.5%",
+          "detail": "Mean on six fresh geometries. All 6 improved."
+        },
+        {
+          "label": "Cable response error in finer Newton",
+          "value": "55.3% → 41.1%",
+          "detail": "Mean on six fresh geometries. All 6 improved."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Per-case gradient, stock replay and finer replay",
+          "url": "evidence/elastic-differentiable-control-v10-replay.json"
+        },
+        {
+          "label": "SuperMimic training with imagined gradients",
+          "url": "https://arxiv.org/abs/2610.28480"
+        },
+        {
+          "label": "GPWM object representation and verified action replay",
+          "url": "https://arxiv.org/html/2611.08338v1#A5.SS5"
+        }
+      ]
+    },
     {
       "id": "elastic-external-benchmarks-v9",
       "date": "2026-11-23",
