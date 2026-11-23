@@ -1,0 +1,3099 @@
+{
+  "protocol": {
+    "test_seconds": 12.0,
+    "training_seconds": 6,
+    "tail_start_seconds": 10.0,
+    "recording_interval_seconds": 0.02,
+    "geometry_seeds_per_material": 12,
+    "force_profiles": {
+      "long-hold": {
+        "label": "Long sustained hold",
+        "description": "An 8 m/s² lateral load ramped on at 2 s and off by 10 s."
+      },
+      "fast-oscillation": {
+        "label": "Fast oscillation",
+        "description": "An 8 Hz lateral oscillation at 6 m/s², with smooth entry and exit."
+      },
+      "strong-reversals": {
+        "label": "Strong reversing kicks",
+        "description": "Four alternating 22 m/s² lateral kicks, each lasting 0.16 s."
+      }
+    },
+    "training_trajectories": {
+      "baseline": 4096,
+      "large": 104096
+    }
+  },
+  "summary": {
+    "cloth": {
+      "all": {
+        "baseline": {
+          "pooled_response_pct": 59.421575120629775,
+          "equal_case_response_pct": 504.58693159118957,
+          "tail_pooled_response_pct": 61.65422337458845,
+          "mean_position_pct_length": 8.305844436668052,
+          "first_six_seconds_position_pct_length": 4.527639964226295,
+          "tail_mean_position_pct_length": 14.454681919563074,
+          "terminal_mean_position_pct_length": 14.085118809557295,
+          "worst_peak_position_pct_length": 64.49598402227852,
+          "beats_ignore_load": 18,
+          "cases_at_most_one_pct_position": 0
+        },
+        "large": {
+          "pooled_response_pct": 31.72126323456956,
+          "equal_case_response_pct": 318.7134656048123,
+          "tail_pooled_response_pct": 33.387360705878194,
+          "mean_position_pct_length": 4.895475300871062,
+          "first_six_seconds_position_pct_length": 2.9788039513376456,
+          "tail_mean_position_pct_length": 7.8092752233078535,
+          "terminal_mean_position_pct_length": 7.582062185513471,
+          "worst_peak_position_pct_length": 29.346966101223426,
+          "beats_ignore_load": 23,
+          "cases_at_most_one_pct_position": 0
+        }
+      },
+      "waveforms": {
+        "long-hold": {
+          "cases": 12,
+          "actors": {
+            "baseline": {
+              "pooled_response_pct": 56.721396652534814,
+              "equal_case_response_pct": 57.34799273383985,
+              "tail_pooled_response_pct": 59.77544029902682,
+              "mean_position_pct_length": 14.00748049307389,
+              "first_six_seconds_position_pct_length": 7.148084863095343,
+              "tail_mean_position_pct_length": 25.3389461929017,
+              "terminal_mean_position_pct_length": 24.48276729553612,
+              "worst_peak_position_pct_length": 64.49598402227852,
+              "beats_ignore_load": 12,
+              "cases_at_most_one_pct_position": 0
+            },
+            "large": {
+              "pooled_response_pct": 28.47304096300252,
+              "equal_case_response_pct": 26.447702768520028,
+              "tail_pooled_response_pct": 30.83288219233666,
+              "mean_position_pct_length": 6.00671489419354,
+              "first_six_seconds_position_pct_length": 3.939975509164373,
+              "tail_mean_position_pct_length": 8.61732684744581,
+              "terminal_mean_position_pct_length": 7.445232911704561,
+              "worst_peak_position_pct_length": 25.533266873331897,
+              "beats_ignore_load": 12,
+              "cases_at_most_one_pct_position": 0
+            }
+          },
+          "observed_max_added_acceleration_m_s2": 8.0,
+          "observed_max_added_slew_m_s3": 31.286895751953125,
+          "mean_newton_response_pct_length": 35.73316140035477
+        },
+        "fast-oscillation": {
+          "cases": 12,
+          "actors": {
+            "baseline": {
+              "pooled_response_pct": 510.86860500104586,
+              "equal_case_response_pct": 1364.5520353171971,
+              "tail_pooled_response_pct": 422.579572253657,
+              "mean_position_pct_length": 4.553089304903405,
+              "first_six_seconds_position_pct_length": 2.703426663041247,
+              "tail_mean_position_pct_length": 7.686637681213663,
+              "terminal_mean_position_pct_length": 8.126983207734328,
+              "worst_peak_position_pct_length": 24.709408341805307,
+              "beats_ignore_load": 0,
+              "cases_at_most_one_pct_position": 0
+            },
+            "large": {
+              "pooled_response_pct": 320.9296008747964,
+              "equal_case_response_pct": 858.469495028377,
+              "tail_pooled_response_pct": 259.3544650386832,
+              "mean_position_pct_length": 3.739774038713494,
+              "first_six_seconds_position_pct_length": 1.9268799798680325,
+              "tail_mean_position_pct_length": 7.273712174806588,
+              "terminal_mean_position_pct_length": 7.683210009491584,
+              "worst_peak_position_pct_length": 25.30723590424948,
+              "beats_ignore_load": 0,
+              "cases_at_most_one_pct_position": 0
+            }
+          },
+          "observed_max_added_acceleration_m_s2": 5.988160133361816,
+          "observed_max_added_slew_m_s3": 289.0522155761719,
+          "mean_newton_response_pct_length": 0.4585711312647743
+        },
+        "strong-reversals": {
+          "cases": 12,
+          "actors": {
+            "baseline": {
+              "pooled_response_pct": 87.01084810086982,
+              "equal_case_response_pct": 91.86076672253161,
+              "tail_pooled_response_pct": 83.03940263741904,
+              "mean_position_pct_length": 6.356963512026859,
+              "first_six_seconds_position_pct_length": 3.731408366542294,
+              "tail_mean_position_pct_length": 10.338461884573858,
+              "terminal_mean_position_pct_length": 9.64560592540144,
+              "worst_peak_position_pct_length": 40.423919331766214,
+              "beats_ignore_load": 6,
+              "cases_at_most_one_pct_position": 0
+            },
+            "large": {
+              "pooled_response_pct": 61.47632800169792,
+              "equal_case_response_pct": 71.2231990175399,
+              "tail_pooled_response_pct": 60.27711783788365,
+              "mean_position_pct_length": 4.93993696970615,
+              "first_six_seconds_position_pct_length": 3.0695563649805315,
+              "tail_mean_position_pct_length": 7.5367866476711605,
+              "terminal_mean_position_pct_length": 7.617743635344269,
+              "worst_peak_position_pct_length": 29.346966101223426,
+              "beats_ignore_load": 11,
+              "cases_at_most_one_pct_position": 0
+            }
+          },
+          "observed_max_added_acceleration_m_s2": 22.0,
+          "observed_max_added_slew_m_s3": 388.9087829589844,
+          "mean_newton_response_pct_length": 8.17920828007423
+        }
+      }
+    },
+    "cable": {
+      "all": {
+        "baseline": {
+          "pooled_response_pct": 87.0872703020584,
+          "equal_case_response_pct": 1349.06642785441,
+          "tail_pooled_response_pct": 101.17800734875857,
+          "mean_position_pct_length": 2.1933929321976398,
+          "first_six_seconds_position_pct_length": 2.239373316237472,
+          "tail_mean_position_pct_length": 1.7817311433581555,
+          "terminal_mean_position_pct_length": 1.4891751025534967,
+          "worst_peak_position_pct_length": 11.5104385142464,
+          "beats_ignore_load": 13,
+          "cases_at_most_one_pct_position": 5
+        },
+        "large": {
+          "pooled_response_pct": 47.54993776142879,
+          "equal_case_response_pct": 823.1944741195878,
+          "tail_pooled_response_pct": 47.42363075865663,
+          "mean_position_pct_length": 1.0429865853489853,
+          "first_six_seconds_position_pct_length": 0.9589405529355335,
+          "tail_mean_position_pct_length": 0.8735408844871456,
+          "terminal_mean_position_pct_length": 0.7895909504459593,
+          "worst_peak_position_pct_length": 4.3763272642844235,
+          "beats_ignore_load": 19,
+          "cases_at_most_one_pct_position": 21
+        }
+      },
+      "waveforms": {
+        "long-hold": {
+          "cases": 12,
+          "actors": {
+            "baseline": {
+              "pooled_response_pct": 79.85316631649047,
+              "equal_case_response_pct": 121.76199775000352,
+              "tail_pooled_response_pct": 109.26467931760638,
+              "mean_position_pct_length": 2.7604241342950204,
+              "first_six_seconds_position_pct_length": 2.6503111805093376,
+              "tail_mean_position_pct_length": 2.0369634153668303,
+              "terminal_mean_position_pct_length": 1.7361033161342154,
+              "worst_peak_position_pct_length": 9.451851284105581,
+              "beats_ignore_load": 7,
+              "cases_at_most_one_pct_position": 0
+            },
+            "large": {
+              "pooled_response_pct": 48.26884064244338,
+              "equal_case_response_pct": 76.49418482168909,
+              "tail_pooled_response_pct": 55.32708374064488,
+              "mean_position_pct_length": 1.536180016905096,
+              "first_six_seconds_position_pct_length": 1.3719456834614674,
+              "tail_mean_position_pct_length": 0.9245344074535198,
+              "terminal_mean_position_pct_length": 0.7573216495727153,
+              "worst_peak_position_pct_length": 4.1079221767296294,
+              "beats_ignore_load": 10,
+              "cases_at_most_one_pct_position": 3
+            }
+          },
+          "observed_max_added_acceleration_m_s2": 8.0,
+          "observed_max_added_slew_m_s3": 31.286895751953125,
+          "mean_newton_response_pct_length": 3.5684587137640995
+        },
+        "fast-oscillation": {
+          "cases": 12,
+          "actors": {
+            "baseline": {
+              "pooled_response_pct": 2265.869016369053,
+              "equal_case_response_pct": 3778.4927527871037,
+              "tail_pooled_response_pct": 3843.6817144802617,
+              "mean_position_pct_length": 1.3806068473089281,
+              "first_six_seconds_position_pct_length": 1.7472368888465006,
+              "tail_mean_position_pct_length": 0.819780670804383,
+              "terminal_mean_position_pct_length": 0.6214427125561469,
+              "worst_peak_position_pct_length": 11.5104385142464,
+              "beats_ignore_load": 0,
+              "cases_at_most_one_pct_position": 5
+            },
+            "large": {
+              "pooled_response_pct": 1316.0978752665287,
+              "equal_case_response_pct": 2315.2123572950545,
+              "tail_pooled_response_pct": 3525.61183000215,
+              "mean_position_pct_length": 0.5389556525072235,
+              "first_six_seconds_position_pct_length": 0.59667976751262,
+              "tail_mean_position_pct_length": 0.5070541967715855,
+              "terminal_mean_position_pct_length": 0.4520509778464225,
+              "worst_peak_position_pct_length": 2.3749231146844276,
+              "beats_ignore_load": 0,
+              "cases_at_most_one_pct_position": 11
+            }
+          },
+          "observed_max_added_acceleration_m_s2": 5.988160133361816,
+          "observed_max_added_slew_m_s3": 289.0522155761719,
+          "mean_newton_response_pct_length": 0.021492865677556816
+        },
+        "strong-reversals": {
+          "cases": 12,
+          "actors": {
+            "baseline": {
+              "pooled_response_pct": 98.64310916420582,
+              "equal_case_response_pct": 146.94453302612305,
+              "tail_pooled_response_pct": 96.56615745668074,
+              "mean_position_pct_length": 2.4391478149889703,
+              "first_six_seconds_position_pct_length": 2.320571879356577,
+              "tail_mean_position_pct_length": 2.488449343903254,
+              "terminal_mean_position_pct_length": 2.1099792789701275,
+              "worst_peak_position_pct_length": 11.442716128679495,
+              "beats_ignore_load": 6,
+              "cases_at_most_one_pct_position": 0
+            },
+            "large": {
+              "pooled_response_pct": 44.667539710587086,
+              "equal_case_response_pct": 77.8768802420197,
+              "tail_pooled_response_pct": 42.549153865057804,
+              "mean_position_pct_length": 1.0538240866346364,
+              "first_six_seconds_position_pct_length": 0.9081962078325129,
+              "tail_mean_position_pct_length": 1.1890340492363316,
+              "terminal_mean_position_pct_length": 1.15940022391874,
+              "worst_peak_position_pct_length": 4.3763272642844235,
+              "beats_ignore_load": 9,
+              "cases_at_most_one_pct_position": 7
+            }
+          },
+          "observed_max_added_acceleration_m_s2": 22.0,
+          "observed_max_added_slew_m_s3": 388.9087829589844,
+          "mean_newton_response_pct_length": 2.46809653687622
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "identity": "cable-1204000-fast-oscillation",
+      "length_m": 0.7060133825018919,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204000,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.0077472229520116715,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0018711130518429915,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5175991849382549,
+          "relative_response_rmse_pct": 6681.093188416026,
+          "prediction_response_rms_pct_length": 0.5173889578010877,
+          "mean_position_pct_length": 0.6432634270173481,
+          "first_six_seconds_position_pct_length": 0.9233959270674408,
+          "tail_mean_position_pct_length": 0.4523083630164648,
+          "terminal_position_pct_length": 0.5046793304524683,
+          "peak_position_pct_length": 1.9649380352702839,
+          "tail_response_rmse_pct_length": 0.003581126246856962,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.3315297951199723,
+          "relative_response_rmse_pct": 4279.33721765276,
+          "prediction_response_rms_pct_length": 0.3315515371012067,
+          "mean_position_pct_length": 0.3313487072793995,
+          "first_six_seconds_position_pct_length": 0.49391230142239767,
+          "tail_mean_position_pct_length": 0.17669334435759215,
+          "terminal_position_pct_length": 0.18291568841082004,
+          "peak_position_pct_length": 1.0211390460511234,
+          "tail_response_rmse_pct_length": 0.0089296298313354,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204000-long-hold",
+      "length_m": 0.7060133825018919,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204000,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 0.590136901563691,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 0.21699729783845034,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4335073010763764,
+          "relative_response_rmse_pct": 412.36318125985514,
+          "prediction_response_rms_pct_length": 2.95087781373087,
+          "mean_position_pct_length": 2.1724274395812624,
+          "first_six_seconds_position_pct_length": 2.188983712060597,
+          "tail_mean_position_pct_length": 0.7868058565889098,
+          "terminal_position_pct_length": 0.6958081220967953,
+          "peak_position_pct_length": 3.8444846143478095,
+          "tail_response_rmse_pct_length": 0.9889418534686213,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.3867289549719082,
+          "relative_response_rmse_pct": 234.98428098590009,
+          "prediction_response_rms_pct_length": 1.958423254583352,
+          "mean_position_pct_length": 1.118867506083783,
+          "first_six_seconds_position_pct_length": 1.12048957852242,
+          "tail_mean_position_pct_length": 0.5371070750341207,
+          "terminal_position_pct_length": 0.4013536899149627,
+          "peak_position_pct_length": 2.586991423674721,
+          "tail_response_rmse_pct_length": 0.6164691386915239,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204000-strong-reversals",
+      "length_m": 0.7060133825018919,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204000,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 0.37872458003252385,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 0.37581783519761447,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.555018698901935,
+          "relative_response_rmse_pct": 410.5935502703295,
+          "prediction_response_rms_pct_length": 1.688514734173009,
+          "mean_position_pct_length": 1.104769293115801,
+          "first_six_seconds_position_pct_length": 1.1562851559643994,
+          "tail_mean_position_pct_length": 1.0448243652560565,
+          "terminal_position_pct_length": 0.519430506671496,
+          "peak_position_pct_length": 5.585873874608294,
+          "tail_response_rmse_pct_length": 1.4536376446723953,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0008006909908995,
+          "relative_response_rmse_pct": 264.2555418253955,
+          "prediction_response_rms_pct_length": 1.2709865048413238,
+          "mean_position_pct_length": 0.6610376042129409,
+          "first_six_seconds_position_pct_length": 0.691967289517391,
+          "tail_mean_position_pct_length": 0.6969819175220313,
+          "terminal_position_pct_length": 0.15165813132684872,
+          "peak_position_pct_length": 3.4944240759565264,
+          "tail_response_rmse_pct_length": 0.9393662326011449,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204001-fast-oscillation",
+      "length_m": 0.9673121014708839,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204001,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.007576431399376049,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0018233448382278849,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.587310242785488,
+          "relative_response_rmse_pct": 7751.805722597257,
+          "prediction_response_rms_pct_length": 0.586536000427683,
+          "mean_position_pct_length": 1.2523352496703202,
+          "first_six_seconds_position_pct_length": 1.5698247542657298,
+          "tail_mean_position_pct_length": 0.8194007943731779,
+          "terminal_position_pct_length": 0.5723540179819048,
+          "peak_position_pct_length": 3.3869119829680736,
+          "tail_response_rmse_pct_length": 0.08039137287900872,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4043419915373161,
+          "relative_response_rmse_pct": 5336.839604600859,
+          "prediction_response_rms_pct_length": 0.40588322385166914,
+          "mean_position_pct_length": 0.4882153635616843,
+          "first_six_seconds_position_pct_length": 0.6245084223723619,
+          "tail_mean_position_pct_length": 0.3898632465256271,
+          "terminal_position_pct_length": 0.5238006344700495,
+          "peak_position_pct_length": 1.5690685706564045,
+          "tail_response_rmse_pct_length": 0.11141356704263627,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204001-long-hold",
+      "length_m": 0.9673121014708839,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204001,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 1.7634744258693038,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 1.0689941637557097,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.2427844220632482,
+          "relative_response_rmse_pct": 127.17986658398343,
+          "prediction_response_rms_pct_length": 3.0871154659818463,
+          "mean_position_pct_length": 2.3642153313311085,
+          "first_six_seconds_position_pct_length": 2.3848613823849725,
+          "tail_mean_position_pct_length": 2.071657017546993,
+          "terminal_position_pct_length": 1.2804284899851461,
+          "peak_position_pct_length": 4.282510494531005,
+          "tail_response_rmse_pct_length": 1.8461046001898738,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.8523772934389386,
+          "relative_response_rmse_pct": 105.04134714206646,
+          "prediction_response_rms_pct_length": 3.5247610144823316,
+          "mean_position_pct_length": 1.5039335996786067,
+          "first_six_seconds_position_pct_length": 1.5362886580316304,
+          "tail_mean_position_pct_length": 1.0426541137458858,
+          "terminal_position_pct_length": 0.3418961486175752,
+          "peak_position_pct_length": 3.926325937355564,
+          "tail_response_rmse_pct_length": 0.9425969835445007,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204001-strong-reversals",
+      "length_m": 0.9673121014708839,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204001,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 0.8305721573503674,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 0.8381306658649644,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8365406822530592,
+          "relative_response_rmse_pct": 221.11753518344048,
+          "prediction_response_rms_pct_length": 1.9977601814152095,
+          "mean_position_pct_length": 1.6988936080527435,
+          "first_six_seconds_position_pct_length": 2.022391996956743,
+          "tail_mean_position_pct_length": 1.7371201263625236,
+          "terminal_position_pct_length": 1.0708529090245409,
+          "peak_position_pct_length": 6.854661956989787,
+          "tail_response_rmse_pct_length": 2.1749197579877233,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.2194955262700193,
+          "relative_response_rmse_pct": 146.8259579228333,
+          "prediction_response_rms_pct_length": 1.8119368803375975,
+          "mean_position_pct_length": 1.0319532251883197,
+          "first_six_seconds_position_pct_length": 0.965178780944838,
+          "tail_mean_position_pct_length": 1.2843692741212358,
+          "terminal_position_pct_length": 1.1378314706851398,
+          "peak_position_pct_length": 3.84689454541044,
+          "tail_response_rmse_pct_length": 1.1337288405326444,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204002-fast-oscillation",
+      "length_m": 1.003659108623289,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204002,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.02527375527759645,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0035071370593948727,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5542120259799651,
+          "relative_response_rmse_pct": 2192.8360858634974,
+          "prediction_response_rms_pct_length": 0.5541414696517628,
+          "mean_position_pct_length": 1.2814377880066667,
+          "first_six_seconds_position_pct_length": 1.658509427419887,
+          "tail_mean_position_pct_length": 0.7076418873167871,
+          "terminal_position_pct_length": 0.9225327455202276,
+          "peak_position_pct_length": 4.97662782134941,
+          "tail_response_rmse_pct_length": 0.0521298022447574,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.24479626426374895,
+          "relative_response_rmse_pct": 968.5789134816265,
+          "prediction_response_rms_pct_length": 0.25398425539852687,
+          "mean_position_pct_length": 0.6051240985870134,
+          "first_six_seconds_position_pct_length": 0.5953533716385774,
+          "tail_mean_position_pct_length": 0.624843742907253,
+          "terminal_position_pct_length": 0.3348947516441791,
+          "peak_position_pct_length": 1.2778202285961733,
+          "tail_response_rmse_pct_length": 0.039515022556226694,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204002-long-hold",
+      "length_m": 1.003659108623289,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204002,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 4.056050695526526,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 1.8447416739654328,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.6420258322707935,
+          "relative_response_rmse_pct": 65.13788979966942,
+          "prediction_response_rms_pct_length": 2.7929055392939808,
+          "mean_position_pct_length": 2.7751051053639775,
+          "first_six_seconds_position_pct_length": 2.664183797520801,
+          "tail_mean_position_pct_length": 2.509122142128677,
+          "terminal_position_pct_length": 2.8119911270459337,
+          "peak_position_pct_length": 6.632498112564181,
+          "tail_response_rmse_pct_length": 2.0370152015717973,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 2.0267512143347957,
+          "relative_response_rmse_pct": 49.96858684656302,
+          "prediction_response_rms_pct_length": 2.6819776677514624,
+          "mean_position_pct_length": 1.4802542946505313,
+          "first_six_seconds_position_pct_length": 1.3289917852520297,
+          "tail_mean_position_pct_length": 0.5198519766684613,
+          "terminal_position_pct_length": 0.46619443053236215,
+          "peak_position_pct_length": 3.5831877340553655,
+          "tail_response_rmse_pct_length": 0.8446547143952818,
+          "p99_abs_edge_strain_pct": 5.9604644775390625e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204002-strong-reversals",
+      "length_m": 1.003659108623289,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204002,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 2.5094527432148803,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 2.2305513008183633,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4170847325248426,
+          "relative_response_rmse_pct": 96.31919704645625,
+          "prediction_response_rms_pct_length": 1.5960915245810774,
+          "mean_position_pct_length": 2.268405296649317,
+          "first_six_seconds_position_pct_length": 2.635756928682579,
+          "tail_mean_position_pct_length": 2.4307510151673837,
+          "terminal_position_pct_length": 3.353085892643025,
+          "peak_position_pct_length": 6.4680913262993345,
+          "tail_response_rmse_pct_length": 2.0642678809674897,
+          "p99_abs_edge_strain_pct": 5.9604644775390625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1514918200320905,
+          "relative_response_rmse_pct": 45.88617271815627,
+          "prediction_response_rms_pct_length": 2.154925420605127,
+          "mean_position_pct_length": 0.9247079254839761,
+          "first_six_seconds_position_pct_length": 0.9393582352433751,
+          "tail_mean_position_pct_length": 0.9603286217350414,
+          "terminal_position_pct_length": 0.9386247903948323,
+          "peak_position_pct_length": 3.4355594713398783,
+          "tail_response_rmse_pct_length": 1.0408265785675983,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204003-fast-oscillation",
+      "length_m": 0.7991429930215352,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204003,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.03006503120769439,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0026856706401279214,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5388095279423931,
+          "relative_response_rmse_pct": 1792.1469105426984,
+          "prediction_response_rms_pct_length": 0.5366805867403537,
+          "mean_position_pct_length": 1.4778274732671566,
+          "first_six_seconds_position_pct_length": 2.0038291513237665,
+          "tail_mean_position_pct_length": 0.6539273947430448,
+          "terminal_position_pct_length": 0.8674954649099028,
+          "peak_position_pct_length": 5.808878019095592,
+          "tail_response_rmse_pct_length": 0.029131394801060872,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.31871640859644074,
+          "relative_response_rmse_pct": 1060.0900640837294,
+          "prediction_response_rms_pct_length": 0.3272976365940903,
+          "mean_position_pct_length": 0.5689659580877816,
+          "first_six_seconds_position_pct_length": 0.7407503164845692,
+          "tail_mean_position_pct_length": 0.40313247152341813,
+          "terminal_position_pct_length": 0.42174131748999727,
+          "peak_position_pct_length": 2.2335140784820458,
+          "tail_response_rmse_pct_length": 0.03666138858495479,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204003-long-hold",
+      "length_m": 0.7991429930215352,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204003,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 5.60532948899326,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 2.5647552938825373,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.8408457538328107,
+          "relative_response_rmse_pct": 68.52131995763628,
+          "prediction_response_rms_pct_length": 2.6465998822957135,
+          "mean_position_pct_length": 3.5064903654144715,
+          "first_six_seconds_position_pct_length": 3.2817770997894735,
+          "tail_mean_position_pct_length": 2.5969394826021226,
+          "terminal_position_pct_length": 2.6659128878692595,
+          "peak_position_pct_length": 7.764485255397126,
+          "tail_response_rmse_pct_length": 2.4679712192373398,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 2.871902762798127,
+          "relative_response_rmse_pct": 51.23521763417215,
+          "prediction_response_rms_pct_length": 2.908190299162062,
+          "mean_position_pct_length": 2.3587740576713365,
+          "first_six_seconds_position_pct_length": 2.248404906156694,
+          "tail_mean_position_pct_length": 0.743644742018926,
+          "terminal_position_pct_length": 0.20868384424566788,
+          "peak_position_pct_length": 4.1079221767296294,
+          "tail_response_rmse_pct_length": 0.7419243111339403,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204003-strong-reversals",
+      "length_m": 0.7991429930215352,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204003,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 2.742112218329258,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 2.6492015576939965,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.503212069751809,
+          "relative_response_rmse_pct": 91.28773261062932,
+          "prediction_response_rms_pct_length": 1.7389115204342136,
+          "mean_position_pct_length": 2.3008680502040346,
+          "first_six_seconds_position_pct_length": 2.4713158820024983,
+          "tail_mean_position_pct_length": 2.2289344081887954,
+          "terminal_position_pct_length": 2.3235825158841505,
+          "peak_position_pct_length": 6.268612648550113,
+          "tail_response_rmse_pct_length": 2.2917688470156454,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.2709158301527523,
+          "relative_response_rmse_pct": 46.34806050815488,
+          "prediction_response_rms_pct_length": 1.8847916049784854,
+          "mean_position_pct_length": 1.085677113436387,
+          "first_six_seconds_position_pct_length": 1.0974017517441552,
+          "tail_mean_position_pct_length": 0.9238282003011623,
+          "terminal_position_pct_length": 0.20936743003297864,
+          "peak_position_pct_length": 3.4966204066203965,
+          "tail_response_rmse_pct_length": 1.0524016035716737,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204004-fast-oscillation",
+      "length_m": 0.7408816513403776,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204004,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.029349582877357307,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0038966765926781704,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5270521699820329,
+          "relative_response_rmse_pct": 1795.773971250012,
+          "prediction_response_rms_pct_length": 0.5300033284034081,
+          "mean_position_pct_length": 1.5848000740227361,
+          "first_six_seconds_position_pct_length": 2.018494439499536,
+          "tail_mean_position_pct_length": 0.9899928323535157,
+          "terminal_position_pct_length": 0.7134585036051593,
+          "peak_position_pct_length": 4.7770013029206995,
+          "tail_response_rmse_pct_length": 0.05768507177628709,
+          "p99_abs_edge_strain_pct": 0.00011920928955078125
+        },
+        "large": {
+          "response_rmse_pct_length": 0.24293184016246563,
+          "relative_response_rmse_pct": 827.7182036201384,
+          "prediction_response_rms_pct_length": 0.25314135560102025,
+          "mean_position_pct_length": 0.7138302517545742,
+          "first_six_seconds_position_pct_length": 0.724079527979702,
+          "tail_mean_position_pct_length": 0.6918195759599461,
+          "terminal_position_pct_length": 0.5649401641259273,
+          "peak_position_pct_length": 1.3862764443125555,
+          "tail_response_rmse_pct_length": 0.045234943031242085,
+          "p99_abs_edge_strain_pct": 0.00011920928955078125
+        }
+      }
+    },
+    {
+      "identity": "cable-1204004-long-hold",
+      "length_m": 0.7408816513403776,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204004,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 4.171923889759673,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 2.0539147901108916,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.031382557885113,
+          "relative_response_rmse_pct": 72.66150193501585,
+          "prediction_response_rms_pct_length": 1.9649916481199998,
+          "mean_position_pct_length": 3.127707564789108,
+          "first_six_seconds_position_pct_length": 3.351762159702047,
+          "tail_mean_position_pct_length": 1.7878085773982197,
+          "terminal_position_pct_length": 2.6379870698811017,
+          "peak_position_pct_length": 8.532187125944857,
+          "tail_response_rmse_pct_length": 1.9484025422277045,
+          "p99_abs_edge_strain_pct": 0.0001251697540283203
+        },
+        "large": {
+          "response_rmse_pct_length": 2.0479183997187413,
+          "relative_response_rmse_pct": 49.08810548403159,
+          "prediction_response_rms_pct_length": 2.536619013065064,
+          "mean_position_pct_length": 1.6488048382710845,
+          "first_six_seconds_position_pct_length": 1.3137382686824326,
+          "tail_mean_position_pct_length": 1.2433430347919834,
+          "terminal_position_pct_length": 1.7381765197215053,
+          "peak_position_pct_length": 3.697325952449373,
+          "tail_response_rmse_pct_length": 1.4002224387648232,
+          "p99_abs_edge_strain_pct": 0.00011920928955078125
+        }
+      }
+    },
+    {
+      "identity": "cable-1204004-strong-reversals",
+      "length_m": 0.7408816513403776,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204004,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 4.096179467142038,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 4.094597051544346,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.9881483252911996,
+          "relative_response_rmse_pct": 97.36263650756948,
+          "prediction_response_rms_pct_length": 1.5720659135679658,
+          "mean_position_pct_length": 4.007401981911474,
+          "first_six_seconds_position_pct_length": 3.6792698143778684,
+          "tail_mean_position_pct_length": 3.610316082919806,
+          "terminal_position_pct_length": 4.581965667653571,
+          "peak_position_pct_length": 9.029351675202667,
+          "tail_response_rmse_pct_length": 3.9903159031977267,
+          "p99_abs_edge_strain_pct": 0.00011920928955078125
+        },
+        "large": {
+          "response_rmse_pct_length": 2.24818949556778,
+          "relative_response_rmse_pct": 54.885034056781045,
+          "prediction_response_rms_pct_length": 2.558312080224928,
+          "mean_position_pct_length": 1.921231359658826,
+          "first_six_seconds_position_pct_length": 1.3563831246751268,
+          "tail_mean_position_pct_length": 2.590570735656119,
+          "terminal_position_pct_length": 3.165942537274227,
+          "peak_position_pct_length": 4.3763272642844235,
+          "tail_response_rmse_pct_length": 2.729139037763545,
+          "p99_abs_edge_strain_pct": 0.00011920928955078125
+        }
+      }
+    },
+    {
+      "identity": "cable-1204005-fast-oscillation",
+      "length_m": 0.9892757241079888,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204005,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.006554209283781837,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0009253362188636079,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5826152029328145,
+          "relative_response_rmse_pct": 8889.176065440504,
+          "prediction_response_rms_pct_length": 0.582230565309541,
+          "mean_position_pct_length": 1.2692701542440192,
+          "first_six_seconds_position_pct_length": 1.4874897682268327,
+          "tail_mean_position_pct_length": 0.9247972825714966,
+          "terminal_position_pct_length": 1.2317212840047438,
+          "peak_position_pct_length": 3.1676842770974765,
+          "tail_response_rmse_pct_length": 0.23023137315453,
+          "p99_abs_edge_strain_pct": 0.00010728836059570312
+        },
+        "large": {
+          "response_rmse_pct_length": 0.42866759057107906,
+          "relative_response_rmse_pct": 6540.340291418556,
+          "prediction_response_rms_pct_length": 0.4304665423176077,
+          "mean_position_pct_length": 0.7616173976596419,
+          "first_six_seconds_position_pct_length": 0.6782713978106126,
+          "tail_mean_position_pct_length": 0.8656298913614452,
+          "terminal_position_pct_length": 0.7709028106883739,
+          "peak_position_pct_length": 1.568117861420077,
+          "tail_response_rmse_pct_length": 0.16963628057807395,
+          "p99_abs_edge_strain_pct": 0.00010728836059570312
+        }
+      }
+    },
+    {
+      "identity": "cable-1204005-long-hold",
+      "length_m": 0.9892757241079888,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204005,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 1.9089027907659288,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 1.643616137638601,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.8993030269167197,
+          "relative_response_rmse_pct": 151.88322008547132,
+          "prediction_response_rms_pct_length": 3.124182609141226,
+          "mean_position_pct_length": 2.845234550684582,
+          "first_six_seconds_position_pct_length": 2.3349634500910565,
+          "tail_mean_position_pct_length": 2.783777308322631,
+          "terminal_position_pct_length": 1.1413604031559206,
+          "peak_position_pct_length": 5.027661930055509,
+          "tail_response_rmse_pct_length": 3.0650801162475165,
+          "p99_abs_edge_strain_pct": 0.00010132789611816406
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7933706332925186,
+          "relative_response_rmse_pct": 93.94771918023892,
+          "prediction_response_rms_pct_length": 2.7817986597229662,
+          "mean_position_pct_length": 1.6655088012979498,
+          "first_six_seconds_position_pct_length": 1.1292228855052489,
+          "tail_mean_position_pct_length": 1.859864686068298,
+          "terminal_position_pct_length": 0.22200701103998122,
+          "peak_position_pct_length": 4.042187407259058,
+          "tail_response_rmse_pct_length": 1.6220132023571747,
+          "p99_abs_edge_strain_pct": 0.00010728836059570312
+        }
+      }
+    },
+    {
+      "identity": "cable-1204005-strong-reversals",
+      "length_m": 0.9892757241079888,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204005,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 0.8672016287810808,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 0.9283101146563526,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.8594186632254535,
+          "relative_response_rmse_pct": 214.41595604923054,
+          "prediction_response_rms_pct_length": 1.9163465121197851,
+          "mean_position_pct_length": 1.9514902819048123,
+          "first_six_seconds_position_pct_length": 2.0412211557808266,
+          "tail_mean_position_pct_length": 1.9922298494249133,
+          "terminal_position_pct_length": 1.5891994466331008,
+          "peak_position_pct_length": 8.064745771514728,
+          "tail_response_rmse_pct_length": 2.0440010444333003,
+          "p99_abs_edge_strain_pct": 0.00010728836059570312
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9292022649919485,
+          "relative_response_rmse_pct": 107.14950643001148,
+          "prediction_response_rms_pct_length": 1.3377971737937753,
+          "mean_position_pct_length": 0.9651028630197607,
+          "first_six_seconds_position_pct_length": 0.7416237536632174,
+          "tail_mean_position_pct_length": 0.7241458468951665,
+          "terminal_position_pct_length": 0.45337563492421,
+          "peak_position_pct_length": 3.5368957574735798,
+          "tail_response_rmse_pct_length": 0.7805962922298904,
+          "p99_abs_edge_strain_pct": 0.00010645389556884766
+        }
+      }
+    },
+    {
+      "identity": "cable-1204006-fast-oscillation",
+      "length_m": 0.762059643619692,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204006,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.011430513613790962,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0017655042386916326,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5308644755709726,
+          "relative_response_rmse_pct": 4644.274907563929,
+          "prediction_response_rms_pct_length": 0.5305555462093124,
+          "mean_position_pct_length": 0.7071099277315116,
+          "first_six_seconds_position_pct_length": 1.0392525218716402,
+          "tail_mean_position_pct_length": 0.32047092374377495,
+          "terminal_position_pct_length": 0.19278916849504948,
+          "peak_position_pct_length": 2.4091764974031817,
+          "tail_response_rmse_pct_length": 0.011913888902264403,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.26981996185486157,
+          "relative_response_rmse_pct": 2360.5235160152615,
+          "prediction_response_rms_pct_length": 0.2710820029855165,
+          "mean_position_pct_length": 0.3294891153613704,
+          "first_six_seconds_position_pct_length": 0.4119387452828693,
+          "tail_mean_position_pct_length": 0.2725399586901443,
+          "terminal_position_pct_length": 0.2591573087629688,
+          "peak_position_pct_length": 0.8022929847158012,
+          "tail_response_rmse_pct_length": 0.006547211181950673,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204006-long-hold",
+      "length_m": 0.762059643619692,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204006,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 1.1953353744394744,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 0.5416909475193628,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.414575415755645,
+          "relative_response_rmse_pct": 118.3412995218165,
+          "prediction_response_rms_pct_length": 2.422648764036947,
+          "mean_position_pct_length": 1.3288988068065373,
+          "first_six_seconds_position_pct_length": 1.4975471946171122,
+          "tail_mean_position_pct_length": 0.6441461743763867,
+          "terminal_position_pct_length": 0.21428504219969643,
+          "peak_position_pct_length": 2.934602298029078,
+          "tail_response_rmse_pct_length": 0.755287245471523,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9736507800615606,
+          "relative_response_rmse_pct": 81.45419276310903,
+          "prediction_response_rms_pct_length": 2.1170580324044472,
+          "mean_position_pct_length": 0.8079057507603664,
+          "first_six_seconds_position_pct_length": 0.7574651210894217,
+          "tail_mean_position_pct_length": 0.6021955237574909,
+          "terminal_position_pct_length": 0.42458205178910224,
+          "peak_position_pct_length": 1.7782413117687002,
+          "tail_response_rmse_pct_length": 0.48637187213052946,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204006-strong-reversals",
+      "length_m": 0.762059643619692,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204006,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 1.2508983180526276,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 1.502330011818816,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.5739236860100674,
+          "relative_response_rmse_pct": 125.82347128424625,
+          "prediction_response_rms_pct_length": 1.6873028076564092,
+          "mean_position_pct_length": 1.418202710156076,
+          "first_six_seconds_position_pct_length": 1.4573553185302415,
+          "tail_mean_position_pct_length": 1.3599067706286285,
+          "terminal_position_pct_length": 1.1362015543901915,
+          "peak_position_pct_length": 5.785527309722996,
+          "tail_response_rmse_pct_length": 1.615343926499453,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.8279495108638721,
+          "relative_response_rmse_pct": 66.18839428554087,
+          "prediction_response_rms_pct_length": 1.4725783526652234,
+          "mean_position_pct_length": 0.6637463333436425,
+          "first_six_seconds_position_pct_length": 0.6096711452003818,
+          "tail_mean_position_pct_length": 0.7282777217354688,
+          "terminal_position_pct_length": 0.6870820791561777,
+          "peak_position_pct_length": 2.5629851439962374,
+          "tail_response_rmse_pct_length": 0.6897648556527474,
+          "p99_abs_edge_strain_pct": 8.344650268554688e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204007-fast-oscillation",
+      "length_m": 0.9088360084247964,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204007,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.02518966493376711,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0035768780276616307,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5791981903059614,
+          "relative_response_rmse_pct": 2299.348529759671,
+          "prediction_response_rms_pct_length": 0.5762757767905352,
+          "mean_position_pct_length": 4.682164370571541,
+          "first_six_seconds_position_pct_length": 5.090690777835771,
+          "tail_mean_position_pct_length": 3.2150433071216464,
+          "terminal_position_pct_length": 0.6693121882071581,
+          "peak_position_pct_length": 11.5104385142464,
+          "tail_response_rmse_pct_length": 0.20754224427138043,
+          "p99_abs_edge_strain_pct": 0.00011324882507324219
+        },
+        "large": {
+          "response_rmse_pct_length": 0.4679888851088668,
+          "relative_response_rmse_pct": 1857.8606993756434,
+          "prediction_response_rms_pct_length": 0.4730750797231038,
+          "mean_position_pct_length": 1.0846454319562115,
+          "first_six_seconds_position_pct_length": 0.8538245582315331,
+          "tail_mean_position_pct_length": 1.5450819589936016,
+          "terminal_position_pct_length": 1.3797199799400777,
+          "peak_position_pct_length": 2.3749231146844276,
+          "tail_response_rmse_pct_length": 0.207409998362865,
+          "p99_abs_edge_strain_pct": 0.00011324882507324219
+        }
+      }
+    },
+    {
+      "identity": "cable-1204007-long-hold",
+      "length_m": 0.9088360084247964,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204007,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 6.900560319245608,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 5.092163452905913,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.4336108200013555,
+          "relative_response_rmse_pct": 93.23316545843481,
+          "prediction_response_rms_pct_length": 3.238466422056929,
+          "mean_position_pct_length": 4.748795274869223,
+          "first_six_seconds_position_pct_length": 4.201114329281611,
+          "tail_mean_position_pct_length": 4.157516209058301,
+          "terminal_position_pct_length": 3.666731385038542,
+          "peak_position_pct_length": 9.074178505536173,
+          "tail_response_rmse_pct_length": 5.549289679968572,
+          "p99_abs_edge_strain_pct": 0.00011324882507324219
+        },
+        "large": {
+          "response_rmse_pct_length": 3.0381158826622423,
+          "relative_response_rmse_pct": 44.02708971601858,
+          "prediction_response_rms_pct_length": 5.2110637905641575,
+          "mean_position_pct_length": 2.204349643976296,
+          "first_six_seconds_position_pct_length": 1.6441230220755263,
+          "tail_mean_position_pct_length": 2.269281359683495,
+          "terminal_position_pct_length": 3.3127626003234014,
+          "peak_position_pct_length": 4.027121826809033,
+          "tail_response_rmse_pct_length": 3.2800753580781854,
+          "p99_abs_edge_strain_pct": 0.00011324882507324219
+        }
+      }
+    },
+    {
+      "identity": "cable-1204007-strong-reversals",
+      "length_m": 0.9088360084247964,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204007,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 3.4147921251816302,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 3.1951295031619833,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.47927759820394,
+          "relative_response_rmse_pct": 101.88841577051721,
+          "prediction_response_rms_pct_length": 1.8596642847042175,
+          "mean_position_pct_length": 3.673131363183779,
+          "first_six_seconds_position_pct_length": 3.448066936927205,
+          "tail_mean_position_pct_length": 2.0223601627470638,
+          "terminal_position_pct_length": 2.1408441268441067,
+          "peak_position_pct_length": 11.442716128679495,
+          "tail_response_rmse_pct_length": 3.273310179819771,
+          "p99_abs_edge_strain_pct": 0.00011324882507324219
+        },
+        "large": {
+          "response_rmse_pct_length": 1.2974101963973028,
+          "relative_response_rmse_pct": 37.99382652987389,
+          "prediction_response_rms_pct_length": 2.6053049596759488,
+          "mean_position_pct_length": 1.4505705124573978,
+          "first_six_seconds_position_pct_length": 1.1204364113014558,
+          "tail_mean_position_pct_length": 1.8850446795979001,
+          "terminal_position_pct_length": 1.8899940040993273,
+          "peak_position_pct_length": 4.09648751425575,
+          "tail_response_rmse_pct_length": 1.742566806183105,
+          "p99_abs_edge_strain_pct": 0.00011324882507324219
+        }
+      }
+    },
+    {
+      "identity": "cable-1204008-fast-oscillation",
+      "length_m": 0.7847104219906029,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204008,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.03348477435211792,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0022050918452776805,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5165227079904118,
+          "relative_response_rmse_pct": 1542.5599186029503,
+          "prediction_response_rms_pct_length": 0.5156454543106501,
+          "mean_position_pct_length": 0.9809224620951613,
+          "first_six_seconds_position_pct_length": 1.32695086753539,
+          "tail_mean_position_pct_length": 0.46715167883839975,
+          "terminal_position_pct_length": 0.6288529027443024,
+          "peak_position_pct_length": 3.860442759669146,
+          "tail_response_rmse_pct_length": 0.014819098342780144,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.23095362770452546,
+          "relative_response_rmse_pct": 689.727292995533,
+          "prediction_response_rms_pct_length": 0.236516290763895,
+          "mean_position_pct_length": 0.41643775308942194,
+          "first_six_seconds_position_pct_length": 0.544420559977025,
+          "tail_mean_position_pct_length": 0.2759062866303346,
+          "terminal_position_pct_length": 0.2573055699386437,
+          "peak_position_pct_length": 1.5418829219663694,
+          "tail_response_rmse_pct_length": 0.04746708597487683,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204008-long-hold",
+      "length_m": 0.7847104219906029,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204008,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 4.256966388144845,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 2.157858343613721,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4177312961198663,
+          "relative_response_rmse_pct": 56.794700161433404,
+          "prediction_response_rms_pct_length": 2.4454829770273814,
+          "mean_position_pct_length": 2.4679485827024794,
+          "first_six_seconds_position_pct_length": 2.4450568440347586,
+          "tail_mean_position_pct_length": 2.1415192075453784,
+          "terminal_position_pct_length": 1.9408689043683276,
+          "peak_position_pct_length": 6.189250835183762,
+          "tail_response_rmse_pct_length": 1.9346809046980091,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 2.3279982331289872,
+          "relative_response_rmse_pct": 54.68678915605702,
+          "prediction_response_rms_pct_length": 2.1304211784750926,
+          "mean_position_pct_length": 1.8955772093314613,
+          "first_six_seconds_position_pct_length": 1.8651439240181034,
+          "tail_mean_position_pct_length": 0.6548931791522197,
+          "terminal_position_pct_length": 0.68870538005606,
+          "peak_position_pct_length": 3.857045958165672,
+          "tail_response_rmse_pct_length": 0.6379565491731071,
+          "p99_abs_edge_strain_pct": 8.940696716308594e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204008-strong-reversals",
+      "length_m": 0.7847104219906029,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204008,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 4.6053269862977535,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 5.781857850719747,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.185292333026385,
+          "relative_response_rmse_pct": 90.87937393976367,
+          "prediction_response_rms_pct_length": 1.79091402271387,
+          "mean_position_pct_length": 3.75281944447468,
+          "first_six_seconds_position_pct_length": 2.7829572255689574,
+          "tail_mean_position_pct_length": 5.135484514168421,
+          "terminal_position_pct_length": 2.56344184568668,
+          "peak_position_pct_length": 8.508674734257857,
+          "tail_response_rmse_pct_length": 5.196904444075452,
+          "p99_abs_edge_strain_pct": 9.5367431640625e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5936902259227792,
+          "relative_response_rmse_pct": 34.60536527947943,
+          "prediction_response_rms_pct_length": 3.450627831551539,
+          "mean_position_pct_length": 1.324579505209967,
+          "first_six_seconds_position_pct_length": 1.1186574766773287,
+          "tail_mean_position_pct_length": 1.439609950831339,
+          "terminal_position_pct_length": 1.7887638495490712,
+          "peak_position_pct_length": 3.5882372336840747,
+          "tail_response_rmse_pct_length": 1.5309234561395715,
+          "p99_abs_edge_strain_pct": 8.940696716308594e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204009-fast-oscillation",
+      "length_m": 0.8098069508448302,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204009,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.01144539808778524,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0006947301887856382,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.522451404905127,
+          "relative_response_rmse_pct": 4564.72899324225,
+          "prediction_response_rms_pct_length": 0.5217145154520678,
+          "mean_position_pct_length": 0.6371661641630906,
+          "first_six_seconds_position_pct_length": 0.9837234174699356,
+          "tail_mean_position_pct_length": 0.24092189605584588,
+          "terminal_position_pct_length": 0.2841976736378094,
+          "peak_position_pct_length": 2.3776677695082866,
+          "tail_response_rmse_pct_length": 0.01402830949871026,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.28958510307497104,
+          "relative_response_rmse_pct": 2530.144437562395,
+          "prediction_response_rms_pct_length": 0.2917191872649184,
+          "mean_position_pct_length": 0.370066400172353,
+          "first_six_seconds_position_pct_length": 0.45932588300112287,
+          "tail_mean_position_pct_length": 0.295580340239022,
+          "terminal_position_pct_length": 0.3393311289851003,
+          "peak_position_pct_length": 0.8840078960408173,
+          "tail_response_rmse_pct_length": 0.00763909083865304,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204009-long-hold",
+      "length_m": 0.8098069508448302,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204009,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 1.1894236928419701,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 0.5354109655206737,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.0624512457775186,
+          "relative_response_rmse_pct": 173.39920653922448,
+          "prediction_response_rms_pct_length": 3.034856983212739,
+          "mean_position_pct_length": 1.7688411204412717,
+          "first_six_seconds_position_pct_length": 1.8474512681851258,
+          "tail_mean_position_pct_length": 0.7959702913527007,
+          "terminal_position_pct_length": 0.6223276763235358,
+          "peak_position_pct_length": 3.1580683388004083,
+          "tail_response_rmse_pct_length": 0.9665831042183257,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1450158006198634,
+          "relative_response_rmse_pct": 96.26643621702206,
+          "prediction_response_rms_pct_length": 2.2937442918528035,
+          "mean_position_pct_length": 0.957416004282263,
+          "first_six_seconds_position_pct_length": 0.9241961435375183,
+          "tail_mean_position_pct_length": 0.6170619469972097,
+          "terminal_position_pct_length": 0.6089843952764576,
+          "peak_position_pct_length": 2.089458018619878,
+          "tail_response_rmse_pct_length": 0.5141132110530421,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204009-strong-reversals",
+      "length_m": 0.8098069508448302,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204009,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 1.215983284434276,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 1.459931293021758,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 1.6692282872239934,
+          "relative_response_rmse_pct": 137.27395011030808,
+          "prediction_response_rms_pct_length": 1.8211211393467441,
+          "mean_position_pct_length": 1.4121690070822195,
+          "first_six_seconds_position_pct_length": 1.3650445333388073,
+          "tail_mean_position_pct_length": 1.4936538533701174,
+          "terminal_position_pct_length": 1.2919348636948376,
+          "peak_position_pct_length": 5.467328840127265,
+          "tail_response_rmse_pct_length": 1.6985525727708528,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.7963791200479764,
+          "relative_response_rmse_pct": 65.49260423579621,
+          "prediction_response_rms_pct_length": 1.4717107449760547,
+          "mean_position_pct_length": 0.6780933578552196,
+          "first_six_seconds_position_pct_length": 0.6505760424567202,
+          "tail_mean_position_pct_length": 0.735381401355045,
+          "terminal_position_pct_length": 0.7837610501624499,
+          "peak_position_pct_length": 2.9294233205058084,
+          "tail_response_rmse_pct_length": 0.6523967694251713,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204010-fast-oscillation",
+      "length_m": 0.8548108961190498,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204010,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.034370704756124984,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.001810718148714128,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.5554100756732965,
+          "relative_response_rmse_pct": 1615.940317820572,
+          "prediction_response_rms_pct_length": 0.5522971825983801,
+          "mean_position_pct_length": 1.467291838398528,
+          "first_six_seconds_position_pct_length": 2.096396578826625,
+          "tail_mean_position_pct_length": 0.6034105276116485,
+          "terminal_position_pct_length": 0.43556142630753886,
+          "peak_position_pct_length": 6.257958477146507,
+          "tail_response_rmse_pct_length": 0.02428327678401594,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.25857750694139287,
+          "relative_response_rmse_pct": 752.3194789752265,
+          "prediction_response_rms_pct_length": 0.2636984063973603,
+          "mean_position_pct_length": 0.5431552865919018,
+          "first_six_seconds_position_pct_length": 0.6978269005557047,
+          "tail_mean_position_pct_length": 0.36880598509038315,
+          "terminal_position_pct_length": 0.26264266853501606,
+          "peak_position_pct_length": 1.1883297921506455,
+          "tail_response_rmse_pct_length": 0.026883416122581792,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204010-long-hold",
+      "length_m": 0.8548108961190498,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204010,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 6.6433439266357395,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 3.081588754153959,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.695588471622209,
+          "relative_response_rmse_pct": 70.68109860752166,
+          "prediction_response_rms_pct_length": 2.555884542247395,
+          "mean_position_pct_length": 4.009505923658118,
+          "first_six_seconds_position_pct_length": 3.759550435002349,
+          "tail_mean_position_pct_length": 2.2879454744620564,
+          "terminal_position_pct_length": 1.4145519553895405,
+          "peak_position_pct_length": 9.451851284105581,
+          "tail_response_rmse_pct_length": 2.7972799025199415,
+          "p99_abs_edge_strain_pct": 7.152557373046875e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 2.1505347021640815,
+          "relative_response_rmse_pct": 32.37126853453657,
+          "prediction_response_rms_pct_length": 4.789089746707616,
+          "mean_position_pct_length": 1.8649809190946791,
+          "first_six_seconds_position_pct_length": 1.7279864673412475,
+          "tail_mean_position_pct_length": 0.6195500461062484,
+          "terminal_position_pct_length": 0.24909019082523592,
+          "peak_position_pct_length": 3.0948308261933586,
+          "tail_response_rmse_pct_length": 0.6655517621504798,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204010-strong-reversals",
+      "length_m": 0.8548108961190498,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204010,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 3.078552745990795,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 2.9968895007253,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.693800168997264,
+          "relative_response_rmse_pct": 87.5021606339344,
+          "prediction_response_rms_pct_length": 1.753035082501339,
+          "mean_position_pct_length": 2.4777672487947116,
+          "first_six_seconds_position_pct_length": 2.6800508644581322,
+          "tail_mean_position_pct_length": 2.05319236358712,
+          "terminal_position_pct_length": 2.1568547041270616,
+          "peak_position_pct_length": 7.011659436823529,
+          "tail_response_rmse_pct_length": 2.523751157792432,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.216700021463119,
+          "relative_response_rmse_pct": 39.52181826501526,
+          "prediction_response_rms_pct_length": 2.9290187565981336,
+          "mean_position_pct_length": 0.9917519086300293,
+          "first_six_seconds_position_pct_length": 0.9489239723092976,
+          "tail_mean_position_pct_length": 1.0253498846083757,
+          "terminal_position_pct_length": 0.859074232865998,
+          "peak_position_pct_length": 2.7742628831921348,
+          "tail_response_rmse_pct_length": 1.048637325678436,
+          "p99_abs_edge_strain_pct": 7.748603820800781e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204011-fast-oscillation",
+      "length_m": 0.8957386215743381,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204011,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.035427099389277884,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.0028269555508742533,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 0.556994925810948,
+          "relative_response_rmse_pct": 1572.2284223458726,
+          "prediction_response_rms_pct_length": 0.5549320728777946,
+          "mean_position_pct_length": 0.5836932385190579,
+          "first_six_seconds_position_pct_length": 0.7682850348154542,
+          "tail_mean_position_pct_length": 0.4423011619067937,
+          "terminal_position_pct_length": 0.434357844807499,
+          "peak_position_pct_length": 1.8276388500051532,
+          "tail_response_rmse_pct_length": 0.008168103043937513,
+          "p99_abs_edge_strain_pct": 6.556510925292969e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 0.20514719703202222,
+          "relative_response_rmse_pct": 579.0685677589247,
+          "prediction_response_rms_pct_length": 0.21018685492395925,
+          "mean_position_pct_length": 0.2545720659853296,
+          "first_six_seconds_position_pct_length": 0.3359452253949645,
+          "tail_mean_position_pct_length": 0.17475355898025757,
+          "terminal_position_pct_length": 0.12725971116591595,
+          "peak_position_pct_length": 0.6970872708441334,
+          "tail_response_rmse_pct_length": 0.028107431292250473,
+          "p99_abs_edge_strain_pct": 6.556510925292969e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204011-long-hold",
+      "length_m": 0.8957386215743381,
+      "prefix_frames": 102,
+      "family": "cable",
+      "seed": 1204011,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 4.540056671383175,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 2.1157636362802617,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.3130464209511183,
+          "relative_response_rmse_pct": 50.94752308997995,
+          "prediction_response_rms_pct_length": 2.9337591234652676,
+          "mean_position_pct_length": 2.009919545898109,
+          "first_six_seconds_position_pct_length": 1.8464824934421453,
+          "tail_mean_position_pct_length": 1.880353243019585,
+          "terminal_position_pct_length": 1.7409867302567845,
+          "peak_position_pct_length": 4.491144436091767,
+          "tail_response_rmse_pct_length": 1.9505066506338178,
+          "p99_abs_edge_strain_pct": 6.556510925292969e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.1286210507486663,
+          "relative_response_rmse_pct": 24.859184200553603,
+          "prediction_response_rms_pct_length": 3.5725396019617865,
+          "mean_position_pct_length": 0.927787577762795,
+          "first_six_seconds_position_pct_length": 0.8672974413253364,
+          "tail_mean_position_pct_length": 0.38496520541789836,
+          "terminal_position_pct_length": 0.42542353253027265,
+          "peak_position_pct_length": 1.7703943754789004,
+          "tail_response_rmse_pct_length": 0.34872911784904814,
+          "p99_abs_edge_strain_pct": 6.556510925292969e-05
+        }
+      }
+    },
+    {
+      "identity": "cable-1204011-strong-reversals",
+      "length_m": 0.8957386215743381,
+      "prefix_frames": 122,
+      "family": "cable",
+      "seed": 1204011,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 4.627362187707408,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 5.632970730635131,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.112356068014835,
+          "relative_response_rmse_pct": 88.87041690705156,
+          "prediction_response_rms_pct_length": 1.7864334005833704,
+          "mean_position_pct_length": 3.203855494337996,
+          "first_six_seconds_position_pct_length": 2.1071467396906653,
+          "tail_mean_position_pct_length": 4.7526186150182195,
+          "terminal_position_pct_length": 2.592357314388768,
+          "peak_position_pct_length": 7.888156163546669,
+          "tail_response_rmse_pct_length": 5.011412509107705,
+          "p99_abs_edge_strain_pct": 6.556510925292969e-05
+        },
+        "large": {
+          "response_rmse_pct_length": 1.173974782838422,
+          "relative_response_rmse_pct": 25.370280847198153,
+          "prediction_response_rms_pct_length": 4.332736433250197,
+          "mean_position_pct_length": 0.947437331119171,
+          "first_six_seconds_position_pct_length": 0.6581765102568676,
+          "tail_mean_position_pct_length": 1.274520356477095,
+          "terminal_position_pct_length": 1.847327476553619,
+          "peak_position_pct_length": 2.671265712168505,
+          "tail_response_rmse_pct_length": 1.3354921869037653,
+          "p99_abs_edge_strain_pct": 6.556510925292969e-05
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204000-fast-oscillation",
+      "length_m": 0.5806576861044437,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204000,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.1896351528172558,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.22574375804409264,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.2815132017839206,
+          "relative_response_rmse_pct": 1730.4350765315069,
+          "prediction_response_rms_pct_length": 3.4364381898750604,
+          "mean_position_pct_length": 6.773994130578503,
+          "first_six_seconds_position_pct_length": 2.1026219879371464,
+          "tail_mean_position_pct_length": 15.605258783889038,
+          "terminal_position_pct_length": 15.169279434965265,
+          "peak_position_pct_length": 24.709408341805307,
+          "tail_response_rmse_pct_length": 4.020454843936034,
+          "p99_abs_edge_strain_pct": 7.061587333679199
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5162597406264327,
+          "relative_response_rmse_pct": 799.5668092653658,
+          "prediction_response_rms_pct_length": 1.6740536573064795,
+          "mean_position_pct_length": 3.051812182915675,
+          "first_six_seconds_position_pct_length": 1.0896838411038197,
+          "tail_mean_position_pct_length": 7.712773382668092,
+          "terminal_position_pct_length": 8.824454124255343,
+          "peak_position_pct_length": 12.252220310668577,
+          "tail_response_rmse_pct_length": 1.7892929486763622,
+          "p99_abs_edge_strain_pct": 4.482148170471191
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204000-long-hold",
+      "length_m": 0.5806576861044437,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204000,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 46.23924064693182,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 64.78138829105163,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 12.338441175047919,
+          "relative_response_rmse_pct": 26.68391825302743,
+          "prediction_response_rms_pct_length": 40.15624125944318,
+          "mean_position_pct_length": 9.704628690127434,
+          "first_six_seconds_position_pct_length": 5.9310370196891995,
+          "tail_mean_position_pct_length": 16.02400725898759,
+          "terminal_position_pct_length": 8.986989330656227,
+          "peak_position_pct_length": 25.962826003882867,
+          "tail_response_rmse_pct_length": 14.788943381455896,
+          "p99_abs_edge_strain_pct": 16.662818908691406
+        },
+        "large": {
+          "response_rmse_pct_length": 6.893836150583532,
+          "relative_response_rmse_pct": 14.909060041064858,
+          "prediction_response_rms_pct_length": 41.92808816414909,
+          "mean_position_pct_length": 4.985537488330954,
+          "first_six_seconds_position_pct_length": 3.676685023739128,
+          "tail_mean_position_pct_length": 4.9422881222797646,
+          "terminal_position_pct_length": 3.5661128645555786,
+          "peak_position_pct_length": 9.809447432147476,
+          "tail_response_rmse_pct_length": 7.504290535529514,
+          "p99_abs_edge_strain_pct": 20.830081939697266
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204000-strong-reversals",
+      "length_m": 0.5806576861044437,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204000,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 16.53166124822062,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 28.315573053783716,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 6.097367693541586,
+          "relative_response_rmse_pct": 36.88297021086053,
+          "prediction_response_rms_pct_length": 12.775351840875802,
+          "mean_position_pct_length": 3.3316021296237666,
+          "first_six_seconds_position_pct_length": 1.9161828689404168,
+          "tail_mean_position_pct_length": 4.12759410725179,
+          "terminal_position_pct_length": 3.4380026992520105,
+          "peak_position_pct_length": 10.282168234765269,
+          "tail_response_rmse_pct_length": 10.831421380926201,
+          "p99_abs_edge_strain_pct": 7.737064361572266
+        },
+        "large": {
+          "response_rmse_pct_length": 8.065067413250942,
+          "relative_response_rmse_pct": 48.78558356692085,
+          "prediction_response_rms_pct_length": 9.367688931900277,
+          "mean_position_pct_length": 3.954762546736183,
+          "first_six_seconds_position_pct_length": 1.8795045857620756,
+          "tail_mean_position_pct_length": 8.106576188763647,
+          "terminal_position_pct_length": 9.617780130433548,
+          "peak_position_pct_length": 13.760458575220635,
+          "tail_response_rmse_pct_length": 14.12202113220918,
+          "p99_abs_edge_strain_pct": 5.6168365478515625
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204001-fast-oscillation",
+      "length_m": 0.7881596099915842,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204001,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.3698481126217247,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.60194386354736,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.936025281725884,
+          "relative_response_rmse_pct": 793.8462253905858,
+          "prediction_response_rms_pct_length": 2.8846649522167596,
+          "mean_position_pct_length": 4.91070927821337,
+          "first_six_seconds_position_pct_length": 3.023793474019329,
+          "tail_mean_position_pct_length": 7.721788241850869,
+          "terminal_position_pct_length": 5.910287323668371,
+          "peak_position_pct_length": 10.647963335742158,
+          "tail_response_rmse_pct_length": 3.7607931570064332,
+          "p99_abs_edge_strain_pct": 9.794632911682129
+        },
+        "large": {
+          "response_rmse_pct_length": 1.5161379640381043,
+          "relative_response_rmse_pct": 409.9352983825521,
+          "prediction_response_rms_pct_length": 1.5031097395925304,
+          "mean_position_pct_length": 8.719724585857897,
+          "first_six_seconds_position_pct_length": 3.7366112309282147,
+          "tail_mean_position_pct_length": 17.067389137913985,
+          "terminal_position_pct_length": 12.830500015794897,
+          "peak_position_pct_length": 25.30723590424948,
+          "tail_response_rmse_pct_length": 1.7902067033464755,
+          "p99_abs_edge_strain_pct": 7.298051357269287
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204001-long-hold",
+      "length_m": 0.7881596099915842,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204001,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 40.49957679636752,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 55.16226468309231,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 26.405304032377067,
+          "relative_response_rmse_pct": 65.19896285618819,
+          "prediction_response_rms_pct_length": 26.528089737987344,
+          "mean_position_pct_length": 19.252653328509666,
+          "first_six_seconds_position_pct_length": 9.232625307698289,
+          "tail_mean_position_pct_length": 33.30994382217781,
+          "terminal_position_pct_length": 41.949972043396365,
+          "peak_position_pct_length": 52.7608980441874,
+          "tail_response_rmse_pct_length": 38.59302908407486,
+          "p99_abs_edge_strain_pct": 17.841840744018555
+        },
+        "large": {
+          "response_rmse_pct_length": 18.52652296942397,
+          "relative_response_rmse_pct": 45.74497916996912,
+          "prediction_response_rms_pct_length": 41.96318936159141,
+          "mean_position_pct_length": 9.138865171139766,
+          "first_six_seconds_position_pct_length": 5.025683651584714,
+          "tail_mean_position_pct_length": 15.836525172232909,
+          "terminal_position_pct_length": 24.635935612431037,
+          "peak_position_pct_length": 25.533266873331897,
+          "tail_response_rmse_pct_length": 30.137874698656425,
+          "p99_abs_edge_strain_pct": 19.572246551513672
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204001-strong-reversals",
+      "length_m": 0.7881596099915842,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204001,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 10.426379588814894,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 13.099319509618287,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 13.641776310674299,
+          "relative_response_rmse_pct": 130.83905294709186,
+          "prediction_response_rms_pct_length": 4.576991417983879,
+          "mean_position_pct_length": 15.343300063672153,
+          "first_six_seconds_position_pct_length": 7.2952790655923305,
+          "tail_mean_position_pct_length": 27.25227236551466,
+          "terminal_position_pct_length": 14.596505763749926,
+          "peak_position_pct_length": 40.423919331766214,
+          "tail_response_rmse_pct_length": 18.328916704222934,
+          "p99_abs_edge_strain_pct": 9.485249519348145
+        },
+        "large": {
+          "response_rmse_pct_length": 5.88286411230305,
+          "relative_response_rmse_pct": 56.42288449400029,
+          "prediction_response_rms_pct_length": 8.947960017679584,
+          "mean_position_pct_length": 10.63834781953656,
+          "first_six_seconds_position_pct_length": 5.831613572666466,
+          "tail_mean_position_pct_length": 18.591237674084372,
+          "terminal_position_pct_length": 9.332089870741779,
+          "peak_position_pct_length": 29.346966101223426,
+          "tail_response_rmse_pct_length": 7.624449123158652,
+          "p99_abs_edge_strain_pct": 8.940592765808105
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204002-fast-oscillation",
+      "length_m": 0.8170234097890825,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204002,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.50566377075534,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.7517394201533255,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.7870709671519567,
+          "relative_response_rmse_pct": 551.1707835008119,
+          "prediction_response_rms_pct_length": 3.2434300765797346,
+          "mean_position_pct_length": 4.76799828375254,
+          "first_six_seconds_position_pct_length": 2.7688195189662927,
+          "tail_mean_position_pct_length": 7.7138926083502515,
+          "terminal_position_pct_length": 8.438500563031042,
+          "peak_position_pct_length": 11.225508984760776,
+          "tail_response_rmse_pct_length": 3.8556895005961076,
+          "p99_abs_edge_strain_pct": 6.116568565368652
+        },
+        "large": {
+          "response_rmse_pct_length": 0.9019031215893977,
+          "relative_response_rmse_pct": 178.3602412809151,
+          "prediction_response_rms_pct_length": 1.2925404580587574,
+          "mean_position_pct_length": 2.5053905357090875,
+          "first_six_seconds_position_pct_length": 2.040303361833422,
+          "tail_mean_position_pct_length": 4.163543548153487,
+          "terminal_position_pct_length": 5.913676279618526,
+          "peak_position_pct_length": 5.938684339516075,
+          "tail_response_rmse_pct_length": 0.7527987437358681,
+          "p99_abs_edge_strain_pct": 5.433465003967285
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204002-long-hold",
+      "length_m": 0.8170234097890825,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204002,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 29.194004846261024,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 44.54576411369154,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 23.621993105330006,
+          "relative_response_rmse_pct": 80.91384936642343,
+          "prediction_response_rms_pct_length": 16.08130148970177,
+          "mean_position_pct_length": 14.91852895836821,
+          "first_six_seconds_position_pct_length": 6.250311091471633,
+          "tail_mean_position_pct_length": 32.21276952225998,
+          "terminal_position_pct_length": 32.04801307416829,
+          "peak_position_pct_length": 50.23980810258732,
+          "tail_response_rmse_pct_length": 37.990452708216374,
+          "p99_abs_edge_strain_pct": 19.253890991210938
+        },
+        "large": {
+          "response_rmse_pct_length": 5.487143967645768,
+          "relative_response_rmse_pct": 18.79544788918717,
+          "prediction_response_rms_pct_length": 29.87936554802788,
+          "mean_position_pct_length": 3.997714473900191,
+          "first_six_seconds_position_pct_length": 2.923467300790574,
+          "tail_mean_position_pct_length": 4.374909404777284,
+          "terminal_position_pct_length": 2.46969647469332,
+          "peak_position_pct_length": 7.5794177350464205,
+          "tail_response_rmse_pct_length": 7.518917260158576,
+          "p99_abs_edge_strain_pct": 20.59117889404297
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204002-strong-reversals",
+      "length_m": 0.8170234097890825,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204002,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 2.7846153676188767,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 3.7685117058137094,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.387063591595165,
+          "relative_response_rmse_pct": 121.63488110357737,
+          "prediction_response_rms_pct_length": 2.713867664687267,
+          "mean_position_pct_length": 3.3662329799363517,
+          "first_six_seconds_position_pct_length": 2.443563234547647,
+          "tail_mean_position_pct_length": 4.385920209568907,
+          "terminal_position_pct_length": 5.002633212369256,
+          "peak_position_pct_length": 7.137512520950171,
+          "tail_response_rmse_pct_length": 5.232809302104934,
+          "p99_abs_edge_strain_pct": 6.5014824867248535
+        },
+        "large": {
+          "response_rmse_pct_length": 2.744981857990383,
+          "relative_response_rmse_pct": 98.57669715935006,
+          "prediction_response_rms_pct_length": 2.805088751252196,
+          "mean_position_pct_length": 2.6287661167801653,
+          "first_six_seconds_position_pct_length": 1.9780307960658843,
+          "tail_mean_position_pct_length": 3.1682403630750726,
+          "terminal_position_pct_length": 1.2177804577313334,
+          "peak_position_pct_length": 5.743068901264133,
+          "tail_response_rmse_pct_length": 4.336748170279285,
+          "p99_abs_edge_strain_pct": 6.437058925628662
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204003-fast-oscillation",
+      "length_m": 0.6546135532818074,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204003,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.3871759664754073,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.5175857003499087,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.927902781722529,
+          "relative_response_rmse_pct": 1014.5006720018149,
+          "prediction_response_rms_pct_length": 3.9527992827677148,
+          "mean_position_pct_length": 5.0216403222571095,
+          "first_six_seconds_position_pct_length": 2.7498233589246497,
+          "tail_mean_position_pct_length": 11.436067025544247,
+          "terminal_position_pct_length": 9.59785710641711,
+          "peak_position_pct_length": 15.717358673758554,
+          "tail_response_rmse_pct_length": 5.104316611301976,
+          "p99_abs_edge_strain_pct": 8.057414054870605
+        },
+        "large": {
+          "response_rmse_pct_length": 2.3815816042728213,
+          "relative_response_rmse_pct": 615.1160739529257,
+          "prediction_response_rms_pct_length": 2.38088561590256,
+          "mean_position_pct_length": 5.281792347706564,
+          "first_six_seconds_position_pct_length": 2.0053220124750193,
+          "tail_mean_position_pct_length": 12.685005908846607,
+          "terminal_position_pct_length": 9.187352370724916,
+          "peak_position_pct_length": 18.244911554089303,
+          "tail_response_rmse_pct_length": 3.093043936974312,
+          "p99_abs_edge_strain_pct": 6.958992958068848
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204003-long-hold",
+      "length_m": 0.6546135532818074,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204003,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 35.14897741352647,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 49.84243919321708,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 22.644805134484756,
+          "relative_response_rmse_pct": 64.42521746242979,
+          "prediction_response_rms_pct_length": 29.819682303780574,
+          "mean_position_pct_length": 14.26166500216563,
+          "first_six_seconds_position_pct_length": 6.531373650986589,
+          "tail_mean_position_pct_length": 28.919285976399873,
+          "terminal_position_pct_length": 50.74826133930048,
+          "peak_position_pct_length": 50.74826133930048,
+          "tail_response_rmse_pct_length": 38.76632118526356,
+          "p99_abs_edge_strain_pct": 15.30637264251709
+        },
+        "large": {
+          "response_rmse_pct_length": 12.344373955372737,
+          "relative_response_rmse_pct": 35.12015103637757,
+          "prediction_response_rms_pct_length": 38.87959286448867,
+          "mean_position_pct_length": 5.083490154670706,
+          "first_six_seconds_position_pct_length": 3.5998015332894284,
+          "tail_mean_position_pct_length": 8.34547772842562,
+          "terminal_position_pct_length": 10.154134297788346,
+          "peak_position_pct_length": 14.4213757434532,
+          "tail_response_rmse_pct_length": 21.771028113291838,
+          "p99_abs_edge_strain_pct": 17.89298439025879
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204003-strong-reversals",
+      "length_m": 0.6546135532818074,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204003,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 4.385777593822303,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 4.59689195841068,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.017624933629794,
+          "relative_response_rmse_pct": 114.40673463920045,
+          "prediction_response_rms_pct_length": 2.9815815063932036,
+          "mean_position_pct_length": 7.815541470955239,
+          "first_six_seconds_position_pct_length": 4.3740357123516835,
+          "tail_mean_position_pct_length": 12.794213309898067,
+          "terminal_position_pct_length": 6.057879851442386,
+          "peak_position_pct_length": 19.708241015833405,
+          "tail_response_rmse_pct_length": 4.808854988634795,
+          "p99_abs_edge_strain_pct": 8.537491798400879
+        },
+        "large": {
+          "response_rmse_pct_length": 5.5468811127840425,
+          "relative_response_rmse_pct": 126.47429091245394,
+          "prediction_response_rms_pct_length": 3.819927663229849,
+          "mean_position_pct_length": 7.981963138418111,
+          "first_six_seconds_position_pct_length": 3.9704180599080403,
+          "tail_mean_position_pct_length": 12.144815142283802,
+          "terminal_position_pct_length": 7.273423175658907,
+          "peak_position_pct_length": 20.20530046456574,
+          "tail_response_rmse_pct_length": 4.994907546855651,
+          "p99_abs_edge_strain_pct": 8.356983184814453
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204004-fast-oscillation",
+      "length_m": 0.6083471937114764,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204004,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.1702338790850281,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.23164941411307086,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.1592753248776293,
+          "relative_response_rmse_pct": 1268.4169194071637,
+          "prediction_response_rms_pct_length": 2.2738902400703873,
+          "mean_position_pct_length": 3.920980942184024,
+          "first_six_seconds_position_pct_length": 2.563678122019754,
+          "tail_mean_position_pct_length": 6.113671682289257,
+          "terminal_position_pct_length": 9.346668047435385,
+          "peak_position_pct_length": 9.688796235512104,
+          "tail_response_rmse_pct_length": 2.431678272151746,
+          "p99_abs_edge_strain_pct": 6.352688312530518
+        },
+        "large": {
+          "response_rmse_pct_length": 1.0284243208899853,
+          "relative_response_rmse_pct": 604.1243531649243,
+          "prediction_response_rms_pct_length": 1.1534940108712257,
+          "mean_position_pct_length": 2.6568257366525283,
+          "first_six_seconds_position_pct_length": 2.1176106956031657,
+          "tail_mean_position_pct_length": 3.762799954775866,
+          "terminal_position_pct_length": 4.083037784893693,
+          "peak_position_pct_length": 5.433186080856549,
+          "tail_response_rmse_pct_length": 1.2571635517426774,
+          "p99_abs_edge_strain_pct": 6.090793609619141
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204004-long-hold",
+      "length_m": 0.6083471937114764,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204004,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 24.721493755099857,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 34.897190250736045,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 17.69094062133062,
+          "relative_response_rmse_pct": 71.56096956188624,
+          "prediction_response_rms_pct_length": 36.2038112289349,
+          "mean_position_pct_length": 12.994335053061114,
+          "first_six_seconds_position_pct_length": 7.5629466642347145,
+          "tail_mean_position_pct_length": 17.98641921030658,
+          "terminal_position_pct_length": 8.852701562744176,
+          "peak_position_pct_length": 32.357459574412864,
+          "tail_response_rmse_pct_length": 23.379967194521015,
+          "p99_abs_edge_strain_pct": 13.709539413452148
+        },
+        "large": {
+          "response_rmse_pct_length": 6.1308517527535855,
+          "relative_response_rmse_pct": 24.799681659563294,
+          "prediction_response_rms_pct_length": 23.261176814826186,
+          "mean_position_pct_length": 5.224298730973397,
+          "first_six_seconds_position_pct_length": 4.075337152721721,
+          "tail_mean_position_pct_length": 4.665623030204198,
+          "terminal_position_pct_length": 2.746596650654138,
+          "peak_position_pct_length": 11.463703071816667,
+          "tail_response_rmse_pct_length": 5.715972694010941,
+          "p99_abs_edge_strain_pct": 20.763757705688477
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204004-strong-reversals",
+      "length_m": 0.6083471937114764,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204004,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 3.986933213393256,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 5.141634424757559,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.099498463818883,
+          "relative_response_rmse_pct": 102.82335430268782,
+          "prediction_response_rms_pct_length": 1.9310958046834492,
+          "mean_position_pct_length": 3.7807629885144833,
+          "first_six_seconds_position_pct_length": 2.408814246372188,
+          "tail_mean_position_pct_length": 5.376659274617737,
+          "terminal_position_pct_length": 7.132362654315592,
+          "peak_position_pct_length": 9.203820474123841,
+          "tail_response_rmse_pct_length": 5.900578050514226,
+          "p99_abs_edge_strain_pct": 6.479215621948242
+        },
+        "large": {
+          "response_rmse_pct_length": 3.255997926693148,
+          "relative_response_rmse_pct": 81.66672859618801,
+          "prediction_response_rms_pct_length": 1.7537107271851837,
+          "mean_position_pct_length": 2.9101914488016107,
+          "first_six_seconds_position_pct_length": 2.0057651925998883,
+          "tail_mean_position_pct_length": 4.136236608423102,
+          "terminal_position_pct_length": 4.387735050207531,
+          "peak_position_pct_length": 6.192530133641084,
+          "tail_response_rmse_pct_length": 5.183548849272543,
+          "p99_abs_edge_strain_pct": 6.239782810211182
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204005-fast-oscillation",
+      "length_m": 0.8056013103210499,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204005,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 1.4473028062733055,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 2.303331219614295,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.197608761834438,
+          "relative_response_rmse_pct": 151.8416707484395,
+          "prediction_response_rms_pct_length": 1.5813523602480908,
+          "mean_position_pct_length": 3.859731005707656,
+          "first_six_seconds_position_pct_length": 2.8803959362751064,
+          "tail_mean_position_pct_length": 4.812787828127013,
+          "terminal_position_pct_length": 5.619943323456462,
+          "peak_position_pct_length": 6.503170187596326,
+          "tail_response_rmse_pct_length": 2.997492038569988,
+          "p99_abs_edge_strain_pct": 10.145569801330566
+        },
+        "large": {
+          "response_rmse_pct_length": 1.738273151302458,
+          "relative_response_rmse_pct": 120.10431706260414,
+          "prediction_response_rms_pct_length": 1.196854280601459,
+          "mean_position_pct_length": 4.044634151283895,
+          "first_six_seconds_position_pct_length": 1.8252342415251754,
+          "tail_mean_position_pct_length": 7.575691028651656,
+          "terminal_position_pct_length": 11.119193027304,
+          "peak_position_pct_length": 11.226115295897168,
+          "tail_response_rmse_pct_length": 2.4010472721908007,
+          "p99_abs_edge_strain_pct": 8.799291610717773
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204005-long-hold",
+      "length_m": 0.8056013103210499,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204005,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 31.820364465393535,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 45.52484445415642,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 14.727938054549284,
+          "relative_response_rmse_pct": 46.28463030512035,
+          "prediction_response_rms_pct_length": 25.401297511723982,
+          "mean_position_pct_length": 11.360669704713226,
+          "first_six_seconds_position_pct_length": 6.834209008670663,
+          "tail_mean_position_pct_length": 18.51368457887135,
+          "terminal_position_pct_length": 6.679806800810225,
+          "peak_position_pct_length": 27.24467526771695,
+          "tail_response_rmse_pct_length": 20.456522630193373,
+          "p99_abs_edge_strain_pct": 19.961994171142578
+        },
+        "large": {
+          "response_rmse_pct_length": 7.570174172425782,
+          "relative_response_rmse_pct": 23.790344012743095,
+          "prediction_response_rms_pct_length": 31.113290508190754,
+          "mean_position_pct_length": 5.132478286381132,
+          "first_six_seconds_position_pct_length": 3.686151188353789,
+          "tail_mean_position_pct_length": 8.044046226119871,
+          "terminal_position_pct_length": 4.096693807035118,
+          "peak_position_pct_length": 12.152706845817537,
+          "tail_response_rmse_pct_length": 11.329254876592522,
+          "p99_abs_edge_strain_pct": 18.921646118164062
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204005-strong-reversals",
+      "length_m": 0.8056013103210499,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204005,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 10.981675020111155,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 13.004813728866447,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 12.757782676843863,
+          "relative_response_rmse_pct": 116.1733765885446,
+          "prediction_response_rms_pct_length": 3.078581215099449,
+          "mean_position_pct_length": 11.448770778409068,
+          "first_six_seconds_position_pct_length": 5.418231749028101,
+          "tail_mean_position_pct_length": 20.607601029744696,
+          "terminal_position_pct_length": 27.867300342210104,
+          "peak_position_pct_length": 30.07830471577649,
+          "tail_response_rmse_pct_length": 16.994472352502836,
+          "p99_abs_edge_strain_pct": 9.058253288269043
+        },
+        "large": {
+          "response_rmse_pct_length": 7.015144043522664,
+          "relative_response_rmse_pct": 63.88045567434446,
+          "prediction_response_rms_pct_length": 5.298848251557198,
+          "mean_position_pct_length": 7.718729884197503,
+          "first_six_seconds_position_pct_length": 3.412564250479412,
+          "tail_mean_position_pct_length": 12.686781534001588,
+          "terminal_position_pct_length": 16.135039383666157,
+          "peak_position_pct_length": 21.150271771965166,
+          "tail_response_rmse_pct_length": 8.106643842527712,
+          "p99_abs_edge_strain_pct": 9.147470474243164
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204006-fast-oscillation",
+      "length_m": 0.6251650111097554,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204006,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.04345233833914072,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.015975584101687628,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.7962907358262674,
+          "relative_response_rmse_pct": 6435.305538683618,
+          "prediction_response_rms_pct_length": 2.803673775091287,
+          "mean_position_pct_length": 4.693914372970139,
+          "first_six_seconds_position_pct_length": 2.1460224781939092,
+          "tail_mean_position_pct_length": 11.649085370821364,
+          "terminal_position_pct_length": 10.47124332990858,
+          "peak_position_pct_length": 18.765026901606017,
+          "tail_response_rmse_pct_length": 3.2378523790413336,
+          "p99_abs_edge_strain_pct": 5.455808162689209
+        },
+        "large": {
+          "response_rmse_pct_length": 1.9831686222793612,
+          "relative_response_rmse_pct": 4564.008976458179,
+          "prediction_response_rms_pct_length": 1.993203942534881,
+          "mean_position_pct_length": 3.3125529615479823,
+          "first_six_seconds_position_pct_length": 1.8131220433076418,
+          "tail_mean_position_pct_length": 6.4409091666062555,
+          "terminal_position_pct_length": 6.773785400514164,
+          "peak_position_pct_length": 10.152070280924972,
+          "tail_response_rmse_pct_length": 2.6916339189617298,
+          "p99_abs_edge_strain_pct": 5.29650354385376
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204006-long-hold",
+      "length_m": 0.6251650111097554,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204006,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 28.553905938752475,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 40.20047076496937,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 22.33296105130228,
+          "relative_response_rmse_pct": 78.21333130117473,
+          "prediction_response_rms_pct_length": 36.22791807379173,
+          "mean_position_pct_length": 13.45706485878626,
+          "first_six_seconds_position_pct_length": 7.167517478220483,
+          "tail_mean_position_pct_length": 22.30158775640051,
+          "terminal_position_pct_length": 38.42584945434308,
+          "peak_position_pct_length": 38.42584945434308,
+          "tail_response_rmse_pct_length": 33.203445729467326,
+          "p99_abs_edge_strain_pct": 12.602692604064941
+        },
+        "large": {
+          "response_rmse_pct_length": 8.091626972753572,
+          "relative_response_rmse_pct": 28.33807392274087,
+          "prediction_response_rms_pct_length": 26.84359175617198,
+          "mean_position_pct_length": 6.021646299622514,
+          "first_six_seconds_position_pct_length": 3.9370245143688747,
+          "tail_mean_position_pct_length": 7.218381104107382,
+          "terminal_position_pct_length": 6.905572484243684,
+          "peak_position_pct_length": 12.041010419503314,
+          "tail_response_rmse_pct_length": 11.672231561467598,
+          "p99_abs_edge_strain_pct": 22.459453582763672
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204006-strong-reversals",
+      "length_m": 0.6251650111097554,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204006,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 9.394389793122382,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 11.532175626629817,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 5.636268918985112,
+          "relative_response_rmse_pct": 59.996115161321235,
+          "prediction_response_rms_pct_length": 4.763519275454135,
+          "mean_position_pct_length": 4.248427988964224,
+          "first_six_seconds_position_pct_length": 2.2859353616162874,
+          "tail_mean_position_pct_length": 9.962634921035619,
+          "terminal_position_pct_length": 11.277502279079279,
+          "peak_position_pct_length": 16.413354378197628,
+          "tail_response_rmse_pct_length": 6.021926973104484,
+          "p99_abs_edge_strain_pct": 6.091879844665527
+        },
+        "large": {
+          "response_rmse_pct_length": 4.779868209595339,
+          "relative_response_rmse_pct": 50.88002855805146,
+          "prediction_response_rms_pct_length": 5.314911122273763,
+          "mean_position_pct_length": 2.724371457137094,
+          "first_six_seconds_position_pct_length": 1.735369514718908,
+          "tail_mean_position_pct_length": 5.446833309434212,
+          "terminal_position_pct_length": 6.635897924510101,
+          "peak_position_pct_length": 8.686531372503287,
+          "tail_response_rmse_pct_length": 5.488457507069871,
+          "p99_abs_edge_strain_pct": 5.388332366943359
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204007-fast-oscillation",
+      "length_m": 0.7417227125726324,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204007,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.8775703056428502,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 1.1013909805831419,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 2.4549343437049016,
+          "relative_response_rmse_pct": 279.74218452008563,
+          "prediction_response_rms_pct_length": 2.766109900609211,
+          "mean_position_pct_length": 4.49860855768969,
+          "first_six_seconds_position_pct_length": 2.907269523364931,
+          "tail_mean_position_pct_length": 6.162591913252143,
+          "terminal_position_pct_length": 5.419726495959513,
+          "peak_position_pct_length": 10.43033685989596,
+          "tail_response_rmse_pct_length": 2.148646467091097,
+          "p99_abs_edge_strain_pct": 6.857171535491943
+        },
+        "large": {
+          "response_rmse_pct_length": 1.544522508771679,
+          "relative_response_rmse_pct": 175.9998599360382,
+          "prediction_response_rms_pct_length": 1.8470663252452495,
+          "mean_position_pct_length": 1.9424208988533216,
+          "first_six_seconds_position_pct_length": 1.780842847580756,
+          "tail_mean_position_pct_length": 1.763402276902811,
+          "terminal_position_pct_length": 2.4685054827372097,
+          "peak_position_pct_length": 3.7597258826028943,
+          "tail_response_rmse_pct_length": 1.4893419109918995,
+          "p99_abs_edge_strain_pct": 5.0858540534973145
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204007-long-hold",
+      "length_m": 0.7417227125726324,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204007,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 37.9195957367894,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 54.79740928282138,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 19.681445827913528,
+          "relative_response_rmse_pct": 51.90310035087924,
+          "prediction_response_rms_pct_length": 29.757087870144513,
+          "mean_position_pct_length": 15.08980245536169,
+          "first_six_seconds_position_pct_length": 6.92976961842237,
+          "tail_mean_position_pct_length": 29.59750620409491,
+          "terminal_position_pct_length": 14.006417033738387,
+          "peak_position_pct_length": 44.75045941060014,
+          "tail_response_rmse_pct_length": 28.29265910857627,
+          "p99_abs_edge_strain_pct": 15.09066104888916
+        },
+        "large": {
+          "response_rmse_pct_length": 9.235887638517582,
+          "relative_response_rmse_pct": 24.35650343591868,
+          "prediction_response_rms_pct_length": 32.56930988541811,
+          "mean_position_pct_length": 7.108629083801102,
+          "first_six_seconds_position_pct_length": 4.093752718623109,
+          "tail_mean_position_pct_length": 10.757120810628319,
+          "terminal_position_pct_length": 5.044830839084561,
+          "peak_position_pct_length": 14.768419511412068,
+          "tail_response_rmse_pct_length": 11.549334438927351,
+          "p99_abs_edge_strain_pct": 23.00527572631836
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204007-strong-reversals",
+      "length_m": 0.7417227125726324,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204007,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 10.736486532298231,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 15.984109858514973,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 9.73677987147848,
+          "relative_response_rmse_pct": 90.68869822718668,
+          "prediction_response_rms_pct_length": 1.7394525928488094,
+          "mean_position_pct_length": 5.715262804554017,
+          "first_six_seconds_position_pct_length": 3.354736954726871,
+          "tail_mean_position_pct_length": 12.319682152441308,
+          "terminal_position_pct_length": 20.311016375378195,
+          "peak_position_pct_length": 20.311016375378195,
+          "tail_response_rmse_pct_length": 15.279562932478628,
+          "p99_abs_edge_strain_pct": 7.394951820373535
+        },
+        "large": {
+          "response_rmse_pct_length": 4.554675891873306,
+          "relative_response_rmse_pct": 42.42240586034937,
+          "prediction_response_rms_pct_length": 7.446072218170452,
+          "mean_position_pct_length": 3.724152703012977,
+          "first_six_seconds_position_pct_length": 2.441350971019981,
+          "tail_mean_position_pct_length": 6.658679741547025,
+          "terminal_position_pct_length": 11.663501037397559,
+          "peak_position_pct_length": 11.663501037397559,
+          "tail_response_rmse_pct_length": 5.782615542327782,
+          "p99_abs_edge_strain_pct": 6.243422031402588
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204008-fast-oscillation",
+      "length_m": 0.643152393933714,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204008,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.665865442053905,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.9257632349037946,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.353365193179159,
+          "relative_response_rmse_pct": 503.6100361111229,
+          "prediction_response_rms_pct_length": 2.8275820610372837,
+          "mean_position_pct_length": 2.8952108616573247,
+          "first_six_seconds_position_pct_length": 2.1522934816698682,
+          "tail_mean_position_pct_length": 3.6183851301787215,
+          "terminal_position_pct_length": 4.6926254819403495,
+          "peak_position_pct_length": 5.362511058620835,
+          "tail_response_rmse_pct_length": 4.146648893707031,
+          "p99_abs_edge_strain_pct": 6.801640033721924
+        },
+        "large": {
+          "response_rmse_pct_length": 2.077821351638849,
+          "relative_response_rmse_pct": 312.048233833802,
+          "prediction_response_rms_pct_length": 1.5668218704407015,
+          "mean_position_pct_length": 1.4896649403742501,
+          "first_six_seconds_position_pct_length": 1.233278486893657,
+          "tail_mean_position_pct_length": 1.497984827271541,
+          "terminal_position_pct_length": 1.4462322205817206,
+          "peak_position_pct_length": 2.88698243484228,
+          "tail_response_rmse_pct_length": 2.45330200052627,
+          "p99_abs_edge_strain_pct": 6.325074195861816
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204008-long-hold",
+      "length_m": 0.643152393933714,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204008,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 33.42538199065387,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 47.880295984887276,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 14.400230385315483,
+          "relative_response_rmse_pct": 43.08172271402001,
+          "prediction_response_rms_pct_length": 32.99416899918159,
+          "mean_position_pct_length": 10.195421257808249,
+          "first_six_seconds_position_pct_length": 5.891259967483489,
+          "tail_mean_position_pct_length": 18.09674339478973,
+          "terminal_position_pct_length": 9.8621171956152,
+          "peak_position_pct_length": 27.90814175074421,
+          "tail_response_rmse_pct_length": 21.490177140029793,
+          "p99_abs_edge_strain_pct": 18.191635131835938
+        },
+        "large": {
+          "response_rmse_pct_length": 4.931706707350272,
+          "relative_response_rmse_pct": 14.754376505642432,
+          "prediction_response_rms_pct_length": 34.67284728295899,
+          "mean_position_pct_length": 3.8702934581912163,
+          "first_six_seconds_position_pct_length": 3.0338704209412217,
+          "tail_mean_position_pct_length": 3.4331602037390194,
+          "terminal_position_pct_length": 2.248386681208196,
+          "peak_position_pct_length": 8.066638356594126,
+          "tail_response_rmse_pct_length": 4.906090621340494,
+          "p99_abs_edge_strain_pct": 21.22875213623047
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204008-strong-reversals",
+      "length_m": 0.643152393933714,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204008,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 6.381329002721711,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 9.037839109282238,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.6619052984545064,
+          "relative_response_rmse_pct": 57.384681104714424,
+          "prediction_response_rms_pct_length": 5.941260023963622,
+          "mean_position_pct_length": 4.122737348142826,
+          "first_six_seconds_position_pct_length": 2.506010176146379,
+          "tail_mean_position_pct_length": 6.151914907501065,
+          "terminal_position_pct_length": 7.401895782361755,
+          "peak_position_pct_length": 9.675845578171174,
+          "tail_response_rmse_pct_length": 4.096827448593414,
+          "p99_abs_edge_strain_pct": 8.77623176574707
+        },
+        "large": {
+          "response_rmse_pct_length": 3.347442827628128,
+          "relative_response_rmse_pct": 52.45682876091179,
+          "prediction_response_rms_pct_length": 5.38977022282345,
+          "mean_position_pct_length": 2.9638126059063885,
+          "first_six_seconds_position_pct_length": 1.917081609917315,
+          "tail_mean_position_pct_length": 3.3988490903031106,
+          "terminal_position_pct_length": 2.3890516059577704,
+          "peak_position_pct_length": 7.306560637082738,
+          "tail_response_rmse_pct_length": 3.621738303481349,
+          "p99_abs_edge_strain_pct": 8.253721237182617
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204009-fast-oscillation",
+      "length_m": 0.663081990376777,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204009,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.36975875930092805,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.49846876929855494,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.169947359571617,
+          "relative_response_rmse_pct": 857.3014918063797,
+          "prediction_response_rms_pct_length": 2.9192754795244147,
+          "mean_position_pct_length": 4.512632336064642,
+          "first_six_seconds_position_pct_length": 2.175172265971108,
+          "tail_mean_position_pct_length": 7.626244055920918,
+          "terminal_position_pct_length": 11.794892705290417,
+          "peak_position_pct_length": 12.211171701592223,
+          "tail_response_rmse_pct_length": 3.944482927509429,
+          "p99_abs_edge_strain_pct": 5.485406875610352
+        },
+        "large": {
+          "response_rmse_pct_length": 1.7590951817933,
+          "relative_response_rmse_pct": 475.74131445028485,
+          "prediction_response_rms_pct_length": 1.5075625012588274,
+          "mean_position_pct_length": 1.4893588553318948,
+          "first_six_seconds_position_pct_length": 1.018872647309996,
+          "tail_mean_position_pct_length": 2.2511636590382147,
+          "terminal_position_pct_length": 2.6763108334263297,
+          "peak_position_pct_length": 2.995665920935277,
+          "tail_response_rmse_pct_length": 2.2499232412797716,
+          "p99_abs_edge_strain_pct": 4.393432140350342
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204009-long-hold",
+      "length_m": 0.663081990376777,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204009,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 37.668302184291534,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 51.866652629588486,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 15.413962312664964,
+          "relative_response_rmse_pct": 40.92024704817438,
+          "prediction_response_rms_pct_length": 31.553906211497186,
+          "mean_position_pct_length": 11.489695521876381,
+          "first_six_seconds_position_pct_length": 6.5109276066643,
+          "tail_mean_position_pct_length": 19.880666760222002,
+          "terminal_position_pct_length": 12.242568774079258,
+          "peak_position_pct_length": 29.547637971242473,
+          "tail_response_rmse_pct_length": 20.76410947304416,
+          "p99_abs_edge_strain_pct": 15.41126823425293
+        },
+        "large": {
+          "response_rmse_pct_length": 8.237024892339466,
+          "relative_response_rmse_pct": 21.867258184454297,
+          "prediction_response_rms_pct_length": 37.502789350859544,
+          "mean_position_pct_length": 7.049152503849208,
+          "first_six_seconds_position_pct_length": 3.7350722266462495,
+          "tail_mean_position_pct_length": 12.624917324719945,
+          "terminal_position_pct_length": 6.439348530343739,
+          "peak_position_pct_length": 19.612465756888923,
+          "tail_response_rmse_pct_length": 11.796990069440177,
+          "p99_abs_edge_strain_pct": 24.449337005615234
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204009-strong-reversals",
+      "length_m": 0.663081990376777,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204009,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 7.3823456185302545,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 7.91383696996928,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 4.796086422776176,
+          "relative_response_rmse_pct": 64.96697216041512,
+          "prediction_response_rms_pct_length": 4.089563482083021,
+          "mean_position_pct_length": 4.835696618446933,
+          "first_six_seconds_position_pct_length": 2.7879399558362894,
+          "tail_mean_position_pct_length": 6.339551915995172,
+          "terminal_position_pct_length": 6.538812873529374,
+          "peak_position_pct_length": 12.689881128852637,
+          "tail_response_rmse_pct_length": 4.481197798476835,
+          "p99_abs_edge_strain_pct": 6.773573875427246
+        },
+        "large": {
+          "response_rmse_pct_length": 3.710463725205076,
+          "relative_response_rmse_pct": 50.2613114711336,
+          "prediction_response_rms_pct_length": 4.560426688878765,
+          "mean_position_pct_length": 1.9075371128584306,
+          "first_six_seconds_position_pct_length": 1.8877522908921636,
+          "tail_mean_position_pct_length": 2.0773365245572557,
+          "terminal_position_pct_length": 2.506677005489779,
+          "peak_position_pct_length": 4.655508888746165,
+          "tail_response_rmse_pct_length": 4.881536115590119,
+          "p99_abs_edge_strain_pct": 5.8039093017578125
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204010-fast-oscillation",
+      "length_m": 0.6988204175063042,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204010,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.25891536338766497,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.2597178067943666,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.0872233207478663,
+          "relative_response_rmse_pct": 1192.3677607826903,
+          "prediction_response_rms_pct_length": 3.2151532037704444,
+          "mean_position_pct_length": 4.784124118675374,
+          "first_six_seconds_position_pct_length": 4.552232242866759,
+          "tail_mean_position_pct_length": 3.7200129628860603,
+          "terminal_position_pct_length": 2.2081489727348678,
+          "peak_position_pct_length": 9.314718248288095,
+          "tail_response_rmse_pct_length": 3.5067769646957063,
+          "p99_abs_edge_strain_pct": 10.05220890045166
+        },
+        "large": {
+          "response_rmse_pct_length": 3.3847026210931945,
+          "relative_response_rmse_pct": 1307.2621789636319,
+          "prediction_response_rms_pct_length": 3.511803710304517,
+          "mean_position_pct_length": 4.796528035480926,
+          "first_six_seconds_position_pct_length": 2.4252460827534295,
+          "tail_mean_position_pct_length": 10.576510195579244,
+          "terminal_position_pct_length": 18.309781072594237,
+          "peak_position_pct_length": 18.77088578719505,
+          "tail_response_rmse_pct_length": 3.879798662066724,
+          "p99_abs_edge_strain_pct": 8.91403865814209
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204010-long-hold",
+      "length_m": 0.6988204175063042,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204010,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 40.005705182166686,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 58.74194178550957,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 20.368295286100313,
+          "relative_response_rmse_pct": 50.91347644880379,
+          "prediction_response_rms_pct_length": 27.397130269130102,
+          "mean_position_pct_length": 15.593829899910606,
+          "first_six_seconds_position_pct_length": 8.506063263355742,
+          "tail_mean_position_pct_length": 26.143940936777838,
+          "terminal_position_pct_length": 7.832282185134056,
+          "peak_position_pct_length": 39.23782944149445,
+          "tail_response_rmse_pct_length": 27.291043253267148,
+          "p99_abs_edge_strain_pct": 15.909664154052734
+        },
+        "large": {
+          "response_rmse_pct_length": 13.067912949123514,
+          "relative_response_rmse_pct": 32.66512336082701,
+          "prediction_response_rms_pct_length": 41.95794454761285,
+          "mean_position_pct_length": 7.256008465474535,
+          "first_six_seconds_position_pct_length": 5.093368940865973,
+          "tail_mean_position_pct_length": 11.013051429606863,
+          "terminal_position_pct_length": 6.0676213265557015,
+          "peak_position_pct_length": 18.644470552838552,
+          "tail_response_rmse_pct_length": 21.085721615101995,
+          "p99_abs_edge_strain_pct": 20.345739364624023
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204010-strong-reversals",
+      "length_m": 0.6988204175063042,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204010,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 7.251648003739441,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 7.001621891283768,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 7.180325941693591,
+          "relative_response_rmse_pct": 99.01647098688366,
+          "prediction_response_rms_pct_length": 4.823894813544432,
+          "mean_position_pct_length": 4.872371221582224,
+          "first_six_seconds_position_pct_length": 4.690481707563459,
+          "tail_mean_position_pct_length": 4.8941606441915475,
+          "terminal_position_pct_length": 3.179160979432762,
+          "peak_position_pct_length": 12.873652016567553,
+          "tail_response_rmse_pct_length": 6.840558166508472,
+          "p99_abs_edge_strain_pct": 10.911273002624512
+        },
+        "large": {
+          "response_rmse_pct_length": 6.6231992637675265,
+          "relative_response_rmse_pct": 91.3337114591353,
+          "prediction_response_rms_pct_length": 5.467188934997526,
+          "mean_position_pct_length": 7.509904823101463,
+          "first_six_seconds_position_pct_length": 5.329246240886999,
+          "tail_mean_position_pct_length": 10.002972173915262,
+          "terminal_position_pct_length": 17.525940578725994,
+          "peak_position_pct_length": 18.980001420917056,
+          "tail_response_rmse_pct_length": 7.15625021172173,
+          "p99_abs_edge_strain_pct": 11.1896390914917
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204011-fast-oscillation",
+      "length_m": 0.7313218465443273,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204011,
+      "excitation": "fast-oscillation",
+      "load_level_m_s2": 6.0,
+      "reference_response_rms_pct_length": 0.21743167842474095,
+      "peak_added_acceleration_m_s2": 5.988160133361816,
+      "peak_added_slew_m_s3": 289.0522155761719,
+      "tail_reference_response_rms_pct_length": 0.28467353448711996,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 3.470396718759036,
+          "relative_response_rmse_pct": 1596.0860643221476,
+          "prediction_response_rms_pct_length": 3.604596586505811,
+          "mean_position_pct_length": 3.997527449090485,
+          "first_six_seconds_position_pct_length": 2.418997566286115,
+          "tail_mean_position_pct_length": 6.05986657145407,
+          "terminal_position_pct_length": 8.854625708004571,
+          "peak_position_pct_length": 8.858310779711793,
+          "tail_response_rmse_pct_length": 3.966785706899239,
+          "p99_abs_edge_strain_pct": 7.024163246154785
+        },
+        "large": {
+          "response_rmse_pct_length": 1.607616520114848,
+          "relative_response_rmse_pct": 739.3662835893015,
+          "prediction_response_rms_pct_length": 1.711404770886365,
+          "mean_position_pct_length": 5.58658323284791,
+          "first_six_seconds_position_pct_length": 2.0364322671020934,
+          "tail_mean_position_pct_length": 11.787373011271292,
+          "terminal_position_pct_length": 8.56569150145397,
+          "peak_position_pct_length": 19.03291469994803,
+          "tail_response_rmse_pct_length": 1.2427751157867404,
+          "p99_abs_edge_strain_pct": 7.438360691070557
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204011-long-hold",
+      "length_m": 0.7313218465443273,
+      "prefix_frames": 102,
+      "family": "cloth",
+      "seed": 1204011,
+      "excitation": "long-hold",
+      "load_level_m_s2": 8.0,
+      "reference_response_rms_pct_length": 43.60138784802298,
+      "peak_added_acceleration_m_s2": 8.0,
+      "peak_added_slew_m_s3": 31.286895751953125,
+      "tail_reference_response_rms_pct_length": 62.03455036950759,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 29.68229319032736,
+          "relative_response_rmse_pct": 68.07648713795068,
+          "prediction_response_rms_pct_length": 25.080019394448957,
+          "mean_position_pct_length": 19.771471186198212,
+          "first_six_seconds_position_pct_length": 8.428977680246646,
+          "tail_mean_position_pct_length": 41.08079889353225,
+          "terminal_position_pct_length": 62.15822875244773,
+          "peak_position_pct_length": 64.49598402227852,
+          "tail_response_rmse_pct_length": 47.304672587973414,
+          "p99_abs_edge_strain_pct": 16.374303817749023
+        },
+        "large": {
+          "response_rmse_pct_length": 14.053352548955436,
+          "relative_response_rmse_pct": 32.231434003751914,
+          "prediction_response_rms_pct_length": 43.299496710951736,
+          "mean_position_pct_length": 7.212464613987762,
+          "first_six_seconds_position_pct_length": 4.399491438047691,
+          "tail_mean_position_pct_length": 12.152421612508547,
+          "terminal_position_pct_length": 14.967865371861308,
+          "peak_position_pct_length": 19.746575593215105,
+          "tail_response_rmse_pct_length": 22.33604394397674,
+          "p99_abs_edge_strain_pct": 19.01591682434082
+        }
+      }
+    },
+    {
+      "identity": "cloth-1204011-strong-reversals",
+      "length_m": 0.7313218465443273,
+      "prefix_frames": 122,
+      "family": "cloth",
+      "seed": 1204011,
+      "excitation": "strong-reversals",
+      "load_level_m_s2": 22.0,
+      "reference_response_rms_pct_length": 7.907258378497623,
+      "peak_added_acceleration_m_s2": 22.0,
+      "peak_added_slew_m_s3": 388.9087829589844,
+      "tail_reference_response_rms_pct_length": 7.3046531813132525,
+      "actors": {
+        "baseline": {
+          "response_rmse_pct_length": 8.501559476270051,
+          "relative_response_rmse_pct": 107.5158932378955,
+          "prediction_response_rms_pct_length": 2.1479697451349744,
+          "mean_position_pct_length": 7.402855751521015,
+          "first_six_seconds_position_pct_length": 5.295689365785873,
+          "tail_mean_position_pct_length": 9.849337777125733,
+          "terminal_position_pct_length": 2.944198291696649,
+          "peak_position_pct_length": 16.942320381309262,
+          "tail_response_rmse_pct_length": 9.359322165930305,
+          "p99_abs_edge_strain_pct": 7.9613847732543945
+        },
+        "large": {
+          "response_rmse_pct_length": 7.236522157874959,
+          "relative_response_rmse_pct": 91.51746169763958,
+          "prediction_response_rms_pct_length": 11.301363821725923,
+          "mean_position_pct_length": 4.61670397998732,
+          "first_six_seconds_position_pct_length": 4.445979294849246,
+          "tail_mean_position_pct_length": 4.022881421665481,
+          "terminal_position_pct_length": 2.728007403610759,
+          "peak_position_pct_length": 13.787291027297337,
+          "tail_response_rmse_pct_length": 11.076997389925964,
+          "p99_abs_edge_strain_pct": 9.522481918334961
+        }
+      }
+    }
+  ],
+  "rendered_cases": [
+    "cloth-1204000-long-hold",
+    "cloth-1204000-fast-oscillation",
+    "cloth-1204000-strong-reversals",
+    "cable-1204000-long-hold",
+    "cable-1204000-fast-oscillation",
+    "cable-1204000-strong-reversals"
+  ]
+}

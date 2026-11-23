@@ -1,8 +1,80 @@
 {
   "schema": 1,
-  "updated": "2026-11-23T09:05:38Z",
-  "headline": "The 104,096-trajectory fit improves cloth and brings cable below 1% mean position error",
+  "updated": "2026-11-23T09:12:34Z",
+  "headline": "How the shared model responds to long, fast, strong, and relocated loads",
   "runs": [
+    {
+      "id": "elastic-shared-excitation-stress-v8",
+      "title": "Frozen cloth and cable models under stronger and longer forcing",
+      "date": "2026-11-23",
+      "status": "Measured fresh stress rollouts",
+      "summary": "The larger fit captures much of the added motion from the sustained hold and strong kicks. At 8 Hz, both materials miss a small Newton response despite plausible overall motion. The model misses all added motion when the force moves to the middle because it reads only the endpoint channel. A response error of 100% matches ignoring the added load. The stock Newton labels replay exactly, while extra solver iterations materially change the checked scenes.",
+      "modalities": [
+        "cloth",
+        "cable"
+      ],
+      "scope": "The frozen fits receive the same controls on 72 added-load pairs. This temporal test uses 12 contact-free seconds and 12 fresh geometries per material at the training force site. A separate six-second test moves a matched force from the end to the middle on 16 geometries.",
+      "media": [
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cloth-long-hold.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cloth-long-hold.webp",
+          "type": "video",
+          "label": "Cloth · Long sustained hold. An 8 m/s² lateral load ramped on at 2 s and off by 10 s."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cloth-fast-oscillation.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cloth-fast-oscillation.webp",
+          "type": "video",
+          "label": "Cloth · Fast oscillation. An 8 Hz lateral oscillation at 6 m/s², with smooth entry and exit."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cloth-strong-reversals.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cloth-strong-reversals.webp",
+          "type": "video",
+          "label": "Cloth · Strong reversing kicks. Four alternating 22 m/s² lateral kicks, each lasting 0.16 s."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cable-long-hold.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cable-long-hold.webp",
+          "type": "video",
+          "label": "Cable · Long sustained hold. An 8 m/s² lateral load ramped on at 2 s and off by 10 s."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cable-fast-oscillation.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cable-fast-oscillation.webp",
+          "type": "video",
+          "label": "Cable · Fast oscillation. An 8 Hz lateral oscillation at 6 m/s², with smooth entry and exit."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cable-strong-reversals.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cable-strong-reversals.webp",
+          "type": "video",
+          "label": "Cable · Strong reversing kicks. Four alternating 22 m/s² lateral kicks, each lasting 0.16 s."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cloth-middle-load.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cloth-middle-load.webp",
+          "type": "video",
+          "label": "Cloth with the added force moved to the middle. The curve shows the actual added force in Newton."
+        },
+        {
+          "src": "media/elastic-shared-excitation-stress-v8-cable-middle-load.mp4",
+          "poster": "media/elastic-shared-excitation-stress-v8-cable-middle-load.webp",
+          "type": "video",
+          "label": "Cable with the added force moved to the middle. The curve shows the actual added force in Newton."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+          "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+        },
+        {
+          "label": "Matched force relocation and Newton solver repeatability checks",
+          "url": "evidence/elastic-shared-excitation-stress-v8-controls.json"
+        }
+      ]
+    },
     {
       "id": "elastic-shared-load-scale-v7",
       "title": "Scaling the shared fit to 104,096 trajectories",
@@ -1172,6 +1244,226 @@
     }
   ],
   "comparisons": [
+    {
+      "id": "elastic-shared-excitation-stress-v8-cable-tail-mean-position-pct-length",
+      "label": "Cable · Final 2 s position error",
+      "track": "36 matched rollouts across all three drives",
+      "scope": "Mean frame-wise RMSE from 10 to 12 s in percent of rest length.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 1.78
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 0.87
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cable-mean-position-pct-length",
+      "label": "Cable · Full rollout position error",
+      "track": "36 matched rollouts across all three drives",
+      "scope": "Mean frame-wise RMSE over 12 s in percent of rest length.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 2.19
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 1.04
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cable-strong-reversals",
+      "label": "Cable · Strong reversing kicks",
+      "track": "12 matched rollouts · pooled response error",
+      "scope": "Four alternating 22 m/s² lateral kicks, each lasting 0.16 s. A response error of 100% matches ignoring the added load.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 98.64
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 44.67
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cable-fast-oscillation",
+      "label": "Cable · Fast oscillation",
+      "track": "12 matched rollouts · pooled response error",
+      "scope": "An 8 Hz lateral oscillation at 6 m/s², with smooth entry and exit. A response error of 100% matches ignoring the added load.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 2265.87
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 1316.1
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cable-long-hold",
+      "label": "Cable · Long sustained hold",
+      "track": "12 matched rollouts · pooled response error",
+      "scope": "An 8 m/s² lateral load ramped on at 2 s and off by 10 s. A response error of 100% matches ignoring the added load.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 79.85
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 48.27
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cloth-tail-mean-position-pct-length",
+      "label": "Cloth · Final 2 s position error",
+      "track": "36 matched rollouts across all three drives",
+      "scope": "Mean frame-wise RMSE from 10 to 12 s in percent of rest length.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 14.45
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 7.81
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cloth-mean-position-pct-length",
+      "label": "Cloth · Full rollout position error",
+      "track": "36 matched rollouts across all three drives",
+      "scope": "Mean frame-wise RMSE over 12 s in percent of rest length.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 8.31
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 4.9
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cloth-strong-reversals",
+      "label": "Cloth · Strong reversing kicks",
+      "track": "12 matched rollouts · pooled response error",
+      "scope": "Four alternating 22 m/s² lateral kicks, each lasting 0.16 s. A response error of 100% matches ignoring the added load.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 87.01
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 61.48
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cloth-fast-oscillation",
+      "label": "Cloth · Fast oscillation",
+      "track": "12 matched rollouts · pooled response error",
+      "scope": "An 8 Hz lateral oscillation at 6 m/s², with smooth entry and exit. A response error of 100% matches ignoring the added load.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 510.87
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 320.93
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
+    {
+      "id": "elastic-shared-excitation-stress-v8-cloth-long-hold",
+      "label": "Cloth · Long sustained hold",
+      "track": "12 matched rollouts · pooled response error",
+      "scope": "An 8 m/s² lateral load ramped on at 2 s and off by 10 s. A response error of 100% matches ignoring the added load.",
+      "values": [
+        {
+          "label": "4,096 trajectories",
+          "unit": "%",
+          "value": 56.72
+        },
+        {
+          "label": "104,096 trajectories",
+          "unit": "%",
+          "value": 28.47
+        }
+      ],
+      "source": {
+        "label": "Stress controls, per-waveform summaries, and all 72 paired scores",
+        "url": "evidence/elastic-shared-excitation-stress-v8-scores.json"
+      }
+    },
     {
       "id": "elastic-shared-load-scale-v7-cable-mean-rollout-rmse-pct-length",
       "label": "Cable · Mean position error",

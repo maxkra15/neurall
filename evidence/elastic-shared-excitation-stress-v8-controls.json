@@ -1,0 +1,524 @@
+{
+  "moved_load": {
+    "scope": "Six-second matched Newton runs at the same resultant added force. Eight fresh geometries per material. The applied force is moved from the end to the middle.",
+    "summary": {
+      "cloth": {
+        "count": 8,
+        "median_newton_end_response_mm": 73.74640861399115,
+        "range_newton_end_response_mm": [
+          23.897126226545105,
+          118.84129893317642
+        ],
+        "median_newton_middle_response_mm": 15.165588627602046,
+        "range_newton_middle_response_mm": [
+          4.505934103650582,
+          37.66195640888902
+        ],
+        "median_newton_location_difference_mm": 67.63619143298575,
+        "range_newton_location_difference_mm": [
+          21.037811684952054,
+          119.96666462314766
+        ],
+        "mean_neurall_end_response_error_pct": 44.29042307430301,
+        "mean_neurall_middle_response_error_pct": 100.0,
+        "mean_neurall_middle_error_with_end_input_pct": 404.1368793695072,
+        "end_mean_whole_rollout_pct_length": 3.1694600731134415,
+        "middle_mean_whole_rollout_pct_length": 2.6508092135190964,
+        "reference_mean_whole_rollout_pct_length": 2.0283261984586716
+      },
+      "cable": {
+        "count": 8,
+        "median_newton_end_response_mm": 13.383891856221695,
+        "range_newton_end_response_mm": [
+          2.438758464522025,
+          22.87177273911096
+        ],
+        "median_newton_middle_response_mm": 6.802460009928919,
+        "range_newton_middle_response_mm": [
+          0.8473539721356003,
+          17.78253038771161
+        ],
+        "median_newton_location_difference_mm": 5.3140338857026235,
+        "range_newton_location_difference_mm": [
+          1.603335042714393,
+          20.140614106455857
+        ],
+        "mean_neurall_end_response_error_pct": 97.41791071815287,
+        "mean_neurall_middle_response_error_pct": 100.0,
+        "mean_neurall_middle_error_with_end_input_pct": 368.89879716169247,
+        "end_mean_whole_rollout_pct_length": 0.6001518182456493,
+        "middle_mean_whole_rollout_pct_length": 0.7304692268371582,
+        "reference_mean_whole_rollout_pct_length": 0.4326440244913101
+      }
+    },
+    "cases": [
+      {
+        "family": "cloth",
+        "seed": 43000,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 67.14174776345457,
+        "newton_middle_response_mm": 7.056300051189396,
+        "newton_location_difference_mm": 62.74430744611957,
+        "neurall_end_response_error_pct": 60.49966737602979,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 519.2664364826534
+      },
+      {
+        "family": "cloth",
+        "seed": 43001,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 60.882922718532114,
+        "newton_middle_response_mm": 12.392462555362219,
+        "newton_location_difference_mm": 51.55042613947117,
+        "neurall_end_response_error_pct": 46.167839685015736,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 329.6605284594419
+      },
+      {
+        "family": "cloth",
+        "seed": 43002,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 49.784077886206546,
+        "newton_middle_response_mm": 5.456809909096306,
+        "newton_location_difference_mm": 47.002989698975156,
+        "neurall_end_response_error_pct": 47.750602243108105,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 549.5276194532511
+      },
+      {
+        "family": "cloth",
+        "seed": 43003,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 80.99159452556248,
+        "newton_middle_response_mm": 17.938714699841874,
+        "newton_location_difference_mm": 72.52807541985193,
+        "neurall_end_response_error_pct": 31.13160431792143,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 352.8331208796747
+      },
+      {
+        "family": "cloth",
+        "seed": 43004,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 94.04974695632565,
+        "newton_middle_response_mm": 17.969515793892555,
+        "newton_location_difference_mm": 84.36032269360747,
+        "neurall_end_response_error_pct": 26.992176610762556,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 419.6334214048338
+      },
+      {
+        "family": "cloth",
+        "seed": 43005,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 80.35106946452774,
+        "newton_middle_response_mm": 37.66195640888902,
+        "newton_location_difference_mm": 76.38619580889184,
+        "neurall_end_response_error_pct": 41.13079468438872,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 168.32579360410082
+      },
+      {
+        "family": "cloth",
+        "seed": 43006,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 23.897126226545105,
+        "newton_middle_response_mm": 4.505934103650582,
+        "newton_location_difference_mm": 21.037811684952054,
+        "neurall_end_response_error_pct": 64.08677842399396,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 514.0250603625825
+      },
+      {
+        "family": "cloth",
+        "seed": 43007,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 118.84129893317642,
+        "newton_middle_response_mm": 25.282022932470582,
+        "newton_location_difference_mm": 119.96666462314766,
+        "neurall_end_response_error_pct": 36.563921253203766,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 379.8230543095196
+      },
+      {
+        "family": "cable",
+        "seed": 43000,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 10.97017421865749,
+        "newton_middle_response_mm": 3.7270282412696467,
+        "newton_location_difference_mm": 7.30044015223904,
+        "neurall_end_response_error_pct": 76.38461063138047,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 385.86556815671
+      },
+      {
+        "family": "cable",
+        "seed": 43001,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 21.20761168778103,
+        "newton_middle_response_mm": 16.848064467448335,
+        "newton_location_difference_mm": 4.578556575384109,
+        "neurall_end_response_error_pct": 19.08703409715153,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 19.474357699512396
+      },
+      {
+        "family": "cable",
+        "seed": 43002,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 15.797609493785899,
+        "newton_middle_response_mm": 12.10812261887177,
+        "newton_location_difference_mm": 3.989383028705987,
+        "neurall_end_response_error_pct": 26.847146449629044,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 30.871954031729327
+      },
+      {
+        "family": "cable",
+        "seed": 43003,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 22.338924248478104,
+        "newton_middle_response_mm": 2.241472172208031,
+        "newton_location_difference_mm": 20.140614106455857,
+        "neurall_end_response_error_pct": 29.531774444558188,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 688.5526319521086
+      },
+      {
+        "family": "cable",
+        "seed": 43004,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 22.87177273911096,
+        "newton_middle_response_mm": 17.78253038771161,
+        "newton_location_difference_mm": 6.090530740710671,
+        "neurall_end_response_error_pct": 29.386282130482186,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 46.03996312439641
+      },
+      {
+        "family": "cable",
+        "seed": 43005,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 2.438758464522025,
+        "newton_middle_response_mm": 0.8473539721356003,
+        "newton_location_difference_mm": 1.603335042714393,
+        "neurall_end_response_error_pct": 257.66045267895544,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 920.0824150663705
+      },
+      {
+        "family": "cable",
+        "seed": 43006,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 3.884978127124155,
+        "newton_middle_response_mm": 9.877891778588191,
+        "newton_location_difference_mm": 6.049511196021138,
+        "neurall_end_response_error_pct": 114.12990080583292,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 32.205955652529994
+      },
+      {
+        "family": "cable",
+        "seed": 43007,
+        "prefix_frames": 102,
+        "newton_end_response_mm": 4.104193186506727,
+        "newton_middle_response_mm": 1.4250336525790834,
+        "newton_location_difference_mm": 2.7095373144471835,
+        "neurall_end_response_error_pct": 226.3160845072332,
+        "neurall_middle_response_error_pct": 100.0,
+        "neurall_middle_error_with_end_input_pct": 828.0975316101825
+      }
+    ]
+  },
+  "teacher_check": {
+    "scope": "One preselected geometry per material across the three temporal stresses and their original-load reference. Same initial state and sampled applied force.",
+    "stock_repeat": {
+      "comparison": {
+        "coarse_substeps": 4,
+        "coarse_iterations": 8,
+        "fine_substeps": 4,
+        "fine_iterations": 8
+      },
+      "cases": [
+        {
+          "identity": "cloth-1204000-reference",
+          "family": "cloth",
+          "excitation": "reference",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 5.058592796325684
+        },
+        {
+          "identity": "cloth-1204000-long-hold",
+          "family": "cloth",
+          "excitation": "long-hold",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 5.6138763427734375,
+          "pooled_response_disagreement_pct_of_stock_response": 0.0
+        },
+        {
+          "identity": "cloth-1204000-fast-oscillation",
+          "family": "cloth",
+          "excitation": "fast-oscillation",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 5.058592796325684,
+          "pooled_response_disagreement_pct_of_stock_response": 0.0
+        },
+        {
+          "identity": "cloth-1204000-strong-reversals",
+          "family": "cloth",
+          "excitation": "strong-reversals",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 5.058592796325684,
+          "pooled_response_disagreement_pct_of_stock_response": 0.0
+        },
+        {
+          "identity": "cable-1204000-reference",
+          "family": "cable",
+          "excitation": "reference",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 1.9522242546081543
+        },
+        {
+          "identity": "cable-1204000-long-hold",
+          "family": "cable",
+          "excitation": "long-hold",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 1.9522242546081543,
+          "pooled_response_disagreement_pct_of_stock_response": 0.0
+        },
+        {
+          "identity": "cable-1204000-fast-oscillation",
+          "family": "cable",
+          "excitation": "fast-oscillation",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 1.9522242546081543,
+          "pooled_response_disagreement_pct_of_stock_response": 0.0
+        },
+        {
+          "identity": "cable-1204000-strong-reversals",
+          "family": "cable",
+          "excitation": "strong-reversals",
+          "seed": 1204000,
+          "mean_pct_length": 0.0,
+          "after_six_seconds_mean_pct_length": 0.0,
+          "max_pct_length": 0.0,
+          "peak_recorded_velocity_m_s": 1.9522242546081543,
+          "pooled_response_disagreement_pct_of_stock_response": 0.0
+        }
+      ]
+    },
+    "extra_iterations": {
+      "comparison": {
+        "coarse_substeps": 4,
+        "coarse_iterations": 8,
+        "fine_substeps": 4,
+        "fine_iterations": 16
+      },
+      "cases": [
+        {
+          "identity": "cloth-1204000-reference",
+          "family": "cloth",
+          "excitation": "reference",
+          "seed": 1204000,
+          "mean_pct_length": 19.187867759861167,
+          "after_six_seconds_mean_pct_length": 29.385928744981992,
+          "max_pct_length": 59.43232435078054,
+          "peak_recorded_velocity_m_s": 4.940196990966797
+        },
+        {
+          "identity": "cloth-1204000-long-hold",
+          "family": "cloth",
+          "excitation": "long-hold",
+          "seed": 1204000,
+          "mean_pct_length": 10.24999695763468,
+          "after_six_seconds_mean_pct_length": 13.646692375566106,
+          "max_pct_length": 24.680686198065917,
+          "peak_recorded_velocity_m_s": 4.940196990966797,
+          "pooled_response_disagreement_pct_of_stock_response": 72.09554723222735
+        },
+        {
+          "identity": "cloth-1204000-fast-oscillation",
+          "family": "cloth",
+          "excitation": "fast-oscillation",
+          "seed": 1204000,
+          "mean_pct_length": 19.146048136658138,
+          "after_six_seconds_mean_pct_length": 29.33094750868425,
+          "max_pct_length": 59.462980018845826,
+          "peak_recorded_velocity_m_s": 4.940196990966797,
+          "pooled_response_disagreement_pct_of_stock_response": 93.3777074294162
+        },
+        {
+          "identity": "cloth-1204000-strong-reversals",
+          "family": "cloth",
+          "excitation": "strong-reversals",
+          "seed": 1204000,
+          "mean_pct_length": 14.703082987610633,
+          "after_six_seconds_mean_pct_length": 20.21558805176686,
+          "max_pct_length": 38.71782709157727,
+          "peak_recorded_velocity_m_s": 4.940196990966797,
+          "pooled_response_disagreement_pct_of_stock_response": 94.71697965298434
+        },
+        {
+          "identity": "cable-1204000-reference",
+          "family": "cable",
+          "excitation": "reference",
+          "seed": 1204000,
+          "mean_pct_length": 8.96873737862398,
+          "after_six_seconds_mean_pct_length": 8.795210303785304,
+          "max_pct_length": 23.297197971411904,
+          "peak_recorded_velocity_m_s": 1.4248924255371094
+        },
+        {
+          "identity": "cable-1204000-long-hold",
+          "family": "cable",
+          "excitation": "long-hold",
+          "seed": 1204000,
+          "mean_pct_length": 8.969409587490755,
+          "after_six_seconds_mean_pct_length": 8.795902178517895,
+          "max_pct_length": 23.297197971411904,
+          "peak_recorded_velocity_m_s": 1.4248924255371094,
+          "pooled_response_disagreement_pct_of_stock_response": 32.096634373958835
+        },
+        {
+          "identity": "cable-1204000-fast-oscillation",
+          "family": "cable",
+          "excitation": "fast-oscillation",
+          "seed": 1204000,
+          "mean_pct_length": 8.968465813751965,
+          "after_six_seconds_mean_pct_length": 8.7950260825233,
+          "max_pct_length": 23.297197971411904,
+          "peak_recorded_velocity_m_s": 1.4248924255371094,
+          "pooled_response_disagreement_pct_of_stock_response": 73.0326483247774
+        },
+        {
+          "identity": "cable-1204000-strong-reversals",
+          "family": "cable",
+          "excitation": "strong-reversals",
+          "seed": 1204000,
+          "mean_pct_length": 8.981736050338743,
+          "after_six_seconds_mean_pct_length": 8.81006055084916,
+          "max_pct_length": 23.297197971411904,
+          "peak_recorded_velocity_m_s": 1.4248924255371094,
+          "pooled_response_disagreement_pct_of_stock_response": 142.43975090467225
+        }
+      ]
+    },
+    "more_substeps_and_iterations": {
+      "comparison": {
+        "coarse_substeps": 4,
+        "coarse_iterations": 8,
+        "fine_substeps": 8,
+        "fine_iterations": 16
+      },
+      "cases": [
+        {
+          "identity": "cloth-1204000-reference",
+          "family": "cloth",
+          "excitation": "reference",
+          "seed": 1204000,
+          "mean_pct_length": 17.63829742423581,
+          "after_six_seconds_mean_pct_length": 26.25962917795641,
+          "max_pct_length": 53.21475718688965,
+          "peak_recorded_velocity_m_s": 5.183903217315674
+        },
+        {
+          "identity": "cloth-1204000-long-hold",
+          "family": "cloth",
+          "excitation": "long-hold",
+          "seed": 1204000,
+          "mean_pct_length": 17.4349021280478,
+          "after_six_seconds_mean_pct_length": 25.869236161384837,
+          "max_pct_length": 42.39245667960294,
+          "peak_recorded_velocity_m_s": 5.183903217315674,
+          "pooled_response_disagreement_pct_of_stock_response": 89.71810218981459
+        },
+        {
+          "identity": "cloth-1204000-fast-oscillation",
+          "family": "cloth",
+          "excitation": "fast-oscillation",
+          "seed": 1204000,
+          "mean_pct_length": 17.548066970722846,
+          "after_six_seconds_mean_pct_length": 26.1224981414435,
+          "max_pct_length": 53.108617387563584,
+          "peak_recorded_velocity_m_s": 5.183903217315674,
+          "pooled_response_disagreement_pct_of_stock_response": 105.40325424553427
+        },
+        {
+          "identity": "cloth-1204000-strong-reversals",
+          "family": "cloth",
+          "excitation": "strong-reversals",
+          "seed": 1204000,
+          "mean_pct_length": 11.783021588089802,
+          "after_six_seconds_mean_pct_length": 14.692853559107903,
+          "max_pct_length": 27.859211836563283,
+          "peak_recorded_velocity_m_s": 5.183903217315674,
+          "pooled_response_disagreement_pct_of_stock_response": 102.9797980169353
+        },
+        {
+          "identity": "cable-1204000-reference",
+          "family": "cable",
+          "excitation": "reference",
+          "seed": 1204000,
+          "mean_pct_length": 15.563051811514088,
+          "after_six_seconds_mean_pct_length": 15.677711889250384,
+          "max_pct_length": 33.39095345298606,
+          "peak_recorded_velocity_m_s": 0.8793160319328308
+        },
+        {
+          "identity": "cable-1204000-long-hold",
+          "family": "cable",
+          "excitation": "long-hold",
+          "seed": 1204000,
+          "mean_pct_length": 15.56228553451263,
+          "after_six_seconds_mean_pct_length": 15.677074917381379,
+          "max_pct_length": 33.39095345298606,
+          "peak_recorded_velocity_m_s": 0.8793160319328308,
+          "pooled_response_disagreement_pct_of_stock_response": 30.978383072864457
+        },
+        {
+          "identity": "cable-1204000-fast-oscillation",
+          "family": "cable",
+          "excitation": "fast-oscillation",
+          "seed": 1204000,
+          "mean_pct_length": 15.562869226947825,
+          "after_six_seconds_mean_pct_length": 15.677654636537229,
+          "max_pct_length": 33.39095345298606,
+          "peak_recorded_velocity_m_s": 0.8793160319328308,
+          "pooled_response_disagreement_pct_of_stock_response": 191.17500535225915
+        },
+        {
+          "identity": "cable-1204000-strong-reversals",
+          "family": "cable",
+          "excitation": "strong-reversals",
+          "seed": 1204000,
+          "mean_pct_length": 15.572152646157845,
+          "after_six_seconds_mean_pct_length": 15.687716304594009,
+          "max_pct_length": 33.39095345298606,
+          "peak_recorded_velocity_m_s": 0.8793160319328308,
+          "pooled_response_disagreement_pct_of_stock_response": 168.14243859767066
+        }
+      ]
+    }
+  }
+}
