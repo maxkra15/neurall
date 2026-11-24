@@ -1,0 +1,1887 @@
+{
+  "task": "Root-clamped, contact-free Newton cable from one observed moving state; match added motion over a known nominal trajectory by optimizing two bounded xyz force pulses.",
+  "teacher_commit": "0ced8f8420d4ee1eab9ecfaee59e1354ef670348",
+  "response_metric": "Native Euclidean RMS tracking error divided by nominal-to-target RMS response",
+  "prediction_interval_s": 0.02,
+  "prediction_steps": 24,
+  "prediction_arc_samples": 17,
+  "model_parameter_count": 165456,
+  "model_type": "CableImpulseModel",
+  "force_bounds_m_s2": [
+    -7.0,
+    7.0
+  ],
+  "train_seed_range_inclusive": [
+    9300000,
+    9300599
+  ],
+  "train_cases": 600,
+  "train_recordings": 1200,
+  "primary_solver_substeps": 8,
+  "primary_solver_sweeps": 16,
+  "train_site_protocol": "even native segment indices, test uses odd indices within each topology",
+  "dataset_sha256": "c49d819515f10d1e927444a9d01c9805dbea7464b8a3e82d6b4cb8014de949be",
+  "model_sha256": "04388034fd4bec76c575ceeb63f42368a5ee804ea8090a816beaa869a0ad8990",
+  "torch_version": "2.15.0+cu132",
+  "train_history": [
+    {
+      "step": 1,
+      "train_base_component_rmse_m_per_m": 0.0684482604265213,
+      "train_response_component_rmse_m_per_m": 0.0030076380353420973,
+      "train_loss": 1.0607916116714478
+    },
+    {
+      "step": 200,
+      "train_base_component_rmse_m_per_m": 0.021964294835925102,
+      "train_response_component_rmse_m_per_m": 0.0007665439625270665,
+      "train_loss": 0.09925153851509094
+    },
+    {
+      "step": 400,
+      "train_base_component_rmse_m_per_m": 0.012110804207623005,
+      "train_response_component_rmse_m_per_m": 0.0007884081569500268,
+      "train_loss": 0.045011006295681
+    },
+    {
+      "step": 600,
+      "train_base_component_rmse_m_per_m": 0.009903447702527046,
+      "train_response_component_rmse_m_per_m": 0.000607397872954607,
+      "train_loss": 0.02948814630508423
+    },
+    {
+      "step": 800,
+      "train_base_component_rmse_m_per_m": 0.007043959107249975,
+      "train_response_component_rmse_m_per_m": 0.0005082418792881072,
+      "train_loss": 0.017779860645532608
+    },
+    {
+      "step": 1000,
+      "train_base_component_rmse_m_per_m": 0.005924564320594072,
+      "train_response_component_rmse_m_per_m": 0.0005123976152390242,
+      "train_loss": 0.014800457283854485
+    },
+    {
+      "step": 1200,
+      "train_base_component_rmse_m_per_m": 0.005729992873966694,
+      "train_response_component_rmse_m_per_m": 0.0004712239606305957,
+      "train_loss": 0.012612905353307724
+    },
+    {
+      "step": 1400,
+      "train_base_component_rmse_m_per_m": 0.004775215405970812,
+      "train_response_component_rmse_m_per_m": 0.00040168690611608326,
+      "train_loss": 0.009204340167343616
+    },
+    {
+      "step": 1600,
+      "train_base_component_rmse_m_per_m": 0.0044146087020635605,
+      "train_response_component_rmse_m_per_m": 0.00041792288538999856,
+      "train_loss": 0.00888250395655632
+    },
+    {
+      "step": 1800,
+      "train_base_component_rmse_m_per_m": 0.0042583998292684555,
+      "train_response_component_rmse_m_per_m": 0.00039311201544478536,
+      "train_loss": 0.007409738842397928
+    },
+    {
+      "step": 2000,
+      "train_base_component_rmse_m_per_m": 0.004181792959570885,
+      "train_response_component_rmse_m_per_m": 0.0003895159170497209,
+      "train_loss": 0.0072952816262841225
+    }
+  ],
+  "fit_device": "cuda",
+  "dataset_seconds": 0.019518196117132902,
+  "fit_seconds": 7.172937209717929,
+  "planner_timing": "One CPU thread, warm f64, includes SciPy and candidate scoring. Excludes precomputing the Sobol candidate bank, teacher replay and gradient checks. Late Sobol batches are excluded from the accepted candidates and any elapsed deadline overrun is recorded.",
+  "results": {
+    "cases": 12,
+    "initial": {
+      "mean_newton_response_error_pct": 100.0,
+      "median_newton_response_error_pct": 100.0,
+      "improved_cases": 0,
+      "median_model_evaluations": 0.0,
+      "median_model_ms": 0.0,
+      "mean_newton_trajectory_rms_error_m": 0.003319759658273047
+    },
+    "gradient": {
+      "mean_newton_response_error_pct": 26.480510142554923,
+      "median_newton_response_error_pct": 26.32506370077331,
+      "improved_cases": 12,
+      "median_model_evaluations": 24.0,
+      "median_model_ms": 16.853501554578543,
+      "mean_newton_trajectory_rms_error_m": 0.0007919556399643811
+    },
+    "sampling": {
+      "mean_newton_response_error_pct": 53.49072122943792,
+      "median_newton_response_error_pct": 41.21074807813699,
+      "improved_cases": 10,
+      "median_model_evaluations": 24.0,
+      "median_model_ms": 5.49685163423419,
+      "mean_newton_trajectory_rms_error_m": 0.0014044285989271304
+    },
+    "wall_matched_sampling": {
+      "mean_newton_response_error_pct": 40.14610939996968,
+      "median_newton_response_error_pct": 37.912226759887574,
+      "improved_cases": 12,
+      "median_model_evaluations": 72.5,
+      "median_model_ms": 16.98239636607468,
+      "mean_newton_trajectory_rms_error_m": 0.0010788820624042996
+    },
+    "exact_response_solve": {
+      "mean_newton_response_error_pct": 26.496690987772713,
+      "median_newton_response_error_pct": 26.246418587374663,
+      "improved_cases": 12,
+      "median_model_evaluations": 1.0,
+      "median_model_ms": 0.7778105791658163,
+      "mean_newton_trajectory_rms_error_m": 0.0007893398762016073
+    },
+    "gradient_better_than_forward_matched_sampling": 9,
+    "gradient_better_than_wall_matched_sampling": 9
+  },
+  "refined_results": null,
+  "cases": [
+    {
+      "seed": 9500000,
+      "first_observed_frame": 12,
+      "force_segment_indices_1based": [
+        5,
+        9
+      ],
+      "moving_rms_speed_m_s": 1.340042595553651,
+      "absolute_nominal_rms_error_m": 0.027416300820031304,
+      "model_gradient": [
+        0.04563448378935957,
+        0.13939181473547962,
+        -0.04336502596714083,
+        0.1667711166631957,
+        0.36717952941378784,
+        0.07408230434957094
+      ],
+      "max_autograd_fd_abs_difference": 6.778938521634359e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.005094976983419823
+      },
+      "gradient": {
+        "amplitudes": [
+          -4.350821926543419,
+          2.064511738994113,
+          0.25541690231860265,
+          -2.810836619636699,
+          -4.622132710486602,
+          2.3348841128727784
+        ],
+        "model_evaluations": 24,
+        "model_ms": 17.162322998046875,
+        "model_response_error_pct": 20.577487062049133,
+        "newton_response_error_pct": 26.26077735264693,
+        "newton_trajectory_rms_error_m": 0.0013379805617844869
+      },
+      "sampling": {
+        "amplitudes": [
+          -5.8371324352920055,
+          4.554740441963077,
+          3.7927306964993477,
+          -5.833456916734576,
+          -4.688021248206496,
+          5.844932219013572
+        ],
+        "model_evaluations": 24,
+        "model_ms": 8.473651017993689,
+        "model_response_error_pct": 30.705572032132185,
+        "newton_response_error_pct": 12.173274739081307,
+        "newton_trajectory_rms_error_m": 0.0006202255460846522
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -1.9359029531478882,
+          -1.7949583288282156,
+          2.5271127931773663,
+          -1.3886399529874325,
+          -2.9103210121393204,
+          -1.6786083094775677
+        ],
+        "model_evaluations": 59,
+        "model_ms": 16.82990789413452,
+        "accepted_model_ms": 16.82990789413452,
+        "deadline_overrun_ms": 0.0,
+        "model_response_error_pct": 27.14447990652961,
+        "newton_response_error_pct": 20.417076659383923,
+        "newton_trajectory_rms_error_m": 0.0010402453564827918
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -4.341156300375176,
+          2.0878869084449323,
+          0.26630199886231837,
+          -2.817499370043075,
+          -4.62847079846972,
+          2.3306759872158445
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.7871878333389759,
+        "model_response_error_pct": 20.57721157201958,
+        "newton_response_error_pct": 26.196846386764527,
+        "newton_trajectory_rms_error_m": 0.0013347232937875
+      },
+      "hold_nominal_rms_error_m": 0.2354000784491167,
+      "damped_velocity_nominal_rms_error_m": 0.1412563498658195,
+      "absolute_target_rms_error_m": 0.02846284788066752,
+      "target_control_model_response_error_pct": 50.04130143030863,
+      "newton_finite_difference_gradient": [
+        0.033251632768843686,
+        0.14938234351673704,
+        0.06159322072360705,
+        0.21614052418590426,
+        0.4920987279025138,
+        0.16636455706943212
+      ],
+      "newton_gradient_cosine": 0.9693721361978801,
+      "target_control_amplitudes": [
+        [
+          4.854086817864136,
+          2.2945080201045087,
+          -2.314310293305205
+        ],
+        [
+          -2.612111507798965,
+          -3.775849513266262,
+          0.5060753572890864
+        ]
+      ],
+      "mean_newton_replay_ms": 606.4645320177078,
+      "target_intervention_rms_m": 0.005094976983419823,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500000,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 10,
+        "radius_m": 0.012697178093063415,
+        "length_m": 0.977815930160653,
+        "density_kg_m3": 886.6976589709924,
+        "stretch_stiffness_n_m": 44771.78716281966,
+        "bend_stiffness_nm_rad": 7.334397764686863,
+        "initial_tilt_rad": 0.10110379143616974,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.41757117059726,
+        "load_phase": -0.11503154030796814,
+        "load_peak_acceleration_scale": 6.292164800090007
+      }
+    },
+    {
+      "seed": 9500001,
+      "first_observed_frame": 21,
+      "force_segment_indices_1based": [
+        3,
+        9
+      ],
+      "moving_rms_speed_m_s": 0.1779386340584878,
+      "absolute_nominal_rms_error_m": 0.0031650359522875948,
+      "model_gradient": [
+        -0.010110741217720239,
+        -0.17886159999061185,
+        0.029794944988917892,
+        0.015827704252525318,
+        -1.1439092592396614,
+        0.07966569335775439
+      ],
+      "max_autograd_fd_abs_difference": 2.3457642078783536e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.0014945876581254859
+      },
+      "gradient": {
+        "amplitudes": [
+          0.585803375556578,
+          1.5240338166406375,
+          -1.4947648923706571,
+          -0.4386199243467154,
+          1.4711922369188768,
+          0.19986894133073124
+        ],
+        "model_evaluations": 24,
+        "model_ms": 17.12183514609933,
+        "model_response_error_pct": 2.354530088894229,
+        "newton_response_error_pct": 45.4703094233402,
+        "newton_trajectory_rms_error_m": 0.0006795936327527122
+      },
+      "sampling": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.727152805775404,
+        "model_response_error_pct": 99.9999999999996,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.0014945876581254859
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -1.7747061755508184,
+          -1.328721895813942,
+          -5.5719107910990715,
+          -4.754706334322691,
+          1.8884668238461018,
+          0.951195040717721
+        ],
+        "model_evaluations": 62,
+        "model_ms": 17.490625847131014,
+        "accepted_model_ms": 16.738181933760643,
+        "deadline_overrun_ms": 0.3687907010316849,
+        "model_response_error_pct": 58.588945111630345,
+        "newton_response_error_pct": 35.72125750947052,
+        "newton_trajectory_rms_error_m": 0.0005338855060637697
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          0.8414467101402877,
+          1.5975566482068673,
+          -1.4963057985692012,
+          -0.46836403674884564,
+          1.4581954461476738,
+          0.19272879577315516
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.7825563661754131,
+        "model_response_error_pct": 2.3086099671028792,
+        "newton_response_error_pct": 45.77995870221213,
+        "newton_trajectory_rms_error_m": 0.0006842216126582068
+      },
+      "hold_nominal_rms_error_m": 0.11789371149165469,
+      "damped_velocity_nominal_rms_error_m": 0.10555563153350969,
+      "absolute_target_rms_error_m": 0.003445002508009906,
+      "target_control_model_response_error_pct": 93.33013592838593,
+      "newton_finite_difference_gradient": [
+        0.001966135113479206,
+        -0.039749136761991585,
+        0.003019618540333243,
+        0.02483201195163237,
+        -0.6906740810761813,
+        0.048082365498898494
+      ],
+      "newton_gradient_cosine": 0.9947279742128773,
+      "target_control_amplitudes": [
+        [
+          4.331985443304353,
+          4.293665387119148,
+          -4.145976833586019
+        ],
+        [
+          -2.4221638107521395,
+          2.5399234360108753,
+          0.5200935853102155
+        ]
+      ],
+      "mean_newton_replay_ms": 745.256600342691,
+      "target_intervention_rms_m": 0.0014945876581254859,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500001,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 12,
+        "radius_m": 0.009795724465099773,
+        "length_m": 0.8142839404609117,
+        "density_kg_m3": 740.9809480296659,
+        "stretch_stiffness_n_m": 46580.896140873054,
+        "bend_stiffness_nm_rad": 9.808126042973253,
+        "initial_tilt_rad": 0.05779886869609671,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.3222617637601528,
+        "load_phase": 0.5670305443513478,
+        "load_peak_acceleration_scale": 7.855287936457729
+      }
+    },
+    {
+      "seed": 9500002,
+      "first_observed_frame": 30,
+      "force_segment_indices_1based": [
+        7,
+        15
+      ],
+      "moving_rms_speed_m_s": 0.4142537514090088,
+      "absolute_nominal_rms_error_m": 0.006634267586855069,
+      "model_gradient": [
+        0.01943864625742376,
+        -0.05576519277569565,
+        0.03537271984289123,
+        0.07011685184672523,
+        -0.21416136532462518,
+        0.14588971813513438
+      ],
+      "max_autograd_fd_abs_difference": 1.1397965904436091e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.007688432147310941
+      },
+      "gradient": {
+        "amplitudes": [
+          0.45634135459598973,
+          0.7166142045376226,
+          -1.9926034897450242,
+          -6.615360145718989,
+          5.451644004243125,
+          -1.7736298937307546
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.836304683238268,
+        "model_response_error_pct": 6.378575428074382,
+        "newton_response_error_pct": 15.767018190387894,
+        "newton_trajectory_rms_error_m": 0.0012122364952221465
+      },
+      "sampling": {
+        "amplitudes": [
+          -1.2862406373023987,
+          -1.2210370525717735,
+          -3.000809174031019,
+          6.623681163415313,
+          4.818826535716653,
+          -5.234251415356994
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.5077881552278996,
+        "model_response_error_pct": 31.393383572305332,
+        "newton_response_error_pct": 40.36769962250408,
+        "newton_trajectory_rms_error_m": 0.0031036431949065203
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          1.2153403293341398,
+          0.0647430382668972,
+          3.197292374446988,
+          0.2809666693210602,
+          5.5647685788571835,
+          -6.008716620504856
+        ],
+        "model_evaluations": 74,
+        "model_ms": 16.80055307224393,
+        "accepted_model_ms": 16.80055307224393,
+        "deadline_overrun_ms": 0.0,
+        "model_response_error_pct": 14.132636130298778,
+        "newton_response_error_pct": 18.73741150538415,
+        "newton_trajectory_rms_error_m": 0.001440613169753894
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          0.7401136326799689,
+          0.7296829202320207,
+          -2.1092248052351295,
+          -6.61663171829097,
+          5.459231045235642,
+          -1.7674859559196747
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.6882199086248875,
+        "model_response_error_pct": 6.377731634329837,
+        "newton_response_error_pct": 15.597470097397029,
+        "newton_trajectory_rms_error_m": 0.001199200905135484
+      },
+      "hold_nominal_rms_error_m": 0.23093793021553718,
+      "damped_velocity_nominal_rms_error_m": 0.20268268440616088,
+      "absolute_target_rms_error_m": 0.007277348953933118,
+      "target_control_model_response_error_pct": 14.503480868571176,
+      "newton_finite_difference_gradient": [
+        0.013958651214471726,
+        -0.05453839070881835,
+        0.03307253645575131,
+        0.06763400777911137,
+        -0.193869706825039,
+        0.12615768186342952
+      ],
+      "newton_gradient_cosine": 0.9993487307586891,
+      "target_control_amplitudes": [
+        [
+          -3.146181165369022,
+          0.8659814049569174,
+          -0.08425552204929954
+        ],
+        [
+          0.6541519478287423,
+          6.372629614219738,
+          -5.55336614426657
+        ]
+      ],
+      "mean_newton_replay_ms": 898.4017276205122,
+      "target_intervention_rms_m": 0.007688432147310941,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500002,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 15,
+        "radius_m": 0.012811160361518852,
+        "length_m": 0.8217589240998858,
+        "density_kg_m3": 815.7074401558096,
+        "stretch_stiffness_n_m": 34107.09830571451,
+        "bend_stiffness_nm_rad": 8.035088809455365,
+        "initial_tilt_rad": 0.14306360652686337,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 0.8554285808207883,
+        "load_phase": 0.059847986179703216,
+        "load_peak_acceleration_scale": 7.368635676368352
+      }
+    },
+    {
+      "seed": 9500003,
+      "first_observed_frame": 35,
+      "force_segment_indices_1based": [
+        5,
+        9
+      ],
+      "moving_rms_speed_m_s": 0.044332922224807086,
+      "absolute_nominal_rms_error_m": 0.004897899752608035,
+      "model_gradient": [
+        0.014621875053634216,
+        0.08431755018600046,
+        0.05953585629215307,
+        0.13924599653627134,
+        0.3948274654046266,
+        0.2512361417966926
+      ],
+      "max_autograd_fd_abs_difference": 4.328757838290009e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.0019460216117868176
+      },
+      "gradient": {
+        "amplitudes": [
+          -1.7766934578625768,
+          -2.653630694724431,
+          -2.7059173828945497,
+          5.192748580716677,
+          -3.011602958129655,
+          -4.457852306779923
+        ],
+        "model_evaluations": 24,
+        "model_ms": 17.265293281525373,
+        "model_response_error_pct": 4.203808580077459,
+        "newton_response_error_pct": 42.829198069733486,
+        "newton_trajectory_rms_error_m": 0.0008334654505919961
+      },
+      "sampling": {
+        "amplitudes": [
+          3.8854024577885866,
+          -0.2734159994870424,
+          -2.0595203284174204,
+          -2.420903518795967,
+          -1.691185848787427,
+          0.40056841634213924
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.830416921526194,
+        "model_response_error_pct": 52.07565491134428,
+        "newton_response_error_pct": 72.3837208602963,
+        "newton_trajectory_rms_error_m": 0.001408602851356809
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -2.112958399578929,
+          -4.666901472955942,
+          -2.93897333368659,
+          2.8696937393397093,
+          -3.405110517516732,
+          -2.750291207805276
+        ],
+        "model_evaluations": 69,
+        "model_ms": 17.157638911157846,
+        "accepted_model_ms": 17.157638911157846,
+        "deadline_overrun_ms": 0.0,
+        "model_response_error_pct": 29.72466833050513,
+        "newton_response_error_pct": 40.10319601030462,
+        "newton_trajectory_rms_error_m": 0.0007804168613777567
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -0.7359292551142237,
+          -2.6139850666429036,
+          -3.0533110214154173,
+          5.629942487960235,
+          -3.0514996902991545,
+          -4.627900308681204
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.8731060661375523,
+        "model_response_error_pct": 4.176288278102022,
+        "newton_response_error_pct": 42.8407809192711,
+        "newton_trajectory_rms_error_m": 0.0008336908553472589
+      },
+      "hold_nominal_rms_error_m": 0.06230539426783569,
+      "damped_velocity_nominal_rms_error_m": 0.06517952749647435,
+      "absolute_target_rms_error_m": 0.005303478859996872,
+      "target_control_model_response_error_pct": 79.6659400596485,
+      "newton_finite_difference_gradient": [
+        -0.012648152209519814,
+        0.0500518225260968,
+        0.02489268510940945,
+        0.07561289366637461,
+        0.2198131693871369,
+        0.16164262179525815
+      ],
+      "newton_gradient_cosine": 0.9945924185449774,
+      "target_control_amplitudes": [
+        [
+          -6.17694137862534,
+          -5.380041409134842,
+          -4.31167224179728
+        ],
+        [
+          -2.6403049065207354,
+          -4.6387307806132,
+          -2.2786067605584
+        ]
+      ],
+      "mean_newton_replay_ms": 994.5189704187214,
+      "target_intervention_rms_m": 0.0019460216117868176,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500003,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 14,
+        "radius_m": 0.01035950372693098,
+        "length_m": 0.6949606380211292,
+        "density_kg_m3": 751.8647851743629,
+        "stretch_stiffness_n_m": 31057.0266537373,
+        "bend_stiffness_nm_rad": 9.361845927689654,
+        "initial_tilt_rad": -0.12877323114721392,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.5592370572484706,
+        "load_phase": 0.003278632388670766,
+        "load_peak_acceleration_scale": 6.061745650386451
+      }
+    },
+    {
+      "seed": 9500004,
+      "first_observed_frame": 24,
+      "force_segment_indices_1based": [
+        3,
+        7
+      ],
+      "moving_rms_speed_m_s": 0.3445752902986015,
+      "absolute_nominal_rms_error_m": 0.0038769743694934034,
+      "model_gradient": [
+        0.05597697830275561,
+        0.1531197322627298,
+        0.0627256197991015,
+        0.18022133918747724,
+        0.8958940704286547,
+        0.504748268327697
+      ],
+      "max_autograd_fd_abs_difference": 7.534917134677244e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.001285277334168035
+      },
+      "gradient": {
+        "amplitudes": [
+          0.19164862817743955,
+          -1.8872669186786188,
+          1.8450780653476937,
+          2.1553678617274983,
+          -1.300852362659066,
+          -2.092936046692793
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.8644730001688,
+        "model_response_error_pct": 5.816388460924767,
+        "newton_response_error_pct": 16.697814403304065,
+        "newton_trajectory_rms_error_m": 0.0002146132238271127
+      },
+      "sampling": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.48591511324048,
+        "model_response_error_pct": 100.00000000000082,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.001285277334168035
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          2.938005041331053,
+          0.8627580981701612,
+          1.0896235052496195,
+          -3.1119720805436373,
+          -0.5745160412043333,
+          -0.09836016595363617
+        ],
+        "model_evaluations": 74,
+        "model_ms": 16.948741860687733,
+        "accepted_model_ms": 16.379541717469692,
+        "deadline_overrun_ms": 0.08426886051893234,
+        "model_response_error_pct": 65.63928026644153,
+        "newton_response_error_pct": 69.79523559601888,
+        "newton_trajectory_rms_error_m": 0.0008970623434448109
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -0.3002694396518046,
+          -1.837328087994589,
+          2.0364190082786067,
+          2.2470433482565175,
+          -1.2949128705370199,
+          -2.115371690439005
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.6911237724125385,
+        "model_response_error_pct": 5.799346956670847,
+        "newton_response_error_pct": 17.229597883992337,
+        "newton_trajectory_rms_error_m": 0.00022144811637124886
+      },
+      "hold_nominal_rms_error_m": 0.14878526184943724,
+      "damped_velocity_nominal_rms_error_m": 0.12337442343876846,
+      "absolute_target_rms_error_m": 0.004215221337368378,
+      "target_control_model_response_error_pct": 33.88574387520744,
+      "newton_finite_difference_gradient": [
+        0.02020203905651099,
+        0.10067079424671925,
+        0.06456478843429361,
+        0.12523619608824366,
+        0.7489804516297942,
+        0.478583182962139
+      ],
+      "newton_gradient_cosine": 0.9968697732690927,
+      "target_control_amplitudes": [
+        [
+          -3.5131294709818555,
+          -2.708646885003157,
+          4.971007041845731
+        ],
+        [
+          -0.7145457037994918,
+          -1.5693226286889903,
+          -1.5979568068326078
+        ]
+      ],
+      "mean_newton_replay_ms": 839.406627137214,
+      "target_intervention_rms_m": 0.001285277334168035,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500004,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 11,
+        "radius_m": 0.01386187706191732,
+        "length_m": 0.8734958725032412,
+        "density_kg_m3": 665.6168921082553,
+        "stretch_stiffness_n_m": 40332.132851417235,
+        "bend_stiffness_nm_rad": 11.789272990113915,
+        "initial_tilt_rad": -0.07773932262090895,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.2077805857411485,
+        "load_phase": 0.0767606569468734,
+        "load_peak_acceleration_scale": 3.2676071414373036
+      }
+    },
+    {
+      "seed": 9500005,
+      "first_observed_frame": 25,
+      "force_segment_indices_1based": [
+        5,
+        7
+      ],
+      "moving_rms_speed_m_s": 0.15441690788298928,
+      "absolute_nominal_rms_error_m": 0.005885544008078017,
+      "model_gradient": [
+        0.0052310354613019135,
+        0.025173806466561484,
+        0.13175912164408785,
+        -0.03327553540803308,
+        0.2324771489569611,
+        -0.14587583670970627
+      ],
+      "max_autograd_fd_abs_difference": 7.611944061181042e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.0013856724742494218
+      },
+      "gradient": {
+        "amplitudes": [
+          -3.022976475237438,
+          0.9919629800101828,
+          -7.0,
+          5.924377031521056,
+          -1.960720978194752,
+          2.193126385630057
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.920929308980703,
+        "model_response_error_pct": 18.08321802115248,
+        "newton_response_error_pct": 28.896472057756604,
+        "newton_trajectory_rms_error_m": 0.0004004104593335087
+      },
+      "sampling": {
+        "amplitudes": [
+          -4.113989979028702,
+          0.7251624949276447,
+          -5.5366673693060875,
+          2.3209409192204475,
+          -2.813808025792241,
+          0.7544523216784
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.6909979321062565,
+        "model_response_error_pct": 57.84909121926167,
+        "newton_response_error_pct": 39.83321199041056,
+        "newton_trajectory_rms_error_m": 0.0005519578541605393
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -0.06100377440452576,
+          -0.6265618596225977,
+          -6.065646888688207,
+          -4.325004123151302,
+          -0.1084279865026474,
+          4.828480904921889
+        ],
+        "model_evaluations": 71,
+        "model_ms": 17.098885029554367,
+        "accepted_model_ms": 16.525063663721085,
+        "deadline_overrun_ms": 0.1779557205736637,
+        "model_response_error_pct": 53.9114133303278,
+        "newton_response_error_pct": 56.45498765057068,
+        "newton_trajectory_rms_error_m": 0.0007822812242148683
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -2.2519050330611092,
+          1.3091124944915127,
+          -6.999999803805595,
+          6.999995492598431,
+          -2.0895687497071074,
+          1.9525890656104787
+        ],
+        "model_evaluations": 1,
+        "model_ms": 2.69484193995595,
+        "model_response_error_pct": 17.064488281998642,
+        "newton_response_error_pct": 29.823114672450096,
+        "newton_trajectory_rms_error_m": 0.0004132506909799815
+      },
+      "hold_nominal_rms_error_m": 0.03904017754366842,
+      "damped_velocity_nominal_rms_error_m": 0.04997647254725226,
+      "absolute_target_rms_error_m": 0.005959178176309912,
+      "target_control_model_response_error_pct": 33.30606824453884,
+      "newton_finite_difference_gradient": [
+        -0.013798449757954079,
+        0.0216774415106998,
+        0.13983356907114886,
+        -0.040457682214648426,
+        0.25240631979454914,
+        -0.16259618621849947
+      ],
+      "newton_gradient_cosine": 0.9979524925735251,
+      "target_control_amplitudes": [
+        [
+          -4.770204685296497,
+          0.9113934068878162,
+          -5.949305446060923
+        ],
+        [
+          -1.9163559669250558,
+          -1.6553096678272032,
+          2.804103794652887
+        ]
+      ],
+      "mean_newton_replay_ms": 802.1967080421746,
+      "target_intervention_rms_m": 0.0013856724742494218,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500005,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 10,
+        "radius_m": 0.013092064425388938,
+        "length_m": 0.7032221346254381,
+        "density_kg_m3": 890.96983261066,
+        "stretch_stiffness_n_m": 31809.104920860624,
+        "bend_stiffness_nm_rad": 19.086283953365502,
+        "initial_tilt_rad": -0.007225036767662452,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 0.931994141088146,
+        "load_phase": -0.3918310630380723,
+        "load_peak_acceleration_scale": 4.155844442042716
+      }
+    },
+    {
+      "seed": 9500006,
+      "first_observed_frame": 18,
+      "force_segment_indices_1based": [
+        5,
+        7
+      ],
+      "moving_rms_speed_m_s": 0.9646094928261616,
+      "absolute_nominal_rms_error_m": 0.007966620483932593,
+      "model_gradient": [
+        -0.013944398748195926,
+        0.09807187307214581,
+        0.011904598774672634,
+        -0.0623095357461249,
+        0.319112011930225,
+        -0.04666452914774295
+      ],
+      "max_autograd_fd_abs_difference": 2.485747718772302e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.003903476326288288
+      },
+      "gradient": {
+        "amplitudes": [
+          -1.0471577598476942,
+          -4.010537334535843,
+          0.18003509533567721,
+          0.8829678767910311,
+          -4.781473546398586,
+          0.5351332228918881
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.817600931972265,
+        "model_response_error_pct": 9.359096591040078,
+        "newton_response_error_pct": 26.779427985803007,
+        "newton_trajectory_rms_error_m": 0.0010453286317412406
+      },
+      "sampling": {
+        "amplitudes": [
+          1.5264919847249985,
+          -3.621486086398363,
+          3.96732135489583,
+          -1.4010713696479797,
+          -5.646613078191876,
+          1.5073071122169495
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.7476540096104145,
+        "model_response_error_pct": 24.39292819654807,
+        "newton_response_error_pct": 23.57631005994839,
+        "newton_trajectory_rms_error_m": 0.0009202956818024095
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          1.1742611676454544,
+          -3.3586118053644896,
+          -0.04699461907148361,
+          5.876488348469138,
+          -4.961983405053616,
+          -5.412632552906871
+        ],
+        "model_evaluations": 69,
+        "model_ms": 17.051295842975378,
+        "accepted_model_ms": 16.47065719589591,
+        "deadline_overrun_ms": 0.2336949110031128,
+        "model_response_error_pct": 21.008059933125818,
+        "newton_response_error_pct": 28.75595870129265,
+        "newton_trajectory_rms_error_m": 0.0011224820403021953
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -1.0512156033807543,
+          -4.014848171975448,
+          0.1823406092836568,
+          0.8845726131145879,
+          -4.780542637431599,
+          0.534050963109014
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.6996653974056244,
+        "model_response_error_pct": 9.359074813114683,
+        "newton_response_error_pct": 26.693513266661544,
+        "newton_trajectory_rms_error_m": 0.0010419749710187567
+      },
+      "hold_nominal_rms_error_m": 0.08178150400513619,
+      "damped_velocity_nominal_rms_error_m": 0.1262190646465976,
+      "absolute_target_rms_error_m": 0.00821598732083054,
+      "target_control_model_response_error_pct": 36.97387362323511,
+      "newton_finite_difference_gradient": [
+        -0.011118329380117864,
+        0.10674484650515978,
+        -0.010748299110059645,
+        -0.03573949296906733,
+        0.21328859458778818,
+        -0.026774750240927035
+      ],
+      "newton_gradient_cosine": 0.9828199498394744,
+      "target_control_amplitudes": [
+        [
+          -6.105017928963099,
+          -4.513625244755366,
+          5.438687465690613
+        ],
+        [
+          -4.629566566407936,
+          -6.940798464201187,
+          6.796621077729117
+        ]
+      ],
+      "mean_newton_replay_ms": 937.4645134434104,
+      "target_intervention_rms_m": 0.003903476326288288,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500006,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 12,
+        "radius_m": 0.013275764460242727,
+        "length_m": 0.9560265194017874,
+        "density_kg_m3": 667.8232241440815,
+        "stretch_stiffness_n_m": 50652.533412398,
+        "bend_stiffness_nm_rad": 10.294446056376147,
+        "initial_tilt_rad": -0.11532560800685263,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.271460118907926,
+        "load_phase": -0.5961270480562137,
+        "load_peak_acceleration_scale": 3.6024725738011973
+      }
+    },
+    {
+      "seed": 9500007,
+      "first_observed_frame": 36,
+      "force_segment_indices_1based": [
+        3,
+        15
+      ],
+      "moving_rms_speed_m_s": 0.650827511115146,
+      "absolute_nominal_rms_error_m": 0.009626351121648623,
+      "model_gradient": [
+        0.006530464768536352,
+        -0.005918512170183311,
+        0.009387712959979724,
+        0.06664606285755956,
+        -0.24960929212341115,
+        0.24606498241338542
+      ],
+      "max_autograd_fd_abs_difference": 4.21532253547241e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.006322881774710583
+      },
+      "gradient": {
+        "amplitudes": [
+          -7.0,
+          -2.494314227746023,
+          7.0,
+          -7.0,
+          3.744127140000942,
+          -2.4824039428043463
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.8458241969347,
+        "model_response_error_pct": 10.223458443919268,
+        "newton_response_error_pct": 26.38935004889969,
+        "newton_trajectory_rms_error_m": 0.0016685674047064566
+      },
+      "sampling": {
+        "amplitudes": [
+          0.2808450981974602,
+          -5.550311172381043,
+          6.367968795821071,
+          -1.6924113910645247,
+          2.289622964337468,
+          -4.391948962584138
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.45693701133132,
+        "model_response_error_pct": 31.98163310527475,
+        "newton_response_error_pct": 42.053796533769905,
+        "newton_trajectory_rms_error_m": 0.002659011836607608
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -2.3617607578635216,
+          -3.6535328812897205,
+          -5.728470603004098,
+          -4.3247809167951345,
+          3.0993061270564795,
+          -3.2670548893511295
+        ],
+        "model_evaluations": 72,
+        "model_ms": 16.71747211366892,
+        "accepted_model_ms": 16.71747211366892,
+        "deadline_overrun_ms": 0.0,
+        "model_response_error_pct": 16.94401320764993,
+        "newton_response_error_pct": 32.20979807237021,
+        "newton_trajectory_rms_error_m": 0.0020365874519889765
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -6.999999999999999,
+          -3.031846777909453,
+          6.9999999999999645,
+          -6.999998344714251,
+          3.754047097295976,
+          -2.4850618547473604
+        ],
+        "model_evaluations": 1,
+        "model_ms": 2.2089798003435135,
+        "model_response_error_pct": 10.220763005112682,
+        "newton_response_error_pct": 26.295990787984795,
+        "newton_trajectory_rms_error_m": 0.0016626644090130646
+      },
+      "hold_nominal_rms_error_m": 0.07223015001551297,
+      "damped_velocity_nominal_rms_error_m": 0.10916928388859928,
+      "absolute_target_rms_error_m": 0.011823296345643337,
+      "target_control_model_response_error_pct": 40.706241454362434,
+      "newton_finite_difference_gradient": [
+        -0.006155073216211615,
+        -0.009180634078454394,
+        -4.240361576683209e-05,
+        0.05790081685026992,
+        -0.17709463005739548,
+        0.19070536314911476
+      ],
+      "newton_gradient_cosine": 0.9972231798514128,
+      "target_control_amplitudes": [
+        [
+          1.3732533822858226,
+          4.898193696184444,
+          -6.352095554982212
+        ],
+        [
+          -5.481715610135192,
+          5.189693089331723,
+          -3.9737468499269077
+        ]
+      ],
+      "mean_newton_replay_ms": 1327.2083777934313,
+      "target_intervention_rms_m": 0.006322881774710583,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500007,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 15,
+        "radius_m": 0.011980881941643972,
+        "length_m": 1.0044045161974142,
+        "density_kg_m3": 656.4924856533307,
+        "stretch_stiffness_n_m": 26956.573672997194,
+        "bend_stiffness_nm_rad": 20.515335215031463,
+        "initial_tilt_rad": -0.133481844203419,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.1657868570221788,
+        "load_phase": 0.1054214239715997,
+        "load_peak_acceleration_scale": 3.4487859682007054
+      }
+    },
+    {
+      "seed": 9500008,
+      "first_observed_frame": 32,
+      "force_segment_indices_1based": [
+        7,
+        11
+      ],
+      "moving_rms_speed_m_s": 0.2533947313804754,
+      "absolute_nominal_rms_error_m": 0.00495163048821707,
+      "model_gradient": [
+        0.02274122778978463,
+        0.03464423988679207,
+        0.08797260380446267,
+        0.08763231199777768,
+        0.18393300034167492,
+        0.2602424778493125
+      ],
+      "max_autograd_fd_abs_difference": 5.260986091215614e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.003015922793889929
+      },
+      "gradient": {
+        "amplitudes": [
+          2.5496064528099667,
+          3.6641431047809037,
+          -3.4269749169797676,
+          0.11302643866992934,
+          -4.022540950086001,
+          -4.407456702470784
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.861178912222385,
+        "model_response_error_pct": 5.368649348311082,
+        "newton_response_error_pct": 34.47292681115305,
+        "newton_trajectory_rms_error_m": 0.0010396768574185572
+      },
+      "sampling": {
+        "amplitudes": [
+          -5.286484062671661,
+          3.3794211987406015,
+          -2.333180969581008,
+          -5.427002901211381,
+          -6.397582681849599,
+          -2.90130434371531
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.457340739667416,
+        "model_response_error_pct": 43.42400418732979,
+        "newton_response_error_pct": 26.635957184206347,
+        "newton_trajectory_rms_error_m": 0.0008033199040892412
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -1.3548908103257418,
+          -1.3347284011542797,
+          -1.9275450557470322,
+          2.2047075293958187,
+          -4.2741063591092825,
+          -4.548168847337365
+        ],
+        "model_evaluations": 74,
+        "model_ms": 17.110743559896946,
+        "accepted_model_ms": 16.52843877673149,
+        "deadline_overrun_ms": 0.24956464767456055,
+        "model_response_error_pct": 41.582420931789386,
+        "newton_response_error_pct": 46.91839313129645,
+        "newton_trajectory_rms_error_m": 0.0014150225129736565
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          6.134008427744832,
+          3.844593662022368,
+          -4.365967905060927,
+          -3.4121738316795183,
+          -3.9159580153154074,
+          -3.3195267691788564
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.6896858103573322,
+        "model_response_error_pct": 5.210509957580347,
+        "newton_response_error_pct": 32.867964765886114,
+        "newton_trajectory_rms_error_m": 0.0009912724412620701
+      },
+      "hold_nominal_rms_error_m": 0.05211952993654013,
+      "damped_velocity_nominal_rms_error_m": 0.035855831295174424,
+      "absolute_target_rms_error_m": 0.005977915440151421,
+      "target_control_model_response_error_pct": 54.31433349770154,
+      "newton_finite_difference_gradient": [
+        0.011030038391902457,
+        0.002740542717939258,
+        0.05557611203111009,
+        0.07015022824564121,
+        0.11063220045298093,
+        0.1515935577911266
+      ],
+      "newton_gradient_cosine": 0.9922459126879578,
+      "target_control_amplitudes": [
+        [
+          -6.622466585516382,
+          5.085162338310951,
+          -2.4564468714270546
+        ],
+        [
+          -0.8480489690939477,
+          -5.6538626403451895,
+          -6.620997304991047
+        ]
+      ],
+      "mean_newton_replay_ms": 1089.5141276530921,
+      "target_intervention_rms_m": 0.003015922793889929,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500008,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 14,
+        "radius_m": 0.010084312050773491,
+        "length_m": 0.8184870482801905,
+        "density_kg_m3": 745.3629141324096,
+        "stretch_stiffness_n_m": 31760.955603501032,
+        "bend_stiffness_nm_rad": 21.54872906039391,
+        "initial_tilt_rad": -0.08164129822104253,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.0451290746619628,
+        "load_phase": -0.059249405813844414,
+        "load_peak_acceleration_scale": 5.224105647781588
+      }
+    },
+    {
+      "seed": 9500009,
+      "first_observed_frame": 28,
+      "force_segment_indices_1based": [
+        3,
+        7
+      ],
+      "moving_rms_speed_m_s": 0.12416268548207665,
+      "absolute_nominal_rms_error_m": 0.003049327631563285,
+      "model_gradient": [
+        0.01977605792697927,
+        0.03807824538418129,
+        -0.08495989684626902,
+        -0.1988136779904682,
+        -0.3047072960889266,
+        -0.9310063101922325
+      ],
+      "max_autograd_fd_abs_difference": 1.6390999668658424e-11,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.0008067881131426924
+      },
+      "gradient": {
+        "amplitudes": [
+          -2.3790422512492575,
+          -4.628902721048115,
+          -0.1392365513633657,
+          -3.9588662155718044,
+          0.7438057041671496,
+          2.509297801969016
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.793891321867704,
+        "model_response_error_pct": 7.59441552465262,
+        "newton_response_error_pct": 20.749861780812708,
+        "newton_trajectory_rms_error_m": 0.00016740741834113556
+      },
+      "sampling": {
+        "amplitudes": [
+          0.8810594417154789,
+          -2.7106386814266443,
+          6.144411912187934,
+          5.455299519002438,
+          0.5281627736985683,
+          -0.6100970041006804
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.434374790638685,
+        "model_response_error_pct": 76.15752335290769,
+        "newton_response_error_pct": 57.54998571168475,
+        "newton_trajectory_rms_error_m": 0.00046430644383719047
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          0.8810594417154789,
+          -2.7106386814266443,
+          6.144411912187934,
+          5.455299519002438,
+          0.5281627736985683,
+          -0.6100970041006804
+        ],
+        "model_evaluations": 74,
+        "model_ms": 17.01605087146163,
+        "accepted_model_ms": 16.452667769044638,
+        "deadline_overrun_ms": 0.22215954959392548,
+        "model_response_error_pct": 76.15752335290769,
+        "newton_response_error_pct": 57.54998571168475,
+        "newton_trajectory_rms_error_m": 0.00046430644383719047
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -1.2181478267960466,
+          -4.544462150399534,
+          -0.07422861393291824,
+          -4.920145712069653,
+          0.785358800635318,
+          2.7250509419247226
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.6849281489849091,
+        "model_response_error_pct": 7.422679648066683,
+        "newton_response_error_pct": 20.449955841514218,
+        "newton_trajectory_rms_error_m": 0.0001649878128722664
+      },
+      "hold_nominal_rms_error_m": 0.04716101393299933,
+      "damped_velocity_nominal_rms_error_m": 0.05615750733799719,
+      "absolute_target_rms_error_m": 0.0029999195173309825,
+      "target_control_model_response_error_pct": 27.133922004357718,
+      "newton_finite_difference_gradient": [
+        -0.01142315656023583,
+        -0.016450883895636575,
+        -0.023424101624988647,
+        -0.16236047174675908,
+        -0.3204360692438448,
+        -0.8765481845653252
+      ],
+      "newton_gradient_cosine": 0.9952155998475392,
+      "target_control_amplitudes": [
+        [
+          3.994717218296401,
+          -6.8049295672927945,
+          0.07115292074838653
+        ],
+        [
+          5.1409282625140325,
+          0.8711343048603108,
+          0.5507156397382182
+        ]
+      ],
+      "mean_newton_replay_ms": 1061.4450213499367,
+      "target_intervention_rms_m": 0.0008067881131426924,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500009,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 10,
+        "radius_m": 0.013557246924595753,
+        "length_m": 0.7655202797136683,
+        "density_kg_m3": 673.2740068715088,
+        "stretch_stiffness_n_m": 38560.754680606755,
+        "bend_stiffness_nm_rad": 16.766162385151333,
+        "initial_tilt_rad": -0.009372520612240198,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.4757382011113456,
+        "load_phase": 0.21875496173786246,
+        "load_peak_acceleration_scale": 7.055152263940675
+      }
+    },
+    {
+      "seed": 9500010,
+      "first_observed_frame": 33,
+      "force_segment_indices_1based": [
+        5,
+        7
+      ],
+      "moving_rms_speed_m_s": 0.42061866674821624,
+      "absolute_nominal_rms_error_m": 0.004148435989535912,
+      "model_gradient": [
+        0.008438107863835155,
+        0.12030915079207846,
+        0.053281032015089394,
+        0.033862051167260813,
+        0.1980472925208417,
+        0.09966044881899068
+      ],
+      "max_autograd_fd_abs_difference": 2.014402533667692e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.005034339019893552
+      },
+      "gradient": {
+        "amplitudes": [
+          1.8237646217220504,
+          -5.537923760972763,
+          -1.7234229788433768,
+          2.852123797103919,
+          -4.920185258796879,
+          -3.7539835273178053
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.753618605434895,
+        "model_response_error_pct": 5.161698765505141,
+        "newton_response_error_pct": 8.892305750168635,
+        "newton_trajectory_rms_error_m": 0.0004476688181489777
+      },
+      "sampling": {
+        "amplitudes": [
+          6.542642783373594,
+          -5.468706829473376,
+          -0.47544858790934086,
+          -2.199593510478735,
+          -3.415379548445344,
+          -0.993987750262022
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.390825681388378,
+        "model_response_error_pct": 33.99838561584764,
+        "newton_response_error_pct": 37.015566543884475,
+        "newton_trajectory_rms_error_m": 0.0018634891099534392
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          -3.8307073693722486,
+          -3.204916959628463,
+          -0.7147728707641363,
+          5.272466875612736,
+          -4.216422164812684,
+          -3.808293130248785
+        ],
+        "model_evaluations": 73,
+        "model_ms": 16.674038488417864,
+        "accepted_model_ms": 16.674038488417864,
+        "deadline_overrun_ms": 0.0,
+        "model_response_error_pct": 26.451385799010662,
+        "newton_response_error_pct": 32.68529437702172,
+        "newton_trajectory_rms_error_m": 0.0016454885285894778
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          0.5825436662126929,
+          -5.533649024040109,
+          -1.5660142716751997,
+          3.7551172877731753,
+          -4.970279273167626,
+          -3.945522031622565
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.7730647921562195,
+        "model_response_error_pct": 5.158109634167798,
+        "newton_response_error_pct": 9.107931714580292,
+        "newton_trajectory_rms_error_m": 0.0004585241602123754
+      },
+      "hold_nominal_rms_error_m": 0.06460419783586172,
+      "damped_velocity_nominal_rms_error_m": 0.08946915707440983,
+      "absolute_target_rms_error_m": 0.004003884004653635,
+      "target_control_model_response_error_pct": 10.9554264129423,
+      "newton_finite_difference_gradient": [
+        0.003329574686027533,
+        0.10920124446240817,
+        0.0550749469389054,
+        0.033054884393067994,
+        0.18427314080963209,
+        0.08545602052543826
+      ],
+      "newton_gradient_cosine": 0.9990815499807085,
+      "target_control_amplitudes": [
+        [
+          5.113283459485576,
+          -6.1625221581360785,
+          -2.510361338028268
+        ],
+        [
+          -1.2569877166184549,
+          -5.152819689040664,
+          -2.883578204125561
+        ]
+      ],
+      "mean_newton_replay_ms": 938.9584970660508,
+      "target_intervention_rms_m": 0.005034339019893552,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500010,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 10,
+        "radius_m": 0.013218011428660621,
+        "length_m": 0.8083948844269385,
+        "density_kg_m3": 810.1148259208896,
+        "stretch_stiffness_n_m": 43846.99818586065,
+        "bend_stiffness_nm_rad": 12.684015912218733,
+        "initial_tilt_rad": 0.024617612968395652,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.35788103094822,
+        "load_phase": 0.35333504039812247,
+        "load_peak_acceleration_scale": 5.712964074439787
+      }
+    },
+    {
+      "seed": 9500011,
+      "first_observed_frame": 38,
+      "force_segment_indices_1based": [
+        5,
+        11
+      ],
+      "moving_rms_speed_m_s": 0.36719613429158576,
+      "absolute_nominal_rms_error_m": 0.007121305019819869,
+      "model_gradient": [
+        -0.016574598344207395,
+        0.15717430235395874,
+        -0.03612831717621355,
+        0.04738245727029177,
+        0.5996024857973773,
+        0.20680311919183564
+      ],
+      "max_autograd_fd_abs_difference": 3.0232552572506677e-12,
+      "initial": {
+        "amplitudes": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_evaluations": 0,
+        "model_ms": 0.0,
+        "model_response_error_pct": 100.0,
+        "newton_response_error_pct": 100.0,
+        "newton_trajectory_rms_error_m": 0.001858739662290999
+      },
+      "gradient": {
+        "amplitudes": [
+          -1.144220119061688,
+          -4.022048066491424,
+          5.93911571226451,
+          -4.345271416927684,
+          -1.3724447515177793,
+          -0.6026895386706073
+        ],
+        "model_evaluations": 24,
+        "model_ms": 16.814235597848892,
+        "model_response_error_pct": 9.634782765635803,
+        "newton_response_error_pct": 24.56065983665287,
+        "newton_trajectory_rms_error_m": 0.0004565187257042426
+      },
+      "sampling": {
+        "amplitudes": [
+          -1.4346895664930344,
+          -3.039767673239112,
+          -0.34122148528695107,
+          -6.053448431193829,
+          0.010858593508601189,
+          1.5007157512009144
+        ],
+        "model_evaluations": 24,
+        "model_ms": 5.397050641477108,
+        "model_response_error_pct": 85.511142978367,
+        "newton_response_error_pct": 90.29913150746891,
+        "newton_trajectory_rms_error_m": 0.0016784257720336329
+      },
+      "wall_matched_sampling": {
+        "amplitudes": [
+          4.3777456767857075,
+          -6.79264409840107,
+          2.44031741283834,
+          -5.367766784504056,
+          -2.156604792922735,
+          0.016654057428240776
+        ],
+        "model_evaluations": 73,
+        "model_ms": 16.686747781932354,
+        "accepted_model_ms": 16.686747781932354,
+        "deadline_overrun_ms": 0.0,
+        "model_response_error_pct": 66.84375668976573,
+        "newton_response_error_pct": 42.40471787483754,
+        "newton_trajectory_rms_error_m": 0.0007881933098222062
+      },
+      "exact_response_solve": {
+        "amplitudes": [
+          -0.7103452015235907,
+          -3.991968876305909,
+          5.815982340150165,
+          -4.676981733928038,
+          -1.3690651269060585,
+          -0.5472685524489171
+        ],
+        "model_evaluations": 1,
+        "model_ms": 0.7949480786919594,
+        "model_response_error_pct": 9.627700768484676,
+        "newton_response_error_pct": 25.077166814558467,
+        "newton_trajectory_rms_error_m": 0.0004661192457610745
+      },
+      "hold_nominal_rms_error_m": 0.020908359584538464,
+      "damped_velocity_nominal_rms_error_m": 0.039249536889342185,
+      "absolute_target_rms_error_m": 0.007254058860333489,
+      "target_control_model_response_error_pct": 38.94777508295629,
+      "newton_finite_difference_gradient": [
+        0.009028194674577661,
+        0.07618284058587971,
+        -0.06651310129886466,
+        0.05450729287587673,
+        0.5898989654126797,
+        0.1514351892258024
+      ],
+      "newton_gradient_cosine": 0.9876928094465065,
+      "target_control_amplitudes": [
+        [
+          -1.8795057972666225,
+          -3.680396715986463,
+          5.860107992556273
+        ],
+        [
+          6.343249440196093,
+          -2.000530397842563,
+          -2.4798421082459496
+        ]
+      ],
+      "mean_newton_replay_ms": 1019.8545002378523,
+      "target_intervention_rms_m": 0.001858739662290999,
+      "teacher_metadata": {
+        "modality": "cable",
+        "seed": 9500011,
+        "dt": 0.02,
+        "substeps": 8,
+        "iterations": 16,
+        "newton_version": "1.9.0.dev0",
+        "warp_version": "1.19.0.dev20261020",
+        "solver": "SolverVBD",
+        "segment_count": 11,
+        "radius_m": 0.012998522751295857,
+        "length_m": 0.7672448134205527,
+        "density_kg_m3": 711.1022113963377,
+        "stretch_stiffness_n_m": 36540.06937777792,
+        "bend_stiffness_nm_rad": 18.566816514186073,
+        "initial_tilt_rad": 0.022548508038522513,
+        "control": "frame-held force at the final segment COM, encoded at its distal endpoint",
+        "velocity": "endpoint from segment COM linear velocity and omega cross offset",
+        "load_duration_seconds": 1.5074292593784138,
+        "load_phase": 0.1540868456694271,
+        "load_peak_acceleration_scale": 2.75769539732888
+      }
+    }
+  ],
+  "refined_cases": []
+}

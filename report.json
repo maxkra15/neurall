@@ -1,8 +1,176 @@
 {
   "schema": 1,
-  "updated": "2026-11-23T19:13:51Z",
-  "headline": "A bounded test of differentiable force planning in NeurALL",
+  "updated": "2026-11-24T08:52:01Z",
+  "headline": "Fast force planning for a moving cable · State-aware causal impulse model trained on 600 pairs of Newton trajectories at 8 substeps and 16 sweeps. Tested on 12 disjoint moving starts and unseen force sites over 0.48 s. Two bounded three-axis forces are optimized and replayed in Newton.",
   "runs": [
+    {
+      "id": "cable-state-refined-v13",
+      "title": "Fast force planning for a moving cable",
+      "date": "2026-11-24",
+      "status": "Measured",
+      "modalities": [
+        "cable"
+      ],
+      "scope": "State-aware causal impulse model trained on 600 pairs of Newton trajectories at 8 substeps and 16 sweeps. Tested on 12 disjoint moving starts and unseen force sites over 0.48 s. Two bounded three-axis forces are optimized and replayed in Newton.",
+      "summary": "One state encoding and bounded least squares cut planning latency by 21.7× compared with repeated backpropagation. All 12 Newton replays improve from zero intervention. Forecast and contact validation remain separate.",
+      "metrics": [
+        {
+          "label": "Newton response residual",
+          "value": "100% → 26.50%",
+          "detail": "12/12 Newton replays improved. Mean absolute target error falls from 3.32 to 0.79 mm."
+        },
+        {
+          "label": "Median planning latency",
+          "value": "16.85 → 0.78 ms",
+          "detail": "One CPU thread. One encoding plus bounded least squares versus L-BFGS-B on the same learned objective. Newton replay is timed separately."
+        },
+        {
+          "label": "Matched-count Sobol residual",
+          "value": "53.49%",
+          "detail": "24 candidates, 5.50 ms median. The one-encoding solver has lower Newton error in 9 of 12 cases."
+        },
+        {
+          "label": "Longer-budget Sobol residual",
+          "value": "40.15%",
+          "detail": "Search given the L-BFGS-B time budget. The one-encoding solver has lower Newton error in 9 of 12 cases."
+        },
+        {
+          "label": "Uncontrolled cable prediction",
+          "value": "7.39 mm RMS",
+          "detail": "Nominal predicted trajectory error over 0.48 s. This differs from the added-motion error after Newton replay."
+        },
+        {
+          "label": "Training budget",
+          "value": "600 pairs · 7.17 s GPU fit",
+          "detail": "Paired Newton capture takes 141.4 s. Fit starts from randomly initialized weights and consumes the saved pairs."
+        }
+      ],
+      "media": [
+        {
+          "src": "media/cable-state-refined-v13-planning-comparison.png",
+          "type": "image",
+          "label": "Held-out Newton replay error and planning latency"
+        },
+        {
+          "src": "media/cable-state-refined-v13-moving-cable-replay.gif",
+          "type": "image",
+          "label": "Moving cable replay with target, neural forecast and selected action in Newton"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Per-case Newton replay, derivative and timing results",
+          "url": "evidence/cable-state-refined-v13.json"
+        },
+        {
+          "label": "SuperNeRD articulated policy-learning paper",
+          "url": "https://github.com/maxkra15/supernerd"
+        },
+        {
+          "label": "Cable benchmark code and reproduction",
+          "url": "https://github.com/maxkra15/neurall/tree/gh-pages/code/cable-state-control"
+        },
+        {
+          "label": "Methods and interpretation",
+          "url": "evidence/cable-state-control-methods.txt"
+        }
+      ]
+    },
+    {
+      "id": "cable-state-impulse-exact-v12",
+      "title": "Solving a cable force plan with one encoding",
+      "date": "2026-11-24",
+      "status": "Measured",
+      "modalities": [
+        "cable"
+      ],
+      "scope": "A learned causal impulse-response model separates observed-state motion from the influence of six force amplitudes. One state encoding gives the matrix for a bounded least-squares plan.",
+      "summary": "The exact small solve retains the iterative plan’s Newton error on stock cases and reduces planning time. A model trained on stock settings loses its mean advantage on the six finer replays.",
+      "metrics": [
+        {
+          "label": "Median CPU planning latency",
+          "value": "25.19 → 1.17 ms",
+          "detail": "21.6× compared with model evaluation and backpropagation in L-BFGS-B, excluding Newton replay."
+        },
+        {
+          "label": "Stock Newton residual",
+          "value": "83.04%",
+          "detail": "16/16 improved from a zero pulse. Matched-count Sobol 94.88%, iterative gradients 83.18%."
+        },
+        {
+          "label": "Finer Newton residual",
+          "value": "88.78%",
+          "detail": "Adaptive Sobol reaches 76.75% on six replays of a model trained at stock settings."
+        }
+      ],
+      "media": [
+        {
+          "src": "media/cable-state-impulse-exact-v12-planning-comparison.png",
+          "type": "image",
+          "label": "Held-out Newton replay error and planning latency"
+        },
+        {
+          "src": "media/cable-state-impulse-exact-v12-moving-cable-replay.gif",
+          "type": "image",
+          "label": "Moving cable replay with target, neural forecast and selected action in Newton"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Per-case Newton replay, derivative and timing results",
+          "url": "evidence/cable-state-impulse-exact-v12.json"
+        },
+        {
+          "label": "SuperNeRD articulated policy-learning paper",
+          "url": "https://github.com/maxkra15/supernerd"
+        }
+      ]
+    },
+    {
+      "id": "cable-state-control-v11",
+      "title": "Planning from a moving cable",
+      "date": "2026-11-24",
+      "status": "Measured",
+      "modalities": [
+        "cable"
+      ],
+      "scope": "Recurrent model initialized from observed cable positions and velocities. L-BFGS-B optimizes two local force pulses on held-out geometries and force sites. Newton replay evaluates the added motion over 0.48 s.",
+      "summary": "Gradients reduce tracking error on 15 of 16 stock cases and beat matched-count sampling on 14. The six finer Newton replays favor sampling on mean error.",
+      "metrics": [
+        {
+          "label": "Stock Newton gradient residual",
+          "value": "83.03%",
+          "detail": "Matched-count Sobol 95.46%, wall-budget Sobol 94.82%. No applied pulse scores 100%."
+        },
+        {
+          "label": "Finer Newton gradient residual",
+          "value": "89.61%",
+          "detail": "Six same-case 8×16 solver replays. Matched-count Sobol reaches 86.12%."
+        }
+      ],
+      "media": [
+        {
+          "src": "media/cable-state-control-v11-planning-comparison.png",
+          "type": "image",
+          "label": "Held-out Newton replay error and planning latency"
+        },
+        {
+          "src": "media/cable-state-control-v11-moving-cable-replay.gif",
+          "type": "image",
+          "label": "Moving cable replay with target, neural forecast and selected action in Newton"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Per-case Newton replay, derivative and timing results",
+          "url": "evidence/cable-state-control-v11.json"
+        },
+        {
+          "label": "SuperNeRD articulated policy-learning paper",
+          "url": "https://github.com/maxkra15/supernerd"
+        }
+      ]
+    },
     {
       "id": "elastic-differentiable-control-v10",
       "title": "Action gradients replayed in Newton",

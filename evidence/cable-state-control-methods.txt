@@ -1,0 +1,11 @@
+NeurALL moving-cable force planning
+
+The test starts from measured positions and velocities of a moving clamped cable. The model predicts its nominal trajectory and learns the added effect of force pulses. The control objective is tracking that added motion over 24 frames at 50 Hz. Evaluation compares each selected action in Newton with the Newton target and Newton no-intervention replay under the same initial trajectory.
+
+The impulse-response head is affine in the six bounded force components for fixed cable state and selected sites. One evaluation gives the force response matrix. Bounded least squares then solves the same learned optimization objective as iterative L-BFGS-B. The recorded objective excludes the Newton replay time. Wall-budget Sobol matches L-BFGS-B and may use more than the 24 count-matched candidates. The exact solve uses one model encoding.
+
+The refined v13 model achieved 26.50% mean residual in Newton and 0.79 mm geometric target error. Nominal world-model prediction error remains 7.39 mm and the target added response error of predicted trajectories averages 42.81%. Newton gradient direction at zero action has mean cosine 0.992. These quantities address different uses of the world model. Good gradients can choose useful actions even when absolute forward estimates still drift.
+
+The stock-teacher v12 model loses its advantage over sampling when replayed at finer solver settings. The refined-teacher v13 model uses 600 different fit pairs and a separate set of 12 held-out cases. Its results support learning and planning on that refined teacher. Results across v12 and v13 do not isolate the effects of resolution and do not establish convergence across solver resolutions. Contact, two-way robot coupling and long recursive rollouts remain to be tested.
+
+The v13 run reused saved Newton pairs after a storage-full error. Dataset commissioning took 141.4 s and the recovered fit took 7.17 s on an RTX PRO 6000 Blackwell. Planning timings use one CPU thread in float64. The reported 21.7× is a planner speedup on the same learned objective.
